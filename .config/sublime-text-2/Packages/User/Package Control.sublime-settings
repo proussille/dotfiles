@@ -1,0 +1,16 @@
+{
+	"auto_upgrade_last_run": 1332670248,
+	"installed_packages":
+	[
+		"Abacus",
+		"AdvancedNewFile",
+		"BracketHighlighter",
+		"CTags",
+		"DocBlockr",
+		"Package Control",
+		"SublimeExternalCommand",
+		"Symfony2 Snippets",
+		"Theme - Soda",
+		"ZenCoding"
+	]
+}

@@ -1,0 +1,4 @@
+{
+    // "ctags_command":    "/usr/local/bin/ctags_sf2",
+    "ctags_command":    "ctags -f .tags -h \".php\" -R --languages=PHP --exclude=\".svn\" --exclude=\".git\" --exclude=\"*/cache/*\" --exclude=\"*/logs/*\" --exclude=\"*/data/*\" --totals=yes --tag-relative=yes --PHP-kinds=+cf --regex-PHP='/abstract class ([^ ]*)/\\1/c/' --regex-PHP='/interface ([^ ]*)/\\1/c/' --regex-PHP='/(public |static |abstract |protected |private )+function ([^ (]*)/\\2/f/'"
+}
