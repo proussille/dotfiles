@@ -42,6 +42,9 @@ alias du='du --human-readable'
 alias md='mkdir'
 alias rd='rmdir'
 
+# Symfony aliases
+alias sf="./app/console"
+
 ########################################
 # Options de zsh (cf 'man zshoptions') #
 ########################################
@@ -70,8 +73,7 @@ unsetopt rm_star_silent
 #setopt correct
 # Si on utilise des jokers dans une liste d'arguments, retire les jokers
 # qui ne correspondent à rien au lieu de donner une erreur
-setopt nullglob
-
+unsetopt correct_all
 # Schémas de complétion
 
 # 1ère tabulation : complète jusqu'au bout de la partie commune et
