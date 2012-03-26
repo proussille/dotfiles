@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1332670248,
+	"auto_upgrade_last_run": 1332688223,
 	"installed_packages":
 	[
 		"Abacus",
@@ -7,9 +7,14 @@
 		"BracketHighlighter",
 		"CTags",
 		"DocBlockr",
+		"HTML5",
 		"Package Control",
+		"PHP-Twig",
+		"Quick File Creator",
+		"SublimeCodeIntel",
 		"SublimeExternalCommand",
 		"Symfony2 Snippets",
+		"Terminal",
 		"Theme - Soda",
 		"ZenCoding"
 	]
