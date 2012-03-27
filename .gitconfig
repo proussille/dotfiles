@@ -10,3 +10,4 @@
     co = checkout
     df = diff
     lg = log -p
+    lo = log --oneline
