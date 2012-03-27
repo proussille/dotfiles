@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1332766857,
+	"auto_upgrade_last_run": 1332849639,
 	"installed_packages":
 	[
 		"Abacus",
@@ -12,8 +12,10 @@
 		"PHP-Twig",
 		"Quick File Creator",
 		"SFTP",
+		"SideBarEnhancements",
 		"SublimeCodeIntel",
 		"SublimeExternalCommand",
+		"SublimeLinter",
 		"Symfony2 Snippets",
 		"Terminal",
 		"Theme - Soda",
