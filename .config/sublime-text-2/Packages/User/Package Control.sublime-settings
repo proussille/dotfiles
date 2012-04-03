@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1332849639,
+	"auto_upgrade_last_run": 1333440914,
 	"installed_packages":
 	[
 		"Abacus",
@@ -10,6 +10,7 @@
 		"HTML5",
 		"Package Control",
 		"PHP-Twig",
+		"Phpcs",
 		"Quick File Creator",
 		"SFTP",
 		"SideBarEnhancements",

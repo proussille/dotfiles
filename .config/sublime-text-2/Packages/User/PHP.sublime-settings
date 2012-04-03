@@ -1,14 +1,14 @@
 {
     //"auto_complete": false,
     //"tab_completion": false,
-
+    "detect_indentation" : false,
     "sublimelinter": true,
     "com.khiltd.abacus.separators":
-        [
-            {
-                "token":                "=>",
-                "gravity":              "right",
-                "preserve_indentation": true
-            }
-        ]
+    [
+        {
+            "token":                "=>",
+            "gravity":              "right",
+            "preserve_indentation": true
+        }
+    ]
 }
