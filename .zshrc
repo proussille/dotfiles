@@ -45,6 +45,8 @@ alias rd='rmdir'
 # Symfony aliases
 alias sf="./app/console"
 
+# Yum alias
+alias yumup="yum update -y"
 ########################################
 # Options de zsh (cf 'man zshoptions') #
 ########################################
