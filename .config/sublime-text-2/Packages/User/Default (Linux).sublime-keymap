@@ -1,6 +1,7 @@
 [
     { "keys": ["shift+alt+a"], "command": "abacus" },
-    { "keys": ["ctrl+shift+n"], "command": "advanced_new_file"},
+    { "keys": ["n","n","n"], "command": "advanced_new_file"},
+    { "keys": ["j","j"], "command": "insert", "args": {"characters": "->"} },
     { "keys": ["ctrl+n"], "command": "quick_create_file"},
     { "keys": ["ctrl+d"], "command": "quick_create_directory"},
 
