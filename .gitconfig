@@ -5,10 +5,13 @@
 	ui = true
 [alias]
     st = status
-    ci = commit
+    c  = commit
+    cm = commit -m
     br = branch
     co = checkout
-    df = diff
+    d  = diff
+    dp = diff -p
     lg = log -p
     lo = log --oneline
     amend = commit --amend
+    ap = add -p
