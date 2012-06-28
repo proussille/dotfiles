@@ -47,6 +47,11 @@ alias sf="./app/console"
 
 # Yum alias
 alias yumup="yum update -y"
+
+# Sublime Text alias
+alias sub="sublime 2>/dev/null"
+alias san="sublime -ban . 2>/dev/null "
+
 ########################################
 # Options de zsh (cf 'man zshoptions') #
 ########################################
@@ -64,7 +69,7 @@ unsetopt clobber
 unsetopt ignore_eof
 
 # Affiche le code de sortie si différent de '0'
-# setopt print_exit_value
+setopt print_exit_value
 
 # Demande confirmation pour 'rm *'
 unsetopt rm_star_silent
@@ -92,7 +97,7 @@ unsetopt list_ambiguous
 setopt auto_remove_slash
 
 # Traite les liens symboliques comme il faut
-setopt chase_links
+unsetopt chase_links
 
 # Quand l'utilisateur commence sa commande par '!' pour faire de la
 # complétion historique, il n'exécute pas la commande immédiatement
