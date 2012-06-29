@@ -15,3 +15,8 @@
     lo = log --oneline
     amend = commit --amend
     ap = add -p
+[core]
+	sharedRepository = umask
+	autocrlf = input
+	safecrlf = true
+
