@@ -69,7 +69,7 @@ unsetopt clobber
 unsetopt ignore_eof
 
 # Affiche le code de sortie si différent de '0'
-setopt print_exit_value
+#setopt print_exit_value
 
 # Demande confirmation pour 'rm *'
 unsetopt rm_star_silent
