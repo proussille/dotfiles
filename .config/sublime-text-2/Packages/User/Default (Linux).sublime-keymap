@@ -2,7 +2,7 @@
     { "keys": ["shift+alt+a"], "command": "abacus" },
     { "keys": ["n","n","n"], "command": "advanced_new_file"},
     { "keys": ["j","j"], "command": "insert", "args": {"characters": "->"} },
-    { "keys": ["l","l"], "command": "insert", "args": {"characters": "=>"} }
+    { "keys": ["h","h"], "command": "insert", "args": {"characters": "=>"} },
     { "keys": ["k","k"], "command": "insert", "args": {"characters": "\\"} },
     { "keys": ["ctrl+n"], "command": "quick_create_file"},
     { "keys": ["ctrl+d"], "command": "quick_create_directory"},
