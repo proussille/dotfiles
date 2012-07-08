@@ -1,0 +1,50 @@
+##########
+# Colors #
+##########
+txtrst='\e[0m'    # Text Reset
+txtbluj="\[\e[01;34m\]" # Bleu prompt
+txtarobasc="\[\e[05;33m\]" # Orange clignote prompt
+txtarobas="\[\e[02;33m\]" # Orange prompt
+txtvertj="\[\e[01;32m\]" # Vert fluo prompt
+txtjaunj="\[\e[01;33m\]" # Jaune prompt
+txtbleucj="\[\033[1;36m\]" # Bleu clair prompt
+txtheure="\[\e[02;36m\]" # turquoise, heure prompt
+txtgrisj="\[\e[30;1m\]" # gris prompt
+
+# Prompt perso, modification de la variable $PS1
+# USER@MACHINE:DOSSIER (nb fichiers Taille Mb) [HH:mm:ss] #N°Commande
+# (nb jobs)-(screen num) :-)
+function truncate_pwd # Fonction pour remplacer PWD par {...} si > 1/3 de l'écran
+{
+  newPWD="${PWD/#$HOME/~}"
+  local pwdmaxlen=$((${COLUMNS:-20}/3))
+  if [ ${#newPWD} -gt $pwdmaxlen ]
+  then
+     newPWD=" {...} ${newPWD: -$pwdmaxlen}"
+  fi
+  #nbFiles=$(ls -1 | wc -l | sed 's: ::g')
+  #sizeFiles=$(ls -lah | grep -m 1 total | sed 's/total //')
+}
+
+PROMPT_COMMAND=truncate_pwd # Executé avant chaque commande
+
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWUPSTREAM="auto"
+
+ROOT_UID=0
+# Vérifier si on est dans un screen
+if [ -n "${STY#*.}" ]; then
+    export PS1="\n${txtbluj}\u${txtrst}${txtarobasc}@${txtrst}${txtvertj}\h${txtrst}:${txtjaunj} \${newPWD}${txtrst}${txtvertj}\$(__git_ps1) ${txtrst}${txtbleucj}[\t]${txtgrisj} #\#\n${txtgrisj}(jobs:${txtbluj}\j${txtgrisj}) - (screen:${txtbluj}$WINDOW${txtgrisj})\`if [ i\$? -eq 0 ]; then echo '${txtvertj} :-)'; else echo '${bldred} :-(' ; fi\`${txtrst}\n$"
+else
+  if [ "$UID" -eq "$ROOT_UID" ]  # Si root le @ clignote,
+  then
+	  export PS1="\n${txtbluj}\u${txtrst}${txtarobasc}@${txtrst}${txtvertj}\h${txtrst}:${txtjaunj} \${newPWD}${txtrst}${txtvertj}\$(__git_ps1) ${txtrst}${txtbleucj}[\t]${txtgrisj} #\#\n${txtgrisj}(jobs:${txtbluj}\j${txtgrisj})\`if [ \$? = "0" ]; then echo '${txtvertj} :-)'; else echo '${bldred} :-(' ; fi\`${txtrst}\n$"
+  else
+	  export PS1="\n${txtbluj}\u${txtrst}${txtarobas}@${txtrst}${txtvertj}\h${txtrst}:${txtjaunj} \${newPWD}${txtrst}${txtvertj}\$(__git_ps1) ${txtrst}${txtbleucj}[\t]${txtgrisj} #\#\n${txtgrisj}(jobs:${txtbluj}\j${txtgrisj})\`if [ \$? = "0" ]; then echo '${txtvertj} :-)'; else echo '${bldred} :-(' ; fi\`${txtrst}\n$"
+  fi
+fi
+
+export PS2="continue-> " # Pour les longues commandes remplace >
+

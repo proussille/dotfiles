@@ -1,0 +1,89 @@
+# include what you want
+
+export PATH=$PATH:$HOME/bin
+export TERM=xterm-256color
+
+# Autojump 
+if [ -f /etc/profile.d/autojump.bash ]; then
+   . /etc/profile.d/autojump.bash
+fi
+
+#####################
+# Completion system #
+#####################
+
+# Base completion
+if [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+fi
+
+# SSH host completion
+if [ -f ~/.ssh/known_hosts ]; then
+  SSH_COMPLETE=( $(cat ~/.ssh/known_hosts | \
+  cut -f 1 -d ' ' | \
+  sed -e s/,.*//g | \
+  uniq | \
+  egrep -v [0123456789]) )
+  complete -o default -W "${SSH_COMPLETE[*]}" ssh
+fi
+
+# sudo completion
+complete -cf sudo
+
+# symfony2 completion
+if [ -e ~/symfony2-autocomplete.bash ]; then
+    . ~/symfony2-autocomplete.bash
+fi
+
+# Ncurse style completion
+function kingbash.fn() {
+  echo -n "KingBash> $READLINE_LINE"
+  OUTPUT=`/usr/bin/kingbash "$(compgen -ab -A function)"`
+  READLINE_POINT=`echo "$OUTPUT" | tail -n 1`
+  READLINE_LINE=`echo "$OUTPUT" | head -n -1`
+  echo -ne "\r\e[2K"; }
+bind -x '"\t":kingbash.fn'
+
+###########
+# History #
+###########
+
+export HISTSIZE=10000
+export HISTFILESIZE=${HISTSIZE}
+export HISTIGNORE="ls:cd:[bf]g:exit" # ignore ls, cd, ...
+export HISTCONTROL="ignoreboth"
+
+# Ncurse style history
+function kingbash.hs() {
+  echo -n "KingBash> $READLINE_LINE"
+  history -a
+  OUTPUT=`/usr/bin/kingbash -r <(tac ~/.bash_history)`
+  READLINE_POINT=`echo "$OUTPUT" | tail -n 1`
+  READLINE_LINE=`echo "$OUTPUT" | head -n -1`
+  echo -ne "\r\e[2K"; }
+bind -x '"\x12":kingbash.hs'
+
+
+shopt -s cdspell # Pour que bash corrige automatiquement les fautes de frappes ex: cd ~/fiml sera remplacé par cd ~/film
+shopt -s checkwinsize # Pour que bash vérifie la taille de la fenêtre après chaque commande
+shopt -s cmdhist # Pour que bash sauve dans l'historique les commandes qui prennent plusieurs lignes sur une seule ligne.
+shopt -s dotglob # Pour que bash montre les fichiers qui commencent par un .
+shopt -s expand_aliases # # Pour que bash montre la commande complete au lieu de l'alias
+shopt -s extglob # Pour que bash, interprète les expressions génériques
+shopt -s histappend # Pour que bash ajoute au lieu d'écraser dans l'histo
+shopt -s hostcomplete # Pour que bash tente de résoudre le nom pour les ip suivis d'un @
+shopt -s nocaseglob # Pour que bash ne soit pas sensible a la casse
+
+##########
+# Prompt #
+##########
+if [ -f ~/.bash_prompt ]; then
+    . ~/.bash_prompt
+fi
+
+#########
+# Alias #
+#########
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
