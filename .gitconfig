@@ -16,6 +16,7 @@
     amend = commit --amend
     ap = add -p
 [core]
+	editor = vim
 	sharedRepository = umask
 	autocrlf = input
 	safecrlf = true
