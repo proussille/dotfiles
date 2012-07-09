@@ -36,13 +36,13 @@ GIT_PS1_SHOWUPSTREAM="auto"
 ROOT_UID=0
 # Vérifier si on est dans un screen
 if [ -n "${STY#*.}" ]; then
-    export PS1="\n${txtbluj}\u${txtrst}${txtarobasc}@${txtrst}${txtvertj}\h${txtrst}:${txtjaunj} \${newPWD}${txtrst}${txtvertj}\$(__git_ps1) ${txtrst}${txtbleucj}[\t]${txtgrisj} #\#\n${txtgrisj}(jobs:${txtbluj}\j${txtgrisj}) - (screen:${txtbluj}$WINDOW${txtgrisj})\`if [ i\$? -eq 0 ]; then echo '${txtvertj} :-)'; else echo '${bldred} :-(' ; fi\`${txtrst}\n$"
+    export PS1="\n${txtbluj}\u${txtrst}${txtarobasc}@${txtrst}${txtvertj}\h${txtrst}:${txtjaunj} \${newPWD}${txtrst}${txtvertj}\$(__git_ps1) ${txtrst}${txtbleucj}[\t]${txtgrisj} #\#\n${txtgrisj}(jobs:${txtbluj}\j${txtgrisj}) - (screen:${txtbluj}$WINDOW${txtgrisj})\`if [ i\$? -eq 0 ]; then echo '${txtvertj} :-)'; else echo '${bldred} :-(' ; fi\`${txtrst}\n$ "
 else
   if [ "$UID" -eq "$ROOT_UID" ]  # Si root le @ clignote,
   then
-	  export PS1="\n${txtbluj}\u${txtrst}${txtarobasc}@${txtrst}${txtvertj}\h${txtrst}:${txtjaunj} \${newPWD}${txtrst}${txtvertj}\$(__git_ps1) ${txtrst}${txtbleucj}[\t]${txtgrisj} #\#\n${txtgrisj}(jobs:${txtbluj}\j${txtgrisj})\`if [ \$? = "0" ]; then echo '${txtvertj} :-)'; else echo '${bldred} :-(' ; fi\`${txtrst}\n$"
+	  export PS1="\n${txtbluj}\u${txtrst}${txtarobasc}@${txtrst}${txtvertj}\h${txtrst}:${txtjaunj} \${newPWD}${txtrst}${txtvertj}\$(__git_ps1) ${txtrst}${txtbleucj}[\t]${txtgrisj} #\#\n${txtgrisj}(jobs:${txtbluj}\j${txtgrisj})\`if [ \$? = "0" ]; then echo '${txtvertj} :-)'; else echo '${bldred} :-(' ; fi\`${txtrst}\n# "
   else
-	  export PS1="\n${txtbluj}\u${txtrst}${txtarobas}@${txtrst}${txtvertj}\h${txtrst}:${txtjaunj} \${newPWD}${txtrst}${txtvertj}\$(__git_ps1) ${txtrst}${txtbleucj}[\t]${txtgrisj} #\#\n${txtgrisj}(jobs:${txtbluj}\j${txtgrisj})\`if [ \$? = "0" ]; then echo '${txtvertj} :-)'; else echo '${bldred} :-(' ; fi\`${txtrst}\n$"
+	  export PS1="\n${txtbluj}\u${txtrst}${txtarobas}@${txtrst}${txtvertj}\h${txtrst}:${txtjaunj} \${newPWD}${txtrst}${txtvertj}\$(__git_ps1) ${txtrst}${txtbleucj}[\t]${txtgrisj} #\#\n${txtgrisj}(jobs:${txtbluj}\j${txtgrisj})\`if [ \$? = "0" ]; then echo '${txtvertj} :-)'; else echo '${bldred} :-(' ; fi\`${txtrst}\n$ "
   fi
 fi
 
