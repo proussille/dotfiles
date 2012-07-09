@@ -2,10 +2,11 @@
 	"auto_upgrade_last_run": 1333440914,
 	"installed_packages":
 	[
-		"Abacus",
 		"AdvancedNewFile",
+		"Alignment",
 		"BracketHighlighter",
 		"CTags",
+		"CTags for PHP",
 		"DocBlockr",
 		"GotoRecent",
 		"HTML5",
@@ -19,6 +20,7 @@
 		"SublimeExternalCommand",
 		"SublimeLinter",
 		"Symfony2 Snippets",
+		"SymfonyCommander",
 		"Terminal",
 		"Theme - Soda",
 		"ZenCoding"
