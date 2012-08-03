@@ -1,4 +1,5 @@
 {
     "detect_indentation" : false,
-    "sublimelinter": true
+    "sublimelinter": true,
+    "tab_size": 4
 }

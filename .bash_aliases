@@ -24,7 +24,7 @@ alias c='clear'
 bind '"\C-l"':"\"clear\r\"" # Ctrl+l vide le terminal
 
 # Symfony aliases
-alias sf="./app/console"
+alias sf="php app/console"
 
 # Yum alias
 alias yup="sudo yum update -y"

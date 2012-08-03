@@ -8,6 +8,8 @@
     { "keys": ["ctrl+alt+d"], "command": "quick_create_directory"},
     { "keys": ["shift+ctrl+w"], "command": "close_all" },
     { "keys": ["ctrl+q"], "command": "pouet" },
+    { "keys": ["ctrl+shift+t"], "command": "reopen_last_file" },
+
 
     // Azerty mapping
     {

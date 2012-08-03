@@ -19,5 +19,4 @@
 	editor = vim
 	sharedRepository = umask
 	autocrlf = input
-	safecrlf = true
-
+    filemode = false
