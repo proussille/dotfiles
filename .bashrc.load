@@ -17,6 +17,12 @@ if [ -f /etc/bash_completion ]; then
         . /etc/bash_completion
 fi
 
+# GIT completion
+if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
+    . /usr/share/git-core/contrib/completion/git-prompt.sh
+fi
+
+
 # SSH host completion
 if [ -f ~/.ssh/known_hosts ]; then
   SSH_COMPLETE=( $(cat ~/.ssh/known_hosts | \
@@ -36,13 +42,6 @@ if [ -e ~/symfony2-autocomplete.bash ]; then
 fi
 
 # Ncurse style completion
-function kingbash.fn() {
-  echo -n "KingBash> $READLINE_LINE"
-  OUTPUT=`/usr/bin/kingbash "$(compgen -ab -A function)"`
-  READLINE_POINT=`echo "$OUTPUT" | tail -n 1`
-  READLINE_LINE=`echo "$OUTPUT" | head -n -1`
-  echo -ne "\r\e[2K"; }
-bind -x '"\t":kingbash.fn'
 
 ###########
 # History #

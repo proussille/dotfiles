@@ -33,7 +33,12 @@ alias yup="sudo yum update -y"
 alias sub="sublime 2>/dev/null"
 alias san="sublime -ban . 2>/dev/null "
 
+# Git alias
+alias g="git status"
+
+# Special alias
 alias dropwatch="echo 100000 | sudo tee /proc/sys/fs/inotify/max_user_watches"
+
 
 #############
 # Functions #

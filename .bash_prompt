@@ -26,7 +26,7 @@ function truncate_pwd # Fonction pour remplacer PWD par {...} si > 1/3 de l'écr
   #sizeFiles=$(ls -lah | grep -m 1 total | sed 's/total //')
 }
 
-PROMPT_COMMAND=truncate_pwd # Executé avant chaque commande
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} truncate_pwd" # Executé avant chaque commande
 
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
