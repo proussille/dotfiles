@@ -53,7 +53,8 @@
 		".git",
 		".hg",
 		"CVS",
-		"web/bundles"
+		"web/bundles",
+		"vendor/faros"
 	],
 	"font_face": "Monaco",
 	"font_size": 10,
