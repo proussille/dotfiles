@@ -7,11 +7,13 @@
     st = status
     c  = commit
     cm = commit -m
+    cp = cherry-pick
     br = branch
     co = checkout
     d  = diff
     dp = diff -p
     ds = diff --staged
+    rh = reset HEAD
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     lo = "log --pretty=\"%h %an %ar %s\""
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
@@ -49,4 +51,12 @@
 [push]
     default = tracking
 [branch]
-	autosetuprebase = always
+    autosetuprebase = always
+[merge]
+    conflictStyle = diff3
+[mergetool]
+    keepBackup = false
+    keepTemporaries = false
+    prompt = false
+[git-up "rebase"]
+	log-hook = "echo \"changes on $1:\"; git ls --decorate $1..$2"
