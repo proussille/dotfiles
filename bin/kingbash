@@ -1,0 +1,723 @@
+#! /usr/bin/env python
+import os, os.path, re, stat, termios, fcntl, sys, string, operator, struct
+
+def usage_help_text():
+	print """Usage
+Tab Completion:
+
+function kingbash.fn() {
+  echo -n "KingBash> $READLINE_LINE" #Where "KingBash> " looks best if it resembles your PS1, at least in length.
+  OUTPUT=`"""+sys.argv[0]+""" "$(compgen -ab -A function)"`
+  READLINE_POINT=`echo "$OUTPUT" | tail -n 1`
+  READLINE_LINE=`echo "$OUTPUT" | head -n -1`
+  echo -ne "\\r\\e[2K"; }
+bind -x '"\\t":kingbash.fn'
+
+
+History search:
+
+function kingbash.hs() {
+  echo -n "KingBash> $READLINE_LINE"
+  history -a
+  OUTPUT=`"""+sys.argv[0]+""" -r <(tac ~/.bash_history)`
+  READLINE_POINT=`echo "$OUTPUT" | tail -n 1`
+  READLINE_LINE=`echo "$OUTPUT" | head -n -1`
+  echo -ne "\\r\\e[2K"; }
+bind -x '"\\x12":kingbash.hs'
+
+
+CLI dmenu:
+
+... | """+sys.argv[0]+"""
+
+
+GUI dmenu:
+
+rm /tmp/menu
+cat > /tmp/inmenu
+urxvtc -e bash -c 'export READLINE_POINT=0; answ=$(""" + sys.argv[0] + """ -r /tmp/inmenu | head -n 1); echo -n "$answ" > /tmp/menu'
+while sleep 0.1; do [ -f /tmp/menu ] && break; done
+cat /tmp/menu
+rm /tmp/menu
+rm /tmp/inmenu
+-------
+
+F1 inside the application will print a key table"""
+
+def F1_help_text():
+	sys.stderr.write("""\x1b[?7hGet usage advice by running """+sys.argv[0]+""" without arguments
+-------------------------
+There are two modes: Tab completion and History/file/dmenu completion.
+---Key table---
++Both modes+
+ F1		This help
+ Up/Down
+ Shift+Up/Down
+ Page up/Pagedown
+ Home/End	Move around the list
+ Enter		Complete the selection and quit
+ Any other character is added "as is" (with the escape sequence replaced with ESC).
+ Under "Tab completion" the program quits after a space or equals sign.
+
++Tab Completion+
+*F2		Erase first word and move cursor to start of line, after the selection has been completed
+ Left		Go to the parent directory and continue browsing
+ Right		Complete the selection, but if it's a directory, bring up the program again inside that directory
+ Escape		Quit, leaving the line as it is seen in the application
+ Backspace	Erase the character left of the cursor and complete again
+ Alt+Backspace	Same, but an entire word or path
+ Control+U	Clear the line and quit
+ Insert		Complete the selection, move the selector bar down, and continue as if we are completing the previous selection again
+ Asterisk	Add everything in the list to the command line. If there are 'suggestions', only complete those. Quit afterwards.
+
++History Completion+
+ Left		Move the cursor left
+ Right		Move the cursor right
+ Escape		Quit, restore the line to what it was when KingBash started
+ Backspace	Erase the character left of the cursor
+ Alt+Backspace	Same, but an entire word or path
+*Delete		Delete the character under the cursor
+ Control+U	Clear the line and continue
+*Tab		Make the current line the same as the selection
+ Insert		Like Tab
+
+* means this key does nothing at all in the other mode
+-------------------------
+\x1b[?7l""")
+
+def main():
+	try:
+		fd=sys.stdin.fileno()
+		oldterm=termios.tcgetattr(fd)
+		dmenu_mode=False
+		del fd
+		del oldterm
+	except termios.error: #stdin is a pipe
+		dmenu_mode=True
+	try:
+		point=int(os.environ["READLINE_POINT"])
+	except:
+		if not dmenu_mode:
+			usage_help_text()
+			sys.exit(0)
+		else:
+			point=0
+	try:
+		line=os.environ["READLINE_LINE"]
+	except KeyError:
+		line=""
+	original_line=line
+	original_point=point
+	if dmenu_mode or ( len(sys.argv) > 2 and sys.argv[1] == "-r" ):
+		if dmenu_mode:
+			f=os.fdopen(sys.stdin.fileno())
+		else:
+			f=open(sys.argv[2])
+		file_mode=True
+		read_file=[]
+		for read_f in f:
+			read_file.append(read_f[:-1])
+		f.close()
+		suggestions=grep_list(line.split(), read_file)
+		filedict=[]
+		for suggestion in suggestions:
+			filedict.append( { "isdir":False, "name":suggestion, "format":"\x1b[m"+suggestion, "rec":False })
+		prework=""
+		workpath=""
+		is_command=True
+		upto=""
+		workstr=""
+		postwork=""
+		cursor=point
+	else:
+		file_mode=False
+		if line[-2:] == "..": print line+"/"; print point+1; return
+		upto=line[:point]
+		first_space=re.search("[^\\\\] ", upto)
+		if first_space:
+			first_space=first_space.start()
+		else:
+			first_space=point
+		workstr=re.match("(.*(?<!\\\\)[ &;|=])(.*)", upto)
+		if not workstr:
+			prework=""
+			workstr=upto
+		else:
+			prework=workstr.group(1)
+			workstr=workstr.group(2)
+		postwork=line[point:]
+		workpath=re.match("(.*/)(.*)",workstr)
+		if not workpath:
+			workpath=""
+		else:
+			workstr=workpath.group(2)
+			workpath=workpath.group(1)
+		if len(workstr) != 0  and workstr[0] == "'":
+			workstr=unfixshell_singlequote(workstr)
+		else:
+			workstr=unfixshell(workstr)
+		filedict=[]
+	
+		is_command=False
+		if len(workpath) == 0:
+			if len(prework) == 0: is_command=True
+			else:
+				if point <= first_space: is_command=True
+				if prework[-5:] in ("sudo ", "type "): is_command=True
+				if prework[-6:] in ("which "): is_command=True
+				if prework[-7:] in ("whatis "): is_command=True
+				if prework[-8:] in ("whereis "): is_command=True
+				if prework[-1]  in ("|", ";", "&") : is_command=True
+				if prework[-2:] in ("| ","; ","& "): is_command=True
+				#However,
+				if prework[-1]  == "=" : is_command=False
+				if prework[-2:] == "= ": is_comamnd=False
+	
+		if is_command:
+			suggestions=complete_command(workstr)
+		else:
+			suggestions=complete_filename(workstr, unfixshell(workpath))
+		suggestions=sorted(set(suggestions),key=str.lower)
+		if len(suggestions) == 1 and not (len(workstr) == 0 and len(sys.argv) > 2 and sys.argv[2] == "rerun" ):
+			fix=fixshell(suggestions[0])
+			if not os.path.isdir(os.path.expandvars(os.path.expanduser(unfixshell(workpath))) + suggestions[0]):
+				fix+=" "
+			else:
+				fix+="/"
+				if len(sys.argv) > 2 and sys.argv[2] == "rerun":
+					rerun_fn(prework+workpath+fix+postwork, str(len(prework+workpath+fix)))
+			print prework + workpath + fix + postwork
+			print len(prework + workpath + fix)
+			return
+		if len(suggestions) == 0:
+			if len(workstr) != 0 or not ( len(sys.argv) > 2 and sys.argv[2] == "rerun" ):
+				print line
+				print point
+				return
+			else:
+				suggestions=[""]
+		if len(workstr) > 0 and workstr[-1] == '\\': workstr=workstr[:-1] #Don't escape the escape for a future character
+		first=suggestions[0]
+		lcd=[] #find largest common divider
+		for last in suggestions[1:]:
+			ld=""
+			for i in xrange(min(len(first),len(last))):
+				if first[i].upper()==last[i].upper():
+					ld=ld+first[i]
+				else:
+					break
+			lcd.append(ld)
+		if len(lcd) > 0:
+			smallest=sorted(lcd)[0]
+		else:
+			smallest=""
+		if len(smallest) > len(workstr):
+			workstr=smallest
+		line=prework+workpath+fixshell(workstr)+postwork
+		point=len(prework+workpath+fixshell(workstr))
+		cursor=len(workpath+workstr)
+		if is_command:
+			for suggestion in suggestions:
+				filedict.append({ "isdir":False, "name":suggestion, "format":"\x1b[7m" + suggestion[:cursor] + "\x1b[m" + suggestion[cursor:], "rec":False })
+		else:
+			for suggestion in suggestions:
+				statf=os.lstat(os.path.expandvars(os.path.expanduser(unfixshell(workpath)))+suggestion)
+				link_ind=""
+				if stat.S_ISLNK(statf[stat.ST_MODE]):
+					link_ind=" -> "+os.readlink(os.path.expandvars(os.path.expanduser(unfixshell(workpath)))+suggestion)
+					try:
+						statf=os.stat(os.path.expandvars(os.path.expanduser(unfixshell(workpath)))+suggestion)
+						link_ind=" @"+link_ind
+					except OSError:
+						link_ind=" @BAD"+link_ind
+				size=statf[stat.ST_SIZE]
+				exp=0
+				while size >= 1024: size=size/1024; exp=exp+1
+				size=str(size)+["B","KB","MB","GB","TB"][exp]
+				if stat.S_ISDIR(statf[stat.ST_MODE]):
+					dirappend="/"
+				else:
+					dirappend=""
+				if point > first_space and len(prework.split()) > 0 and isrecommended(re.sub(".*[^\\\\][;&|]", "", prework).split()[0], suggestion, dirappend=="/"):
+					rec=True
+					color="\x1b[m\x1b[31m"
+					matchcolor="\x1b[31;47m"
+				else:
+					rec=False
+					color="\x1b[m"
+					matchcolor="\x1b[30;47m"
+				filedict.append({ "isdir":dirappend=="/", "name":suggestion, "format":"\x1b[m"+string.ljust("\x1b[35m(" + size + ")\x1b[m", 17) + matchcolor + str(workpath+suggestion)[:cursor] + color + str(workpath+suggestion)[cursor:] + dirappend + link_ind, "rec":rec})
+		filedict.sort(key=operator.itemgetter("isdir"),reverse=True)
+		filedict.sort(key=operator.itemgetter("rec"),reverse=True)
+
+	selected=0
+	viewmin=0
+	if len(sys.argv) == 5:
+		selected=int(sys.argv[3])
+		viewmin=int(sys.argv[4]) #Restoring the position from Insert
+	try:
+		screen=terminal_size()[0]/3
+		if screen == 0: screen=0/0
+	except:
+		screen=23
+	original_screen=screen
+
+	count=len(filedict)-1
+	if count < screen: screen=count
+
+
+	try:
+		fd=sys.stdin.fileno()
+		oldterm=termios.tcgetattr(fd)
+	except termios.error:
+		newin=os.open("/dev/tty", os.O_RDONLY)
+		os.dup2(newin, fd)
+		oldterm=termios.tcgetattr(fd)
+	newattr=termios.tcgetattr(fd)
+	newattr[3]=newattr[3] & ~termios.ICANON & ~termios.ECHO
+	termios.tcsetattr(fd, termios.TCSANOW, newattr)
+
+	#This disables line wrap, makes the cursor invisible, and clears the possible calling-function's replacement prompt
+	sys.stderr.write("\x1b[?7l\x1b[?25l\r\x1b[2K")
+	
+	file_mode_changes=False
+	show_F1_help_text=False
+	rerun=False
+	icm=False #icm means Insert's Cursor Move.
+
+	try:
+		while 1:
+			if show_F1_help_text:
+				F1_help_text()
+				show_F1_help_text=False
+			if file_mode and file_mode_changes:
+				suggestions=grep_list(line.split(), read_file)
+				filedict=[]
+				for suggestion in suggestions:
+					filedict.append( { "isdir":False, "name":suggestion, "format":"\x1b[m"+suggestion, "rec":False })
+				oldcount=count
+				count=len(filedict)-1
+				if count < 0: count = 0
+				if count < original_screen:
+					screen=count
+				if screen != original_screen and count > original_screen:
+					screen=original_screen
+				if oldcount != count: selected=0
+				file_mode_changes=False
+			try:
+				unused = line[point+1:]
+				sys.stderr.write("KingBash> " + line[:point] + '\x1b[7m' + line[point] + '\x1b[m' + line[point+1:] + '\n')
+			except IndexError:
+				sys.stderr.write("KingBash> " + line + '\x1b[7m \x1b[m\n')
+			show_filelist(filedict, selected, viewmin, screen)
+			sys.stderr.write("\n"+"-"*999)
+			try:
+				c=sys.stdin.read(1)
+				if c == "\x1b":
+					c="ESC"
+					oldflags=fcntl.fcntl(fd, fcntl.F_GETFL)
+					fcntl.fcntl(fd, fcntl.F_SETFL, oldflags | os.O_NONBLOCK)
+					while 1:
+						try:
+							newc=sys.stdin.read(1)
+							c=c+newc
+							if newc in ("A","B","C","D","a","b","c","d","~"): #Common endings of escape codes of keys that are held down
+								break
+						except IOError: break
+					fcntl.fcntl(fd, fcntl.F_SETFL, oldflags)
+				if   c == "ESC[A":#UP
+					selected-=1
+				elif c in ("ESC[a","ESC[1;2A"):#SHIFT UP
+					selected-=5
+				elif c == "ESC[B":#DOWN
+					selected+=1
+				elif c in ("ESC[b","ESC[1;2B"):#SHIFT DOWN
+					selected+=5
+				elif c == "ESC[C":#RIGHT
+					if file_mode:
+						if point != len(line):
+							point+=1
+					else:
+						filedict[selected]["name"]=fixshell(filedict[selected]["name"])
+						if not filedict[selected]["isdir"]:
+							filedict[selected]["name"]+=" "
+						else:
+							filedict[selected]["name"]+="/"
+						line=prework + workpath + filedict[selected]["name"] + postwork
+						point=len(prework + workpath + filedict[selected]["name"])
+						rerun=True
+						break
+				elif c == "ESC[D":#LEFT
+					if file_mode:
+						if point != 0:
+							point-=1
+					else:
+						workstr=""
+						oldlen=len(workpath)
+						if workpath == "/":
+							pass
+						elif workpath == "" or workpath[-3:] == "../":
+							workpath+="../"
+						else:
+							oldpath=workpath
+							workpath=re.sub("/[^/]*/$", "/", workpath)
+							if oldpath == workpath:
+								workpath=re.sub(".*?/$", "", workpath)
+							del oldpath
+						line=prework+workpath+fixshell(workstr)+postwork
+						point=point+(len(workpath)-oldlen)
+						rerun=True
+						break
+				elif c == "ESC[6~":#PAGEDOWN
+					selected+=screen+1
+					if viewmin + screen + 1 < count: viewmin+=screen+1
+				elif c == "ESC[5~":#PAGEUP
+					selected-=screen+1
+					viewmin-=screen+1
+				elif c in ("ESC[4~","ESC[F","ESC[8~"):#END
+					selected=count
+					viewmin=count - (screen - (count % screen))
+				elif c in ("ESC[1~","ESC[H","ESC[7~"):#HOME
+					selected=0
+					viewmin=0
+				elif c in ("\x0d", "\n"):#ENTER
+					if not file_mode:
+						filedict[selected]["name"]=fixshell(filedict[selected]["name"])
+						if not filedict[selected]["isdir"]:
+							filedict[selected]["name"]+=" "
+						else:
+							filedict[selected]["name"]+="/"
+					try:
+						line=prework + workpath + filedict[selected]["name"] + postwork
+						point=len(prework + workpath + filedict[selected]["name"])
+					except IndexError:
+						pass
+					break
+				elif c == "ESC":#ESCAPE
+					if file_mode:
+						line=original_line
+						point=original_point
+					break
+				elif c in ("\x7f", "\x08"):#BACKSPACE
+					if file_mode:
+						if point != 0:
+							line=line[:point-1]+line[point:]
+							point-=1
+							file_mode_changes=True
+					else:
+						line=prework+str(workpath+workstr)[:-1]+postwork
+						point-=1
+						rerun=True
+						break
+				elif c in ("ESC\x7f", "ESC\x08"):#ALT+BACKSPACE
+					if file_mode:
+						try:
+							nline=" ".join(line[:point].split(" ")[:-1])+line[point:]
+							point-=len(line)-len(nline)
+							line=nline
+							del nline
+							file_mode_changes=True
+						except: pass
+					else:
+						new=re.sub("""[/ '"]?[^/ '"]*?[/ '"]?$""", "", prework+workpath+fixshell(workstr))
+						line=new+postwork
+						point=len(new)
+						rerun=True
+						break
+				elif c == "ESC[3~":#DELETE
+					if file_mode:
+						line=line[:point]+line[point+1:]
+						file_mode_changes=True
+				elif c == "\x15":#CONTROL + U
+					line=""
+					point=0
+					if not file_mode:
+						break
+				elif c == "\x09":#TAB
+					if file_mode:
+						line=filedict[selected]["name"]
+						point=len(filedict[selected]["name"])
+				elif c == "ESC[2~":#INSERT
+					if not file_mode:
+						filedict[selected]["name"]=fixshell(filedict[selected]["name"])
+						if not filedict[selected]["isdir"]:
+							filedict[selected]["name"]+=" "
+						else:
+							filedict[selected]["name"]+="/ "
+					line=prework + workpath + filedict[selected]["name"] + workpath + fixshell(workstr) + postwork
+					point=len(prework + workpath + filedict[selected]["name"] + workpath + fixshell(workstr))
+					if not file_mode:
+						rerun=True
+						selected+=1
+						if selected > count: selected=count
+						if selected > viewmin + screen: viewmin+=screen+1
+						icm=(str(selected), str(viewmin))
+						break
+				elif c == "*" and not file_mode:#ASTERISK
+					line=prework
+					point=len(prework)
+					allfalse=True
+					for file in filedict:
+						if file["rec"] == False: continue
+						allfalse=False
+						file["name"]=fixshell(file["name"])+" "
+						line+=workpath+file["name"]
+						point+=len(workpath+file["name"])
+					if allfalse:
+						for file in filedict:
+							file["name"]=fixshell(file["name"])+" "
+							line+=workpath + file["name"]
+							point+=len(workpath + file["name"])
+#					line+=workpath+fixshell(workstr)+postwork
+#					point+=len(workpath+fixshell(workstr))
+					line+=postwork
+#					rerun=True #In case you want to backspace and add more stuff
+					break
+				elif c in ("ESC[12~","ESCOQ"):#F2
+					if not is_command:
+						prework=re.sub("^.*?(?<!\\\\) ", "", prework) #remove first word and move cursor there
+						prework=" "+prework
+						filedict[selected]["name"]=fixshell(filedict[selected]["name"])
+						if not filedict[selected]["isdir"]:
+							filedict[selected]["name"]+=" "
+						else:
+							filedict[selected]["name"]+="/"
+						line=prework + workpath + filedict[selected]["name"] + postwork
+						point=0
+						break
+				elif c in ("ESC[11~","ESCOP"):#F1
+					show_F1_help_text=True
+				else:
+					if file_mode:
+						line=line[:point] + c + line[point:]
+						point+=len(c)
+						file_mode_changes=True
+					else:
+						point=len(prework + workpath + fixshell(workstr) + c)
+						line=prework + workpath + fixshell(workstr) + c + postwork
+						if c not in (' ',"="):
+							rerun=True
+						break
+			except IOError: pass
+			if selected < 0: selected=0
+			elif selected > count: selected=count
+			elif selected > viewmin + screen: viewmin+=screen+1
+			elif selected < viewmin: viewmin-=screen
+			if viewmin < 0: viewmin=0
+			erase_filelist(screen+2)
+	except KeyboardInterrupt:
+		if file_mode:
+			line=original_line
+			point=original_point
+	finally:
+		sys.stderr.write('\x1b[m\x1b[?25h\x1b[?7h') #default color, make cursor visible, enable line wrap
+		erase_filelist(screen+2)
+		termios.tcsetattr(fd, termios.TCSAFLUSH, oldterm)
+	if rerun:
+		rerun_fn(line, point, icm)
+	else:
+		print line
+		if not dmenu_mode:
+			print point
+
+def rerun_fn(line,point,icm=None):
+	os.environ["READLINE_LINE"]=line
+	os.environ["READLINE_POINT"]=str(point)
+	if len(sys.argv) > 1:
+		aliases=sys.argv[1]
+	else:
+		aliases="alias"
+	if icm:
+		os.execl(sys.argv[0],sys.argv[0],aliases,"rerun",icm[0],icm[1])
+	else:
+		os.execl(sys.argv[0],sys.argv[0],aliases,"rerun")
+
+# Thanks to http://bytes.com/topic/python/answers/453313-best-way-finding-terminal-width-height
+def ioctl_GWINSZ(fd): #### TABULATION FUNCTIONS
+	try: ### Discover terminal width
+		cr = struct.unpack('hh', fcntl.ioctl(fd, termios.TIOCGWINSZ, '1234'))
+	except:
+		return None
+	return cr
+def terminal_size():
+### decide on *some* terminal size
+	# try open fds
+	cr = ioctl_GWINSZ(0) or ioctl_GWINSZ(1) or ioctl_GWINSZ(2)
+	if not cr:
+		# ...then ctty
+		try:
+			fd = os.open(os.ctermid(), os.O_RDONLY)
+			cr = ioctl_GWINSZ(fd)
+			os.close(fd)
+		except:
+			pass
+	return int(cr[0]), int(cr[1])
+
+def complete_command(workstr):
+	paths=os.environ["PATH"].split(":")
+	paths.append("COMPLETE_ALIASES")
+	suggestions=[]
+	for path in paths:
+		suggestions.extend(complete_filename(workstr, path))
+	return suggestions
+def complete_filename(workstr, path):
+	if path == "": path="./"
+	path=os.path.expandvars(os.path.expanduser(path))
+	suggestions=[]
+	try:
+		if path == "COMPLETE_ALIASES":
+			if len(sys.argv) > 1:
+				filelist=sys.argv[1].split("\n") #expect a newline separated list on argument 1
+			else:
+				return []
+		else:
+			filelist=os.listdir(path)
+		for file in filelist:
+			try:
+				asterisk=re.escape(workstr)
+				asterisk=re.sub("\\\\\*",".*",asterisk)
+				asterisk=re.sub("\\\\\?",".?",asterisk)
+				asterisk+=".*"
+				asterisk_match=re.match(asterisk,file,re.I)
+				if asterisk_match:
+					suggestions.append(file)
+				else:
+					asterisk_match=re.match(asterisk,fixshell(file),re.I)
+					if asterisk_match:
+						suggestions.append(file)
+			except ValueError: pass
+	except OSError: pass
+	return suggestions
+def grep_list(patterns, lines):
+	good_list=[]
+	for line in lines:
+		found=True
+		for pattern in patterns:
+			if pattern.lower() not in line.lower():
+				found=False
+				break
+		if found: good_list.append(line)
+	return good_list
+
+def show_filelist(filedict, selected, viewmin, screen):
+	length=len(filedict)-1
+	eofs=viewmin+screen
+	if eofs > length:
+		modeofs=length
+	else:
+		modeofs=eofs
+	try:
+		if length % screen != 0:
+			modlen=(screen-(length%screen)+length)
+		else:
+			modlen=length
+	except ZeroDivisionError:
+		modlen=1
+	try:
+		dotstart=screen*viewmin/modlen+viewmin
+		if dotstart == 2: dotstart=1
+		dotend=screen*(eofs+1)/modlen+viewmin-1
+		if modeofs - viewmin == 0: modeofs=2
+		selindicator=dotstart + (dotend - dotstart + 1) * (selected - viewmin) / (modeofs - viewmin +1)
+	except ZeroDivisionError:
+		dotstart=1
+		dotend=1
+		selindicator=1
+	if selindicator > eofs: selindicator=eofs
+	if dotend < dotstart: dotend=dotstart
+	for i in xrange(viewmin, viewmin+screen+1):
+		sys.stderr.write("\x1b[m")
+		if i<dotstart or i>dotend:
+			sys.stderr.write("  ")
+		elif i == selindicator:
+			sys.stderr.write("X ")
+		elif i >= dotstart and i <= dotend:
+			sys.stderr.write("* ")
+		try:
+			if i == selected:
+				format_string=filedict[i]["format"].replace("\x1b[m","\x1b[m\x1b[30;46m")+ "\x1b[36;46m" + " # " * 99
+			else:
+				format_string=filedict[i]["format"]
+			sys.stderr.write(format_string.replace("\n","(nl)")+"\x1b[m")
+		except IndexError: pass
+		if i != viewmin+screen: sys.stderr.write('\n')	
+		
+def erase_filelist(screen):
+	for unused in xrange(screen):
+		sys.stderr.write("\x1b[2K\x1b[A")
+	sys.stderr.write("\x1b[2K\r")
+
+def unfixshell_singlequote(goodstr):
+	badstr=re.sub("'\\\\''", "'", goodstr)
+	if badstr[-1] == "'":
+		return badstr[1:-1]
+	else:
+		return badstr[1:]
+def unfixshell(goodstr):
+	if len(goodstr) != 0 and goodstr[-1] == "\\":
+		appendslash="\\"
+	else:
+		appendslash=""
+	goodpieces=[]
+	while "\\\\" in goodstr:
+		index=goodstr.index("\\\\")
+		goodpieces.append(goodstr[:index])
+		try:
+			goodstr=goodstr[index+2:]
+		except IndexError: goodstr=""
+	goodpieces.append(goodstr)
+	goodstr=""
+	for piece in goodpieces:
+		goodstr=goodstr+re.sub("\\\\","",piece)+"\\"
+	return goodstr[:-1]+appendslash
+def fixshell(badstr):
+	badchars=""" !@#$^&*()`'"<>[]{};:\\=?|	"""
+	goodstr=""
+	for ch in badstr:
+		if ch in badchars:
+			ch="\\"+ch
+		goodstr=goodstr+ch
+	return goodstr
+
+def isrecommended(cmd, file, isdir):
+	if cmd in ("cd","popd","rmdir"):
+		return isdir
+# http://wiki.archlinux.org/index.php/Common_Applications
+# http://wiki.archlinux.org/index.php/Lightweight_Applications
+# not sure if some of the binaries are correctly named
+
+#Video (and audio)
+	if cmd in ("mplayer", "mwrap", "vlc", "gmplayer", "smplayer", "mencoder", "kmplayer", "Parole", "whaawmp", "dragonplayer","ffmpeg"): 
+		return re.search("\.(mkv|m4v|mpe?g|avi|mp4|wmv|rmvb|as[fx]|divx|vob|ogm|rm|flv|part|iso|mp?|ogg|wav|flac|m4a)$",file,re.I) != None
+
+#Audio
+	if cmd in ("mpg123", "mpg321", "mp3blaster", "cmus", "cplay", "moc", "xmms", "xmms2", "sonata", "deadbeef","ogg123"):
+		return re.search("\.(mp?|wav|ogg|gsm|dct|flac|au|aiff|vox|wma|aac|ra|m4a)$",file,re.I) != None
+
+#PDF
+	if cmd in ("xpdf","epdfview","evince","foxit","mupdf","okular","apvlv","zathura"):
+		return re.search("\.pdf$",file,re.I) != None
+
+#Images
+	if cmd in ("feh","geeqie","gqview","eog","gpicview","gthumb","mirage","qiv","ristretto","xnview","xv","viewnior"):
+		return re.search("\.(jpe?g|png|gif|tiff|bmp|ico?n|tif)$",file,re.I) != None
+
+#Games
+	if cmd in ("sdlmame","openmsx","zsnes","desmume","VirtualBoy"):
+		return re.search("\.(rom|dsk)$",file,re.I) != None
+
+#Wine
+	if cmd in ("wine", "winewrap", "wineconsole"):
+		return re.search("\.(exe|com|bat)$", file, re.I) != None
+
+#Archives
+	if cmd in ("atool","x","xi","gunzip","extract","unzip","unrar","zip","rar","7z", "comix", "v"):
+		return re.search("\.(tgz|zip|rar|bz2|gz|tar|exe|pk3|lha|Z|lzma)$",file,re.I) != None
+
+#Text
+	if cmd in ("vim","nano","acme","beaver","geany","leafpad","medit","mousepad","pyroom","sam","vi","gvim","emacs","tea","scite"):
+		return re.search("\.(pdf|rom|dsk|jpe?g|png|gif|tiff|bmp|ico?n|tif|pdf|wav|ogg|gsm|dct|flac|au|aiff|vox|wma|aac|ra|mkv|mpe?g|avi|mp4|wmv|rmvb|as[fx]|divx|vob|ogm|rm|flv|part|iso|mp.|tgz|zip|rar|bz2|gz|tar|exe|pk3|lha|Z|lzma|\.o)$",file,re.I) == None and not isdir #everything else
+
+	return False
+
+main()
