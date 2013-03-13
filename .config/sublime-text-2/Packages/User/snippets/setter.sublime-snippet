@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[
+public function set${1:$SELECTION}(${1:$SELECTION})
+{
+    \$this->${1:$SELECTION} = ${1:$SELECTION};
+
+    return \$this;
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>setter</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.php</scope>
+</snippet>

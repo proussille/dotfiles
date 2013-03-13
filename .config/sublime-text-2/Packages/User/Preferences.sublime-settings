@@ -53,8 +53,7 @@
 		".git",
 		".hg",
 		"CVS",
-		"web/bundles",
-		"vendor/faros"
+		"web/bundles"
 	],
 	"font_face": "Source Code Pro",
 	"font_size": 10,
@@ -67,6 +66,13 @@
 	[
 		"draw_active"
 	],
+	"phoenix_color_expanded_folder": true,
+	"phoenix_color_green": true,
+	"phoenix_dirty_bottom_bar": true,
+	"phoenix_dirty_bottom_bar_red": true,
+	"phoenix_highlight_current_tab": true,
+	"phoenix_sidebar_tree_large": true,
+	"phoenix_solid_current_tab": true,
 	"rulers":
 	[
 		80,
@@ -77,12 +83,5 @@
 	"theme": "Phoenix Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": true,
-	"trim_trailing_white_space_on_save": true,
-	"phoenix_color_green": true,
-	"phoenix_highlight_current_tab": true,
-	"phoenix_solid_current_tab": true,
-	"phoenix_dirty_bottom_bar": true,
-	"phoenix_dirty_bottom_bar_red": true,
-	"phoenix_sidebar_tree_large": true,
-	"phoenix_color_expanded_folder": true
+	"trim_trailing_white_space_on_save": true
 }

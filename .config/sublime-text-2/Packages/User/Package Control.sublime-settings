@@ -2,8 +2,8 @@
 	"auto_upgrade_last_run": 1333440914,
 	"installed_packages":
 	[
-		"AdvancedNewFile",
 		"Alignment",
+		"ApacheConf.tmLanguage",
 		"Base16 Color Schemes",
 		"BracketHighlighter",
 		"Color Highlighter",
@@ -12,20 +12,25 @@
 		"DocBlockr",
 		"Emmet",
 		"Format SQL",
+		"FuzzyFileNav",
+		"Git",
 		"GotoRecent",
 		"LESS",
 		"LiveReload",
 		"Package Control",
-		"PHP-Twig",
 		"Phpcs",
+		"PHPUnit",
+		"PHPUnit Completions",
 		"Pretty JSON",
 		"Quick File Creator",
 		"SFTP",
 		"SideBarEnhancements",
+		"SmartMarkdown",
 		"SublimeLinter",
 		"Symfony2 Snippets",
 		"Terminal",
 		"Theme - Phoenix",
 		"Theme - Soda",
+		"Twig"
 	]
 }
