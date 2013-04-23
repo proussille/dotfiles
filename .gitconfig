@@ -1,6 +1,6 @@
 [user]
-	name = Erwan Richard
-	email = erwann.richard@gmail.com
+	name = Philippe Roussille
+	email = proussille@pilip.net
 [color]
 	ui = true
 [alias]
@@ -42,7 +42,7 @@
     unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
     assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
 [core]
-	editor = vim
+	editor = vi
 	sharedRepository = umask
 	autocrlf = input
     filemode = false
