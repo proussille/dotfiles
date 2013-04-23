@@ -30,8 +30,8 @@ alias sf="php app/console"
 alias yup="sudo yum update -y"
 
 # Sublime Text alias
-alias sub="sublime 2>/dev/null"
-alias san="sublime -ban . 2>/dev/null "
+alias sub="/opt/sublime_text_3/sublime_text 2>/dev/null"
+alias san="/opt/sublime_text_3/sublime_text -an . 2>/dev/null "
 
 # Git alias
 alias g="git status"
