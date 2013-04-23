@@ -34,7 +34,7 @@ alias sub="/opt/sublime_text_3/sublime_text 2>/dev/null"
 alias san="/opt/sublime_text_3/sublime_text -an . 2>/dev/null "
 
 # Git alias
-alias g="git status"
+alias g="git status -sb"
 
 # Special alias
 alias dropwatch="echo 100000 | sudo tee /proc/sys/fs/inotify/max_user_watches"
