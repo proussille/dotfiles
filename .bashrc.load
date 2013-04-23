@@ -56,7 +56,7 @@ export HISTCONTROL="ignoreboth"
 function kingbash.hs() {
   echo -n "KingBash> $READLINE_LINE"
   history -a
-  OUTPUT=`/usr/bin/kingbash -r <(tac ~/.bash_history)`
+  OUTPUT=`kingbash -r <(tac ~/.bash_history)`
   READLINE_POINT=`echo "$OUTPUT" | tail -n 1`
   READLINE_LINE=`echo "$OUTPUT" | head -n -1`
   echo -ne "\r\e[2K"; }

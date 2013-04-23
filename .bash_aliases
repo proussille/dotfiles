@@ -16,6 +16,7 @@ if type -P htop >/dev/null; then
 fi
 alias reload_bash="source ~/.bashrc" # recharger le ~/.bashrc
 alias psp='ps u -C' # ps sur un seul process
+alias vi="vim"
 if type -P vim >/dev/null; then
   alias vi=vim # toujours utiliser vim au lieu de vi si installe
 fi
@@ -31,8 +32,8 @@ alias composer="php ~/bin/composer.phar"
 alias yup="sudo yum update -y"
 
 # Sublime Text alias
-alias sub="/opt/sublime_text_3/sublime_text 2>/dev/null"
-alias san="/opt/sublime_text_3/sublime_text -an . 2>/dev/null "
+alias sub="~/bin/sublime_text_3/sublime_text 2>/dev/null"
+alias san="~/bin/sublime_text_3/sublime_text -an . 2>/dev/null "
 
 # Git alias
 alias g="git status -sb"
