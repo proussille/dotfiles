@@ -1,9 +1,0 @@
-{
-    "phpcs_additional_args": {
-        "--standard": "PSR1",
-        "-n": ""
-    },
-
-    // Path to where you have the php-cs-fixer installed
-    "php_cs_fixer_executable_path": "php-cs-fixer"
-}

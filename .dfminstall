@@ -1,5 +1,5 @@
 .config skip
-.config/sublime-text-2/Packages recurse
+.config/sublime-text-3/Packages recurse
 bin recurse
 README.md skip
 CHANGELOG.md skip
