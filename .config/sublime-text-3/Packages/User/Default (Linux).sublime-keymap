@@ -1,0 +1,5 @@
+[
+    { "keys": ["ctrl+q"], "command": "rien" },
+    { "keys": ["ctrl+alt+q"], "command": "exit" },
+    { "keys": ["ctrl+²"], "command": "show_panel", "args": {"panel": "console", "toggle": true} }
+]

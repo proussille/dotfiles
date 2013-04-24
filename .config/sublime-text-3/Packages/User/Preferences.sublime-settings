@@ -1,0 +1,25 @@
+{
+	"color_scheme": "Packages/Theme - Nexus/Nexus.tmTheme",
+	"curly_style": "none",
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		".rsync_cache",
+		"app/cache"
+	],
+	"font_face": "Source Code Pro",
+	"font_size": 10,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"show_tab_close_buttons": false,
+	"tab_size": 4,
+	"tag_style": "none",
+	"theme": "Nexus.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}

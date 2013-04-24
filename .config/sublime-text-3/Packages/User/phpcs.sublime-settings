@@ -1,0 +1,21 @@
+{
+    // PHP_CodeSniffer settings
+
+    // Do you want to run the phpcs checker?
+    "phpcs_sniffer_run": false,
+
+    // PHP-CS-Fixer settings
+
+    // Fix the issues on save
+    "php_cs_fixer_on_save": false,
+
+    // PHP Linter settings
+
+    // Are we going to run php -l over the file?
+    "phpcs_linter_run": true,
+
+    // PHP Mess Detector settings
+
+    // Execute phpmd
+    "phpmd_run": false
+}
