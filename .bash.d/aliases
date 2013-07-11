@@ -32,6 +32,7 @@ alias composer="php ~/bin/composer.phar"
 alias yup="sudo yum update -y"
 
 # Sublime Text alias
+alias subl="~/bin/sublime_text_3/sublime_text"
 alias sub="~/bin/sublime_text_3/sublime_text 2>/dev/null"
 alias san="~/bin/sublime_text_3/sublime_text -an . 2>/dev/null "
 

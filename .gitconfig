@@ -1,6 +1,6 @@
 [user]
 	name = Philippe Roussille
-	email = proussille@pilip.net
+	email = proussille@gmail.com
 [color]
 	ui = true
 [alias]
@@ -44,9 +44,10 @@
     unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
     assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
 [core]
-	editor = vi
-	sharedRepository = umask
-	autocrlf = input
+    editor = vi
+    sharedRepository = umask
+    autocrlf = input
+    tab-in-indent = true
     filemode = false
 [push]
     default = tracking

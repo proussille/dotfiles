@@ -1,0 +1,7 @@
+#!/bin/env sh
+
+function reload {
+    source ~/.bashrc
+}
+
+# vim:foldmethod=marker:foldlevel=0
