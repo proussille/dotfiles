@@ -1,10 +1,27 @@
 #!/usr/bin/env sh
 
-# function _update_ps1() {
-#    export PS1="$(~/.powerline-shell/powerline-shell.py $?)"
-# }
+# Prompt perso, modification de la variable $PS1
+# USER@MACHINE:DOSSIER (nb fichiers Taille Mb) [HH:mm:ss] #N°Commande
+# (nb jobs)-(screen num) :-)
+function truncate_pwd # Fonction pour remplacer PWD par {...} si > 1/3 de l'écran
+{
+  newPWD="${PWD/#$HOME/~}"
+  local pwdmaxlen=$((${COLUMNS:-20}/3))
+  if [ ${#newPWD} -gt $pwdmaxlen ]
+  then
+     newPWD=" {...} ${newPWD: -$pwdmaxlen}"
+  fi
+  #nbFiles=$(ls -1 | wc -l | sed 's: ::g')
+  #sizeFiles=$(ls -lah | grep -m 1 total | sed 's/total //')
+}
 
-# export PROMPT_COMMAND="_update_ps1"
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ;} truncate_pwd" # Executé avant chaque commande
+
+function _update_ps1() {
+   export PS1="$(~/.powerline-shell/powerline-shell.py $?)"
+}
+
+export PROMPT_COMMAND="_update_ps1"
 
 # Prompt Colors {{{
 C_GREEN="\[\033[01;32m\]"
