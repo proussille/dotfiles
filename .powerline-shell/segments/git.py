@@ -29,15 +29,15 @@ def add_git_segment():
     bg = Color.REPO_CLEAN_FG
     fg = Color.REPO_CLEAN_BG
 
-    #cmd = "git branch 2> /dev/null | grep -e '\\*'"
-    p1 = subprocess.Popen(['git', 'branch', '--no-color'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    p2 = subprocess.Popen(['grep', '-e', '\\*'], stdin=p1.stdout, stdout=subprocess.PIPE)
-    output = p2.communicate()[0].strip()
-    if not output:
-        return
-
-    branch = output.rstrip()[2:]
     if ("/mnt/" not in os.getcwd()) :
+        #cmd = "git branch 2> /dev/null | grep -e '\\*'"
+        p1 = subprocess.Popen(['git', 'branch', '--no-color'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        p2 = subprocess.Popen(['grep', '-e', '\\*'], stdin=p1.stdout, stdout=subprocess.PIPE)
+        output = p2.communicate()[0].strip()
+        if not output:
+            return
+
+        branch = output.rstrip()[2:]
         has_pending_commits, has_untracked_files, origin_position = get_git_status()
         branch += origin_position
         if has_untracked_files:
@@ -48,6 +48,14 @@ def add_git_segment():
         if has_pending_commits:
             bg = Color.REPO_DIRTY_BG
             fg = Color.REPO_DIRTY_FG
+
+    else:
+        p1 = subprocess.Popen(['git', 'symbolic-ref', 'HEAD'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        p2 = subprocess.Popen(['grep', '-e', 'refs/heads/'], stdin=p1.stdout, stdout=subprocess.PIPE)
+        output = p2.communicate()[0].strip()
+        if not output:
+            return
+        branch = output.replace('refs/heads/', '')
 
     powerline.append(' %s ' % branch, fg, bg)
 
