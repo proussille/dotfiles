@@ -29,7 +29,7 @@ def add_git_segment():
     bg = Color.REPO_CLEAN_FG
     fg = Color.REPO_CLEAN_BG
 
-    if ("/mnt/" not in os.getcwd()) :
+    if ("/mnt/" not in os.getcwd() and "/media/sandboxes/" not in os.getcwd()) :
         #cmd = "git branch 2> /dev/null | grep -e '\\*'"
         p1 = subprocess.Popen(['git', 'branch', '--no-color'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         p2 = subprocess.Popen(['grep', '-e', '\\*'], stdin=p1.stdout, stdout=subprocess.PIPE)
