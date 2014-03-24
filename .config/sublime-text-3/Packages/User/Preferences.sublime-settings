@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/Theme - Nexus/Nexus.tmTheme",
+	"color_scheme": "Packages/User/Phoenix Dark Green (SL).tmTheme",
 	"curly_style": "none",
 	"enable_tab_scrolling": false,
 	"folder_exclude_patterns":
@@ -12,7 +12,7 @@
 		"app/cache"
 	],
 	"font_face": "Source Code Pro",
-	"font_size": 9,
+	"font_size": 10,
 	"ignored_packages":
 	[
 		"Vintage"
