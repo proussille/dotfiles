@@ -28,6 +28,12 @@ class Powerline:
             'separator': '',
             'separator_thin': ''
         },
+        'block': {
+            'lock': 'RO',
+            'network': 'SSH',
+            'separator': u'\u259E',
+            'separator_thin': u'\u259A'
+        },
     }
 
     color_templates = {
@@ -112,7 +118,7 @@ if __name__ == "__main__":
             help='Colorize the hostname based on a hash of itself.')
     arg_parser.add_argument('--mode', action='store', default='patched',
             help='The characters used to make separators between segments',
-            choices=['patched', 'compatible', 'flat'])
+            choices=['patched', 'compatible', 'flat', 'block'])
     arg_parser.add_argument('--shell', action='store', default='bash',
             help='Set this to your shell type', choices=['bash', 'zsh', 'bare'])
     arg_parser.add_argument('prev_error', nargs='?', type=int, default=0,
