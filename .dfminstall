@@ -3,5 +3,4 @@
 bin recurse
 README.md skip
 CHANGELOG.md skip
-t skip
 .gitmodules skip
