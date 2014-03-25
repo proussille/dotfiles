@@ -394,16 +394,24 @@ def add_git_segment():
     else:
         branch = '(Detached)'
 
-    has_pending_commits, has_untracked_files, origin_position = get_git_status()
-    branch += origin_position
-    if has_untracked_files:
-        branch += ' +'
+    if ("/media/" not in os.getcwd() and "/media/" not in os.getcwd()) :
 
-    bg = Color.REPO_CLEAN_BG
-    fg = Color.REPO_CLEAN_FG
-    if has_pending_commits:
-        bg = Color.REPO_DIRTY_BG
-        fg = Color.REPO_DIRTY_FG
+        has_pending_commits, has_untracked_files, origin_position = get_git_status()
+        branch += origin_position
+        if has_untracked_files:
+            branch += ' +'
+
+        bg = Color.REPO_CLEAN_BG
+        fg = Color.REPO_CLEAN_FG
+        if has_pending_commits:
+            bg = Color.REPO_DIRTY_BG
+            fg = Color.REPO_DIRTY_FG
+
+    else :
+        # Inversion des couleurs
+        bg = Color.REPO_CLEAN_FG
+        fg = Color.REPO_CLEAN_BG
+
 
     powerline.append(' %s ' % branch, fg, bg)
 
