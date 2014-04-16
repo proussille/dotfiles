@@ -394,7 +394,7 @@ def add_git_segment():
     else:
         branch = '(Detached)'
 
-    if ("/media/" not in os.getcwd() and "/media/" not in os.getcwd()) :
+    if ("/media/" not in os.getcwd() and "/media/" not in os.getcwd() and "/mnt/" not in os.getcwd()) :
 
         has_pending_commits, has_untracked_files, origin_position = get_git_status()
         branch += origin_position
