@@ -33,9 +33,9 @@ alias phpunit="php ~/bin/phpunit.phar"
 alias yup="sudo yum update -y"
 
 # Sublime Text alias
-alias subl="sublime"
-alias sub="sublime 2>/dev/null"
-alias san="sublime -an . 2>/dev/null "
+# alias subl="sublime"
+alias sub="subl 2>/dev/null"
+alias san="subl -an . 2>/dev/null "
 
 # Git alias
 alias g="git status -sb"

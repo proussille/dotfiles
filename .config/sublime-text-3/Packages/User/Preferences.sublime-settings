@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/User/Phoenix Dark Green (SL).tmTheme",
+	"color_scheme": "Packages/User/LAZY (SL).tmTheme",
 	"curly_style": "none",
 	"enable_tab_scrolling": false,
 	"folder_exclude_patterns":
@@ -12,7 +12,7 @@
 		"app/cache"
 	],
 	"font_face": "Source Code Pro",
-	"font_size": 10,
+	"font_size": 11,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -20,7 +20,7 @@
 	"show_tab_close_buttons": false,
 	"tab_size": 4,
 	"tag_style": "none",
-	"theme": "Phoenix Dark.sublime-theme",
+	"theme": "Soda Light.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }

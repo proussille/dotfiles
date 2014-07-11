@@ -38,6 +38,9 @@ if [[ -f /etc/profile.d/bash-completion.sh ]]; then
 fi
 # }}}
 
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
+
+
 # Miscs {{{
 export EDITOR="/usr/bin/vim"
 umask 002
