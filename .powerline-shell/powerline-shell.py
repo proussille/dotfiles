@@ -249,7 +249,18 @@ def add_virtual_env_segment():
 
 add_virtual_env_segment()
 
+def add_time_segment():
+    import os
+    if powerline.args.shell == 'bash':
+        user_prompt = '\\t '
+    elif powerline.args.shell == 'zsh':
+        user_prompt = ' %T '
+    else:
+        user_prompt = ' %s ' % os.getenv('USER')
 
+    powerline.append(user_prompt, Color.HOSTNAME_FG, Color.HOSTNAME_BG)
+
+add_time_segment()
 
 def add_username_segment():
     import os
@@ -531,7 +542,6 @@ except OSError:
     pass
 except subprocess.CalledProcessError:
     pass
-
 
 import os
 import re

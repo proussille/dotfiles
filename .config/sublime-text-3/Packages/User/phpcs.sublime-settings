@@ -1,21 +1,28 @@
 {
-    // PHP_CodeSniffer settings
+    "show_debug": false,
 
-    // Do you want to run the phpcs checker?
-    "phpcs_sniffer_run": false,
-
-    // PHP-CS-Fixer settings
+    "phpcs_additional_args": {
+        "--standard": "PSR1",
+        "-n": "",
+        "--ignore": "*Bundle/Tests/*Test.php,*Bundle/spec/*.php,*fluxbb/*"
+    },
 
     // Fix the issues on save
-    "php_cs_fixer_on_save": false,
+    "php_cs_fixer_on_save": true,
 
-    // PHP Linter settings
+    "php_cs_fixer_additional_args": {
+        "--level": "all",
+        "--fixers": "-phpdoc_params"
+    },
 
-    // Are we going to run php -l over the file?
-    "phpcs_linter_run": true,
+    // Show the quick panel
+    "php_cs_fixer_show_quick_panel": true,
 
-    // PHP Mess Detector settings
+    // Path to where you have the php-cs-fixer installed
+    "php_cs_fixer_executable_path": "/usr/local/bin/php-cs-fixer",
 
-    // Execute phpmd
-    "phpmd_run": false
+    "phpmd_executable_path": "/usr/bin/phpmd",
+    "phpmd_run": false,
+
+    "phpcs_linter_run": true
 }
