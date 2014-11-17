@@ -27,6 +27,7 @@ bind '"\C-l"':"\"clear\r\"" # Ctrl+l vide le terminal
 # Symfony aliases
 alias sf="php app/console"
 alias composer="php ~/bin/composer.phar"
+# alias composer="hhvm -v ResourceLimit.SocketDefaultTimeout=30 -v Http.SlowQueryThreshold=30000 ~/bin/composer.phar"
 alias phpunit="php ~/bin/phpunit.phar"
 
 # Yum alias

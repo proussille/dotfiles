@@ -12,7 +12,7 @@
 		"app/cache"
 	],
 	"font_face": "Source Code Pro",
-	"font_size": 11,
+	"font_size": 10,
 	"ignored_packages":
 	[
 		"Vintage"
