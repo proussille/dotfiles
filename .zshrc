@@ -125,3 +125,5 @@ unsetopt bg_nice
 
 # N'envoie pas de "HUP" aux jobs qui tourent quand le shell se ferme
 unsetopt hup
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

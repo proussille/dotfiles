@@ -60,3 +60,5 @@
     prompt = false
 [git-up "rebase"]
 	log-hook = "echo \"changes on $1:\"; git ls $1..$2"
+[gitflow "hotfix"]
+	notag = true

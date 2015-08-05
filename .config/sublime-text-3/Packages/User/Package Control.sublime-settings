@@ -1,5 +1,8 @@
 {
 	"auto_upgrade_last_run": null,
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"Additional PHP Snippets",
@@ -13,6 +16,7 @@
 		"PHP Companion",
 		"PHP-Twig",
 		"Phpcs",
+		"PhpDoc",
 		"Pretty JSON",
 		"SideBarEnhancements",
 		"Slugify",
