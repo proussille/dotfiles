@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/User/LAZY (SL).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Solarized (Light) (SL).tmTheme",
 	"curly_style": "none",
 	"enable_tab_scrolling": false,
 	"folder_exclude_patterns":
@@ -25,7 +25,7 @@
 	"show_tab_close_buttons": false,
 	"tab_size": 4,
 	"tag_style": "none",
-	"theme": "Soda Light.sublime-theme",
+	"theme": "Sodarized Light 3.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }

@@ -127,7 +127,7 @@ if __name__ == "__main__":
 
     powerline = Powerline(args, get_valid_cwd())
 
-
+# Couleur du terminal : #ABB2BF / #282C34
 class DefaultColor:
     """
     This class should have the default colors for every segment.
@@ -227,7 +227,7 @@ class LightColor:
     VIRTUAL_ENV_FG = 00
 
 # class Color(DefaultColor):
-class Color(LightColor):
+class Color(DefaultColor):
     """
     This subclass is required when the user chooses to use 'default' theme.
     Because the segments require a 'Color' class for every theme.

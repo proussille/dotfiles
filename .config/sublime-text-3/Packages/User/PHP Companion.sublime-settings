@@ -1,5 +1,6 @@
 {
     "exclude_dir": [
         "app"
-    ]
+    ],
+    "allow_use_from_global_namespace" : true
 }

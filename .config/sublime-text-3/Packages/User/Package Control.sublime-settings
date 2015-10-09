@@ -1,11 +1,13 @@
 {
 	"auto_upgrade_last_run": null,
+	"bootstrapped": true,
 	"in_process_packages":
 	[
 	],
 	"installed_packages":
 	[
 		"Additional PHP Snippets",
+		"ColorSchemeSelector",
 		"DocBlockr",
 		"EditorConfig",
 		"FindKeyConflicts",
@@ -25,6 +27,7 @@
 		"Theme - Nexus",
 		"Theme - Phoenix",
 		"Theme - Soda",
+		"Theme - Sodarized",
 		"Themr"
 	]
 }
