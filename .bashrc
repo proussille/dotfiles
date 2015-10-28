@@ -38,8 +38,6 @@ if [[ -f /etc/profile.d/bash-completion.sh ]]; then
 fi
 # }}}
 
-[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
-
 
 # Miscs {{{
 export EDITOR="/usr/bin/vim"
@@ -57,3 +55,5 @@ fi
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+eval "$(fasd --init auto)"

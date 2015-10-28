@@ -9,7 +9,7 @@ ZSH=$HOME/oh-my-zsh
 ZSH_THEME="miloshadzic"
 
 # Plugins
-plugins=(git autojump git-flow github symfony2)
+plugins=(git git-flow github symfony2)
 
 source $ZSH/oh-my-zsh.sh
 
