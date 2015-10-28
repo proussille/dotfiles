@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# @author Mustafa Hasturk
+# @mail mustafa.hasturk@yandex.com
+# @link https://github.com/muhasturk/ukupgrade
+
+cd /tmp
+
+if ! which lynx > /dev/null; then sudo apt-get install lynx -y; fi
+
+if [ "$(getconf LONG_BIT)" == "64" ]; then arch=amd64; else arch=i386; fi
+
+function download() {
+   wget $(lynx -dump -listonly -dont-wrap-pre $kernelURL | grep "$1" | grep "$2" | grep "$arch" | cut -d ' ' -f 4)
+}
+
+# Kernel URL
+read -p "Do you want the latest RC? (y/n): " rc
+case "$rc" in
+   y* | Y*) kernelURL=$(lynx -dump -nonumbers http://kernel.ubuntu.com/~kernel-ppa/mainline/ | tail -1) ;;
+   n* | N*) kernelURL=$(lynx -dump -nonumbers http://kernel.ubuntu.com/~kernel-ppa/mainline/ | grep -v rc | tail -1) ;;
+   *) exit ;;
+esac
+ 
+read -p "Do you want the lowlatency kernel? (y/n): " lowlatency
+case "$lowlatency" in
+   y* | Y*) lowlatency=1 ;;
+   n* | n*) lowlatency=0 ;;
+   *) exit ;;
+esac
+
+# Download Kernel
+if [ "$lowlatency" == "0" ]; then
+   echo "Downloading the latest generic kernel...\n"
+   download generic header
+   download generic image
+elif [ "$lowlatency" == "1" ]; then
+   echo "Downloading the latest lowlatency kernel...\n"
+   download lowlatency header
+   download lowlatency image
+fi
+
+# Shared Kernel Header
+echo "Downloading the shared kernel header...\n"
+wget $(lynx -dump -listonly -dont-wrap-pre $kernelURL | grep all | cut -d ' ' -f 4)
+
+# Install Kernel
+echo "Installing Linux Kernel...\m"
+sudo dpkg -i linux*.deb
+echo "Done. We should reboot the machine."
+sudo reboot

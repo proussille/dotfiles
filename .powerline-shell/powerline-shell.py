@@ -227,7 +227,7 @@ class LightColor:
     VIRTUAL_ENV_FG = 00
 
 # class Color(DefaultColor):
-class Color(DefaultColor):
+class Color(LightColor):
     """
     This subclass is required when the user chooses to use 'default' theme.
     Because the segments require a 'Color' class for every theme.

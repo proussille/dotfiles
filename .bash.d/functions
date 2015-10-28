@@ -5,3 +5,5 @@ function reload {
 }
 
 # vim:foldmethod=marker:foldlevel=0
+
+. /usr/share/autojump/autojump.sh

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>author</key>
-	<string>Jeroen van der Ham</string>
+	<string>Austin Cummings</string>
 	<key>name</key>
-	<string>iPlastic</string>
+	<string>Chrome DevTools</string>
 	<key>settings</key>
 	<array>
 		<dict>
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#EEEEEEEB</string>
+				<string>#FFFFFF</string>
 				<key>caret</key>
 				<string>#000000</string>
 				<key>foreground</key>
@@ -33,7 +33,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#009933</string>
+				<string>#C41A16</string>
 			</dict>
 		</dict>
 		<dict>
@@ -44,18 +44,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#0066FF</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Regular expression</string>
-			<key>scope</key>
-			<string>string.regexp</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#FF0080</string>
+				<string>#1C00CF</string>
 			</dict>
 		</dict>
 		<dict>
@@ -66,7 +55,18 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#0000FF</string>
+				<string>#AA0D91</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Operator</string>
+			<key>scope</key>
+			<string>keyword.operator</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#000000</string>
 			</dict>
 		</dict>
 		<dict>
@@ -77,7 +77,7 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#9700CC</string>
+				<string>#AA0D91</string>
 			</dict>
 		</dict>
 		<dict>
@@ -99,7 +99,9 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#FF8000</string>
+				<string>#000000</string>
+			<!-- 	<key>fontStyle</key>
+				<string>italic</string> -->
 			</dict>
 		</dict>
 		<dict>
@@ -131,10 +133,10 @@
 			<string>comment</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>italic</string>
+				<!-- <key>fontStyle</key>
+				<string>italic</string> -->
 				<key>foreground</key>
-				<string>#0066FF</string>
+				<string>#007400</string>
 			</dict>
 		</dict>
 		<dict>
@@ -144,8 +146,8 @@
 			<string>invalid</string>
 			<key>settings</key>
 			<dict>
-				<key>background</key>
-				<string>#E71A114D</string>
+				<!-- <key>background</key>
+				<string>#E71A114D</string> -->
 				<key>foreground</key>
 				<string>#FF0000</string>
 			</dict>
@@ -182,10 +184,10 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#0033CC</string>
+				<string>#AA0D91</string>
 			</dict>
 		</dict>
-		<dict>
+		<!-- <dict>
 			<key>name</key>
 			<string>Constant</string>
 			<key>scope</key>
@@ -193,9 +195,9 @@
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#6782D3</string>
+				<string>#000000</string>
 			</dict>
-		</dict>
+		</dict> -->
 		<dict>
 			<key>name</key>
 			<string>Support</string>
@@ -206,7 +208,7 @@
 				<key>fontStyle</key>
 				<string>bold</string>
 				<key>foreground</key>
-				<string>#3333FF</string>
+				<string>#000000</string>
 			</dict>
 		</dict>
 		<dict>
@@ -216,8 +218,10 @@
 			<string>storage</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
+				<!-- <key>fontStyle</key>
+				<string>bold</string> -->
+				<key>foreground</key>
+				<string>#AA0D91</string>
 			</dict>
 		</dict>
 		<dict>
@@ -242,6 +246,7 @@
 				<string>bold</string>
 				<key>foreground</key>
 				<string>#000000</string>
+				<!-- <string>#881280</string> -->
 			</dict>
 		</dict>
 		<dict>
@@ -265,7 +270,8 @@
 				<key>fontStyle</key>
 				<string>italic</string>
 				<key>foreground</key>
-				<string>#3366CC</string>
+				<!-- <string>#3366CC</string> -->
+				<string>#994500</string>
 			</dict>
 		</dict>
 		<dict>
@@ -275,41 +281,13 @@
 			<string>entity.name.tag</string>
 			<key>settings</key>
 			<dict>
-				<key>fontStyle</key>
-				<string>bold</string>
+				<key>foreground</key>
+				<string>#881280</string>
+				<!-- <key>fontStyle</key>
+				<string>bold</string> -->
 			</dict>
 		</dict>
-	<dict>
-            <key>name</key>
-            <string>SublimeLinter Error</string>
-            <key>scope</key>
-            <string>sublimelinter.mark.error</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#D02000</string>
-            </dict>
-        </dict><dict>
-            <key>name</key>
-            <string>SublimeLinter Warning</string>
-            <key>scope</key>
-            <string>sublimelinter.mark.warning</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#DDB700</string>
-            </dict>
-        </dict><dict>
-            <key>name</key>
-            <string>SublimeLinter Gutter Mark</string>
-            <key>scope</key>
-            <string>sublimelinter.gutter-mark</string>
-            <key>settings</key>
-            <dict>
-                <key>foreground</key>
-                <string>#FFFFFF</string>
-            </dict>
-        </dict></array>
+	</array>
 	<key>uuid</key>
 	<string>4FCFA210-B247-11D9-9D00-000D93347A42</string>
 </dict>
