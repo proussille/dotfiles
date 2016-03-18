@@ -7,6 +7,7 @@
 	"installed_packages":
 	[
 		"Additional PHP Snippets",
+		"Alignment",
 		"ColorSchemeSelector",
 		"Colorsublime",
 		"DocBlockr",
@@ -15,6 +16,8 @@
 		"Git",
 		"JSON Reindent",
 		"LESS",
+		"Line Endings Unify",
+		"LineEndings",
 		"OmniMarkupPreviewer",
 		"One Dark Color Scheme",
 		"Package Control",
@@ -32,6 +35,7 @@
 		"Theme - Nexus",
 		"Theme - Soda",
 		"Theme - Sodarized",
-		"Themr"
+		"Themr",
+		"Unicode Character Highlighter"
 	]
 }

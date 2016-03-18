@@ -26,10 +26,6 @@ bind '"\C-l"':"\"clear\r\"" # Ctrl+l vide le terminal
 
 # Symfony aliases
 alias sf="php app/console"
-alias composer="php ~/bin/composer.phar"
-alias composer-hhvm="hhvm -v ResourceLimit.SocketDefaultTimeout=30 -v Http.SlowQueryThreshold=30000 ~/bin/composer.phar"
-alias composer-update="composer-hhvm update --no-scripts && composer install"
-alias phpunit="php ~/bin/phpunit.phar"
 
 alias cap="bundle exec cap"
 
@@ -49,11 +45,20 @@ alias dropwatch="echo 100000 | sudo tee /proc/sys/fs/inotify/max_user_watches"
 
 alias dc='docker-compose'
 alias dcup='docker-compose up -d'
-alias dcrun='docker-compose run --rm'
-alias dcsf='docker-compose run --rm php php app/console'
-alias dccap='docker-compose run --rm application bundle exec cap'
-alias dcgulp='docker-compose run --rm application node_modules/.bin/gulp'
-alias dccomposer='docker-compose run --rm php composer'
+#alias dcrun='docker-compose run -u $UID --rm'
+#alias dcsf='docker-compose run -u $UID --rm php php app/console'
+
+function dcexec {
+   docker exec -it -u $UID $(dc ps -q php) "$@"
+}
+
+function dcsf {
+   docker exec -it -u $UID $(dc ps -q php) php app/console "$@"
+}
+
+function dccomposer {
+   docker exec -it -u $UID $(dc ps -q php) composer "$@"
+}
 
 alias docker-purge-logs="sudo find /var/lib/docker/containers -type f -name *-json.log -exec rm -rf {} \;"
 

@@ -22,10 +22,12 @@
 		"*.log"
 	],
 	"index_files": true,
+	"show_encoding": false,
+	"show_line_endings": false,
 	"show_tab_close_buttons": false,
 	"tab_size": 4,
 	"tag_style": "none",
-	"theme": "Cobalt2.sublime-theme",
+	"theme": "Minimal Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }
