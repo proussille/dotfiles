@@ -1,0 +1,24 @@
+## PostgreSQL
+export PGHOST="pgsql.docker"
+export PGUSER="postgres"
+export PGPASSWORD="root"
+
+## Symfony
+export SF_DATABASE_DRIVER="pdo_pgsql"
+export SF_DATABASE_HOST=$PGHOST
+export SF_DATABASE_USER=$PGUSER
+export SF_DATABASE_PASSWORD=$PGPASSWORD
+export SF_DATABASE_PORT="null"
+export SF_DATABASE_SERVER_VERSION="9.5"
+export SF_MAILER_HOST="maildev.docker"
+export SF_MAILER_DELIVERY_ADDRESS="philippe@lephare.com"
+export SYMFONY_ASSETS_INSTALL="relative"
+
+## Blackfire
+export BLACKFIRE_CLIENT_ID=f0868984-c44c-49fc-9319-949337599f2b
+export BLACKFIRE_CLIENT_TOKEN=b5836ca5ea1ea557b52d66809c3cdcc73c247497ce46a7d39adebea1c248f45a
+export BLACKFIRE_SERVER_ID=26fd91bc-9735-44c1-835d-39810ae4066a
+export BLACKFIRE_SERVER_TOKEN=a91675750d33cf26e889b747e86063db9fb1b1dd3a73835c1e4a818f62d62f94
+
+## Slimpay
+#export SCIM_HOME=$HOME/sandbox/imaprotect/app/Resources/slimpay
