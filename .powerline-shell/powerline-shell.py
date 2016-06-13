@@ -181,58 +181,58 @@ class Color(DefaultColor):
     pass
 
 
-class LightColor:
-    """
-    This class should have the default colors for every segment.
-    Please test every new segment with this theme first.
-    """
-    USERNAME_FG = 237
-    USERNAME_BG = 15
-    USERNAME_ROOT_BG = 124
+# class LightColor:
+#     """
+#     This class should have the default colors for every segment.
+#     Please test every new segment with this theme first.
+#     """
+#     USERNAME_FG = 237
+#     USERNAME_BG = 15
+#     USERNAME_ROOT_BG = 124
 
-    HOSTNAME_FG = 250
-    HOSTNAME_BG = 238
+#     HOSTNAME_FG = 250
+#     HOSTNAME_BG = 238
 
-    HOME_SPECIAL_DISPLAY = True
-    HOME_BG = 39
-    HOME_FG = 15
-    PATH_BG = 250
-    PATH_FG = 237
-    CWD_FG = 0
-    SEPARATOR_FG = 244
+#     HOME_SPECIAL_DISPLAY = True
+#     HOME_BG = 39
+#     HOME_FG = 15
+#     PATH_BG = 250
+#     PATH_FG = 237
+#     CWD_FG = 0
+#     SEPARATOR_FG = 244
 
-    READONLY_BG = 124
-    READONLY_FG = 254
+#     READONLY_BG = 124
+#     READONLY_FG = 254
 
-    SSH_BG = 166 # medium orange
-    SSH_FG = 254
+#     SSH_BG = 166 # medium orange
+#     SSH_FG = 254
 
-    REPO_CLEAN_BG = 148  # a light green color
-    REPO_CLEAN_FG = 0  # black
-    REPO_DIRTY_BG = 161  # pink/red
-    REPO_DIRTY_FG = 15  # white
+#     REPO_CLEAN_BG = 148  # a light green color
+#     REPO_CLEAN_FG = 0  # black
+#     REPO_DIRTY_BG = 161  # pink/red
+#     REPO_DIRTY_FG = 15  # white
 
-    JOBS_FG = 39
-    JOBS_BG = 15
+#     JOBS_FG = 39
+#     JOBS_BG = 15
 
-    CMD_PASSED_BG = 251
-    CMD_PASSED_FG = 237
-    CMD_FAILED_BG = 161
-    CMD_FAILED_FG = 15
+#     CMD_PASSED_BG = 251
+#     CMD_PASSED_FG = 237
+#     CMD_FAILED_BG = 161
+#     CMD_FAILED_FG = 15
 
-    SVN_CHANGES_BG = 148
-    SVN_CHANGES_FG = 22  # dark green
+#     SVN_CHANGES_BG = 148
+#     SVN_CHANGES_FG = 22  # dark green
 
-    VIRTUAL_ENV_BG = 35  # a mid-tone green
-    VIRTUAL_ENV_FG = 00
+#     VIRTUAL_ENV_BG = 35  # a mid-tone green
+#     VIRTUAL_ENV_FG = 00
 
-# class Color(DefaultColor):
-class Color(LightColor):
-    """
-    This subclass is required when the user chooses to use 'default' theme.
-    Because the segments require a 'Color' class for every theme.
-    """
-    pass
+# # class Color(DefaultColor):
+# class Color(LightColor):
+#     """
+#     This subclass is required when the user chooses to use 'default' theme.
+#     Because the segments require a 'Color' class for every theme.
+#     """
+#     pass
 
 
 import os
