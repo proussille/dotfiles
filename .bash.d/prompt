@@ -40,4 +40,10 @@ function parse_git_branch {
 
 export PS1="$C_GREEN\u@\h $C_BLUE\W $C_YELLOW\$(parse_git_branch)$C_BLUE \$ $C_NONE"
 
+function prompt_session_type {
+  ([ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]) && SESSION_TYPE=remote/ssh;
+  ([ -f /proc/1/cgroup ] && grep ':\/system.slice\/docker-[a-z0-9]*\.scope' /proc/1/cgroup > /dev/null  ) && SESSION_TYPE=remote/docker;
+  echo -e $SESSION_TYPE
+}
+
 # vim:foldmethod=marker:foldlevel=0

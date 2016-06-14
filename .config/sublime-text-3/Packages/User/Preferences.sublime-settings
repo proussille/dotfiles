@@ -1,5 +1,5 @@
 {
-	"color_scheme": "Packages/User/Flat.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Solarized (Light).tmTheme",
 	"curly_style": "none",
 	"enable_tab_scrolling": false,
 	"folder_exclude_patterns":
@@ -27,7 +27,7 @@
 	"show_tab_close_buttons": false,
 	"tab_size": 4,
 	"tag_style": "none",
-	"theme": "Minimal Dark.sublime-theme",
+	"theme": "Cobalt2.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true
 }

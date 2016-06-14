@@ -4,3 +4,4 @@ bin recurse
 README.md skip
 CHANGELOG.md skip
 .gitmodules skip
+gnome-terminal-colors/set_light.sh exec
