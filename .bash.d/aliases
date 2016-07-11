@@ -25,7 +25,6 @@ alias c='clear'
 bind '"\C-l"':"\"clear\r\"" # Ctrl+l vide le terminal
 
 # Symfony aliases
-alias sf="php app/console"
 
 alias cap="bundle exec cap"
 

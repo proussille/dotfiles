@@ -40,6 +40,7 @@ fi
 
 
 # Miscs {{{
+export DOCKER_HOST_SUFFIX="phr.lph"
 export EDITOR="/usr/bin/vim"
 umask 002
 if [ -f ~/.dircolors ]; then
@@ -57,3 +58,6 @@ export PATH="$HOME/.rvm/bin:$PATH" # Add RVM to PATH for scripting
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 eval "$(fasd --init auto)"
+
+export NVM_DIR="/home/roussillep/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
