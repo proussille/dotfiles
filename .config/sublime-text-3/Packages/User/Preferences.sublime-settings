@@ -1,4 +1,5 @@
 {
+	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
 	"curly_style": "none",
 	"enable_tab_scrolling": false,
 	"folder_exclude_patterns":
@@ -26,11 +27,6 @@
 	"show_tab_close_buttons": false,
 	"tab_size": 4,
 	"tag_style": "none",
-	"theme": "Default.sublime-theme",
-	"translate_tabs_to_spaces": true,
-	"trim_trailing_white_space_on_save": true,
-
-	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
 	"theme": "Boxy Solarized Light.sublime-theme",
 	"theme_accent_green": true,
 	"theme_bar": true,
@@ -50,5 +46,7 @@
 	"theme_tab_line_size_lg": true,
 	"theme_tab_selected_transparent": true,
 	"theme_tab_selected_underlined": true,
-	"theme_tab_size_lg": true
+	"theme_tab_size_lg": true,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
 }
