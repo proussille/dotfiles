@@ -1,7 +1,7 @@
 # ~/.tmuxinator/sandbox.yml
 
 name: sandbox
-root: ~/sandbox
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
@@ -49,8 +49,7 @@ windows:
       panes:
           - main: clear
           - mac:
-            - cd ~/sandbox/mac.franciaflex
-            - clear
+            - cd ~/sandbox/mac.franciaflex && clear
   # - 'CAR': 'cd ~/sandbox/piscines-caron && clear'
   - 'PAN':
       root: ~/sandbox/panaget

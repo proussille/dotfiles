@@ -3,3 +3,6 @@ packages
 recovery
 .node-gyp
 .apm
+blob-store
+compile-cache
+nohup.out

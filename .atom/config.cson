@@ -1,4 +1,16 @@
 "*":
+  "atom-material-ui":
+    colors: {}
+    fonts:
+      fontSize: 14
+    tabs:
+      compactTabs: true
+      tintedTabBar: true
+    treeView:
+      compactList: true
+    ui:
+      panelContrast: true
+      panelShadows: true
   core:
     disabledPackages: [
       "language-gfm"
@@ -6,7 +18,7 @@
     projectHome: "/home/roussillep/sandbox"
     telemetryConsent: "no"
     themes: [
-      "atom-light-ui"
+      "atom-material-ui"
       "solarized-light-syntax"
     ]
   editor:
