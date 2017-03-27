@@ -11,6 +11,7 @@
     ]
   editor:
     fontSize: 13
+    showInvisibles: true
   "exception-reporting":
     userId: "87320729-c39a-481f-a5aa-43274d3a63ab"
   "project-manager":
@@ -24,3 +25,5 @@
       "bower_components"
       "public/libs"
     ]
+  welcome:
+    showOnStartup: false
