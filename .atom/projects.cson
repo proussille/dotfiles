@@ -1,1 +1,8 @@
-[]
+[
+  {
+    title: "Dotfiles"
+    paths: [
+      "~/.dotfiles"
+    ]
+  }
+]

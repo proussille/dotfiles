@@ -47,9 +47,6 @@ windows:
       root: ~/sandbox/storistes-de-france
       layout: main-horizontal
       panes:
-          - echo 'pouet'
-          - echo 'pouet'
-      panes:
           - main: clear
           - mac:
             - cd ~/sandbox/mac.franciaflex
