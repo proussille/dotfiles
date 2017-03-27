@@ -1,0 +1,26 @@
+"*":
+  core:
+    disabledPackages: [
+      "language-gfm"
+    ]
+    projectHome: "/home/roussillep/sandbox"
+    telemetryConsent: "no"
+    themes: [
+      "atom-light-ui"
+      "solarized-light-syntax"
+    ]
+  editor:
+    fontSize: 13
+  "exception-reporting":
+    userId: "87320729-c39a-481f-a5aa-43274d3a63ab"
+  "project-manager":
+    alwaysOpenInSameWindow: true
+    includeGitRepositories: true
+    savePathsRelativeToHome: true
+  "todo-show":
+    ignoreThesePaths: [
+      "node_modules"
+      "vendor"
+      "bower_components"
+      "public/libs"
+    ]
