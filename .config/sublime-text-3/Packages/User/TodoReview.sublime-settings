@@ -1,0 +1,16 @@
+{
+    "folders": [],
+    "settings": {
+        "todoreview": {
+            "exclude_folders": [
+                "*.git*",
+                "*vendor*",
+                "*cache*",
+                "*node_modules*",
+                "*bin*",
+                "*logs*",
+                "*public/libs*",
+            ]
+        }
+    }
+}

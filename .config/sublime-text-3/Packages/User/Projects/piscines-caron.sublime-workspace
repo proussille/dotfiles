@@ -1,0 +1,487 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"constat",
+				"constant_score"
+			],
+			[
+				"publi",
+				"publishEnd"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"inli",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 280.0,
+		"last_filter": "dup",
+		"selected_items":
+		[
+			[
+				"dup",
+				"File: Duplicate"
+			],
+			[
+				"dupl",
+				"File: Duplicate"
+			],
+			[
+				"blame",
+				"Git: Blame"
+			],
+			[
+				"move",
+				"File: Move"
+			],
+			[
+				"blam",
+				"Git: Blame"
+			],
+			[
+				"thmee",
+				"Themr: List themes"
+			],
+			[
+				"theme",
+				"Themr: List themes"
+			],
+			[
+				"thme",
+				"Themr: List themes"
+			],
+			[
+				"json",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"scheme",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"sche",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"schele",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reid",
+				"Indentation: Reindent Lines"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 391.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/roussillep/sandbox/piscines-caron",
+		"/home/roussillep/sandbox/piscines-caron/app",
+		"/home/roussillep/sandbox/piscines-caron/app/DoctrineMigrations",
+		"/home/roussillep/sandbox/piscines-caron/app/config",
+		"/home/roussillep/sandbox/piscines-caron/src",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Controller",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Controller/Form",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Form",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Form/Lead",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/config",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/config/routing",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/translations",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Catalog",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Form",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Tag",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Tag/TimeOne",
+		"/home/roussillep/sandbox/piscines-caron/web"
+	],
+	"file_history":
+	[
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Form/catalog_request_confirm.html.twig",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Form/become_retailer_confirm.html.twig",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Form/quotation_confirm.html.twig",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Form/renovation_confirm.html.twig",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Form/salon_piscine_2015_confirm.html.twig",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Form/sav_confirm.html.twig",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Form/sponsor_confirm.html.twig",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/layout.html.twig",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Tag/TimeOne/TagLead.js.twig",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Tag/TimeOne/TagManager.js.twig",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Controller/Form/AbstractFormController.php",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Controller/Form/LandingInquiryController.php",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Form/Lead/LandingInquiryType.php",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Form/Lead/QuotationType.php",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Form/Lead/RenovationType.php",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Form/Lead/SalonPiscine2015Type.php",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Form/Lead/SavType.php",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Form/Lead/SponsorType.php",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/config/routing/form.yml",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Form/landing_inquiry.html.twig",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Form/Lead/InquiryType.php",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Form/Lead/CatalogType.php",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Form/Lead/BecomeRetailerType.php",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/translations/validators.fr.yml",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/config/validation.yml",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Entity/Lead/LeadActivity.php",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Entity/Core/User.php",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Form/_coordonnees.html.twig",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/translations/messages.fr.yml",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/translations/seo.fr.yml",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Form/landing_inquiry_confirm.html.twig",
+		"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Resources/views/Form/inquiry_confirm.html.twig",
+		"/home/roussillep/sandbox/piscines-caron/web/.htaccess",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Resources/views/Core/Dealer/list.html.twig",
+		"/home/roussillep/sandbox/renoval/vendor/faros/avant-theme-bundle/Resources/views/themes/avant/base.html.twig",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Menu/Builder.php",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Resources/config/services.yml",
+		"/home/roussillep/sandbox/renoval/vendor/faros/avant-theme-bundle/Menu/DefaultMenuBuilder.php",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Resources/views/layout.html.twig",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Resources/public/less/theme.less",
+		"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/less/bootstrap-avanttheme.less",
+		"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/libs/less/variables.less",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Resources/views/Menu/main.html.twig",
+		"/home/roussillep/sandbox/renoval/vendor/knplabs/knp-menu/src/Knp/Menu/Resources/views/knp_menu.html.twig",
+		"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/js/admin.js",
+		"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/libs/js/application.js",
+		"/home/roussillep/sandbox/renoval/vendor/faros/avant-theme-bundle/Resources/config/services.yml",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Menu/DefaultMenuBuilder.php",
+		"/home/roussillep/sandbox/renoval/vendor/faros/avant-theme-bundle/Resources/views/themes/avant/Menu/main.html.twig",
+		"/home/roussillep/sandbox/bernard-solfin/docker-compose.override.yml",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Controller/Catalog/CatalogController.php",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/catalog-bundle/Faros/CatalogBundle/Controller/CatalogController.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/CatalogController.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/CommonsController.php",
+		"/home/roussillep/sandbox/bernard-solfin/app/config/parameters.yml",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Ads/show.html.twig",
+		"/home/roussillep/sandbox/todaycar/app/config/parameters.yml",
+		"/home/roussillep/sandbox/todaycar/var/logs/dev-2016-06-14.log",
+		"/home/roussillep/sandbox/todaycar/Gemfile",
+		"/home/roussillep/sandbox/todaycar/Capfile",
+		"/home/roussillep/sandbox/todaycar/app/config/capistrano/deploy.rb",
+		"/home/roussillep/sandbox/todaycar/app/config/capistrano/tasks/secure.rake",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/js/theia-sticky-sidebar.js",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/layout.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Booking/recapitulatif.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Booking/livraison.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Ads/index.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Booking/_recap_final.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/less/responsive.less",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/less/styleDev.less",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/js/script.js",
+		"/home/roussillep/sandbox/todaycar/gulpfile.js",
+		"/home/roussillep/gnome-terminal-colors-solarized/set_dark.sh",
+		"/home/roussillep/.config/dconf/user",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Controller/ContactInspectorController.php",
+		"/home/roussillep/sandbox/todaycar/vendor/bower_components/theia-sticky-sidebar/js/theia-sticky-sidebar.js",
+		"/home/roussillep/sandbox/todaycar/package.json",
+		"/home/roussillep/sandbox/todaycar/docker-compose.override.yml.dist",
+		"/home/roussillep/sandbox/todaycar/docker-compose.yml",
+		"/home/roussillep/sandbox/todaycar/docker-compose.override.yml",
+		"/home/roussillep/sandbox/todaycar/app/config/parameters.yml.dist",
+		"/home/roussillep/sandbox/todaycar/app/Resources/crontab.production",
+		"/home/roussillep/.dotfiles/.tmux.conf"
+	],
+	"find":
+	{
+		"height": 48.0
+	},
+	"find_in_files":
+	{
+		"height": 134.0,
+		"where_history":
+		[
+			"/home/roussillep/sandbox/piscines-caron/src/PiscinesCaron/SiteBundle/Controller",
+			"/home/roussillep/sandbox/piscines-caron/app/config",
+			"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/libs/js",
+			"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/js",
+			"/home/roussillep/sandbox/renoval/vendor/faros",
+			"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/less"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"envoyer votre demande",
+			"inquiry.",
+			"landing_Inquiry",
+			"inquiry",
+			"Inquiry",
+			"inquiry",
+			"forwardToExtrabat",
+			"extraba",
+			"extrabat",
+			"acc-menu",
+			".show",
+			"nav",
+			"display",
+			"display:",
+			"#d2d3d6",
+			"display",
+			"acc-menu",
+			"hasChild",
+			"DefaultMenuBuilder",
+			"isProductPublished",
+			"$this->pm",
+			"disabled",
+			"\n        $suggest = count($params) > 0 ? $index->suggest($params) : [];",
+			"\n        $suggestAds = array_column($suggest['hits']['hits'], '_source', '_id');",
+			"\n        $suggest = $index->suggest($params);",
+			"brand",
+			"model",
+			"\n                                'boost' => 1,",
+			"boots",
+			"booots",
+			":",
+			"}",
+			"{",
+			"$page * 5",
+			"cross",
+			"awl",
+			"awol",
+			"ads",
+			"Envoyez nous un email",
+			"blocAnnonce",
+			"#pageShowAd .blocAnnonce",
+			"fixPrice",
+			"infoprix",
+			"trustycar",
+			"target_base"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "piscines-caron.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"abscontr",
+				"src/PiscinesCaron/SiteBundle/Controller/Form/AbstractFormController.php"
+			],
+			[
+				"taglead.js",
+				"src/PiscinesCaron/SiteBundle/Resources/views/Tag/TimeOne/TagLead.js.twig"
+			],
+			[
+				"taglead",
+				"src/PiscinesCaron/SiteBundle/Resources/views/Tag/TimeOne/TagLead.js.twig"
+			],
+			[
+				"absforcontrolr",
+				"src/PiscinesCaron/SiteBundle/Controller/Form/AbstractFormController.php"
+			],
+			[
+				"leadac",
+				"src/PiscinesCaron/SiteBundle/Entity/Lead/LeadActivity.php"
+			],
+			[
+				"user.php",
+				"src/PiscinesCaron/SiteBundle/Entity/Core/User.php"
+			],
+			[
+				"leadactivi",
+				"src/PiscinesCaron/SiteBundle/Entity/Lead/LeadActivity.php"
+			],
+			[
+				"_coordonnees",
+				"src/PiscinesCaron/SiteBundle/Resources/views/Form/_coordonnees.html.twig"
+			],
+			[
+				"absformcontroller",
+				"src/PiscinesCaron/SiteBundle/Controller/Form/AbstractFormController.php"
+			],
+			[
+				"defaultmenubuilder",
+				"vendor/faros/avant-theme-bundle/Menu/DefaultMenuBuilder.php"
+			],
+			[
+				"admin.js",
+				"web/bundles/farosavanttheme/themes/avant/js/admin.js"
+			],
+			[
+				"knpmenuhtml",
+				"vendor/knplabs/knp-menu/src/Knp/Menu/Resources/views/knp_menu.html.twig"
+			],
+			[
+				"default",
+				"src/ExtranetBundle/Menu/DefaultMenuBuilder.php"
+			],
+			[
+				"bootstrap-avanttheme.less",
+				"web/bundles/farosavanttheme/themes/avant/less/bootstrap-avanttheme.less"
+			],
+			[
+				"knp_menu.html",
+				"vendor/knplabs/knp-menu/src/Knp/Menu/Resources/views/knp_menu.html.twig"
+			],
+			[
+				"menubuilder",
+				"vendor/faros/avant-theme-bundle/Menu/DefaultMenuBuilder.php"
+			],
+			[
+				"main.html.tw",
+				"vendor/faros/avant-theme-bundle/Resources/views/themes/avant/Menu/main.html.twig"
+			],
+			[
+				"avantbase.html.twi",
+				"vendor/faros/avant-theme-bundle/Resources/views/themes/avant/base.html.twig"
+			],
+			[
+				"catalogcontroller",
+				"src/BernardSolfin/SiteBundle/Controller/CatalogController.php"
+			],
+			[
+				"crontab",
+				"app/Resources/crontab.production"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "ponroy",
+		"selected_items":
+		[
+			[
+				"ponroy",
+				"~/sandbox/ponroy.sublime-workspace"
+			],
+			[
+				"",
+				"~/sandbox/dotfiles.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 251.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

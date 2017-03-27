@@ -1,0 +1,4776 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"la",
+				"label"
+			],
+			[
+				"constat",
+				"constant_score"
+			],
+			[
+				"publi",
+				"publishEnd"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"inli",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/config/validation.yml",
+			"settings":
+			{
+				"buffer_size": 4168,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Form/SellInquiryType.php",
+			"settings":
+			{
+				"buffer_size": 3198,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/vendor/faros/avant-theme-bundle/Controller/Admin/SecurityController.php",
+			"settings":
+			{
+				"buffer_size": 9378,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/vendor/faros/core-bundle/Entity/Repository/UserRepository.php",
+			"settings":
+			{
+				"buffer_size": 6385,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Import/AdListener.php",
+			"settings":
+			{
+				"buffer_size": 11527,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Entity/Ad/Ad.php",
+			"settings":
+			{
+				"buffer_size": 31987,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "CarnetEntretien;Carrosserie;Clefs;Co2;commentaire produit;consommation euromix;Cote ArgusAnnonces;Couleur;cylindree;Date1MEC;DateCreation;DateExpirationGC;DateMission;DossierRefInt;empattement;Energie;Equipements;Etat;GarantieConstructeur;Genre;Hauteur;Immatriculation;kilo declare;Largeur;lien expertise;Longueur;Marque;Millesime;NbCylind;NbPortes;NbVitesses;NE;observations;PAV;photos;Places;PremiereMain;prix de vente;PrixNeuf;Propulsion;Puissance;PuissanceCh;Regroupement;Segment;TPBoiteVit;TypeComm;volume coffre;XCle;dossierrefvendeur\nPAJ;Monospace;O;116;La deuxième génération de la Classe B affiche un style dynamique. L'intérieur est luxieux, rappelle les modèles plus exclusifs de la marque,est très habitable et bien pensé avec de multiples rangements. Ici en version 136 chevaux, le moteur est en adéquation avec le comportement dynamique du véhicule, De plus il sait rester discret et est très sobre. Le modèle présenté ici est équipé de nombreuses options qui relève encore l'agrement, notamment le très agréable toit panoramique, le système de navigation ou encore la caméra de recul.;;23310;Noir métal;1796.0;20/03/2013;13/07/2016;;;890917;270;GO;climatisation regulee#jantes alu#GPS couleur#toit panoramique#toit ouvrant electrique#stop & start#phares xenon#regulateur vitesse#aide parking#ESP#volant multifonctions#detecteur de pluie#autoradio#Bluetooth#ordinateur de bord#allumage automatique des feux#vitres teintees electriques av+ar#retro-electrique#banquette arriere modulable#laves phares#direction assistee;;;VP;154;CR 553 XW;80000;179;http://www4.macadam.eu/Manager/SinglePage/AppraisalWebView?AssessmentFileId=&culture=fr;436;MERCEDES;2013;4;5;7;5;;1430;https://multimedia.vpauto.fr/documents/today/CR553XW_01.jpg#https://multimedia.vpauto.fr/documents/today/CR553XW_02.jpg#https://multimedia.vpauto.fr/documents/today/CR553XW_03.jpg#https://multimedia.vpauto.fr/documents/today/CR553XW_04.jpg#https://multimedia.vpauto.fr/documents/today/CR553XW_05.jpg#https://multimedia.vpauto.fr/documents/today/CR553XW_06.jpg#https://multimedia.vpauto.fr/documents/today/CR553XW_07.jpg#https://multimedia.vpauto.fr/documents/today/CR553XW_08.jpg#;5;O;20990;35325;AVANT;7;136;Classe B;Monospace;AUTOMATIQUE;B II 200 1.8CDi136BE DCT7 Sport;;3EF01902379DA3F7C1257FEF004E9581;8081103\nO;Berline;O;94;La Rio offre un style moderne et dynamique, tranchant avec les modèles précédents. Sa taille lui permet de proposer un des plus spacieux habitacles de la catégorie et la présentation est très agréable.  De son côté, l'équipement est complet avec notamment le régulateur de vitesse ou encore  la connexion média USB. Le nouveau moteur de 75 chevaux est très volontaire et sa boite 6 vitesses lui permettent d'affronter tous les types de parcours sans problème, tout en restant très frugal. En bref, c'est un excellent choix et la garantie jusqu'en décembre 2018 n'est pas le dernier de ses arguments.;;10251;Gris clair métal;1120;04/12/2013;01/08/2016;01/12/2018;;893895;257;GO;air conditionne#stop & start#regulateur vitesse#ESP#volant multifonctions#autoradio#ordinateur de bord#6 vitesses#vitres teintees electriques#retro-electrique#banquette arriere modulable#direction assistee;;O;VP;146;DB 414 BD;40000;172;http://www4.macadam.eu/Manager/SinglePage/AppraisalWebView?AssessmentFileId=&culture=fr;405;KIA;2013;3;5;6;5;;1165;https://multimedia.vpauto.fr/documents/today/DB414BD_01.jpg#https://multimedia.vpauto.fr/documents/today/DB414BD_02.jpg#https://multimedia.vpauto.fr/documents/today/DB414BD_03.jpg#https://multimedia.vpauto.fr/documents/today/DB414BD_04.jpg#https://multimedia.vpauto.fr/documents/today/DB414BD_05.jpg#https://multimedia.vpauto.fr/documents/today/DB414BD_06.jpg#https://multimedia.vpauto.fr/documents/today/DB414BD_07.jpg#https://multimedia.vpauto.fr/documents/today/CRDB414BD_08.jpg#;5;O;8990;16350;AVANT;4;75;Rio;Compacte;MECANIQUE;RIO III 1.1CRDi75 ISG Style 5p;;7D1434B7F089BE8CC125800200284FA5;\nN;SUV;O;99;On ne présente plus le Qashqai, c'est la référence du segment des crossovers. Dans sa dernière version, il est monté en gamme avec un style plus moderne et un intérieur dont la finition et la présentation ont fait un grand bond en avant. L'équipement est toujours très complet.  L'agrément de conduite est parfait, l'insonorisation est excellente et le comportement routier amélioré par rapport à son ainé. Ici en version 110 chevaux, il est particulièrement économique à l'usage et est très plaisant à conduire sur tous types de revétements. En plus il est très réspectueusx de l'environnement avec des rejets de CO2 très faibles. Il bénéficie en plus de la garantie constructeur jusqu'en septembre 2017. ;;18363;Noir métal;1461;30/09/2014;01/07/2016;01/09/2017;;888610;265;GO;climatisation regulee#jantes alu#stop & start#regulateur vitesse#aide parking#ESP#volant multifonctions#detecteur de pluie#autoradio#Bluetooth#ordinateur de bord#allumage automatique des feux#6 vitesses#vitres teintees electriques av+ar#retro-electrique#banquette arriere modulable#anti-brouillard#direction assistee;;O;VP;159;DK 211 NK;54500;181;http://www4.macadam.eu/Manager/SinglePage/AppraisalWebView?AssessmentFileId=&culture=fr;438;NISSAN;2014;4;5;6;5;;1310;https://multimedia.vpauto.fr/documents/today/DK211NK_01.jpg#https://multimedia.vpauto.fr/documents/today/DK211NK_02.jpg#https://multimedia.vpauto.fr/documents/today/DK211NK_03.jpg#https://multimedia.vpauto.fr/documents/today/DK211NK_04.jpg#https://multimedia.vpauto.fr/documents/today/DK211NK_05.jpg#https://multimedia.vpauto.fr/documents/today/DK211NK_06.jpg#https://multimedia.vpauto.fr/documents/today/DK211NK_07.jpg#https://multimedia.vpauto.fr/documents/today/DK211NK_08.jpg#;5;O;17450;26840;AVANT;5;110;Qashqai;SUV;MECANIQUE;QASHQAI II 1.5DCi110 S/S 4X2 Acenta;;61573A1F77E086DBC1257FE30042F515;14353418V\nO;Berline;N;94;Nouvelle venue dans la catégorie des compactes, elle est l'une des plus habitables, la place offerte aux passagers, notamment à l'arrière, etant digne de la catégorie supérieure. La présentation intérieure est très agréable et les grandes surfaces vitrées participent à l'impression d'espace, tout en facilitant la vie du conducteur en ville. Basée sur un chassis dynamique et bien suspendu, elle est très confortable et exploite très bien le moteur de 110 chevaux, performant et sobre. C'est un choix judicieux dans sa catégorie, d'autant plus qu'elle est ici couverte par la garantie constructeur jusqu'en février 2018.;;13505;Noir métal;1461;23/02/2015;13/05/2016;01/02/2018;13/05/2016;479448;270;GO;climatisation regulee#jantes alu#stop & start#regulateur vitesse#ESP#volant multifonctions#detecteur de pluie#autoradio#Bluetooth#ordinateur de bord#allumage automatique des feux#6 vitesses#vitres teintees electriques av+ar#retro-electrique#banquette arriere modulable#anti-brouillard#direction assistee;;O;VP;152;DP 768 FK;21000;177;http://www4.macadam.eu/Manager/SinglePage/AppraisalWebView?AssessmentFileId=&culture=fr;439;NISSAN;2015;4;5;6;5;;1270;https://multimedia.vpauto.fr/documents/today/DB768FK_01.jpg#https://multimedia.vpauto.fr/documents/today/DB768FK_02.jpg#https://multimedia.vpauto.fr/documents/today/DB768FK_03.jpg#https://multimedia.vpauto.fr/documents/today/DB768FK_04.jpg#https://multimedia.vpauto.fr/documents/today/DB768FK_05.jpg#https://multimedia.vpauto.fr/documents/today/DB768FK_06.jpg#https://multimedia.vpauto.fr/documents/today/DB768FK_07.jpg#https://multimedia.vpauto.fr/documents/today/DB768FK_08.jpg#;5;O;12790;23190;AVANT;5;110;Pulsar;Compacte;MECANIQUE;PULSAR 1.5dCi110 Acenta;;830497E057C4E724C1257FB2002D992B;40585\nN;SUV;O;95;Le petit crossover de Renault soigne son look de baroudeur. Bien campé sur ses grandes roues, il a fière allure et ses protections lui permettent d'affronter tous les dangers de la ville et du stationnement. Basé sur une plateforme moderne, il bénéficie d'une très bonne tenue de route et d'un grand confort. Sa position de conduite surélevée permet une très bonne vision périphérique. L'habitabilité est généreuse et le coffre un des plus logeable de la catégorie.  Ici couplé avec l'excellent DCI90, il est souple et econome, performant et très silencieux.;;15683;Gris médium métal;1461;28/04/2015;01/06/2016;01/04/2017;06/06/2016;882034;261;GO;air conditionne#jantes alu#stop & start#regulateur vitesse#ESP#autoradio#Bluetooth#ordinateur de bord#vitres teintees electriques av+ar#retro-electrique#banquette arriere modulable#anti-brouillard#5 vitesses#direction assistee;;O;VP;157;DR 303 CN;21000;178;http://www4.macadam.eu/Manager/SinglePage/AppraisalWebView?AssessmentFileId=&culture=fr;412;RENAULT;2015;4;5;5;5;;1170;https://multimedia.vpauto.fr/documents/today/DR303CN_01.jpg#https://multimedia.vpauto.fr/documents/today/DR303CN_02.jpg#https://multimedia.vpauto.fr/documents/today/DR303CN_03.jpg#https://multimedia.vpauto.fr/documents/today/DR303CN_04.jpg#https://multimedia.vpauto.fr/documents/today/DR303CN_05.jpg#https://multimedia.vpauto.fr/documents/today/DR303CN_06.jpg#https://multimedia.vpauto.fr/documents/today/DR303CN_07.jpg#https://multimedia.vpauto.fr/documents/todayDR303CN_08.jpg#;5;O;13890;20400;AVANT;4;90;Captur;SUV;MECANIQUE;CAPTUR 1.5DCi90Energy S/S Zen;;538ADDBE4BE16A41C1257FC5002EC0AB;\nO;Berline;O;88;La Polo, dans sa dernière version restylée, est toujours présentée et équipée comme un véhicule du segment supérieur. La finition est bluffante, l'habitabilité généreuse et le confort lui permet d'affronter les longs trajets. Elle bénéficie ici d'un système multimédia empruntée à la Golf. Son nouveau moteur diesel lui permet d'avoir un appétit d'oiseau.;;16370;Noir métal;1422;14/09/2015;26/07/2016;01/09/2017;;893116;;GO;air conditionne#jantes alu#GPS couleur#stop & start#regulateur vitesse#aide parking#ESP#volant multifonctions#detecteur de pluie#autoradio#Bluetooth#ordinateur de bord#allumage automatique des feux#vitres teintees electriques av+ar#retro-electrique#banquette arriere modulable#5 vitesses#direction assistee;;O;VP;144;DV 883 RP;10000;168;http://www4.macadam.eu/Manager/SinglePage/AppraisalWebView?AssessmentFileId=&culture=fr;397;VOLKSWAGEN;2015;3;5;5;6;;1076;https://multimedia.vpauto.fr/documents/today/DV833RP_01.jpg#https://multimedia.vpauto.fr/documents/today/DV833RP_02.jpg#https://multimedia.vpauto.fr/documents/today/DV833RP_03.jpg#https://multimedia.vpauto.fr/documents/today/DV833RP_04.jpg#https://multimedia.vpauto.fr/documents/today/DV833RP_05.jpg#https://multimedia.vpauto.fr/documents/today/DV833RP_06.jpg#https://multimedia.vpauto.fr/documents/today/DV833RP_07.jpg#https://multimedia.vpauto.fr/documents/today/DV833RP_08.jpg#;5;O;14490;19640;AVANT;4;90;Polo;Citadine;MECANIQUE;POLO V 1.4TDi90BM Lounge Ph2 5p;;E9558C3385D753ACC1257FFC00497C84;8082107\nPAJ;Berline;O;109;Cette deuxième génération de la Cee'd est une vraie réussite. Dynamique, élégante, elle a été conçue spécifiquement pour le marché européen. Elle offre un des habitacles les plus généreux de la catégorie. ##La présentation intérieure est très attractive et la finition particulièrement soignée. Ici en version 1.4 CRDI, la motorisation est très souple et volontaire, en plus d'etre économe. Elle bénéficie en plus d'une boite 6 vitesses qui lui permet de gérer tous les types de parcours.##La finition Motion est très complète car elle intègre un bel arsenal sécuritaire (notamment ESP, assistance au freinage d'urgence, 6 airbags) et un équipement généreux (air conditionné, Radio CD MP3 avec commandes au volant, ordinateur de bord, volant cuir, etc.)##Elle bénificie d'une garantie jusqu'en juin 2019 ou 150.000 kilomètres, de quoi envisager sereinement l'avenir.;;11152;Noir métal;1396;11/06/2013;19/10/2016;01/06/2019;;908614;265;GO;air conditionne#ESP#volant multifonctions#airbag x 6#ordinateur de bord#autoradio cd#6 vitesses#vitres teintees electriques#retro-electrique;Véhicule de première main le véhicule est très propre et a été bien entretenu. Il bénéficie toujours de la garantie constructeur.;O;VP;147;CV 861 RP;78019;178;http://www4.macadam.eu/Manager/SinglePage/AppraisalWebView?AssessmentFileId=&culture=fr;431;KIA;2013;4;5;6;5;- Véhicule de première main le véhicule est très propre et a été bien entretenu. Il bénéficie toujours de la garantie constructeur. - Garantie constructeur 06/2019* ;1352;http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CV861RP/$file/CV861RP_01.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CV861RP/$file/CV861RP_03.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CV861RP/$file/CV861RP_04.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CV861RP/$file/CV861RP_05.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CV861RP/$file/CV861RP_06.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CV861RP/$file/CV861RP_07.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CV861RP/$file/CV861RP_09.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CV861RP/$file/CV861RP_10.jpg#;5;O;8990;19550;AVANT;5;90;Ceed;Compacte;MECANIQUE;CEED II  1.4CRDi90 Motion;380;0F08AB6BF751F0C2C125805100464177;161003151\nO;Berline;O;105;On ne présente plus la Clio. C'est la voiture la plus vendue de sa catégorie et ce n'est pas sans raison. Son comportement routier est parfait, alliant confort et agilité, ses mécaniques sont efficaces et frugales et elle est très habitable.##Richement dotée danc cette version Business, elle dispose notamment du très efficace GPS Carminat Tom Tom, de l'intérieur cuir-tissu, de l'autoradio MP3 avec prise auxilière et USB, du volant multifonction et du régulateur de vitesse. Son moteur dCi est souple, fiable et consomme peu.;;8866;Blanc;1461;14/11/2012;24/11/2016;;;915142;258;GO;air conditionne#cuir et tissu#GPS couleur#regulateur vitesse#aide parking#volant multifonctions#ordinateur de bord#autoradio cd#vitres teintees electriques av+ar#direction assistee;ce véhicule de première main a toujours été entretenu avec soin et ne présentea ucun défaut majeur.;N;VP;150;CM 004 WF;73500;172;http://www4.macadam.eu/Manager/SinglePage/AppraisalWebView?AssessmentFileId=&culture=fr;399;RENAULT;2012;4;5;5;;- ce véhicule de première main a toujours été entretenu avec soin et ne présente aucun défaut majeur. ;1099;http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CM004WF/$file/CM004WF_01.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CM004WF/$file/CM004WF_03.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CM004WF/$file/CM004WF_04.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CM004WF/$file/CM004WF_05.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CM004WF/$file/CM004WF_06.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CM004WF/$file/CM004WF_07.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CM004WF/$file/CM004WF_09.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CM004WF/$file/CM004WF_10.jpg#;5;O;7390;17300;AVANT;4;75;CLIO III d;Citadine;MECANIQUE;CLIO III 1.5DCi75 Business Ph2 NG25p;;241138B3CF5E53EBC12580750033BD51;161123054\nO;Berline;N;79;Seule citadine Full-Hybrid du marché, la Yaris est la voiture idéale des centre-villes  mais son moteur thermique lui permet d'affronter tous les types de routes. De plus, elle s'avère être très habitable et la finition est impeccable.;;11566;Rouge foncé métal;1497;06/02/2013;09/12/2016;;;918405;251;EH;climatisation regulee#regulateur vitesse#retro camera#volant multifonctions#autoradio#Bluetooth#ordinateur de bord#vitres teintees electriques#direction assistee;1ere main, ce véhicule a été bien entretenu et suivi par son propriétaire;N;VP;151;CQ 003 MX;42000;170;http://www4.macadam.eu/Manager/SinglePage/AppraisalWebView?AssessmentFileId=&culture=fr;391;TOYOTA;2013;4;5;2;;- 1ere main ce véhicule a été bien entretenu et suivi par son propriétaire ;1085;http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CQ003MX/$file/CQ003MX_01.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CQ003MX/$file/CQ003MX_03.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CQ003MX/$file/CQ003MX_04.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CQ003MX/$file/CQ003MX_05.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CQ003MX/$file/CQ003MX_06.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CQ003MX/$file/CQ003MX_07.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CQ003MX/$file/CQ003MX_09.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CQ003MX/$file/CQ003MX_10.jpg#;5;O;10490;19200;AVANT;3;75;YARIS Hybride e;Citadine;AUTOMATIQUE;YARIS III 1.5 100 Hybride Dynamiq.5p;;E2E6ED96427CC689C12580840056AAF0;161201059\nO;Berline;O;75;Seule citadine Full-Hybrid du marché, la Yaris est la voiture idéale des centre-villes  mais son moteur thermique lui permet d'affronter tous les types de routes. De plus, elle s'avère être très habitable et la finition est impeccable. Le modèle présenté ici benéficie du dernier restylage et possède le GPS et la caméra de recul, équipement parfait pour la ville.;;14549;Noir métal;1497;07/10/2015;06/12/2016;01/10/2018;;917697;251;EH;climatisation regulee#GPS couleur#regulateur vitesse#retro camera#ordinateur de bord#vitres teintees electriques;1ere main, ce véhicule est dans un parfait état;O;VP;151;DW 710 JD;13800;170;http://www4.macadam.eu/Manager/SinglePage/AppraisalWebView?AssessmentFileId=&culture=fr;395;TOYOTA;2015;4;5;2;;1ere main, ce véhicule est dans un parfait état;1085;http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DW710JD/$file/DW710JD_01.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DW710JD/$file/DW710JD_03.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DW710JD/$file/DW710JD_04.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DW710JD/$file/DW710JD_05.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DW710JD/$file/DW710JD_06.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DW710JD/$file/DW710JD_07.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DW710JD/$file/DW710JD_09.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DW710JD/$file/DW710JD_10.jpg#;5;O;12890;19200;AVANT;3;73;YARIS Hybride e;Citadine;AUTOMATIQUE;YARIS III 1.5 100 Hybride Dynamiq.5p;;F391C73E12F1F791C12580810054C864;161205051\n;Berline;O;149;On ne présente plus la Golf, LA référence de la catégorie à la finition impeccable, digne des segments supérieurs. A bord, les matériaux sont flatteurs, l'érgonomie est parfaite, l'habitabilité est très importante et les sièges très confortables, et ce pour tous les passagers. Sur la route, elle brille par son confort et son silence de fonctionnement.La tenue de route est particulièrement sécurisante et les suspensions filtrent parfaitement les irrégularités.;;8608;Blanc;1390;07/08/2012;27/12/2016;;;921962;258;ES;air conditionne#regulateur vitesse#ordinateur de bord#vitres teintees electriques;ce véhicule de première main a toujours été entretenu avec soin et ne présentea ucun défaut majeur.;;VP;147;CJ 035 NT;79500;179;http://www4.macadam.eu/Manager/SinglePage/AppraisalWebView?AssessmentFileId=&culture=fr;420;VOLKSWAGEN;2012;4;3;5;;- ce véhicule de première main a toujours été entretenu avec soin et ne présente aucun défaut majeur. ;1142;http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CJ035NT/$file/CJ035NT_01.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CJ035NT/$file/CJ035NT_03.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CJ035NT/$file/CJ035NT_04.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CJ035NT/$file/CJ035NT_05.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CJ035NT/$file/CJ035NT_06.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CJ035NT/$file/CJ035NT_07.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CJ035NT/$file/CJ035NT_09.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CJ035NT/$file/CJ035NT_10.jpg#;5;O;7990;16870;AVANT;5;80;GOLF VI e;Compacte;MECANIQUE;GOLF VI 1.4i 16v 80 Trendline NG 3p;;3D52FD113F5A85FFC125809600488C6F;161220169\nO;Berline;N;141;Cette berline au design séduisant dispose de nombreux atouts pour séduire. Extérieurement, elle affiche une plastique dynamique.bord, la présentation est moderne, l'assemblage est de qualité et l'ergonomie parfaite. Elle est parfaite pour les familles avec un espace généreux aux places arrières et un frand coffres bien agencé.##Sur la route le moteur de 163 cheveux de notre version est souple, coupleux et permet des reprises énergiques, aidé par une boite 6 vitesses bien étagée. Sa suspension est confortable et elle est parfaite pour les longs trajets.;;9847;Noir métal;1998;23/12/2011;21/02/2016;;;916671;269;GO;climatisation regulee#jantes alu#regulateur vitesse#aide parking#ESP#volant multifonctions#detecteur de pluie#autoradio#ordinateur de bord#ASR#allumage automatique des feux#6 vitesses#vitres teintees electriques av+ar#retro-electrique#banquette arriere modulable#anti-brouillard#ABS#direction assistee;;;VP;148;BZ 935 KW;57000;179;https://www4.macadam.eu/Manager/SinglePage/AppraisalWebView?AssessmentFileId=e%3dnc%3d%3dbG5RH5IodP%2f1%2fNEOLx3huw%3d%3d&culture=fr;460;CHEVROLET;2011;4;4;6;5;- Carnet d'entretien - Garantie 3 mois Prémium;1518;http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BZ935KW/$file/BZ935KW_03.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BZ935KW/$file/BZ935KW_04.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BZ935KW/$file/BZ935KW_05.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BZ935KW/$file/BZ935KW_06.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BZ935KW/$file/BZ935KW_07.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BZ935KW/$file/BZ935KW_08.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BZ935KW/$file/BZ935KW_09.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BZ935KW/$file/BZ935KW_10.jpg#;5;O;9290;23100;AVANT;9;163;CRUZE;Compacte;MECANIQUE;Cruze 2.0 VCDi 163 LTZ;;62514F522AD0521CC125807C002FF501;161122130\nO;Berline;O;104;Cette petite italienne porte en elle tous les gênes de la sportivité d'Alfa Romeo, avec une présentation sportive qui se démarque dans la production automobile. La présentation est flatteuse et la finition prémium. ##Ici en finition JTDM95, elle est frugale tout en étant dynamique et attachante sur la route ;;8315;Gris médium métal;1248;20/01/2011;21/02/2016;;;932785;251;GO;jantes alu#ESP#autoradio#ASR#retros electriques#vitres teintees#vitres electriques#anti-brouillard#ABS#direction assistee;;;VP;145;DK 143 VF;85000;172;http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_CT.pdf;406;ALFA ROMEO;2011;4;3;5;;- Carnet d'entretien ;1150;http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_01.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_02.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_03.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_04.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_05.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_06.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_07.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_08.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_09.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_10.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_11.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_12.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_13.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_14.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_15.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_16.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_17.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_18.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DK143VF/$file/DK143VF_19.jpg#;4;N;7890;17900;AVANT;5;95;MITO;Citadine;MECANIQUE;MiTo 1.3 JTDm Start & Stop 95 Progression;;D11E25F59E78FC59C12580CA002E1E91;170214008\nN;cabriolet;O;124;L'alliance du coupé et du cabriolet dans un même véhicule. On ne présente plus la 207cc qui permet d'allier le meilleur de ces deux mondes, offre un coffre généreux pour partir en weekend, un vrai toit qui la protège des agressions et qui permet de longs trajets dans le silence, et de rouler cheveux au vent dès qu'un rayon de soleil apparait.##Ici équipée du HDI 112, elle est sobre, performante et bénéficie de la boite 6 vitesses permettant de baisser la consommation. Son chassis et sa tenue de route sont parfaites pour profiter des petites routes. ##Notre version est la série spéciale 64 à la présentation et l'équipement généreux. C'est la voiture idéale pour des vacances sur la côte basque.;;10988;Noir métal;1560;04/11/2011;01/02/2017;;;929338;254;GO;air conditionne#jantes alu#toit ouvrant electrique#regulateur vitesse#aide parking#ESP#volant multifonctions#autoradio#Bluetooth#ordinateur de bord#vitres teintees electriques av+ar#retros electriques#vitres electriques#anti-brouillard#ABS;;;VP;139;BX 641 GN;68000;175;;404;PEUGEOT;2011;4;2;6;;;1400;https://cdn.vpauto.fr/p/DDXUVPX_01.JPG#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BX641GN/$file/BX641GN_02.JPG#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BX641GN/$file/BX641GN_03.JPG#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BX641GN/$file/BX641GN_04.JPG#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BX641GN/$file/BX641GN_05.JPG#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BX641GN/$file/BX641GN_06.JPG#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BX641GN/$file/BX641GN_07.JPG#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BX641GN/$file/BX641GN_08.JPG#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BX641GN/$file/BX641GN_09.JPG#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BX641GN/$file/BX641GN_10.JPG#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BX641GN/$file/BX641GN_11.JPG#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BX641GN/$file/BX641GN_12.JPG#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BX641GN/$file/BX641GN_13.JPG#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BX641GN/$file/BX641GN_14.JPG#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BX641GN/$file/BX641GN_15.JPG#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/BX641GN/$file/BX641GN_16.JPG#;4;;8990;24450;AVANT;6;111;207 CC;Citadine;MECANIQUE;207 CC 1.6 HDi 112ch FAP Série 64;370;7F75D0E98B38620FC12580BA00308250;170130176\nN;SUV;O;137;Le plus petit des SUV Audi a du style ! Il a un vrai look de baroudeur avec sa garde au sol réhaussé et des protections de carrosserie. ##A bord, on retrouve la parfaite finition Audi et une habitabilité généreuse pour sa taille. ##Grace à sa légéreté, les performances sont très bonnes et le comportement routier parfaitement équiliré entre dynamisme et confort.##Ici équipé du cuir et du GPS, sa présentation est très flatteuse.;;22789;Gris foncé métal;1968;14/01/2013;22/02/2017;;;933870;260;GO;climatisation regulee#cuir#jantes alu#GPS#regulateur vitesse#ESP#volant multifonctions#detecteur de pluie#Bluetooth#vitres teintees electriques av+ar#retros electriques#barres de toit#vitres teintees#vitres electriques#anti-brouillard#banquette arriere#ABS#direction assistee;;;VP;157;CP 613 TK;71000;183;;439;AUDI;2013;4;5;6;;- Suivi d'entretien ;1445;http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_01.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_02.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_03.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_04.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_05.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_06.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_07.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_08.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_09.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_10.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_11.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_12.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_13.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_14.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_15.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_16.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_17.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_20.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_21.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_22.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/CP613TK/$file/CP613TK_23.jpg#;5;N;20890;34150;AVANT;8;140;463;4x4, SUV;MECANIQUE;Q3 2.0 TDI 140 ch Business Line;;321168694B31EB7FC12580CF00335808;170221070\nO;Berline;N;109;Chez Seat, on sait faire des berlines diesel sportives au look ravageur. Notre Leon en est le parfait exemple. Parfaitement campé sur ces jantes de 18 pouces et habillé d'appendices aérodynamiques, elle en impose. ##A l'intérieur, la présentation est à l'avenant avec ses sièges cuir-tissu au mantien parfait et son petit volant sport à méplat.##Sur la route, son moteur est diabolique. Extrémement coupleux, il posse à tous les étages en cachant ses origines de diesel. Doublé par un comportement efficace, elle est agile et performante.;;17767;Blanc;1968;14/11/2013;02/03/2017;;;935634;262;GO;cuir et tissu#jantes alu#retroviseurs rabattable electriquement#regulateur vitesse#aide parking#ESP#volant multifonctions#autoradio#Bluetooth#ordinateur de bord#ASR#allumage automatique des feux#retros electriques#banquette arriere modulable#vitres teintees#anti-brouillard;;;VP;146;DC 795 JN;56000;182;;426;SEAT;2013;4;5;6;;- Suivi d'entretien ;1295;http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_01.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_02.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_03.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_04.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_05.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_06.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_07.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_08.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_09.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_10.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_11.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_12.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_13.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_14.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_15.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_16.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_18.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_19.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_20.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DC795JN/$file/DC795JN_21.jpg#;5;N;16221;29155;AVANT;9;184;380;Compacte;MECANIQUE;Leon 2.0 TDI 184 Start/Stop FR;;E22BD09CD775FE7AC12580D700361731;170221129\nO;Pick-up;O;222;Le Navara est un vrai pickup, au look de baroudeur et aux vraies capacités en tout terrain.##A bord, l'équipement est généreux, il est confortable et et bien présenté.##Son moteur très coupleux permet d'affronter tous les types de parcours.##Il bénéficie ici d'un attelage et d'un hard top pour cacher son chargement et le protéger.;;22543;Gris clair métal;2488;29/12/2014;23/02/2017;;;934149;320;GO;climatisation regulee#jantes alu#regulateur vitesse#ESP#hard top#autoradio#ordinateur de bord#siege chauffant#retros electriques#vitres teintees#vitres electriques#anti-brouillard#ABS#attelage;;;CTTE;179;DM 644 XN;25000;185;;522;NISSAN;2014;4;2;6;;- Suivi d'entretien ;1895;http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DM644XN/$file/DM644XN_01.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DM644XN/$file/DM644XN_02.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DM644XN/$file/DM644XN_03.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DM644XN/$file/DM644XN_04.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DM644XN/$file/DM644XN_06.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DM644XN/$file/DM644XN_07.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DM644XN/$file/DM644XN_08.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DM644XN/$file/DM644XN_09.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DM644XN/$file/DM644XN_10.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DM644XN/$file/DM644XN_11.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DM644XN/$file/DM644XN_12.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DM644XN/$file/DM644XN_13.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/DM644XN/$file/DM644XN_14.jpg#;0;O;20290;31150;4X4;8;190;NAVARA;4x4, SUV;MECANIQUE;Navara 2.5 dCi 190 Euro 5 King Cab SE;;3EB0D239FD490A6AC12580D0003753C8;170217194\nO;Pick-up;O;185;Référence sur le marché des pickups tout terrain, le Hilux a la réputation d'un vrai baroudeur indestructible, et ce n'est pas usurpé. A l'aise partout, il brille par son confort. Le véhicule présenté ici est neuf et prêt à vous accompagner dans toutes vos aventures.;;30027;Noir;2494;02/12/2016;03/03/2017;02/12/2018;;935868;309;GO;air conditionne#GPS#volant multifonctions#autoradio#retros electriques#cache bagages#vitres electriques#ABS#direction assistee#attelage;Véhiculeenétatneuf;;CTTE;181;EH 647 FQ;1200;186;;533;TOYOTA;2016;4;4;6;;- Véhicule en état neuf ;2055;http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_01.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_02.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_03.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_04.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_05.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_06.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_07.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_08.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_09.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_10.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_11.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_12.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_13.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_14.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_15.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_16.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_17.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_18.jpg#http://extranet.vpauto.fr/Etincelle/PhotosLorient.nsf/Photos/EH647FQ/$file/EH647FQ_19.jpg#;0;O;28490;33540;4X4;8;149;HILUX RC2 X-TRA CABINE;4x4, SUV;MECANIQUE;HILUX RC2 X-TRA CAB 4WD 2.5L 144 D-4D LEGENDE;;1E3EACDE54AC6A8CC12580D80039605E;170227046\n",
+			"file": "/home/roussillep/sandbox/todaycar/app/Resources/exchange/in/StockTrusty.csv",
+			"file_size": 37958,
+			"file_write_time": 131338783028306896,
+			"settings":
+			{
+				"buffer_size": 37583,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/app/Resources/crontab.production",
+			"settings":
+			{
+				"buffer_size": 882,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Controller/ContactInspectorController.php",
+			"settings":
+			{
+				"buffer_size": 1402,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/vendor/faros/lead-bundle/Controller/AbstractFormController.php",
+			"settings":
+			{
+				"buffer_size": 6464,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/app/config/roles.yml",
+			"settings":
+			{
+				"buffer_size": 3940,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/config/routing.yml",
+			"settings":
+			{
+				"buffer_size": 4017,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Command/AdBookingCleanupCommand.php",
+			"settings":
+			{
+				"buffer_size": 2363,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/app/config/parameters.yml.dist",
+			"settings":
+			{
+				"buffer_size": 875,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Search/Index.php",
+			"settings":
+			{
+				"buffer_size": 9086,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Command/ElasticSearchPopulateCommand.php",
+			"settings":
+			{
+				"buffer_size": 4964,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/app/config/parameters.yml",
+			"settings":
+			{
+				"buffer_size": 855,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "aline.faust26@gmail.com,amelie.vanbe@hotmail.fr,caro.roy49@gmail.com,cholet.julien@orange.fr,clementmamont@gmail.com,conor.marcus@gmail.com,dtgiveupmj@gmail.com,fredumont@hotmail.fr,gwenael.jouannic@gmail.com,jeanlin.dubus@free.fr,jeremy.lecat.44@gmail.com,jose.brikman@orange.fr,josemalagon69@hotmail.com,olivier.blanc@laposte.net,patricebuchon@yahoo.fr,renauxe@hotmail.com,samuel_faust@yahoo.fr,schoelinck@gmail.com,simoesvieira.bastien@wanadoo.fr,thierry.boudaud@free.fr,thomas@jollytime.fr,virgi2501@gmail.com,xav.par@gmail.com,zenia.barrios@protonmail.com",
+			"settings":
+			{
+				"buffer_size": 560,
+				"line_ending": "Unix",
+				"name": "aline.faust26@gmail.com,amelie.vanbe@hotmail.fr,ca"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/vendor/symfony/symfony/src/Symfony/Component/Config/Util/XmlUtils.php",
+			"settings":
+			{
+				"buffer_size": 8107,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Ads/show.html.twig",
+			"settings":
+			{
+				"buffer_size": 13829,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Ads/_rapport.html.twig",
+			"settings":
+			{
+				"buffer_size": 3637,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Form/SellInquiryFlow.php",
+			"settings":
+			{
+				"buffer_size": 2172,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/AdminBundle/Controller/SellLandingPageController.php",
+			"settings":
+			{
+				"buffer_size": 3539,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/vendor/faros/admin-bundle/Controller/CRUD/ORMController.php",
+			"settings":
+			{
+				"buffer_size": 40256,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/vendor/faros/core-bundle/Publication/PublicationManager.php",
+			"settings":
+			{
+				"buffer_size": 3590,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/AdminBundle/Controller/AdController.php",
+			"settings":
+			{
+				"buffer_size": 3982,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/AdminBundle/Controller/ContactInspectorController.php",
+			"settings":
+			{
+				"buffer_size": 6601,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Controller/SellInquiryController.php",
+			"settings":
+			{
+				"buffer_size": 4627,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Entity/Repository/SellLandingPageRepository.php",
+			"settings":
+			{
+				"buffer_size": 1752,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/app/DoctrineMigrations/Version20161212112131.php",
+			"settings":
+			{
+				"buffer_size": 1189,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Entity/Page/SellLandingPage.php",
+			"settings":
+			{
+				"buffer_size": 11899,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Contact/Form/sell_inquiry.html.twig",
+			"settings":
+			{
+				"buffer_size": 1411,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/AdminBundle/Resources/views/SellLandingPage/form.html.twig",
+			"settings":
+			{
+				"buffer_size": 2117,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/todaycar/src/AdminBundle/Resources/translations/messages.fr.yml",
+			"settings":
+			{
+				"buffer_size": 4737,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 357.0,
+		"last_filter": "move",
+		"selected_items":
+		[
+			[
+				"move",
+				"File: Move"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"boxy",
+				"Boxy Theme: Activation"
+			],
+			[
+				"theme",
+				"Boxy Theme: Preferences"
+			],
+			[
+				"blame",
+				"Git: Blame"
+			],
+			[
+				"thmee",
+				"Themr: List themes"
+			],
+			[
+				"thme",
+				"Themr: List themes"
+			],
+			[
+				"json",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"scheme",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"sche",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"schele",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reid",
+				"Indentation: Reindent Lines"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 391.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/roussillep/sandbox/todaycar",
+		"/home/roussillep/sandbox/todaycar/app",
+		"/home/roussillep/sandbox/todaycar/app/Resources",
+		"/home/roussillep/sandbox/todaycar/app/config",
+		"/home/roussillep/sandbox/todaycar/app/config/capistrano",
+		"/home/roussillep/sandbox/todaycar/app/config/capistrano/stages",
+		"/home/roussillep/sandbox/todaycar/app/config/capistrano/tasks",
+		"/home/roussillep/sandbox/todaycar/src",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Controller",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Import",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/config",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/config/import",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Email",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Email/fr",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Email/fr/Booking",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Email/fr/Form",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Email/fr/Form/Admin",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Email/fr/Form/User",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Email/fr/Sell",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Search",
+		"/home/roussillep/sandbox/todaycar/vendor"
+	],
+	"file_history":
+	[
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Ads/_rapport.html.twig",
+		"/home/roussillep/sandbox/todaycar/app/Resources/crontab.production",
+		"/home/roussillep/sandbox/todaycar/vendor/faros/core-bundle/Publication/PublicationManager.php",
+		"/home/roussillep/sandbox/todaycar/src/AdminBundle/Form/SellLandingPageType.php",
+		"/home/roussillep/sandbox/todaycar/vendor/faros/admin-bundle/Controller/CRUD/ORMController.php",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Controller/AdController.php",
+		"/home/roussillep/sandbox/todaycar/app/config/config.yml",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Entity/Repository/SellLandingPageRepository.php",
+		"/home/roussillep/sandbox/todaycar/src/AdminBundle/Controller/SellInquiryController.php",
+		"/home/roussillep/sandbox/todaycar/web/.htaccess",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Contact/Form/sell_inquiry_confirm.html.twig",
+		"/home/roussillep/sandbox/todaycar/vendor/faros/avant-theme-bundle/Resources/views/themes/avant/Email/request-password.html.twig",
+		"/home/roussillep/sandbox/todaycar/vendor/faros/avant-theme-bundle/Controller/Admin/SecurityController.php",
+		"/home/roussillep/sandbox/todaycar/vendor/faros/core-bundle/Resources/skeleton/Entity/User.php",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Entity/Core/User.php",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Controller/InquiryController.php",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Controller/SellInquiryController.php",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Contact/Form/sell_inquiry_layout.html.twig",
+		"/home/roussillep/sandbox/brithotel/src/BritHotel/ExtranetBundle/Controller/Price/GroupRateController.php",
+		"/home/roussillep/sandbox/renoval/var/logs/dev.inquiry_api.log",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Form/Type/DealerProfileType.php",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Entity/Cms/Repository/NewsRepository.php",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Controller/DashboardController.php",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Entity/Core/DealerProfile.php",
+		"/home/roussillep/sandbox/renoval/web/bundles/extranet/less/theme.less",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Controller/Lead/InquiryController.php",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Controller/Core/DealerController.php",
+		"/home/roussillep/sandbox/renoval/app/DoctrineMigrations/Version20161201153121.php",
+		"/home/roussillep/sandbox/renoval/app/DoctrineMigrations/Version20161201152949.php",
+		"/home/roussillep/sandbox/renoval/var/logs/dev.dealer_api.log",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Resources/views/Core/Dealer/list.html.twig",
+		"/home/roussillep/sandbox/renoval/app/config/config.yml",
+		"/home/roussillep/sandbox/renoval/app/config/config_dev.yml",
+		"/home/roussillep/sandbox/renoval/app/config/config_prod.yml",
+		"/home/roussillep/sandbox/renoval/vendor/faros/avant-theme-bundle/Resources/views/themes/avant/base.html.twig",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Menu/Builder.php",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Resources/config/services.yml",
+		"/home/roussillep/sandbox/renoval/vendor/faros/avant-theme-bundle/Menu/DefaultMenuBuilder.php",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Resources/views/layout.html.twig",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Resources/public/less/theme.less",
+		"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/less/bootstrap-avanttheme.less",
+		"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/libs/less/variables.less",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Resources/views/Menu/main.html.twig",
+		"/home/roussillep/sandbox/renoval/vendor/knplabs/knp-menu/src/Knp/Menu/Resources/views/knp_menu.html.twig",
+		"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/js/admin.js",
+		"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/libs/js/application.js",
+		"/home/roussillep/sandbox/renoval/vendor/faros/avant-theme-bundle/Resources/config/services.yml",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Menu/DefaultMenuBuilder.php",
+		"/home/roussillep/sandbox/renoval/vendor/faros/avant-theme-bundle/Resources/views/themes/avant/Menu/main.html.twig",
+		"/home/roussillep/sandbox/bernard-solfin/docker-compose.override.yml",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Controller/Catalog/CatalogController.php",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/catalog-bundle/Faros/CatalogBundle/Controller/CatalogController.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/CatalogController.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/CommonsController.php",
+		"/home/roussillep/sandbox/bernard-solfin/app/config/parameters.yml",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Ads/show.html.twig",
+		"/home/roussillep/sandbox/todaycar/app/config/parameters.yml",
+		"/home/roussillep/sandbox/todaycar/var/logs/dev-2016-06-14.log",
+		"/home/roussillep/sandbox/todaycar/Gemfile",
+		"/home/roussillep/sandbox/todaycar/Capfile",
+		"/home/roussillep/sandbox/todaycar/app/config/capistrano/deploy.rb",
+		"/home/roussillep/sandbox/todaycar/app/config/capistrano/tasks/secure.rake",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/js/theia-sticky-sidebar.js",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/layout.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Booking/recapitulatif.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Booking/livraison.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Ads/index.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Booking/_recap_final.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/less/responsive.less",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/less/styleDev.less",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/js/script.js",
+		"/home/roussillep/sandbox/todaycar/gulpfile.js",
+		"/home/roussillep/gnome-terminal-colors-solarized/set_dark.sh",
+		"/home/roussillep/.config/dconf/user",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Controller/ContactInspectorController.php",
+		"/home/roussillep/sandbox/todaycar/vendor/bower_components/theia-sticky-sidebar/js/theia-sticky-sidebar.js",
+		"/home/roussillep/sandbox/todaycar/package.json",
+		"/home/roussillep/sandbox/todaycar/docker-compose.override.yml.dist",
+		"/home/roussillep/sandbox/todaycar/docker-compose.yml",
+		"/home/roussillep/sandbox/todaycar/docker-compose.override.yml",
+		"/home/roussillep/sandbox/todaycar/app/config/parameters.yml.dist",
+		"/home/roussillep/.dotfiles/.tmux.conf"
+	],
+	"find":
+	{
+		"height": 60.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"/home/roussillep/sandbox/todaycar/src",
+			"/home/roussillep/sandbox/todaycar/src/AdminBundle/Controller",
+			"/home/roussillep/sandbox/todaycar/src",
+			"/home/roussillep/sandbox/todaycar/src/SiteBundle/Entity",
+			"/home/roussillep/sandbox/todaycar/vendor/faros/avant-theme-bundle",
+			"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views",
+			"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Entity",
+			"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Entity/Core",
+			"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/libs/js",
+			"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/js",
+			"/home/roussillep/sandbox/renoval/vendor/faros",
+			"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/less"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\n",
+			",",
+			"INSPE",
+			"macadam_assessment",
+			"updateAssessmentQuery",
+			"transmission",
+			"macadam_assessment",
+			"experti",
+			"landing",
+			"filter",
+			"dump",
+			"themes/avant/libs/",
+			"step_order",
+			"backgroundPosition",
+			"BackgroundPosition",
+			"backgroundPosition",
+			"BackgroundPosition",
+			"backgroundPosition",
+			"BackgroundPosition",
+			"default",
+			"backgroundPosition",
+			"'validation_groups' => ",
+			"setp_",
+			"flow_sellInquiry_step2",
+			"flow_sellInquiry_step1",
+			"step",
+			"faros_avant_theme.admin.request_password.email",
+			"request-password",
+			"google_conversion_id",
+			"boolean",
+			"Enabled",
+			"enabled",
+			"Enabled",
+			"enabled",
+			"dealer",
+			"acc-menu",
+			".show",
+			"nav",
+			"display",
+			"display:",
+			"#d2d3d6",
+			"display",
+			"acc-menu",
+			"hasChild",
+			"DefaultMenuBuilder",
+			"isProductPublished",
+			"$this->pm",
+			"disabled",
+			"\n        $suggest = count($params) > 0 ? $index->suggest($params) : [];",
+			"\n        $suggestAds = array_column($suggest['hits']['hits'], '_source', '_id');",
+			"\n        $suggest = $index->suggest($params);",
+			"brand",
+			"model",
+			"\n                                'boost' => 1,",
+			"boots",
+			"booots",
+			":",
+			"}",
+			"{",
+			"$page * 5",
+			"cross",
+			"awl",
+			"awol",
+			"ads",
+			"Envoyez nous un email",
+			"blocAnnonce",
+			"#pageShowAd .blocAnnonce",
+			"fixPrice",
+			"infoprix",
+			"trustycar",
+			"target_base"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 17,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/config/validation.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4168,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1942,
+								1942
+							],
+							[
+								2044,
+								2044
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1942,
+										1943
+									],
+									"2":
+									[
+										2044,
+										2045
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"brackethighlighter.default"
+									],
+									"2":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1932,
+										1933
+									],
+									"2":
+									[
+										2034,
+										2035
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 294.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Form/SellInquiryType.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3198,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1568,
+								1568
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1774,
+										1775
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/square_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1567,
+										1568
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/roussillep/sandbox/todaycar/vendor/faros/avant-theme-bundle/Controller/Admin/SecurityController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9378,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4728,
+								4728
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										4762,
+										4763
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										4728,
+										4729
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1575.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/roussillep/sandbox/todaycar/vendor/faros/core-bundle/Entity/Repository/UserRepository.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6385,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1933,
+								1933
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1983,
+										1984
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1926,
+										1927
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Import/AdListener.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11527,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6667,
+								6667
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										6667,
+										6668
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										6660,
+										6661
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1980.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Entity/Ad/Ad.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 31987,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								755,
+								755
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+									"1":
+									[
+										319,
+										320
+									]
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/roussillep/sandbox/todaycar/app/Resources/exchange/in/StockTrusty.csv",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 37583,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2506,
+								2506
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/roussillep/sandbox/todaycar/app/Resources/crontab.production",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 882,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								882,
+								882
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Controller/ContactInspectorController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1402,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								546,
+								546
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										546,
+										547
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										529,
+										530
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/home/roussillep/sandbox/todaycar/vendor/faros/lead-bundle/Controller/AbstractFormController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6464,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4781,
+								4781
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										4780,
+										4781
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										4735,
+										4736
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1890.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/home/roussillep/sandbox/todaycar/app/config/roles.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3940,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2044,
+								2044
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 228.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/config/routing.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4017,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								468,
+								468
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Command/AdBookingCleanupCommand.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2363,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								945,
+								945
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										944,
+										945
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										943,
+										944
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/home/roussillep/sandbox/todaycar/app/config/parameters.yml.dist",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 875,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Search/Index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9086,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Command/ElasticSearchPopulateCommand.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4964,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1978,
+								1978
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1978,
+										1979
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1966,
+										1967
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 354.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "/home/roussillep/sandbox/todaycar/app/config/parameters.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 855,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								709,
+								709
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 560,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								560,
+								560
+							]
+						],
+						"settings":
+						{
+							"auto_name": "aline.faust26@gmail.com,amelie.vanbe@hotmail.fr,ca",
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"default_dir": "/home/roussillep/sandbox/todaycar",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "/home/roussillep/sandbox/todaycar/vendor/symfony/symfony/src/Symfony/Component/Config/Util/XmlUtils.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8107,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								547,
+								547
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Ads/show.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13829,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6121,
+								6121
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										6120,
+										6121
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										6119,
+										6120
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1743.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Ads/_rapport.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3637,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								995,
+								995
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										2699,
+										2702
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/tag.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										979,
+										982
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Form/SellInquiryFlow.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2172,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								401,
+								401
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1817,
+										1818
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										400,
+										401
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 29,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "/home/roussillep/sandbox/todaycar/src/AdminBundle/Controller/SellLandingPageController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3539,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2825,
+								2825
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										2838,
+										2839
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/square_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										2711,
+										2712
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 978.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "/home/roussillep/sandbox/todaycar/vendor/faros/admin-bundle/Controller/CRUD/ORMController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 40256,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23556,
+								23556
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										23608,
+										23609
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										23539,
+										23540
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 9633.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "/home/roussillep/sandbox/todaycar/vendor/faros/core-bundle/Publication/PublicationManager.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3590,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1994,
+								1994
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										2010,
+										2011
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1994,
+										1995
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 720.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "/home/roussillep/sandbox/todaycar/src/AdminBundle/Controller/AdController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3982,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								796,
+								796
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1541,
+										1542
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										917,
+										918
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 309.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 25,
+					"type": "text"
+				},
+				{
+					"buffer": 26,
+					"file": "/home/roussillep/sandbox/todaycar/src/AdminBundle/Controller/ContactInspectorController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6601,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1405,
+								1405
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1404,
+										1405
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										928,
+										929
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 504.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 28,
+					"type": "text"
+				},
+				{
+					"buffer": 27,
+					"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Controller/SellInquiryController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4627,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1201,
+										1202
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1200,
+										1201
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 30,
+					"type": "text"
+				},
+				{
+					"buffer": 28,
+					"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Entity/Repository/SellLandingPageRepository.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1752,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1100,
+								1100
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1101,
+										1102
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1100,
+										1101
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 31,
+					"type": "text"
+				},
+				{
+					"buffer": 29,
+					"file": "/home/roussillep/sandbox/todaycar/app/DoctrineMigrations/Version20161212112131.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1189,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								678,
+								678
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										678,
+										679
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										583,
+										584
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 32,
+					"type": "text"
+				},
+				{
+					"buffer": 30,
+					"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Entity/Page/SellLandingPage.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11899,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1877,
+								1877
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+									"1":
+									[
+										501,
+										502
+									]
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 495.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 26,
+					"type": "text"
+				},
+				{
+					"buffer": 31,
+					"file": "/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Contact/Form/sell_inquiry.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1411,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								702,
+								702
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										701,
+										702
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										661,
+										662
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 33,
+					"type": "text"
+				},
+				{
+					"buffer": 32,
+					"file": "/home/roussillep/sandbox/todaycar/src/AdminBundle/Resources/views/SellLandingPage/form.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2117,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1288,
+								1288
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1310,
+										1311
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1271,
+										1272
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 27,
+					"type": "text"
+				},
+				{
+					"buffer": 33,
+					"file": "/home/roussillep/sandbox/todaycar/src/AdminBundle/Resources/translations/messages.fr.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4737,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1368.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "todaycar.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"adbooki",
+				"src/SiteBundle/Command/AdBookingCleanupCommand.php"
+			],
+			[
+				"crontab",
+				"app/Resources/crontab.production"
+			],
+			[
+				"ad.php",
+				"src/SiteBundle/Entity/Ad/Ad.php"
+			],
+			[
+				"index.php",
+				"src/SiteBundle/Search/Index.php"
+			],
+			[
+				"xmlutils",
+				"vendor/symfony/symfony/src/Symfony/Component/Config/Util/XmlUtils.php"
+			],
+			[
+				"securitycontro",
+				"vendor/faros/avant-theme-bundle/Controller/Admin/SecurityController.php"
+			],
+			[
+				"publi",
+				"vendor/faros/core-bundle/Publication/PublicationManager.php"
+			],
+			[
+				"landincntroller",
+				"src/AdminBundle/Controller/SellLandingPageController.php"
+			],
+			[
+				"selllandingre",
+				"src/SiteBundle/Entity/Repository/SellLandingPageRepository.php"
+			],
+			[
+				"selllandingpagerepo",
+				"src/SiteBundle/Entity/Repository/SellLandingPageRepository.php"
+			],
+			[
+				"selllandingtype",
+				"src/AdminBundle/Form/SellLandingPageType.php"
+			],
+			[
+				"sellinquicontroller",
+				"src/SiteBundle/Controller/SellInquiryController.php"
+			],
+			[
+				"user.php",
+				"src/SiteBundle/Entity/Core/User.php"
+			],
+			[
+				"emailpassword",
+				"vendor/faros/avant-theme-bundle/Resources/views/themes/avant/Email/request-password.html.twig"
+			],
+			[
+				".htacecss",
+				"web/.htaccess"
+			],
+			[
+				"dealerryp",
+				"src/ExtranetBundle/Form/Type/DealerProfileType.php"
+			],
+			[
+				"dealerprofile",
+				"src/ExtranetBundle/Entity/Core/DealerProfile.php"
+			],
+			[
+				"theme.less",
+				"web/bundles/extranet/less/theme.less"
+			],
+			[
+				"inquicontroller",
+				"src/ExtranetBundle/Controller/Lead/InquiryController.php"
+			],
+			[
+				"varlogsdealer",
+				"var/logs/dev.dealer_api.log"
+			],
+			[
+				"dealercontroller",
+				"src/ExtranetBundle/Controller/Core/DealerController.php"
+			],
+			[
+				"defaultmenubuilder",
+				"vendor/faros/avant-theme-bundle/Menu/DefaultMenuBuilder.php"
+			],
+			[
+				"admin.js",
+				"web/bundles/farosavanttheme/themes/avant/js/admin.js"
+			],
+			[
+				"knpmenuhtml",
+				"vendor/knplabs/knp-menu/src/Knp/Menu/Resources/views/knp_menu.html.twig"
+			],
+			[
+				"default",
+				"src/ExtranetBundle/Menu/DefaultMenuBuilder.php"
+			],
+			[
+				"bootstrap-avanttheme.less",
+				"web/bundles/farosavanttheme/themes/avant/less/bootstrap-avanttheme.less"
+			],
+			[
+				"knp_menu.html",
+				"vendor/knplabs/knp-menu/src/Knp/Menu/Resources/views/knp_menu.html.twig"
+			],
+			[
+				"menubuilder",
+				"vendor/faros/avant-theme-bundle/Menu/DefaultMenuBuilder.php"
+			],
+			[
+				"main.html.tw",
+				"vendor/faros/avant-theme-bundle/Resources/views/themes/avant/Menu/main.html.twig"
+			],
+			[
+				"avantbase.html.twi",
+				"vendor/faros/avant-theme-bundle/Resources/views/themes/avant/base.html.twig"
+			],
+			[
+				"catalogcontroller",
+				"src/BernardSolfin/SiteBundle/Controller/CatalogController.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "ponroy",
+		"selected_items":
+		[
+			[
+				"ponroy",
+				"~/sandbox/ponroy.sublime-workspace"
+			],
+			[
+				"",
+				"~/sandbox/dotfiles.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 251.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

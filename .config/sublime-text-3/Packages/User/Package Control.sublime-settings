@@ -32,6 +32,7 @@
 		"PhpDoc",
 		"Predawn Monokai",
 		"Pretty JSON",
+		"ProjectManager",
 		"Restructured Text (RST) Snippets",
 		"SideBarEnhancements",
 		"Slugify",
@@ -42,6 +43,7 @@
 		"Theme - Soda",
 		"Theme - Sodarized",
 		"Themr",
+		"TodoReview",
 		"Unicode Character Highlighter"
 	]
 }

@@ -1,0 +1,3814 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"constat",
+				"constant_score"
+			],
+			[
+				"publi",
+				"publishEnd"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"inli",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Resources/public/js/admin.js",
+			"settings":
+			{
+				"buffer_size": 3274,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/public/js/script.js",
+			"settings":
+			{
+				"buffer_size": 19370,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/public/js/shop.js",
+			"settings":
+			{
+				"buffer_size": 12629,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Product/show.html.twig",
+			"settings":
+			{
+				"buffer_size": 26058,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Command/StockCheckerCommand.php",
+			"settings":
+			{
+				"buffer_size": 2308,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\nnamespace Faros\\ShopBundle\\Form;\n\nuse Symfony\\Component\\Form\\AbstractType;\nuse Symfony\\Component\\Form\\FormBuilderInterface;\n\nuse Faros\\AdminBundle\\Form\\DataTransformer\\TaxonomyChoiceToList;\nuse Faros\\AdminBundle\\Listener\\TranslatableFieldListener;\nuse Faros\\ShopBundle\\Form\\DataTransformer\\CouponCodeCollectionToString;\nuse Faros\\ShopBundle\\Form\\DataTransformer\\PriorityListToCollection;\nuse Symfony\\Component\\Validator\\Constraints\\Callback;\nuse Symfony\\Component\\Validator\\ExecutionContextInterface;\n\nclass CouponType extends AbstractType\n{\n    private $container;\n\n    public function __construct($container)\n    {\n        $this->container = $container;\n    }\n\n    public function buildForm(FormBuilderInterface $builder, array $options)\n    {\n        $entity = $builder->getData();\n        // Translatable Aware Form\n        $subscriber = new TranslatableFieldListener($builder->getFormFactory(), array());\n        $builder->addEventSubscriber($subscriber);\n\n        $translator = $this->container->get('translator');\n        $doctrine   = $this->container->get('doctrine');\n\n        $couponClass         = $this->container->getParameter('faros_shop.coupon_class');\n        $advantageClass      = $this->container->getParameter('faros_shop.coupon_advantage_class');\n        $advantageRepository = $doctrine->getRepository($advantageClass);\n        $taxonomyClass       = $this->container->getParameter('faros_cms.taxonomy_class');\n        $taxonomyRepository  = $doctrine->getRepository($taxonomyClass);\n\n        $builder\n            ->add('name')\n            ->add('alternativeName')\n            ->add('type', 'choice', array(\n                'choices'    => $couponClass::$typeValues,\n            ))\n            ->add('enabled', 'checkbox', array(\n                'required' => false,\n                'help_inline' => 'coupon.enabled'\n            ))\n            ->add('description', 'ckeditor')\n\n            // Handling Advantage field\n            ->add(\n                $builder->create('advantages', 'text', array(\n                    'required' => false,\n                    'label_render' => false,\n                    'attr' => array(\n                        'style' => 'display:none',\n                    )\n                ))\n                ->addModelTransformer(new PriorityListToCollection($advantageRepository))\n            );\n        ;\n\n        // Handling Codes field\n        $couponCodeClass = $this->container->getParameter('faros_shop.coupon_code_class');\n        $codeRepository = $doctrine->getRepository($couponCodeClass);b\n        $codes = array();\n\n        foreach ($entity->getCodes() as $code) {\n            $codes []= $code->getCode();\n        }\n\n        $builder->add(\n            $builder->create('codes', 'text', array(\n                'required'         => false,\n                'attr' => array(\n                    'class'            => 'select2-tag',\n                    'style'            => 'width: 100%',\n                    'data-placeholder' => $translator->trans('coupon.edit.placeholder.code', [], 'admin'),\n                    'data-tags'        => implode(',',$codes)\n                ),\n                'constraints' => new Callback(array(\n                    'methods' => array(function($data, ExecutionContextInterface $context) {\n                        if (0 == $data->count()) {\n                            $context->addViolationAtSubPath('value', 'coupon.code.at_least_one_code');\n                        }\n                    })\n                )),\n            ))\n            ->addModelTransformer(new CouponCodeCollectionToString($codeRepository, $entity))\n        );\n\n        // Handling Taxonomy field\n        if (null !== ($parentTaxonomy = $this->container->getParameter('faros_shop.coupon_taxonomy'))) {\n            $parentTaxonomy  = $taxonomyRepository->findOneByContent($parentTaxonomy);\n            if (null !== $parentTaxonomy) {\n                $taxonomies      = array();\n                foreach ($parentTaxonomy->getChildren() as $taxonomy) {\n                    $taxonomies[] = $taxonomy->getContent();\n                }\n                $builder->add(\n                    $builder->create('taxonomy', 'text', array(\n                        'required'         => false,\n                        'attr'             => array(\n                            'class'            => 'select2-tag',\n                            'style'            => 'width: 100%',\n                            'data-placeholder' => $translator->trans('coupon.edit.placeholder.taxonomy', [], 'admin'),\n                            'data-tags'        => implode(',', $taxonomies)\n                        )\n                    ))\n                    ->addModelTransformer(new TaxonomyChoiceToList($this->container, $taxonomyRepository, $parentTaxonomy))\n                );\n            }\n        }\n\n        return $builder;\n    }\n\n    public function getName()\n    {\n        return 'faros_coupon_type';\n    }\n}\n",
+			"file": "/home/roussillep/sandbox/bernard-solfin/vendor/faros/shop-bundle/Faros/ShopBundle/Form/CouponType.php",
+			"file_size": 4948,
+			"file_write_time": 131232497208941264,
+			"settings":
+			{
+				"buffer_size": 4949,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Type to search: ",
+			"settings":
+			{
+				"buffer_size": 16,
+				"line_ending": "Unix",
+				"name": "Instant File Search",
+				"scratch": true
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Entity/Shop/Coupon.php",
+			"settings":
+			{
+				"buffer_size": 11797,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/app/Resources/crontab.preprod",
+			"settings":
+			{
+				"buffer_size": 1095,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Cart/_form.html.twig",
+			"settings":
+			{
+				"buffer_size": 4264,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Form/CartItemType.php",
+			"settings":
+			{
+				"buffer_size": 4314,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Resources/views/Admin/dashboard.html.twig",
+			"settings":
+			{
+				"buffer_size": 5608,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Catalog/_productList.html.twig",
+			"settings":
+			{
+				"buffer_size": 3100,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Catalog/_product.html.twig",
+			"settings":
+			{
+				"buffer_size": 3541,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Controller/AdminController.php",
+			"settings":
+			{
+				"buffer_size": 1530,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/SearchEngineController.php",
+			"settings":
+			{
+				"buffer_size": 17699,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/CatalogController.php",
+			"settings":
+			{
+				"buffer_size": 14889,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/app/Resources/crontab.production",
+			"settings":
+			{
+				"buffer_size": 1245,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/ProductController.php",
+			"settings":
+			{
+				"buffer_size": 17849,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Catalog/Store.php",
+			"settings":
+			{
+				"buffer_size": 2264,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Entity/CatalogRepository.php",
+			"settings":
+			{
+				"buffer_size": 2536,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/config/import/shop.yml",
+			"settings":
+			{
+				"buffer_size": 6757,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Command/ExportCommand.php",
+			"settings":
+			{
+				"buffer_size": 3701,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/bernard-solfin/vendor/faros/catalog-bundle/Faros/CatalogBundle/Model/Catalog.php",
+			"settings":
+			{
+				"buffer_size": 4465,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 357.0,
+		"last_filter": "blame",
+		"selected_items":
+		[
+			[
+				"blame",
+				"Git: Blame"
+			],
+			[
+				"move",
+				"File: Move"
+			],
+			[
+				"dupl",
+				"File: Duplicate"
+			],
+			[
+				"mov",
+				"File: Move"
+			],
+			[
+				"bale",
+				"BracketHighlighter: Jump to Left Bracket"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"thmee",
+				"Themr: List themes"
+			],
+			[
+				"theme",
+				"Themr: List themes"
+			],
+			[
+				"thme",
+				"Themr: List themes"
+			],
+			[
+				"json",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"scheme",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"sche",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"schele",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reid",
+				"Indentation: Reindent Lines"
+			]
+		],
+		"width": 701.0
+	},
+	"console":
+	{
+		"height": 391.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/roussillep/sandbox/bernard-solfin",
+		"/home/roussillep/sandbox/bernard-solfin/app",
+		"/home/roussillep/sandbox/bernard-solfin/app/Resources",
+		"/home/roussillep/sandbox/bernard-solfin/app/Resources/exchange",
+		"/home/roussillep/sandbox/bernard-solfin/app/Resources/exchange/input",
+		"/home/roussillep/sandbox/bernard-solfin/app/Resources/exchange/input/20170313-0810",
+		"/home/roussillep/sandbox/bernard-solfin/app/Resources/exchange/input/20170313-1810",
+		"/home/roussillep/sandbox/bernard-solfin/app/config",
+		"/home/roussillep/sandbox/bernard-solfin/app/config/docker",
+		"/home/roussillep/sandbox/bernard-solfin/app/config/docker/php",
+		"/home/roussillep/sandbox/bernard-solfin/src",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Command",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Command/AvisVerifies",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Controller",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Resources",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Resources/public",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Resources/views",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Resources/views/Admin",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/config",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/config/routing",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/public",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Catalog",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Valmary",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Valmary/Exception",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Valmary/Interpreter",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Valmary/Response",
+		"/home/roussillep/sandbox/bernard-solfin/vendor",
+		"/home/roussillep/sandbox/bernard-solfin/web",
+		"/home/roussillep/sandbox/bernard-solfin/web/e-catalogue"
+	],
+	"file_history":
+	[
+		"/home/roussillep/sandbox/bernard-solfin/app/Resources/crontab.production",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/core-bundle/Faros/CoreBundle/Entity/Behavior/TranslatableEntity.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Entity/Catalog/ProductReference.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Command/StockCheckerCommand.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Entity/Catalog/Product.php",
+		"/home/roussillep/sandbox/bernard-solfin/app/config/routing_dev.yml",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/Dev/EmailController.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Valmary/Response/Response.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Valmary/Response/Shirt.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Email/admin_order_custom_shirt.html.twig",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Email/user_order_custom_shirt.html.twig",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/jms/payment-core-bundle/JMS/Payment/CoreBundle/Entity/ExtendedDataType.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Email/_order_details.html.twig",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Listener/CheckOutListener.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Controller/Shop/CustomShirtController.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/AccountController.php",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/core-bundle/Faros/CoreBundle/Tracking/Tracker.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Resources/views/Shop/CustomShirt/edit.html.twig",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Email/factory_send_shirt.html.twig",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/CatalogController.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/ProductController.php",
+		"/home/roussillep/Téléchargements/export-cmd-bsol.sql",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Resources/config/routing.yml",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Entity/Catalog/ProductReferencePrice.php",
+		"/home/roussillep/sandbox/bernard-solfin/node_modules/bower/lib/core/resolvers/GitHubResolver.js",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Command/ImportCommand.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/config/import/shop.yml",
+		"/home/roussillep/sandbox/bernard-solfin/app/Resources/crontab.preprod",
+		"/home/roussillep/Images/Inès ROW2/P1010583_resultat.rawraw",
+		"/home/roussillep/Téléchargements/custom data (1).webarchive",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/layout.html.twig",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Form/CouponAdvantageType.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Resources/translations/messages.fr.yml",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Shop/Processor/AdvantageProcessor.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Helpers/Traits/CatalogHelper.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Cart/show.html.twig",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/catalog-bundle/Faros/CatalogBundle/Model/Catalog.php",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/catalog-bundle/Faros/CatalogBundle/Model/Category.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Entity/Catalog/ProductCategory.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Entity/Catalog/CategoryHierarchy.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Entity/Catalog/ProductSelection.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Entity/Catalog/ProductSelectionItem.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Product/show.html.twig",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Product/_zoneRef.html.twig",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/CartController.php",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/shop-bundle/Faros/ShopBundle/Cart/Cart.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/OrderController.php",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/checkout-bundle/Faros/CheckoutBundle/Controller/OrderController.php",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/checkout-bundle/Faros/CheckoutBundle/Checkout/CheckoutManager.php",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/shop-bundle/Faros/ShopBundle/Shop/ShopManager.php",
+		"/home/roussillep/sandbox/bernard-solfin/app/config/cms.yml",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Import/Command/AbstractImportCommand.php",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/checkout-bundle/Faros/CheckoutBundle/Controller/DeliveryController.php",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/checkout-bundle/Faros/CheckoutBundle/Controller/PaymentController.php",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/checkout-bundle/Faros/CheckoutBundle/Controller/SoColissimoController.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/CommonsController.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Form/CartItemType.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Cart/_form.html.twig",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity/MappedSuperclass/AbstractClosure.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Search/ProductDomain.php",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/search-bundle/Faros/SearchBundle/Domain/AbstractSearchDomain.php",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/search-bundle/Faros/SearchBundle/Engine/SearchEngine.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Feed/IzifluxService.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Listener/CatalogResolver.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Form/CartType.php",
+		"/home/roussillep/sandbox/brithotel/vendor/beberlei/DoctrineExtensions/src/Query/Postgresql/DateFormat.php",
+		"/home/roussillep/sandbox/brithotel/src/BritHotel/ExtranetBundle/Resources/views/Email/vinivi-request.html.twig",
+		"/home/roussillep/sandbox/brithotel/src/BritHotel/ExtranetBundle/Event/Email/EmailViniviRequestEvent.php",
+		"/home/roussillep/sandbox/brithotel/src/BritHotel/ExtranetBundle/Controller/Service/ViniviController.php",
+		"/home/roussillep/sandbox/brithotel/src/BritHotel/ExtranetBundle/Controller/DashboardController.php",
+		"/home/roussillep/sandbox/brithotel/src/BritHotel/ExtranetBundle/Controller/Price/GroupRateController.php",
+		"/home/roussillep/sandbox/brithotel/vendor/beberlei/DoctrineExtensions/src/Query/Mysql/Date.php",
+		"/home/roussillep/sandbox/brithotel/src/BritHotel/ExtranetBundle/Resources/config/services.yml",
+		"/home/roussillep/sandbox/renoval/var/logs/dev.inquiry_api.log",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Form/Type/DealerProfileType.php",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Entity/Cms/Repository/NewsRepository.php",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Controller/DashboardController.php",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Entity/Core/DealerProfile.php",
+		"/home/roussillep/sandbox/renoval/web/bundles/extranet/less/theme.less",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Controller/Lead/InquiryController.php",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Controller/Core/DealerController.php",
+		"/home/roussillep/sandbox/renoval/app/DoctrineMigrations/Version20161201153121.php",
+		"/home/roussillep/sandbox/renoval/app/DoctrineMigrations/Version20161201152949.php",
+		"/home/roussillep/sandbox/renoval/var/logs/dev.dealer_api.log",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Resources/views/Core/Dealer/list.html.twig",
+		"/home/roussillep/sandbox/renoval/app/config/config.yml",
+		"/home/roussillep/sandbox/renoval/app/config/config_dev.yml",
+		"/home/roussillep/sandbox/renoval/app/config/config_prod.yml",
+		"/home/roussillep/sandbox/renoval/vendor/faros/avant-theme-bundle/Resources/views/themes/avant/base.html.twig",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Menu/Builder.php",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Resources/config/services.yml",
+		"/home/roussillep/sandbox/renoval/vendor/faros/avant-theme-bundle/Menu/DefaultMenuBuilder.php",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Resources/views/layout.html.twig",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Resources/public/less/theme.less",
+		"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/less/bootstrap-avanttheme.less",
+		"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/libs/less/variables.less",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Resources/views/Menu/main.html.twig",
+		"/home/roussillep/sandbox/renoval/vendor/knplabs/knp-menu/src/Knp/Menu/Resources/views/knp_menu.html.twig",
+		"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/js/admin.js",
+		"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/libs/js/application.js",
+		"/home/roussillep/sandbox/renoval/vendor/faros/avant-theme-bundle/Resources/config/services.yml",
+		"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Menu/DefaultMenuBuilder.php",
+		"/home/roussillep/sandbox/renoval/vendor/faros/avant-theme-bundle/Resources/views/themes/avant/Menu/main.html.twig",
+		"/home/roussillep/sandbox/bernard-solfin/docker-compose.override.yml",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Controller/Catalog/CatalogController.php",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/catalog-bundle/Faros/CatalogBundle/Controller/CatalogController.php",
+		"/home/roussillep/sandbox/bernard-solfin/app/config/parameters.yml",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Ads/show.html.twig",
+		"/home/roussillep/sandbox/todaycar/app/config/parameters.yml",
+		"/home/roussillep/sandbox/todaycar/var/logs/dev-2016-06-14.log",
+		"/home/roussillep/sandbox/todaycar/Gemfile",
+		"/home/roussillep/sandbox/todaycar/Capfile",
+		"/home/roussillep/sandbox/todaycar/app/config/capistrano/deploy.rb",
+		"/home/roussillep/sandbox/todaycar/app/config/capistrano/tasks/secure.rake",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/js/theia-sticky-sidebar.js",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/layout.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Booking/recapitulatif.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Booking/livraison.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Ads/index.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Booking/_recap_final.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/less/responsive.less",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/less/styleDev.less",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/js/script.js",
+		"/home/roussillep/sandbox/todaycar/gulpfile.js",
+		"/home/roussillep/gnome-terminal-colors-solarized/set_dark.sh",
+		"/home/roussillep/.config/dconf/user",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Controller/ContactInspectorController.php",
+		"/home/roussillep/sandbox/todaycar/vendor/bower_components/theia-sticky-sidebar/js/theia-sticky-sidebar.js"
+	],
+	"find":
+	{
+		"height": 48.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"/home/roussillep/sandbox/bernard-solfin/app/Resources/exchange/input",
+			"/home/roussillep/sandbox/bernard-solfin/vendor/faros",
+			"/home/roussillep/sandbox/bernard-solfin/src",
+			"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Entity",
+			"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin",
+			"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views",
+			"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle",
+			"/home/roussillep/sandbox/bernard-solfin/src",
+			"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources",
+			"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/config/routing",
+			"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/config",
+			"/home/roussillep/sandbox/bernard-solfin/src",
+			"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Resources",
+			"/home/roussillep/sandbox/bernard-solfin/src",
+			"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin",
+			"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views",
+			"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle",
+			"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views",
+			"/home/roussillep/sandbox/bernard-solfin/src",
+			"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin",
+			"/home/roussillep/sandbox/bernard-solfin/src",
+			"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin",
+			"/home/roussillep/sandbox/brithotel/src/BritHotel",
+			"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Entity",
+			"/home/roussillep/sandbox/renoval/src/ExtranetBundle/Entity/Core",
+			"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/libs/js",
+			"/home/roussillep/sandbox/renoval/web/bundles/farosavanttheme/themes/avant/js",
+			"/home/roussillep/sandbox/renoval/vendor/faros",
+			"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/less"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"247253",
+			"@\\Gedmo\\Mapping\\A",
+			"@\\",
+			"])",
+			":not([disabled]",
+			"disabled",
+			"getPartialProducts",
+			"span2",
+			"span4",
+			"stock",
+			":not([disabled])",
+			"length",
+			"sizes",
+			"shop_cart_form_ajax",
+			"/form",
+			"fidel",
+			"cadeau",
+			"gift",
+			"tracker",
+			"sendToFactory",
+			"monoPOS_",
+			"monoPOS_poche",
+			"ROLE_EMAIL_CUSTOMSHIRT",
+			"custom",
+			"admin_order_custom_shirt",
+			"block iadvize",
+			"iadvize",
+			"POST_SELECT_DELIVERY",
+			"POST_CREATE_ORDER",
+			"CART_UPDATE",
+			"dump",
+			"exact_full_search",
+			", ",
+			"forceProcess",
+			"vinivi",
+			"boolean",
+			"Enabled",
+			"enabled",
+			"Enabled",
+			"enabled",
+			"dealer",
+			"acc-menu",
+			".show",
+			"nav",
+			"display",
+			"display:",
+			"#d2d3d6",
+			"display",
+			"acc-menu",
+			"hasChild",
+			"DefaultMenuBuilder",
+			"isProductPublished",
+			"$this->pm",
+			"disabled",
+			"\n        $suggest = count($params) > 0 ? $index->suggest($params) : [];",
+			"\n        $suggestAds = array_column($suggest['hits']['hits'], '_source', '_id');",
+			"\n        $suggest = $index->suggest($params);",
+			"brand",
+			"model",
+			"\n                                'boost' => 1,",
+			"boots",
+			"booots",
+			":",
+			"}",
+			"{",
+			"$page * 5",
+			"cross",
+			"awl",
+			"awol",
+			"ads",
+			"Envoyez nous un email",
+			"blocAnnonce",
+			"#pageShowAd .blocAnnonce",
+			"fixPrice",
+			"infoprix",
+			"trustycar",
+			"target_base"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 20,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Resources/public/js/admin.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1170,
+										1171
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										0,
+										1
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/public/js/script.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19370,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/public/js/shop.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12629,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6769,
+								6769
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										7356,
+										7357
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										6728,
+										6729
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2520.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Product/show.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 26058,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6096,
+								6096
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										6096,
+										6097
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										6080,
+										6081
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1698.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Command/StockCheckerCommand.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2308,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+									"1":
+									[
+										331,
+										332
+									]
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/roussillep/sandbox/bernard-solfin/vendor/faros/shop-bundle/Faros/ShopBundle/Form/CouponType.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4949,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1635,
+								1635
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1710,
+										1711
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1612,
+										1613
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 150.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16,
+								16
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"default_dir": "/home/roussillep/sandbox/bernard-solfin",
+							"sidebar_instant_search_paths":
+							[
+								"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin"
+							],
+							"syntax": "Packages/SideBarEnhancements/SideBar Results.hidden-tmLanguage",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Entity/Shop/Coupon.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11797,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								919,
+								919
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+									"1":
+									[
+										870,
+										871
+									]
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/home/roussillep/sandbox/bernard-solfin/app/Resources/crontab.preprod",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1095,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Cart/_form.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4264,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3560,
+								3560
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3560,
+										3561
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/double_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										3535,
+										3536
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 213.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Form/CartItemType.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4314,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								24,
+								24
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 720.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Resources/views/Admin/dashboard.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5608,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4270,
+								4270
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 450.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Catalog/_productList.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3100,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2693,
+								2693
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										2693,
+										2694
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										2642,
+										2643
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/views/Catalog/_product.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3541,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								985,
+								985
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										984,
+										985
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										975,
+										976
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Controller/AdminController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1376,
+								1376
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1526,
+										1527
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										214,
+										215
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/SearchEngineController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17699,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5508,
+								5508
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+									"1":
+									[
+										7339,
+										7340
+									]
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1554.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/CatalogController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14889,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								926,
+								926
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										958,
+										959
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										891,
+										892
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "/home/roussillep/sandbox/bernard-solfin/app/Resources/crontab.production",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1245,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1245,
+								1245
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/ProductController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17849,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								992,
+								992
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										993,
+										994
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										992,
+										993
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Catalog/Store.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2264,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								933,
+								933
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										956,
+										957
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										933,
+										934
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Entity/CatalogRepository.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2536,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								890,
+								890
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										889,
+										890
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										885,
+										886
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Resources/config/import/shop.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6757,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1213,
+								1213
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1212,
+										1213
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/square_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1194,
+										1195
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Command/ExportCommand.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3701,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3483,
+								3483
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3496,
+										3497
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										3449,
+										3450
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 765.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"file": "/home/roussillep/sandbox/bernard-solfin/vendor/faros/catalog-bundle/Faros/CatalogBundle/Model/Catalog.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4465,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3072,
+								3072
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3126,
+										3127
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										3064,
+										3065
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 594.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "bernard-solfin.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"crontab",
+				"app/Resources/crontab.production"
+			],
+			[
+				"shop.yml",
+				"src/BernardSolfin/SiteBundle/Resources/config/import/shop.yml"
+			],
+			[
+				"catalogcontroller",
+				"src/BernardSolfin/SiteBundle/Controller/CatalogController.php"
+			],
+			[
+				"coupontype",
+				"vendor/faros/shop-bundle/Faros/ShopBundle/Form/CouponType.php"
+			],
+			[
+				"crontabprodi",
+				"app/Resources/crontab.production"
+			],
+			[
+				"translatableentity",
+				"vendor/faros/core-bundle/Faros/CoreBundle/Entity/Behavior/TranslatableEntity.php"
+			],
+			[
+				"coupon.php",
+				"src/BernardSolfin/SiteBundle/Entity/Shop/Coupon.php"
+			],
+			[
+				"cronta",
+				"app/Resources/crontab.production"
+			],
+			[
+				"crontabpreprod",
+				"app/Resources/crontab.preprod"
+			],
+			[
+				"crontabprod",
+				"app/Resources/crontab.production"
+			],
+			[
+				"cartitemtype",
+				"src/BernardSolfin/SiteBundle/Form/CartItemType.php"
+			],
+			[
+				"cartform",
+				"src/BernardSolfin/SiteBundle/Resources/views/Cart/_form.html.twig"
+			],
+			[
+				"_product.html.twig",
+				"src/BernardSolfin/SiteBundle/Resources/views/Catalog/_product.html.twig"
+			],
+			[
+				"_productlist",
+				"src/BernardSolfin/SiteBundle/Resources/views/Catalog/_productList.html.twig"
+			],
+			[
+				"product.",
+				"src/BernardSolfin/SiteBundle/Entity/Catalog/Product.php"
+			],
+			[
+				"product.php",
+				"src/BernardSolfin/SiteBundle/Entity/Catalog/Product.php"
+			],
+			[
+				"producreference.php",
+				"src/BernardSolfin/SiteBundle/Entity/Catalog/ProductReference.php"
+			],
+			[
+				"customshrtcontroller",
+				"src/BernardSolfin/AdminBundle/Controller/Shop/CustomShirtController.php"
+			],
+			[
+				"shirt.php",
+				"src/BernardSolfin/SiteBundle/Valmary/Response/Shirt.php"
+			],
+			[
+				"factory_send_shirt",
+				"src/BernardSolfin/SiteBundle/Resources/views/Email/factory_send_shirt.html.twig"
+			],
+			[
+				"extendeddatatype",
+				"vendor/jms/payment-core-bundle/JMS/Payment/CoreBundle/Entity/ExtendedDataType.php"
+			],
+			[
+				"devcontroller",
+				"src/BernardSolfin/SiteBundle/Controller/Dev/EmailController.php"
+			],
+			[
+				"_order_details",
+				"src/BernardSolfin/SiteBundle/Resources/views/Email/_order_details.html.twig"
+			],
+			[
+				"exportcomma",
+				"src/BernardSolfin/AdminBundle/Command/ExportCommand.php"
+			],
+			[
+				"productrefprice",
+				"src/BernardSolfin/SiteBundle/Entity/Catalog/ProductReferencePrice.php"
+			],
+			[
+				"cms.yml",
+				"app/config/cms.yml"
+			],
+			[
+				"iziflux",
+				"src/BernardSolfin/SiteBundle/Feed/IzifluxService.php"
+			],
+			[
+				"shopmanager",
+				"vendor/faros/shop-bundle/Faros/ShopBundle/Shop/ShopManager.php"
+			],
+			[
+				"ordercontroller",
+				"vendor/faros/checkout-bundle/Faros/CheckoutBundle/Controller/OrderController.php"
+			],
+			[
+				"paymentcontrollr",
+				"vendor/faros/checkout-bundle/Faros/CheckoutBundle/Controller/PaymentController.php"
+			],
+			[
+				"paymencontroler",
+				"vendor/faros/checkout-bundle/Faros/CheckoutBundle/Controller/PaymentController.php"
+			],
+			[
+				"socolcontroller",
+				"vendor/faros/checkout-bundle/Faros/CheckoutBundle/Controller/SoColissimoController.php"
+			],
+			[
+				"delivercontroller",
+				"vendor/faros/checkout-bundle/Faros/CheckoutBundle/Controller/DeliveryController.php"
+			],
+			[
+				"carttype",
+				"src/BernardSolfin/SiteBundle/Form/CartType.php"
+			],
+			[
+				"cartcontr",
+				"src/BernardSolfin/SiteBundle/Controller/CartController.php"
+			],
+			[
+				"commoncontr",
+				"src/BernardSolfin/SiteBundle/Controller/CommonsController.php"
+			],
+			[
+				"cartcontroller",
+				"src/BernardSolfin/SiteBundle/Controller/CartController.php"
+			],
+			[
+				"_zoneref",
+				"src/BernardSolfin/SiteBundle/Resources/views/Product/_zoneRef.html.twig"
+			],
+			[
+				"productshow",
+				"src/BernardSolfin/SiteBundle/Resources/views/Product/show.html.twig"
+			],
+			[
+				"producse",
+				"src/BernardSolfin/SiteBundle/Entity/Catalog/ProductSelection.php"
+			],
+			[
+				"catgeryhier",
+				"src/BernardSolfin/SiteBundle/Entity/Catalog/CategoryHierarchy.php"
+			],
+			[
+				"productcateg",
+				"src/BernardSolfin/SiteBundle/Entity/Catalog/ProductCategory.php"
+			],
+			[
+				"category",
+				"vendor/faros/catalog-bundle/Faros/CatalogBundle/Model/Category.php"
+			],
+			[
+				"shirt",
+				"src/BernardSolfin/SiteBundle/Valmary/Response/Shirt.php"
+			],
+			[
+				"cartshow",
+				"src/BernardSolfin/SiteBundle/Resources/views/Cart/show.html.twig"
+			],
+			[
+				"productdomain",
+				"src/BernardSolfin/SiteBundle/Search/ProductDomain.php"
+			],
+			[
+				"advantagetype",
+				"src/BernardSolfin/AdminBundle/Form/CouponAdvantageType.php"
+			],
+			[
+				"vinivi-request",
+				"src/BritHotel/ExtranetBundle/Resources/views/Email/vinivi-request.html.twig"
+			],
+			[
+				"vivicontr",
+				"src/BritHotel/ExtranetBundle/Controller/Service/ViniviController.php"
+			],
+			[
+				"dashbcontroller",
+				"src/BritHotel/ExtranetBundle/Controller/DashboardController.php"
+			],
+			[
+				"dateformat",
+				"vendor/beberlei/DoctrineExtensions/src/Query/Postgresql/DateFormat.php"
+			],
+			[
+				"date.hp",
+				"vendor/beberlei/DoctrineExtensions/src/Query/Mysql/Date.php"
+			],
+			[
+				"dealerryp",
+				"src/ExtranetBundle/Form/Type/DealerProfileType.php"
+			],
+			[
+				"dealerprofile",
+				"src/ExtranetBundle/Entity/Core/DealerProfile.php"
+			],
+			[
+				"theme.less",
+				"web/bundles/extranet/less/theme.less"
+			],
+			[
+				"inquicontroller",
+				"src/ExtranetBundle/Controller/Lead/InquiryController.php"
+			],
+			[
+				"varlogsdealer",
+				"var/logs/dev.dealer_api.log"
+			],
+			[
+				"dealercontroller",
+				"src/ExtranetBundle/Controller/Core/DealerController.php"
+			],
+			[
+				"defaultmenubuilder",
+				"vendor/faros/avant-theme-bundle/Menu/DefaultMenuBuilder.php"
+			],
+			[
+				"admin.js",
+				"web/bundles/farosavanttheme/themes/avant/js/admin.js"
+			],
+			[
+				"knpmenuhtml",
+				"vendor/knplabs/knp-menu/src/Knp/Menu/Resources/views/knp_menu.html.twig"
+			],
+			[
+				"default",
+				"src/ExtranetBundle/Menu/DefaultMenuBuilder.php"
+			],
+			[
+				"bootstrap-avanttheme.less",
+				"web/bundles/farosavanttheme/themes/avant/less/bootstrap-avanttheme.less"
+			],
+			[
+				"knp_menu.html",
+				"vendor/knplabs/knp-menu/src/Knp/Menu/Resources/views/knp_menu.html.twig"
+			],
+			[
+				"menubuilder",
+				"vendor/faros/avant-theme-bundle/Menu/DefaultMenuBuilder.php"
+			],
+			[
+				"main.html.tw",
+				"vendor/faros/avant-theme-bundle/Resources/views/themes/avant/Menu/main.html.twig"
+			],
+			[
+				"avantbase.html.twi",
+				"vendor/faros/avant-theme-bundle/Resources/views/themes/avant/base.html.twig"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "ponroy",
+		"selected_items":
+		[
+			[
+				"ponroy",
+				"~/sandbox/ponroy.sublime-workspace"
+			],
+			[
+				"",
+				"~/sandbox/dotfiles.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 251.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
