@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"profe",
+				"professionnel"
+			],
+			[
+				"testi",
+				"testimonialBody"
+			],
+			[
 				"constat",
 				"constant_score"
 			],
@@ -24,54 +32,73 @@
 	"buffers":
 	[
 		{
-			"file": "/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Controller/PageController.php",
+			"file": "/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Realisation/index.html.twig",
 			"settings":
 			{
-				"buffer_size": 9158,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/PointOfSale/search.html.twig",
-			"settings":
-			{
-				"buffer_size": 8464,
+				"buffer_size": 5460,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "{\n    \"destination_addresses\": [\n        \"12 Avenue de l&#039;Entreprise, 12000 Rodez, France\",\n        \"9 Rue de Melaudye, 81990 Le Sequestre, France\"\n    ],\n    \"origin_addresses\": [\n        \"81100 Castres, France\"\n    ],\n    \"rows\": [\n        {\n            \"elements\": [\n                {\n                    \"distance\": {\n                        \"text\": \"114 km\",\n                        \"value\": 113599\n                    },\n                    \"duration\": {\n                        \"text\": \"1 heure 29 min\",\n                        \"value\": 5369\n                    },\n                    \"status\": \"OK\"\n                },\n                {\n                    \"distance\": {\n                        \"text\": \"42,3 km\",\n                        \"value\": 42333\n                    },\n                    \"duration\": {\n                        \"text\": \"40 minutes\",\n                        \"value\": 2375\n                    },\n                    \"status\": \"OK\"\n                }\n            ]\n        }\n    ],\n    \"status\": \"OK\"\n}",
+			"file": "/home/roussillep/sandbox/storistes-de-france/app/Resources/crontab.production",
 			"settings":
 			{
-				"buffer_size": 1032,
+				"buffer_size": 498,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Command/AllImportLauncherCommand.php",
+			"settings":
+			{
+				"buffer_size": 1855,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 1844 files for \"sdf:import:\"\n\n/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Command/AllImportLauncherCommand.php:\n   17      {\n   18          $this\n   19:             ->setName('sdf:import:launch-all')\n   20              ->setDescription('Lance tous les imports issus de l\\'ERP')\n   21          ;\n   ..\n   26  \n   27          $scripts = array(\n   28:             'sdf:import:sellers',\n   29:             'sdf:import:companies',\n   30:             'sdf:import:point-of-sales',\n   31:             'sdf:import:retailers',\n   32:             'sdf:import:company-orders',\n   33:             'sdf:import:production-time',\n   34          );\n   35  \n\n/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Command/ImportCompaniesCommand.php:\n   16          parent::configure();\n   17          $this\n   18:             ->setName('sdf:import:companies')\n   19              ->setDescription('Import des entreprises.')\n   20          ;\n\n/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Command/ImportCompanyOrdersCommand.php:\n   16          parent::configure();\n   17          $this\n   18:             ->setName('sdf:import:company-orders')\n   19              ->setDescription('Import des commandes.')\n   20          ;\n\n/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Command/ImportPointOfSalesCommand.php:\n   16          parent::configure();\n   17          $this\n   18:             ->setName('sdf:import:point-of-sales')\n   19              ->setDescription('Import des point de ventes.')\n   20          ;\n\n/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Command/ImportProductionTimeCommand.php:\n   14          parent::configure();\n   15          $this\n   16:             ->setName('sdf:import:production-time')\n   17              ->setDescription('Import des temps de production.')\n   18          ;\n\n/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Command/ImportRetailersCommand.php:\n   16          parent::configure();\n   17          $this\n   18:             ->setName('sdf:import:retailers')\n   19              ->setDescription('Import des users back office.')\n   20          ;\n\n/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Command/ImportSellersCommand.php:\n   14          parent::configure();\n   15          $this\n   16:             ->setName('sdf:import:sellers')\n   17              ->setDescription('Import des commerciaux.')\n   18          ;\n\n/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/CommandLauncherController.php:\n   18  \n   19      /*\n   20:       sdf:import:companies                  Import des entreprises.\n   21:       sdf:import:company_orders             Import des commandes.\n   22:       sdf:import:point_of_sales             Import des point de ventes.\n   23:       sdf:import:production_time            Import des temps de production.\n   24:       sdf:import:retailers                  Import des users back office.\n   25:       sdf:import:sellers                    Import des commerciaux.\n   26       */\n   27      public function importAction(Request $request, $file = null)\n   ..\n   45          foreach ($files as $script) {\n   46              if (null === $file || $script === $file) {\n   47:                 $output .= $this->launchOneCommand('sdf:import:'.$script);\n   48              }\n   49          }\n\n20 matches across 8 files\n",
+			"settings":
+			{
+				"buffer_size": 3406,
 				"line_ending": "Unix",
-				"name": "{"
+				"name": "Find Results",
+				"scratch": true
 			}
 		},
 		{
-			"file": "/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Lead/RetailerProvider.php",
+			"file": "/home/roussillep/sandbox/storistes-de-france/composer.json",
 			"settings":
 			{
-				"buffer_size": 15928,
+				"buffer_size": 3585,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Realisation/list.html.twig",
+			"settings":
+			{
+				"buffer_size": 6279,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "storistes-de-france.sublime-project",
+			"file": "/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Realisation/show.html.twig",
 			"settings":
 			{
-				"buffer_size": 126,
+				"buffer_size": 5875,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/roussillep/sandbox/storistes-de-france/src/.htaccess",
+			"file": "/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/translations/seo.fr.yml",
 			"settings":
 			{
-				"buffer_size": 13,
+				"buffer_size": 6276,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -84,9 +111,29 @@
 	"command_palette":
 	{
 		"height": 357.0,
-		"last_filter": "jso",
+		"last_filter": "blame",
 		"selected_items":
 		[
+			[
+				"blame",
+				"Git: Blame"
+			],
+			[
+				"move",
+				"File: Move"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
 			[
 				"jso",
 				"JSON Reindent: reindent file or selection"
@@ -96,20 +143,8 @@
 				"JSON Reindent: reindent file or selection"
 			],
 			[
-				"blame",
-				"Git: Blame"
-			],
-			[
 				"bl\tme",
 				"Git: Blame"
-			],
-			[
-				"rei",
-				"Indentation: Reindent Lines"
-			],
-			[
-				"move",
-				"File: Move"
 			],
 			[
 				"git stat",
@@ -170,25 +205,145 @@
 	"expanded_folders":
 	[
 		"/home/roussillep/sandbox/storistes-de-france",
+		"/home/roussillep/sandbox/storistes-de-france/app",
+		"/home/roussillep/sandbox/storistes-de-france/app/config",
+		"/home/roussillep/sandbox/storistes-de-france/app/config/capistrano",
+		"/home/roussillep/sandbox/storistes-de-france/app/config/capistrano/stages",
+		"/home/roussillep/sandbox/storistes-de-france/bin",
 		"/home/roussillep/sandbox/storistes-de-france/src",
 		"/home/roussillep/sandbox/storistes-de-france/src/Sdf",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Command",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Command/Notification",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/public",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/public/css",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/public/img",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Lead",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Lead/QuoteRequest",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/ExtranetBundle",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/ExtranetBundle/Resources",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/ExtranetBundle/Resources/public",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/ExtranetBundle/Resources/public/css",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/ExtranetBundle/Resources/public/img",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/ExtranetBundle/Resources/views",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/ExtranetBundle/Resources/views/Admin",
 		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Controller",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Controller/Form",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Form",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Form/Quotation",
 		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources",
-		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/public",
-		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/public/fonts",
-		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/public/js",
-		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/public/less",
-		"/home/roussillep/sandbox/storistes-de-france/web",
-		"/home/roussillep/sandbox/storistes-de-france/web/bundles",
-		"/home/roussillep/sandbox/storistes-de-france/web/bundles/bazingajstranslation",
-		"/home/roussillep/sandbox/storistes-de-france/web/bundles/ericharddms",
-		"/home/roussillep/sandbox/storistes-de-france/web/bundles/farosadmin"
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/config",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/config/routing",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/translations",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Commons",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/PointOfSale",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Realisation",
+		"/home/roussillep/sandbox/storistes-de-france/vendor",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Lead",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Form",
+		"/home/roussillep/sandbox/storistes-de-france/web"
 	],
 	"file_history":
 	[
-		"/home/roussillep/sandbox/storistes-de-france/app/Resources/crontab.production",
-		"/home/roussillep/sandbox/storistes-de-france/app/config/parameters.yml",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Commons/nav.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Realisation/show.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/PointOfSale/search.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Lead/QuoteRequestController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/ExtranetBundle/Resources/views/Admin/dashboard_retailer.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Command/Notification/PointOfSaleActivityNotifierCommand.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/faros/core-bundle/Faros/CoreBundle/Entity/Repository/UserRepository.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/ExtranetBundle/Resources/public/css/extranet.css",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/public/css/admin.css",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Form/quote_request_confirm.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Form/Quotation/QuotationFlow.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/config/routing/form.yml",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/Realisation.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/ExtranetBundle/Menu/Builder.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Form/RealisationType.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Controller/Form/QuotationController.php",
 		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Core/User.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Home/index.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Lead/QuoteRequest.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/ExtranetBundle/Controller/Lead/QuoteRequestController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Controller/Form/CatalogController.php",
+		"/home/roussillep/sandbox/storistes-de-france/app/config/parameters.yml",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Lead/QuoteRequest/admin_actions.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Lead/QuoteRequest/show.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Form/Quotation/QuotationForm.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Lead/LeadActivity.php",
+		"/home/roussillep/sandbox/storistes-de-france/app/Resources/crontab.production",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/ExtranetBundle/Resources/views/Lead/QuoteRequest/show.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/ExtranetBundle/Resources/config/routing.yml",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/config/routing/lead.yml",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/ExtranetBundle/Resources/views/Lead/QuoteRequest/retailer_actions.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Core/Route.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Behavior/MacEntity.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/faros/admin-bundle-legacy/Faros/AdminBundle/Controller/CRUDController.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Routing/Rewriter.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Home/_slideshow.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/public/less/Pros/categPros.less",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/public/less/Pros/fichePros.less",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Cms/Realisation/edit.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Cms/Realisation/list.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Realisation/list.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Realisation/index.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Home/_pros.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Cms/RealisationCategory/edit.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Form/RealisationCategoryType.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/public/less/home.less",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/config/routing.yml",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Controller/RealisationController.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/RealisationCategory.php",
+		"/home/roussillep/sandbox/storistes-de-france/app/config/capistrano/stages/preprod.rb",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/layout.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/public/less/navbar.less",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Controller/PageController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Cms/RealisationCategoryController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Cms/RealisationCategory/list.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/public/less/Pros/couleursPros.less",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/layout.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Commons/footer.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/faros/cms-bundle/Faros/CmsBundle/Cms/PublicationManager.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Menu/Builder.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Lead/NetworkApplianceController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Lead/JobOfferController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Lead/JobApplicationController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Lead/InquiryController.php",
+		"/home/roussillep/sandbox/storistes-de-france/app/config/routing.yml",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/faros/core-bundle/Faros/CoreBundle/Routing/DynamicRouter.php",
+		"/home/roussillep/sandbox/storistes-de-france/composer.json",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/faros/lead-bundle/Faros/LeadBundle/Controller/InquiryController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Lead/WarrantyController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Form/AdviceType.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Form/ColorChart/ColorChartType.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Lead/LeadEvent.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/AdminController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Lead/ProjectSurveyController.php",
+		"/home/roussillep/sandbox/storistes-de-france/app/config/security_roles.yml",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/translations/messages.fr.yml",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Form/PressType.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/config/routing/catalog.yml",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/config/routing/cms.yml",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Cms/PropageController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Cms/RealisationController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Cms/Realisation/new.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Cms/Realisation/order.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Cms/RealisationCategory/new.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Cms/RealisationCategory/order.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Cms/PropageCategoryController.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/SlideshowItem.php",
+		"/home/roussillep/.config/sublime-text-3/Packages/User/Projects/storistes-de-france.sublime-project",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Lead/RetailerProvider.php",
 		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Core/RetailerProfile.php",
 		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Controller/SearchController.php",
 		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Command/AbstractImportCommand.php",
@@ -227,34 +382,7 @@
 		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/CatalogController.php",
 		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/CommonsController.php",
 		"/home/roussillep/sandbox/bernard-solfin/app/config/parameters.yml",
-		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Ads/show.html.twig",
-		"/home/roussillep/sandbox/todaycar/app/config/parameters.yml",
-		"/home/roussillep/sandbox/todaycar/var/logs/dev-2016-06-14.log",
-		"/home/roussillep/sandbox/todaycar/Gemfile",
-		"/home/roussillep/sandbox/todaycar/Capfile",
-		"/home/roussillep/sandbox/todaycar/app/config/capistrano/deploy.rb",
-		"/home/roussillep/sandbox/todaycar/app/config/capistrano/tasks/secure.rake",
-		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/js/theia-sticky-sidebar.js",
-		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/layout.html.twig",
-		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Booking/recapitulatif.html.twig",
-		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Booking/livraison.html.twig",
-		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Ads/index.html.twig",
-		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Booking/_recap_final.html.twig",
-		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/less/responsive.less",
-		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/less/styleDev.less",
-		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/js/script.js",
-		"/home/roussillep/sandbox/todaycar/gulpfile.js",
-		"/home/roussillep/gnome-terminal-colors-solarized/set_dark.sh",
-		"/home/roussillep/.config/dconf/user",
-		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Controller/ContactInspectorController.php",
-		"/home/roussillep/sandbox/todaycar/vendor/bower_components/theia-sticky-sidebar/js/theia-sticky-sidebar.js",
-		"/home/roussillep/sandbox/todaycar/package.json",
-		"/home/roussillep/sandbox/todaycar/docker-compose.override.yml.dist",
-		"/home/roussillep/sandbox/todaycar/docker-compose.yml",
-		"/home/roussillep/sandbox/todaycar/docker-compose.override.yml",
-		"/home/roussillep/sandbox/todaycar/app/config/parameters.yml.dist",
-		"/home/roussillep/sandbox/todaycar/app/Resources/crontab.production",
-		"/home/roussillep/.dotfiles/.tmux.conf"
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Ads/show.html.twig"
 	],
 	"find":
 	{
@@ -262,9 +390,18 @@
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 130.0,
 		"where_history":
 		[
+			"/home/roussillep/sandbox/storistes-de-france/src",
+			"/home/roussillep/sandbox/storistes-de-france/src/Sdf",
+			"/home/roussillep/sandbox/storistes-de-france/vendor/mac",
+			"/home/roussillep/sandbox/storistes-de-france/src/Sdf",
+			"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/public/less",
+			"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views",
+			"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/public/less",
+			"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views",
+			"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Form",
 			"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Controller",
 			"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle",
 			"/home/roussillep/sandbox/ponroy/src",
@@ -281,57 +418,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"&quot;",
-			"&gt",
-			"&quot;",
-			"debug",
-			"Find",
-			"findAPro",
-			"$leadActivity;",
-			"modal",
-			"isFidelity",
-			"unprocessCart",
-			"isNonGiftApplication",
-			"additionnalsGifts",
-			"ConstraintValidator",
-			"processCart",
-			"faros.shop.advantage_processor",
-			"AdvantageProcessor",
-			"max_coupon_use_reached",
-			"Vous avez déjà utilisé ce code promo.",
-			"unprocessCart",
-			"@",
-			", ",
-			"@",
-			"no_payment",
-			"FidelityResolverList",
-			"fidelitypoint",
-			"isProductPublished",
-			"$this->pm",
-			"disabled",
-			"\n        $suggest = count($params) > 0 ? $index->suggest($params) : [];",
-			"\n        $suggestAds = array_column($suggest['hits']['hits'], '_source', '_id');",
-			"\n        $suggest = $index->suggest($params);",
-			"brand",
-			"model",
-			"\n                                'boost' => 1,",
-			"boots",
-			"booots",
-			":",
-			"}",
-			"{",
-			"$page * 5",
-			"cross",
-			"awl",
-			"awol",
-			"ads",
-			"Envoyez nous un email",
-			"blocAnnonce",
-			"#pageShowAd .blocAnnonce",
-			"fixPrice",
-			"infoprix",
-			"trustycar",
-			"target_base"
+			"sdf:import:",
+			"import:",
+			"inport:",
+			"realisationCategory.title",
+			"box-",
+			"box-box",
+			"profe",
+			"quotation",
+			"catalogue",
+			"Votre demande de devis",
+			"Demande de devis acc",
+			"hasProject",
+			"quoteRequestAccepted_retaler",
+			"npai",
+			"quoteRequest.npai",
+			"npai",
+			"coord",
+			"sdf_extranet_quote_request_switchNpai",
+			"admin_quote_request",
+			"transformToInquiry",
+			" data-toggle",
+			"action",
+			"cancelled",
+			"tn",
+			"longitude",
+			"Longitude",
+			"longitude",
+			"Longitude",
+			"longitude",
+			"mac_",
+			"mac_brand",
+			"padding-top",
+			"logo",
+			"max-hei",
+			"logo",
+			"\n                //'required' => true,\n            ",
+			"image2",
+			"image1",
+			"testimonialImage",
+			"testimonial",
+			"rci",
+			"carousel-product-category",
+			"Commerce",
+			".carousel-inner",
+			"#pros .carousel-inner",
+			"#pros .carousel-inner > .item",
+			"#pro",
+			"theme_cafe",
+			"scb_corporate_youArePro",
+			"/realisations",
+			" /realisations",
+			"/realisations",
+			"{{ path('scb_corporate_youArePro') }}",
+			"borderCafe",
+			"border",
+			"bestOf",
+			"mac_corebundle_realisationcategorytype_images_control_group",
+			"required",
+			"testimonialImage",
+			"tli",
+			"tlistImage(\\Mac\\CoreBundle\\Entity\\Core\\File $listImage = null)\n    {",
+			"TestimonialImage",
+			"testimonialImage",
+			"TestimonialImage",
+			"testimonialImage",
+			"tlis",
+			"Body",
+			"body",
+			"Body",
+			"body",
+			"job",
+			"fields.html.twig",
+			"collection",
+			"press",
+			"Press",
+			"press",
+			"realisationes",
+			"press",
+			"realisationes",
+			"press",
+			"PRESS",
+			"_Realisation",
+			"_Realisation_",
+			"Press",
+			"press",
+			"Press",
+			"PRESS",
+			"Press",
+			"press",
+			"RealisationPRESSCATEGORY",
+			"PressCategory",
+			"PRESSCATEGORY",
+			"PressCategory",
+			"Cms/realisation",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Press",
+			"press",
+			"Press",
+			"PRESS",
+			"Press",
+			"Cms/propage",
+			"faq",
+			"Faq",
+			"faq",
+			"Faq",
+			"faq",
+			"Faq",
+			"faq",
+			"Faq"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -339,6 +553,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"sdf_site_realisation_index",
+			"|length"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -349,24 +565,24 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Controller/PageController.php",
+					"file": "/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Realisation/index.html.twig",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9158,
+						"buffer_size": 5460,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1760,
-								1760
+								552,
+								552
 							]
 						],
 						"settings":
@@ -376,29 +592,39 @@
 							{
 								"close":
 								{
+									"1":
+									[
+										551,
+										552
+									]
 								},
 								"icon":
 								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
 								},
 								"open":
 								{
+									"1":
+									[
+										438,
+										439
+									]
 								},
 								"unmatched":
 								{
-									"1":
-									[
-										1514,
-										1515
-									]
 								}
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
@@ -409,130 +635,36 @@
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content"
-							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2340.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/PointOfSale/search.html.twig",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8464,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8258,
-								8258
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
@@ -542,125 +674,45 @@
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content"
+								"bh_unmatched_content"
 							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.scan":
+							{
+								"allowed_colors":
+								[
+									"webcolors",
+									"hex",
+									"rgb",
+									"hex_compressed",
+									"rgba",
+									"hsl",
+									"hsla"
+								],
+								"compress_hex_output": true,
+								"current_ext": ".twig",
+								"current_syntax": "PHP-Twig/Syntaxes/HTML (Twig)",
+								"enabled": true,
+								"last_updated": 1499152845.3,
+								"scan_completion_scopes":
+								[
+								],
+								"scan_scopes":
+								[
+									"meta.declaration-list.css -support.type.property-name.css -comment -string",
+									"meta.property-value.css -comment -string",
+									"meta.value.css -comment -string",
+									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
+									"meta.tag.any.html meta.attribute-with-value.style.html"
+								],
+								"use_hex_argb": false
+							},
 							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
 							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2295.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1032,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								721,
-								721
-							]
-						],
-						"settings":
-						{
-							"auto_name": "{",
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content"
-							],
-							"default_dir": "/home/roussillep/sandbox/storistes-de-france",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -671,248 +723,12 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Lead/RetailerProvider.php",
+					"buffer": 1,
+					"file": "/home/roussillep/sandbox/storistes-de-france/app/Resources/crontab.production",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15928,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								9784,
-								9784
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										9805,
-										9806
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										9745,
-										9746
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content"
-							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3384.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "storistes-de-france.sublime-project",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 126,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								116,
-								116
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										119,
-										120
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										19,
-										20
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content"
-							],
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/home/roussillep/sandbox/storistes-de-france/src/.htaccess",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 13,
+						"buffer_size": 498,
 						"regions":
 						{
 						},
@@ -948,6 +764,391 @@
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.scan":
+							{
+								"current_ext": ".production",
+								"current_syntax": "Text/Plain text",
+								"enabled": false,
+								"last_updated": 1499152845.3
+							},
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Command/AllImportLauncherCommand.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1855,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.scan":
+							{
+								"allowed_colors":
+								[
+									"webcolors",
+									"hex",
+									"rgb",
+									"hex_compressed",
+									"rgba",
+									"hsl",
+									"hsla"
+								],
+								"compress_hex_output": true,
+								"current_ext": ".php",
+								"current_syntax": "PHP/PHP",
+								"enabled": true,
+								"last_updated": 1499152845.3,
+								"scan_completion_scopes":
+								[
+								],
+								"scan_scopes":
+								[
+									"meta.declaration-list.css -support.type.property-name.css -comment -string",
+									"meta.property-value.css -comment -string",
+									"meta.value.css -comment -string",
+									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
+									"meta.tag.any.html meta.attribute-with-value.style.html"
+								],
+								"use_hex_argb": false
+							},
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3406,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										207,
+										218
+									],
+									[
+										393,
+										404
+									],
+									[
+										434,
+										445
+									],
+									[
+										477,
+										488
+									],
+									[
+										525,
+										536
+									],
+									[
+										568,
+										579
+									],
+									[
+										616,
+										627
+									],
+									[
+										860,
+										871
+									],
+									[
+										1156,
+										1167
+									],
+									[
+										1454,
+										1465
+									],
+									[
+										1760,
+										1771
+									],
+									[
+										2066,
+										2077
+									],
+									[
+										2362,
+										2373
+									],
+									[
+										2606,
+										2617
+									],
+									[
+										2681,
+										2692
+									],
+									[
+										2754,
+										2765
+									],
+									[
+										2833,
+										2844
+									],
+									[
+										2916,
+										2927
+									],
+									[
+										2997,
+										3008
+									],
+									[
+										3318,
+										3329
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								1176,
+								1176
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1182,
+										1183
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1154,
+										1155
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -958,6 +1159,134 @@
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.scan":
+							{
+								"current_ext": null,
+								"current_syntax": "Default/Find Results",
+								"enabled": false,
+								"last_updated": 1499671472.7
+							},
+							"default_dir": "/home/roussillep/sandbox/storistes-de-france",
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/roussillep/sandbox/storistes-de-france/composer.json",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3585,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1146,
+								1146
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1820,
+										1821
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										452,
+										453
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -977,7 +1306,116 @@
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": ".json",
+								"current_syntax": "JavaScript/JSON",
+								"enabled": false,
+								"last_updated": 1499845162.4
+							},
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Realisation/list.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6279,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								162,
+								162
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
@@ -987,7 +1425,71 @@
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
-								"bh_unmatched_content",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Realisation/show.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5875,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1682,
+								1682
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1681,
+										1682
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1670,
+										1671
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
@@ -997,15 +1499,181 @@
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
-								"bh_square_content"
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
 							],
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/translations/seo.fr.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6276,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6253,
+								6253
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										6275,
+										6276
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/double_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										6176,
+										6177
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 1260.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1060,6 +1728,186 @@
 		"selected_items":
 		[
 			[
+				"crontab",
+				"app/Resources/crontab.production"
+			],
+			[
+				"user",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Core/User.php"
+			],
+			[
+				"dashboardhtml",
+				"src/Sdf/ExtranetBundle/Resources/views/Admin/dashboard_retailer.html.twig"
+			],
+			[
+				"quoterecontr",
+				"src/Sdf/AdminBundle/Controller/Lead/QuoteRequestController.php"
+			],
+			[
+				"realisationshow",
+				"src/Sdf/SiteBundle/Resources/views/Realisation/show.html.twig"
+			],
+			[
+				"realisationtype",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Form/RealisationType.php"
+			],
+			[
+				"menubuilder",
+				"src/Sdf/ExtranetBundle/Menu/Builder.php"
+			],
+			[
+				"realisation",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/Realisation.php"
+			],
+			[
+				"quoterequest",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Lead/QuoteRequest.php"
+			],
+			[
+				"quotereq",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Lead/QuoteRequest.php"
+			],
+			[
+				"leadacti",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Lead/LeadActivity.php"
+			],
+			[
+				"quotereqcontroller",
+				"src/Sdf/AdminBundle/Controller/Lead/QuoteRequestController.php"
+			],
+			[
+				"quoterequcont",
+				"src/Sdf/ExtranetBundle/Controller/Lead/QuoteRequestController.php"
+			],
+			[
+				"quotecontroller",
+				"src/Sdf/AdminBundle/Controller/Lead/QuoteRequestController.php"
+			],
+			[
+				"quoterequest.php",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Lead/QuoteRequest.php"
+			],
+			[
+				"user.php",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Core/User.php"
+			],
+			[
+				"rewriter",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Routing/Rewriter.php"
+			],
+			[
+				"crudcontroller",
+				"vendor/faros/admin-bundle-legacy/Faros/AdminBundle/Controller/CRUDController.php"
+			],
+			[
+				"route.php",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Core/Route.php"
+			],
+			[
+				"realisacateg",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/RealisationCategory.php"
+			],
+			[
+				"realisation.php",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/Realisation.php"
+			],
+			[
+				"realisationlist",
+				"src/Sdf/AdminBundle/Resources/views/Cms/Realisation/list.html.twig"
+			],
+			[
+				"relisation",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/Realisation.php"
+			],
+			[
+				"realisationtyp",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Form/RealisationType.php"
+			],
+			[
+				"slideshowhtml",
+				"src/Sdf/SiteBundle/Resources/views/Home/_slideshow.html.twig"
+			],
+			[
+				"reacatedit",
+				"src/Sdf/AdminBundle/Resources/views/Cms/RealisationCategory/edit.html.twig"
+			],
+			[
+				"reacattype",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Form/RealisationCategoryType.php"
+			],
+			[
+				"realisacategory",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/RealisationCategory.php"
+			],
+			[
+				"reacatlisthtml",
+				"src/Sdf/AdminBundle/Resources/views/Cms/RealisationCategory/list.html.twig"
+			],
+			[
+				"realicatcontr",
+				"src/Sdf/AdminBundle/Controller/Cms/RealisationCategoryController.php"
+			],
+			[
+				"homeindex",
+				"src/Sdf/SiteBundle/Resources/views/Home/index.html.twig"
+			],
+			[
+				"publicationmanager",
+				"vendor/faros/cms-bundle/Faros/CmsBundle/Cms/PublicationManager.php"
+			],
+			[
+				"layout.html",
+				"src/Sdf/AdminBundle/Resources/views/layout.html.twig"
+			],
+			[
+				"realisationcateg",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/RealisationCategory.php"
+			],
+			[
+				"realisatiocateg",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/RealisationCategory.php"
+			],
+			[
+				"dynamicro",
+				"vendor/faros/core-bundle/Faros/CoreBundle/Routing/DynamicRouter.php"
+			],
+			[
+				"inquirycontroler",
+				"vendor/faros/lead-bundle/Faros/LeadBundle/Controller/InquiryController.php"
+			],
+			[
+				"quotereqcont",
+				"src/Sdf/ExtranetBundle/Controller/Lead/QuoteRequestController.php"
+			],
+			[
+				"quotcontroller",
+				"src/Sdf/AdminBundle/Controller/Lead/QuoteRequestController.php"
+			],
+			[
+				"admincontrolelr",
+				"src/Sdf/AdminBundle/Controller/AdminController.php"
+			],
+			[
+				"leadevent",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Lead/LeadEvent.php"
+			],
+			[
+				"advicetype",
+				"src/Sdf/AdminBundle/Form/AdviceType.php"
+			],
+			[
+				"realisatiocategor",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/RealisationCategory.php"
+			],
+			[
+				"realisacategtpye",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Form/RealisationCategoryType.php"
+			],
+			[
+				"presstype",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Form/PressType.php"
+			],
+			[
 				"pointofsalesearch",
 				"src/Sdf/SiteBundle/Resources/views/PointOfSale/search.html.twig"
 			],
@@ -1074,10 +1922,6 @@
 			[
 				"newspro.php",
 				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/NewsPro.php"
-			],
-			[
-				"crontab",
-				"app/Resources/crontab.production"
 			],
 			[
 				"cartshow",

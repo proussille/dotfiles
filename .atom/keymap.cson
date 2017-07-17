@@ -30,3 +30,11 @@
 # If you are unfamiliar with CSON, you can read more about it in the
 # Atom Flight Manual:
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+'.platform-linux':
+  'ctrl-b': 'fuzzy-finder:toggle-buffer-finder'
+  'ctrl-p': 'fuzzy-finder:toggle-file-finder'
+  'ctrl-shift-B': 'fuzzy-finder:toggle-git-status-finder'
+  'ctrl-t': 'fuzzy-finder:toggle-file-finder'
+
+'.fuzzy-finder atom-text-editor[mini]':
+  'shift-enter': 'fuzzy-finder:invert-confirm'

@@ -1,0 +1,2458 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"getComm",
+				"getCommercialType"
+			],
+			[
+				"write",
+				"writeException"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"ROLE_GROUP_",
+				"ROLE_GROUP_RETAILER"
+			],
+			[
+				"ROLE",
+				"ROLE_GROUP_COMMERCIAUX"
+			],
+			[
+				"unass",
+				"unassigned"
+			],
+			[
+				"point",
+				"point_of_sale"
+			],
+			[
+				"str_rep",
+				"str_replace"
+			],
+			[
+				"commercial",
+				"commercial_binomial_id"
+			],
+			[
+				"commerci",
+				"commercial_id"
+			],
+			[
+				"binomi",
+				"binomials"
+			],
+			[
+				"ass",
+				"assignations"
+			],
+			[
+				"assigne",
+				"assignment"
+			],
+			[
+				"pointOf",
+				"pointOfSale"
+			],
+			[
+				"commer",
+				"commercial_id"
+			],
+			[
+				"upda",
+				"updated_by"
+			],
+			[
+				"crea",
+				"created_by"
+			],
+			[
+				"updated",
+				"updated_at"
+			],
+			[
+				"assi",
+				"assigned_to_id"
+			],
+			[
+				"stat",
+				"status"
+			],
+			[
+				"point_of_sale",
+				"point_of_sale_id"
+			],
+			[
+				"quote_request",
+				"quote_request_assignment"
+			],
+			[
+				"array_fil",
+				"array_filter"
+			],
+			[
+				"form",
+				"formBuilder"
+			],
+			[
+				"constat",
+				"constant_score"
+			],
+			[
+				"publi",
+				"publishEnd"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"inli",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<?php\n\nnamespace Mac\\CoreBundle\\Entity\\Cms;\n\nuse Doctrine\\Common\\Collections\\ArrayCollection;\nuse Doctrine\\ORM\\Mapping as ORM;\nuse Faros\\CmsBundle\\Entity\\Behavior\\PublishableEntity;\nuse Gedmo\\Blameable\\Traits\\BlameableEntity;\nuse Gedmo\\Mapping\\Annotation as Gedmo;\nuse Gedmo\\Timestampable\\Traits\\TimestampableEntity;\nuse Mac\\CoreBundle\\Entity\\Behavior\\MacEntity;\nuse Symfony\\Component\\Validator\\Constraints as Assert;\n\n/**\n * @ORM\\Entity()\n * @ORM\\Table(name=\"realisation\", uniqueConstraints={\n *     @ORM\\UniqueConstraint(name=\"unique_idx\", columns={\"mac_brand\",\"mac_app\",\"slug\"})\n * })\n * @ORM\\HasLifecycleCallbacks\n */\nclass Realisation\n{\n    use BlameableEntity, TimestampableEntity, PublishableEntity, MacEntity;\n\n    /**\n     * @ORM\\Id\n     * @ORM\\GeneratedValue(strategy=\"AUTO\")\n     * @ORM\\Column(type=\"integer\")\n     */\n    protected $id;\n\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"Mac\\CoreBundle\\Entity\\Cms\\RealisationCategory\", inversedBy=\"realisations\")\n     * @ORM\\JoinColumn(referencedColumnName=\"id\", nullable=false)\n     */\n    protected $category;\n\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"Mac\\CoreBundle\\Entity\\Core\\File\")\n     * @ORM\\JoinColumn(nullable=true)\n     */\n    protected $listImage;\n\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"Mac\\CoreBundle\\Entity\\Core\\File\")\n     * @ORM\\JoinColumn(nullable=true)\n     */\n    protected $testimonialImage;\n\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"Mac\\CoreBundle\\Entity\\Core\\File\")\n     * @ORM\\JoinColumn(nullable=true)\n     */\n    protected $image1;\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"Mac\\CoreBundle\\Entity\\Core\\File\")\n     * @ORM\\JoinColumn(nullable=true)\n     */\n    protected $image2;\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"Mac\\CoreBundle\\Entity\\Core\\File\")\n     * @ORM\\JoinColumn(nullable=true)\n     */\n    protected $image3;\n\n    /**\n     * @ORM\\ManyToMany(targetEntity=\"Mac\\CoreBundle\\Entity\\Core\\File\")\n     * @ORM\\JoinColumn(nullable=true, onDelete=\"SET NULL\")\n     */\n    protected $images;\n\n    /**\n     * @Gedmo\\Slug(fields={\"title\"})\n     * @ORM\\Column(type=\"string\", nullable=false)\n     */\n    protected $slug;\n\n    /**\n     * @ORM\\Column(type=\"string\", nullable=true)\n     */\n    protected $title;\n\n    /**\n     * @ORM\\Column(type=\"string\", nullable=true)\n     */\n    protected $product;\n\n    /**\n     * @ORM\\Column(type=\"text\", nullable=true)\n     */\n    protected $subtitle;\n\n    /**\n     * @ORM\\Column(type=\"text\", nullable=true)\n     */\n    protected $body;\n\n    /**\n     * @ORM\\Column(type=\"string\", nullable=true)\n     */\n    protected $testimonialTitle;\n\n    /**\n     * @ORM\\Column(type=\"text\", nullable=true)\n     */\n    protected $testimonialBody;\n\n    /**\n     * @ORM\\Column(type=\"string\", nullable=true)\n     */\n    protected $testimonialName;\n\n    /**\n     * @ORM\\Column(type=\"text\", nullable=true)\n     */\n    protected $quotationIntro;\n\n    /**\n     * Constructor\n     */\n    public function __construct()\n    {\n        $this->images = new \\Doctrine\\Common\\Collections\\ArrayCollection();\n    }\n\n    /**\n     * Get id\n     *\n     * @return integer\n     */\n    public function getId()\n    {\n        return $this->id;\n    }\n\n    /**\n     * Set slug\n     *\n     * @param string $slug\n     * @return Realisation\n     */\n    public function setSlug($slug)\n    {\n        $this->slug = $slug;\n\n        return $this;\n    }\n\n    /**\n     * Get slug\n     *\n     * @return string\n     */\n    public function getSlug()\n    {\n        return $this->slug;\n    }\n\n    /**\n     * Set title\n     *\n     * @param string $title\n     * @return Realisation\n     */\n    public function setTitle($title)\n    {\n        $this->title = $title;\n\n        return $this;\n    }\n\n    /**\n     * Get title\n     *\n     * @return string\n     */\n    public function getTitle()\n    {\n        return $this->title;\n    }\n\n    /**\n     * Set product\n     *\n     * @param string $product\n     * @return Realisation\n     */\n    public function setProduct($product)\n    {\n        $this->product = $product;\n\n        return $this;\n    }\n\n    /**\n     * Get product\n     *\n     * @return string\n     */\n    public function getProduct()\n    {\n        return $this->product;\n    }\n\n    /**\n     * Set subtitle\n     *\n     * @param string $subtitle\n     * @return Realisation\n     */\n    public function setSubtitle($subtitle)\n    {\n        $this->subtitle = $subtitle;\n\n        return $this;\n    }\n\n    /**\n     * Get subtitle\n     *\n     * @return string\n     */\n    public function getSubtitle()\n    {\n        return $this->subtitle;\n    }\n\n    /**\n     * Set body\n     *\n     * @param string $body\n     * @return Realisation\n     */\n    public function setBody($body)\n    {\n        $this->body = $body;\n\n        return $this;\n    }\n\n    /**\n     * Get body\n     *\n     * @return string\n     */\n    public function getBody()\n    {\n        return $this->body;\n    }\n\n    /**\n     * Set testimonialTitle\n     *\n     * @param string $testimonialTitle\n     * @return Realisation\n     */\n    public function setTestimonialTitle($testimonialTitle)\n    {\n        $this->testimonialTitle = $testimonialTitle;\n\n        return $this;\n    }\n\n    /**\n     * Get testimonialTitle\n     *\n     * @return string\n     */\n    public function getTestimonialTitle()\n    {\n        return $this->testimonialTitle;\n    }\n\n    /**\n     * Set testimonialBody\n     *\n     * @param string $testimonialBody\n     * @return Realisation\n     */\n    public function setTestimonialBody($testimonialBody)\n    {\n        $this->testimonialBody = $testimonialBody;\n\n        return $this;\n    }\n\n    /**\n     * Get testimonialBody\n     *\n     * @return string\n     */\n    public function getTestimonialBody()\n    {\n        return $this->testimonialBody;\n    }\n\n    /**\n     * Set testimonialName\n     *\n     * @param string $testimonialName\n     * @return Realisation\n     */\n    public function setTestimonialName($testimonialName)\n    {\n        $this->testimonialName = $testimonialName;\n\n        return $this;\n    }\n\n    /**\n     * Get testimonialName\n     *\n     * @return string\n     */\n    public function getTestimonialName()\n    {\n        return $this->testimonialName;\n    }\n\n    /**\n     * Set category\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Cms\\RealisationCategory $category\n     * @return Realisation\n     */\n    public function setCategory(\\Mac\\CoreBundle\\Entity\\Cms\\RealisationCategory $category)\n    {\n        $this->category = $category;\n\n        return $this;\n    }\n\n    /**\n     * Get category\n     *\n     * @return \\Mac\\CoreBundle\\Entity\\Cms\\RealisationCategory\n     */\n    public function getCategory()\n    {\n        return $this->category;\n    }\n\n    /**\n     * Set testimonialImage\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Core\\File $testimonialImage\n     * @return Realisation\n     */\n    public function setTestimonialImage(\\Mac\\CoreBundle\\Entity\\Core\\File $testimonialImage = null)\n    {\n        $this->testimonialImage = $testimonialImage;\n\n        return $this;\n    }\n\n    /**\n     * Get testimonialImage\n     *\n     * @return \\Mac\\CoreBundle\\Entity\\Core\\File\n     */\n    public function getTestimonialImage()\n    {\n        return $this->testimonialImage;\n    }\n\n    /**\n     * Set listImage\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Core\\File $listImage\n     * @return Realisation\n     */\n    public function setListImage(\\Mac\\CoreBundle\\Entity\\Core\\File $listImage = null)\n    {\n        $this->listImage = $listImage;\n\n        return $this;\n    }\n\n    /**\n     * Get listImage\n     *\n     * @return \\Mac\\CoreBundle\\Entity\\Core\\File\n     */\n    public function getListImage()\n    {\n        return $this->listImage;\n    }\n\n    /**\n     * Add image\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Core\\File $image\n     * @return Realisation\n     */\n    public function addImage(\\Mac\\CoreBundle\\Entity\\Core\\File $image)\n    {\n        $this->images[] = $image;\n\n        return $this;\n    }\n\n    /**\n     * Remove image\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Core\\File $image\n     */\n    public function removeImage(\\Mac\\CoreBundle\\Entity\\Core\\File $image)\n    {\n        $this->images->removeElement($image);\n    }\n\n    /**\n     * Get images\n     *\n     * @return \\Doctrine\\Common\\Collections\\Collection\n     */\n    public function getImages()\n    {\n        return $this->images;\n    }\n\n    /**\n     * Set quotationIntro\n     *\n     * @param string $quotationIntro\n     * @return Realisation\n     */\n    public function setQuotationIntro($quotationIntro)\n    {\n        $this->quotationIntro = $quotationIntro;\n\n        return $this;\n    }\n\n    /**\n     * Get quotationIntro\n     *\n     * @return string\n     */\n    public function getQuotationIntro()\n    {\n        return $this->quotationIntro;\n    }\n\n    /**\n     * Set image1\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Core\\File $image1\n     * @return Realisation\n     */\n    public function setImage1(\\Mac\\CoreBundle\\Entity\\Core\\File $image1 = null)\n    {\n        $this->image1 = $image1;\n\n        return $this;\n    }\n\n    /**\n     * Get image1\n     *\n     * @return \\Mac\\CoreBundle\\Entity\\Core\\File\n     */\n    public function getImage1()\n    {\n        return $this->image1;\n    }\n\n    /**\n     * Set image2\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Core\\File $image2\n     * @return Realisation\n     */\n    public function setImage2(\\Mac\\CoreBundle\\Entity\\Core\\File $image2 = null)\n    {\n        $this->image2 = $image2;\n\n        return $this;\n    }\n\n    /**\n     * Get image2\n     *\n     * @return \\Mac\\CoreBundle\\Entity\\Core\\File\n     */\n    public function getImage2()\n    {\n        return $this->image2;\n    }\n\n    /**\n     * Set image3\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Core\\File $image3\n     * @return Realisation\n     */\n    public function setImage3(\\Mac\\CoreBundle\\Entity\\Core\\File $image3 = null)\n    {\n        $this->image3 = $image3;\n\n        return $this;\n    }\n\n    /**\n     * Get image3\n     *\n     * @return \\Mac\\CoreBundle\\Entity\\Core\\File\n     */\n    public function getImage3()\n    {\n        return $this->image3;\n    }\n}\n",
+			"file": "/home/roussillep/sandbox/mac.franciaflex/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/Realisation.php",
+			"file_size": 9974,
+			"file_write_time": 131375190227058816,
+			"settings":
+			{
+				"buffer_size": 9974,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\nnamespace Application\\Migrations;\n\nuse Doctrine\\DBAL\\Migrations\\AbstractMigration;\nuse Doctrine\\DBAL\\Schema\\Schema;\n\n/**\n * Auto-generated Migration: Please modify to your needs!\n */\nclass Version20170330174614 extends AbstractMigration\n{\n    /**\n     * @param Schema $schema\n     */\n    public function up(Schema $schema)\n    {\n        // this up() migration is auto-generated, please modify it to your needs\n        $this->abortIf($this->connection->getDatabasePlatform()->getName() != 'mysql', 'Migration can only be executed safely on \\'mysql\\'.');\n\n        $this->addSql('CREATE TABLE realisation (id INT AUTO_INCREMENT NOT NULL, category_id INT NOT NULL, testimonial_image_id INT DEFAULT NULL, image1_id INT DEFAULT NULL, image2_id INT DEFAULT NULL, image3_id INT DEFAULT NULL, slug VARCHAR(255) NOT NULL, title VARCHAR(255) DEFAULT NULL, product VARCHAR(255) DEFAULT NULL, subtitle LONGTEXT DEFAULT NULL, body LONGTEXT DEFAULT NULL, testimonial_title VARCHAR(255) DEFAULT NULL, testimonial_body LONGTEXT DEFAULT NULL, testimonial_name VARCHAR(255) DEFAULT NULL, quotation_intro LONGTEXT DEFAULT NULL, created_by VARCHAR(255) DEFAULT NULL, updated_by VARCHAR(255) DEFAULT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, publish_start DATETIME DEFAULT NULL, publish_end DATETIME DEFAULT NULL, status VARCHAR(255) NOT NULL, mac_brand VARCHAR(3) NOT NULL COMMENT \\'Marque du groupe MAC propriétaire de l enregistrement\\', mac_app VARCHAR(3) DEFAULT NULL COMMENT \\'Application de la marque MAC propriétaire de l enregistrement\\', reference VARCHAR(255) DEFAULT NULL COMMENT \\'Référence fournie par le SI du groupe MAC\\', INDEX IDX_EAA5610E12469DE2 (category_id), INDEX IDX_EAA5610E81EE4A47 (testimonial_image_id), INDEX IDX_EAA5610EE5529553 (image1_id), INDEX IDX_EAA5610EF7E73ABD (image2_id), INDEX IDX_EAA5610E4F5B5DD8 (image3_id), UNIQUE INDEX unique_idx (mac_brand, mac_app, slug), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');\n        $this->addSql('CREATE TABLE realisation_file (realisation_id INT NOT NULL, file_id INT NOT NULL, INDEX IDX_9632ECE1B685E551 (realisation_id), INDEX IDX_9632ECE193CB796C (file_id), PRIMARY KEY(realisation_id, file_id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');\n        $this->addSql('CREATE TABLE realisation_category (id INT AUTO_INCREMENT NOT NULL, picto_id INT DEFAULT NULL, slug VARCHAR(100) NOT NULL, title VARCHAR(50) NOT NULL, subtitle LONGTEXT DEFAULT NULL, body LONGTEXT DEFAULT NULL, position INT NOT NULL, created_by VARCHAR(255) DEFAULT NULL, updated_by VARCHAR(255) DEFAULT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, publish_start DATETIME DEFAULT NULL, publish_end DATETIME DEFAULT NULL, status VARCHAR(255) NOT NULL, mac_brand VARCHAR(3) NOT NULL COMMENT \\'Marque du groupe MAC propriétaire de l enregistrement\\', mac_app VARCHAR(3) DEFAULT NULL COMMENT \\'Application de la marque MAC propriétaire de l enregistrement\\', reference VARCHAR(255) DEFAULT NULL COMMENT \\'Référence fournie par le SI du groupe MAC\\', INDEX IDX_5E43E33BAF2B8743 (picto_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');\n        $this->addSql('CREATE TABLE realisation_category_file (realisation_category_id INT NOT NULL, file_id INT NOT NULL, INDEX IDX_95656209D4F97F1A (realisation_category_id), INDEX IDX_9565620993CB796C (file_id), PRIMARY KEY(realisation_category_id, file_id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');\n        $this->addSql('ALTER TABLE realisation ADD CONSTRAINT FK_EAA5610E12469DE2 FOREIGN KEY (category_id) REFERENCES realisation_category (id)');\n        $this->addSql('ALTER TABLE realisation ADD CONSTRAINT FK_EAA5610E81EE4A47 FOREIGN KEY (testimonial_image_id) REFERENCES _file (id)');\n        $this->addSql('ALTER TABLE realisation ADD CONSTRAINT FK_EAA5610EE5529553 FOREIGN KEY (image1_id) REFERENCES _file (id)');\n        $this->addSql('ALTER TABLE realisation ADD CONSTRAINT FK_EAA5610EF7E73ABD FOREIGN KEY (image2_id) REFERENCES _file (id)');\n        $this->addSql('ALTER TABLE realisation ADD CONSTRAINT FK_EAA5610E4F5B5DD8 FOREIGN KEY (image3_id) REFERENCES _file (id)');\n        $this->addSql('ALTER TABLE realisation_file ADD CONSTRAINT FK_9632ECE1B685E551 FOREIGN KEY (realisation_id) REFERENCES realisation (id) ON DELETE CASCADE');\n        $this->addSql('ALTER TABLE realisation_file ADD CONSTRAINT FK_9632ECE193CB796C FOREIGN KEY (file_id) REFERENCES _file (id) ON DELETE CASCADE');\n        $this->addSql('ALTER TABLE realisation_category ADD CONSTRAINT FK_5E43E33BAF2B8743 FOREIGN KEY (picto_id) REFERENCES _file (id) ON DELETE SET NULL');\n        $this->addSql('ALTER TABLE realisation_category_file ADD CONSTRAINT FK_95656209D4F97F1A FOREIGN KEY (realisation_category_id) REFERENCES realisation_category (id) ON DELETE CASCADE');\n        $this->addSql('ALTER TABLE realisation_category_file ADD CONSTRAINT FK_9565620993CB796C FOREIGN KEY (file_id) REFERENCES _file (id) ON DELETE CASCADE');\n    }\n\n    /**\n     * @param Schema $schema\n     */\n    public function down(Schema $schema)\n    {\n        // this down() migration is auto-generated, please modify it to your needs\n        $this->abortIf($this->connection->getDatabasePlatform()->getName() != 'mysql', 'Migration can only be executed safely on \\'mysql\\'.');\n\n        $this->addSql('ALTER TABLE realisation_file DROP FOREIGN KEY FK_9632ECE1B685E551');\n        $this->addSql('ALTER TABLE realisation DROP FOREIGN KEY FK_EAA5610E12469DE2');\n        $this->addSql('ALTER TABLE realisation_category_file DROP FOREIGN KEY FK_95656209D4F97F1A');\n        $this->addSql('DROP TABLE realisation');\n        $this->addSql('DROP TABLE realisation_file');\n        $this->addSql('DROP TABLE realisation_category');\n        $this->addSql('DROP TABLE realisation_category_file');\n    }\n}\n",
+			"file": "/home/roussillep/sandbox/mac.franciaflex/app/DoctrineMigrations/Version20170330174614.php",
+			"file_size": 5900,
+			"file_write_time": 131353624450060618,
+			"settings":
+			{
+				"buffer_size": 5892,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\nnamespace Application\\Migrations;\n\nuse Doctrine\\DBAL\\Migrations\\AbstractMigration;\nuse Doctrine\\DBAL\\Schema\\Schema;\n\n/**\n * Auto-generated Migration: Please modify to your needs!\n */\nclass Version20170403150334 extends AbstractMigration\n{\n    /**\n     * @param Schema $schema\n     */\n    public function up(Schema $schema)\n    {\n        // this up() migration is auto-generated, please modify it to your needs\n        $this->abortIf($this->connection->getDatabasePlatform()->getName() != 'mysql', 'Migration can only be executed safely on \\'mysql\\'.');\n\n        $this->addSql('CREATE TABLE realisation (id INT AUTO_INCREMENT NOT NULL, category_id INT NOT NULL, testimonial_image_id INT DEFAULT NULL, image1_id INT DEFAULT NULL, image2_id INT DEFAULT NULL, image3_id INT DEFAULT NULL, slug VARCHAR(255) NOT NULL, title VARCHAR(255) DEFAULT NULL, product VARCHAR(255) DEFAULT NULL, subtitle LONGTEXT DEFAULT NULL, body LONGTEXT DEFAULT NULL, testimonial_title VARCHAR(255) DEFAULT NULL, testimonial_body LONGTEXT DEFAULT NULL, testimonial_name VARCHAR(255) DEFAULT NULL, quotation_intro LONGTEXT DEFAULT NULL, created_by VARCHAR(255) DEFAULT NULL, updated_by VARCHAR(255) DEFAULT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, publish_start DATETIME DEFAULT NULL, publish_end DATETIME DEFAULT NULL, status VARCHAR(255) NOT NULL, mac_brand VARCHAR(3) NOT NULL COMMENT \\'Marque du groupe MAC propriétaire de l enregistrement\\', mac_app VARCHAR(3) DEFAULT NULL COMMENT \\'Application de la marque MAC propriétaire de l enregistrement\\', reference VARCHAR(255) DEFAULT NULL COMMENT \\'Référence fournie par le SI du groupe MAC\\', INDEX IDX_EAA5610E12469DE2 (category_id), INDEX IDX_EAA5610E81EE4A47 (testimonial_image_id), INDEX IDX_EAA5610EE5529553 (image1_id), INDEX IDX_EAA5610EF7E73ABD (image2_id), INDEX IDX_EAA5610E4F5B5DD8 (image3_id), UNIQUE INDEX unique_idx (mac_brand, mac_app, slug), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');\n        $this->addSql('CREATE TABLE realisation_file (realisation_id INT NOT NULL, file_id INT NOT NULL, INDEX IDX_9632ECE1B685E551 (realisation_id), INDEX IDX_9632ECE193CB796C (file_id), PRIMARY KEY(realisation_id, file_id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');\n        $this->addSql('CREATE TABLE realisation_category (id INT AUTO_INCREMENT NOT NULL, picto_id INT DEFAULT NULL, slug VARCHAR(100) NOT NULL, title VARCHAR(50) NOT NULL, subtitle LONGTEXT DEFAULT NULL, list_body LONGTEXT DEFAULT NULL, body LONGTEXT DEFAULT NULL, position INT NOT NULL, created_by VARCHAR(255) DEFAULT NULL, updated_by VARCHAR(255) DEFAULT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, publish_start DATETIME DEFAULT NULL, publish_end DATETIME DEFAULT NULL, status VARCHAR(255) NOT NULL, mac_brand VARCHAR(3) NOT NULL COMMENT \\'Marque du groupe MAC propriétaire de l enregistrement\\', mac_app VARCHAR(3) DEFAULT NULL COMMENT \\'Application de la marque MAC propriétaire de l enregistrement\\', reference VARCHAR(255) DEFAULT NULL COMMENT \\'Référence fournie par le SI du groupe MAC\\', INDEX IDX_5E43E33BAF2B8743 (picto_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');\n        $this->addSql('CREATE TABLE realisation_category_file (realisation_category_id INT NOT NULL, file_id INT NOT NULL, INDEX IDX_95656209D4F97F1A (realisation_category_id), INDEX IDX_9565620993CB796C (file_id), PRIMARY KEY(realisation_category_id, file_id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');\n        $this->addSql('ALTER TABLE realisation ADD CONSTRAINT FK_EAA5610E12469DE2 FOREIGN KEY (category_id) REFERENCES realisation_category (id)');\n        $this->addSql('ALTER TABLE realisation ADD CONSTRAINT FK_EAA5610E81EE4A47 FOREIGN KEY (testimonial_image_id) REFERENCES _file (id)');\n        $this->addSql('ALTER TABLE realisation ADD CONSTRAINT FK_EAA5610EE5529553 FOREIGN KEY (image1_id) REFERENCES _file (id)');\n        $this->addSql('ALTER TABLE realisation ADD CONSTRAINT FK_EAA5610EF7E73ABD FOREIGN KEY (image2_id) REFERENCES _file (id)');\n        $this->addSql('ALTER TABLE realisation ADD CONSTRAINT FK_EAA5610E4F5B5DD8 FOREIGN KEY (image3_id) REFERENCES _file (id)');\n        $this->addSql('ALTER TABLE realisation_file ADD CONSTRAINT FK_9632ECE1B685E551 FOREIGN KEY (realisation_id) REFERENCES realisation (id) ON DELETE CASCADE');\n        $this->addSql('ALTER TABLE realisation_file ADD CONSTRAINT FK_9632ECE193CB796C FOREIGN KEY (file_id) REFERENCES _file (id) ON DELETE CASCADE');\n        $this->addSql('ALTER TABLE realisation_category ADD CONSTRAINT FK_5E43E33BAF2B8743 FOREIGN KEY (picto_id) REFERENCES _file (id) ON DELETE SET NULL');\n        $this->addSql('ALTER TABLE realisation_category_file ADD CONSTRAINT FK_95656209D4F97F1A FOREIGN KEY (realisation_category_id) REFERENCES realisation_category (id) ON DELETE CASCADE');\n        $this->addSql('ALTER TABLE realisation_category_file ADD CONSTRAINT FK_9565620993CB796C FOREIGN KEY (file_id) REFERENCES _file (id) ON DELETE CASCADE');\n    }\n\n    /**\n     * @param Schema $schema\n     */\n    public function down(Schema $schema)\n    {\n        // this down() migration is auto-generated, please modify it to your needs\n        $this->abortIf($this->connection->getDatabasePlatform()->getName() != 'mysql', 'Migration can only be executed safely on \\'mysql\\'.');\n\n        $this->addSql('ALTER TABLE realisation_file DROP FOREIGN KEY FK_9632ECE1B685E551');\n        $this->addSql('ALTER TABLE realisation DROP FOREIGN KEY FK_EAA5610E12469DE2');\n        $this->addSql('ALTER TABLE realisation_category_file DROP FOREIGN KEY FK_95656209D4F97F1A');\n        $this->addSql('DROP TABLE realisation');\n        $this->addSql('DROP TABLE realisation_file');\n        $this->addSql('DROP TABLE realisation_category');\n        $this->addSql('DROP TABLE realisation_category_file');\n    }\n}\n",
+			"file": "/home/roussillep/sandbox/mac.franciaflex/app/DoctrineMigrations/Version20170403150334.php",
+			"file_size": 5933,
+			"file_write_time": 131356982419721002,
+			"settings":
+			{
+				"buffer_size": 5925,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/mac.franciaflex/app/DoctrineMigrations/Version20170403160436.php",
+			"settings":
+			{
+				"buffer_size": 6732,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\nnamespace Application\\Migrations;\n\nuse Doctrine\\DBAL\\Migrations\\AbstractMigration;\nuse Doctrine\\DBAL\\Schema\\Schema;\n\n/**\n * Auto-generated Migration: Please modify to your needs!\n */\nclass Version20170403175907 extends AbstractMigration\n{\n    /**\n     * @param Schema $schema\n     */\n    public function up(Schema $schema)\n    {\n        // this up() migration is auto-generated, please modify it to your needs\n        $this->abortIf($this->connection->getDatabasePlatform()->getName() != 'mysql', 'Migration can only be executed safely on \\'mysql\\'.');\n\n\n\n        $this->addSql('ALTER TABLE realisation_category ADD list_image_id INT DEFAULT NULL');\n        $this->addSql('ALTER TABLE realisation_category ADD CONSTRAINT FK_5E43E33B43C8160D FOREIGN KEY (list_image_id) REFERENCES _file (id)');\n        $this->addSql('CREATE INDEX IDX_5E43E33B43C8160D ON realisation_category (list_image_id)');\n    }\n\n    /**\n     * @param Schema $schema\n     */\n    public function down(Schema $schema)\n    {\n        // this down() migration is auto-generated, please modify it to your needs\n        $this->abortIf($this->connection->getDatabasePlatform()->getName() != 'mysql', 'Migration can only be executed safely on \\'mysql\\'.');\n\n\n\n        $this->addSql('ALTER TABLE realisation_category DROP FOREIGN KEY FK_5E43E33B43C8160D');\n        $this->addSql('DROP INDEX IDX_5E43E33B43C8160D ON realisation_category');\n        $this->addSql('ALTER TABLE realisation_category DROP list_image_id');\n    }\n}\n",
+			"file": "/home/roussillep/sandbox/mac.franciaflex/app/DoctrineMigrations/Version20170403175907.php",
+			"file_size": 2891,
+			"file_write_time": 131357087477473442,
+			"settings":
+			{
+				"buffer_size": 1493,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\nnamespace Mac\\CoreBundle\\Entity\\Cms;\n\nuse Doctrine\\ORM\\Mapping as ORM;\nuse Faros\\CmsBundle\\Entity\\Behavior\\PublishableEntity;\nuse Gedmo\\Blameable\\Traits\\BlameableEntity;\nuse Gedmo\\Mapping\\Annotation as Gedmo;\nuse Gedmo\\Timestampable\\Traits\\TimestampableEntity;\nuse Mac\\CoreBundle\\Entity\\Behavior\\MacEntity;\n\n/**\n * @ORM\\Entity()\n */\nclass RealisationCategory\n{\n    use BlameableEntity, TimestampableEntity, PublishableEntity, MacEntity;\n\n    /**\n     * @ORM\\Id\n     * @ORM\\Column(type=\"integer\")\n     * @ORM\\GeneratedValue(strategy=\"AUTO\")\n     */\n    private $id;\n\n    /**\n     * @ORM\\OneToMany(targetEntity=\"Mac\\CoreBundle\\Entity\\Cms\\Realisation\", mappedBy=\"category\")\n     */\n    private $realisations;\n\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"Mac\\CoreBundle\\Entity\\Core\\File\")\n     * @ORM\\JoinColumn(nullable=true, onDelete=\"SET NULL\")\n     */\n    protected $picto;\n\n    /**\n     * @ORM\\ManyToMany(targetEntity=\"Mac\\CoreBundle\\Entity\\Core\\File\")\n     * @ORM\\JoinColumn(nullable=true, onDelete=\"SET NULL\")\n     */\n    protected $images;\n\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"Mac\\CoreBundle\\Entity\\Core\\File\")\n     * @ORM\\JoinColumn(nullable=true)\n     */\n    protected $listImage;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=100, nullable=false)\n     * @Gedmo\\Slug(fields={\"title\"})\n     */\n    private $slug;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=50, nullable=false)\n     */\n    private $title;\n\n    /**\n     * @ORM\\Column(type=\"text\", nullable=true)\n     */\n    protected $subtitle;\n\n    /**\n     * @ORM\\Column(type=\"text\", nullable=true)\n     */\n    protected $listBody;\n\n    /**\n     * @ORM\\Column(type=\"text\", nullable=true)\n     */\n    protected $body;\n\n    /**\n     * @ORM\\Column(type=\"integer\", length=11, nullable=false)\n     */\n    private $position = 0;\n    /**\n     * Constructor\n     */\n    public function __construct()\n    {\n        $this->realisations = new \\Doctrine\\Common\\Collections\\ArrayCollection();\n        $this->images = new \\Doctrine\\Common\\Collections\\ArrayCollection();\n    }\n\n    /**\n     * Get id\n     *\n     * @return integer\n     */\n    public function getId()\n    {\n        return $this->id;\n    }\n\n    /**\n     * Set slug\n     *\n     * @param string $slug\n     * @return RealisationCategory\n     */\n    public function setSlug($slug)\n    {\n        $this->slug = $slug;\n\n        return $this;\n    }\n\n    /**\n     * Get slug\n     *\n     * @return string\n     */\n    public function getSlug()\n    {\n        return $this->slug;\n    }\n\n    /**\n     * Set title\n     *\n     * @param string $title\n     * @return RealisationCategory\n     */\n    public function setTitle($title)\n    {\n        $this->title = $title;\n\n        return $this;\n    }\n\n    /**\n     * Get title\n     *\n     * @return string\n     */\n    public function getTitle()\n    {\n        return $this->title;\n    }\n\n    /**\n     * Set subtitle\n     *\n     * @param string $subtitle\n     * @return RealisationCategory\n     */\n    public function setSubtitle($subtitle)\n    {\n        $this->subtitle = $subtitle;\n\n        return $this;\n    }\n\n    /**\n     * Get subtitle\n     *\n     * @return string\n     */\n    public function getSubtitle()\n    {\n        return $this->subtitle;\n    }\n\n    /**\n     * Set body\n     *\n     * @param string $body\n     * @return RealisationCategory\n     */\n    public function setBody($body)\n    {\n        $this->body = $body;\n\n        return $this;\n    }\n\n    /**\n     * Get body\n     *\n     * @return string\n     */\n    public function getBody()\n    {\n        return $this->body;\n    }\n\n    /**\n     * Set listBody\n     *\n     * @param string $listBody\n     * @return RealisationCategory\n     */\n    public function setListBody($listBody)\n    {\n        $this->listBody = $listBody;\n\n        return $this;\n    }\n\n    /**\n     * Get listBody\n     *\n     * @return string\n     */\n    public function getListBody()\n    {\n        return $this->listBody;\n    }\n\n    /**\n     * Set position\n     *\n     * @param integer $position\n     * @return RealisationCategory\n     */\n    public function setPosition($position)\n    {\n        $this->position = $position;\n\n        return $this;\n    }\n\n    /**\n     * Get position\n     *\n     * @return integer\n     */\n    public function getPosition()\n    {\n        return $this->position;\n    }\n\n    /**\n     * Add realisation\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Cms\\Realisation $realisation\n     * @return RealisationCategory\n     */\n    public function addRealisation(\\Mac\\CoreBundle\\Entity\\Cms\\Realisation $realisation)\n    {\n        $this->realisations[] = $realisation;\n\n        return $this;\n    }\n\n    /**\n     * Remove realisation\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Cms\\Realisation $realisation\n     */\n    public function removeRealisation(\\Mac\\CoreBundle\\Entity\\Cms\\Realisation $realisation)\n    {\n        $this->realisations->removeElement($realisation);\n    }\n\n    /**\n     * Get realisations\n     *\n     * @return \\Doctrine\\Common\\Collections\\Collection\n     */\n    public function getRealisations()\n    {\n        return $this->realisations;\n    }\n\n    /**\n     * Set picto\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Core\\File $picto\n     * @return RealisationCategory\n     */\n    public function setPicto(\\Mac\\CoreBundle\\Entity\\Core\\File $picto = null)\n    {\n        $this->picto = $picto;\n\n        return $this;\n    }\n\n    /**\n     * Get picto\n     *\n     * @return \\Mac\\CoreBundle\\Entity\\Core\\File\n     */\n    public function getPicto()\n    {\n        return $this->picto;\n    }\n\n    /**\n     * Add image\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Core\\File $image\n     * @return RealisationCategory\n     */\n    public function addImage(\\Mac\\CoreBundle\\Entity\\Core\\File $image)\n    {\n        $this->images[] = $image;\n\n        return $this;\n    }\n\n    /**\n     * Remove image\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Core\\File $image\n     */\n    public function removeImage(\\Mac\\CoreBundle\\Entity\\Core\\File $image)\n    {\n        $this->images->removeElement($image);\n    }\n\n    /**\n     * Get images\n     *\n     * @return \\Doctrine\\Common\\Collections\\Collection\n     */\n    public function getImages()\n    {\n        return $this->images;\n    }\n\n    /**\n     * Set listImage\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Core\\File $listImage\n     * @return RealisationCategory\n     */\n    public function setListImage(\\Mac\\CoreBundle\\Entity\\Core\\File $listImage = null)\n    {\n        $this->listImage = $listImage;\n\n        return $this;\n    }\n\n    /**\n     * Get listImage\n     *\n     * @return \\Mac\\CoreBundle\\Entity\\Core\\File\n     */\n    public function getListImage()\n    {\n        return $this->listImage;\n    }\n}",
+			"file": "/home/roussillep/sandbox/mac.franciaflex/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/RealisationCategory.php",
+			"file_size": 6644,
+			"file_write_time": 131375190227058816,
+			"settings":
+			{
+				"buffer_size": 6644,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\nnamespace Application\\Migrations;\n\nuse Doctrine\\DBAL\\Migrations\\AbstractMigration;\nuse Doctrine\\DBAL\\Schema\\Schema;\n\n/**\n * Auto-generated Migration: Please modify to your needs!\n */\nclass Version20170414161353 extends AbstractMigration\n{\n    /**\n     * @param Schema $schema\n     */\n    public function up(Schema $schema)\n    {\n        // this up() migration is auto-generated, please modify it to your needs\n        $this->abortIf($this->connection->getDatabasePlatform()->getName() != 'mysql', 'Migration can only be executed safely on \\'mysql\\'.');\n\n        $this->addSql('ALTER TABLE quote_request ADD npai TINYINT(1) DEFAULT NULL');\n    }\n\n    /**\n     * @param Schema $schema\n     */\n    public function down(Schema $schema)\n    {\n        // this down() migration is auto-generated, please modify it to your needs\n        $this->abortIf($this->connection->getDatabasePlatform()->getName() != 'mysql', 'Migration can only be executed safely on \\'mysql\\'.');\n\n        $this->addSql('ALTER TABLE quote_request DROP npai');\n    }\n}\n",
+			"file": "/home/roussillep/sandbox/mac.franciaflex/app/DoctrineMigrations/Version20170414161353.php",
+			"file_size": 1042,
+			"file_write_time": 131366536421693550,
+			"settings":
+			{
+				"buffer_size": 1042,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/mac.franciaflex/app/DoctrineMigrations/Version20170424150851.php",
+			"settings":
+			{
+				"buffer_size": 1044,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/mac.franciaflex/app/config/parameters.yml",
+			"settings":
+			{
+				"buffer_size": 1503,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\n\nnamespace Mac\\CoreBundle\\Entity\\Lead;\n\nuse Doctrine\\Common\\Collections\\ArrayCollection;\nuse Doctrine\\ORM\\Mapping as ORM;\nuse Gedmo\\Mapping\\Annotation as Gedmo;\nuse Mac\\CoreBundle\\Behavior\\Core\\AddressableEntity;\nuse Mac\\CoreBundle\\Entity\\Behavior\\MacEntity;\nuse Mac\\CoreBundle\\LeadAssignment\\AssignableInterface;\nuse Mac\\CoreBundle\\LeadAssignment\\AssigneeInterface;\nuse Mac\\CoreBundle\\LeadAssignment\\AssignableLogInterface;\nuse Symfony\\Component\\Security\\Core\\User\\UserInterface;\n\n/**\n * @ORM\\Entity\n * @ORM\\Table(indexes={@ORM\\Index(name=\"idx_mac_quote_request\", columns={\"mac_brand\",\"mac_app\",\"reference\"})})\n * @Gedmo\\Loggable\n */\nclass QuoteRequest implements AssignableInterface\n{\n    use MacEntity, AddressableEntity;\n\n    /**\n     * @ORM\\Id\n     * @ORM\\Column(type=\"integer\")\n     * @ORM\\GeneratedValue(strategy=\"AUTO\")\n     */\n    protected $id;\n\n    /**\n     * @ORM\\OneToOne(targetEntity=\"Mac\\CoreBundle\\Entity\\Lead\\LeadActivity\", cascade={\"persist\"})\n     * @ORM\\JoinColumn(name=\"lead_activity_id\", referencedColumnName=\"id\", nullable=false, unique=true)\n     */\n    protected $leadActivity;\n\n    /**\n     * @ORM\\Column(type=\"json_array\", nullable=true)\n     */\n    protected $products;\n\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"Mac\\CoreBundle\\Entity\\Catalog\\ProductCategory\")\n     * @ORM\\JoinColumn(name=\"product_category_id\", referencedColumnName=\"id\", onDelete=\"SET NULL\")\n     */\n    protected $productCategory;\n\n    /**\n     * @ORM\\OneToMany(targetEntity=\"Mac\\CoreBundle\\Entity\\Lead\\QuoteRequestAssignment\", mappedBy=\"quoteRequest\", cascade={\"persist\"})\n     * @ORM\\OrderBy({\"createdAt\" = \"DESC\", \"decidedAt\" = \"DESC\"})\n     */\n    protected $assignments;\n\n    /**\n     * @ORM\\ManyToOne(targetEntity=\"Mac\\CoreBundle\\Entity\\Lead\\PointOfSale\")\n     * @ORM\\JoinColumn(name=\"point_of_sale_id\", referencedColumnName=\"id\")\n     */\n    protected $assignedTo;\n\n    /**\n     * @ORM\\Column(type=\"integer\", nullable=true)\n     */\n    protected $noSaleReasons;\n\n    /**\n     * @ORM\\Column(type=\"string\", nullable=true)\n     */\n    protected $noSaleReasonPrecision;\n\n    /**\n     * @ORM\\Column(type=\"string\", nullable=true)\n     */\n    protected $haveProject;\n\n    /**\n     * @ORM\\Column(type=\"string\", nullable=true)\n     */\n    protected $workType;\n\n    /**\n     * @ORM\\Column(type=\"string\", nullable=true)\n     */\n    protected $housingType;\n\n    /**\n     * @ORM\\Column(type=\"string\", nullable=true)\n     */\n    protected $completionDate;\n\n    /**\n     * @ORM\\Column(type=\"string\", nullable=false)\n     * @Gedmo\\Versioned\n     */\n    protected $status;\n\n    /**\n     * @ORM\\Column(type=\"decimal\", nullable=true)\n     */\n    protected $revenue;\n\n    /**\n     * @ORM\\Column(type=\"string\", nullable=true)\n     */\n    protected $salePrecision;\n\n    /**\n     * @ORM\\Column(type=\"text\", nullable=true)\n     */\n    protected $message;\n\n    /**\n     * @ORM\\Column(type=\"string\", nullable=true)\n     */\n    protected $attachment;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=255, nullable=false)\n     */\n    protected $contactMode;\n\n    /**\n     * @ORM\\OneToMany(targetEntity=\"Mac\\CoreBundle\\Entity\\Lead\\FeedbackSurvey\", mappedBy=\"quoteRequest\", cascade={\"persist\"})\n     * @ORM\\OrderBy({\"createdAt\" = \"DESC\"})\n     */\n    protected $feedbackSurvey;\n\n    /**\n     * @ORM\\OneToMany(targetEntity=\"Mac\\CoreBundle\\Entity\\Lead\\ProjectSurvey\", mappedBy=\"quoteRequest\", cascade={\"persist\"})\n     * @ORM\\OrderBy({\"createdAt\" = \"DESC\"})\n     */\n    protected $projectSurvey;\n\n    /**\n     * @ORM\\ManyToMany(targetEntity=\"Mac\\CoreBundle\\Entity\\Catalog\\Product\")\n     * @ORM\\JoinTable(name=\"quote_request_product\",\n     *     joinColumns={@ORM\\JoinColumn(name=\"quote_request_id\", referencedColumnName=\"id\")},\n     *     inverseJoinColumns={@ORM\\JoinColumn(name=\"product_id\", referencedColumnName=\"id\")}\n     * )\n     */\n    protected $productInterest;\n\n    /**\n     * @ORM\\ManyToMany(targetEntity=\"Mac\\CoreBundle\\Entity\\Catalog\\ProductCategory\")\n     * @ORM\\JoinTable(name=\"quote_request_product_category\",\n     *     joinColumns={@ORM\\JoinColumn(name=\"quote_request_id\", referencedColumnName=\"id\")},\n     *     inverseJoinColumns={@ORM\\JoinColumn(name=\"product_category_id\", referencedColumnName=\"id\")}\n     * )\n     */\n    protected $productCategoryInterest;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=255, nullable=true)\n     */\n    protected $type;\n\n    /**\n     * @ORM\\Column(type=\"integer\", nullable=true)\n     */\n    protected $categoryMask;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=255, nullable=true)\n     */\n    protected $productName;\n\n    /**\n     * @ORM\\Column(type=\"date\", nullable=true)\n     */\n    protected $purchaseDate;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=255, nullable=true)\n     */\n    protected $companyName;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=255, nullable=true)\n     */\n    protected $companyZipcode;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=255, nullable=true)\n     */\n    protected $companyCity;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=255, nullable=true)\n     */\n    protected $companyActivity;\n\n    /**\n     * @ORM\\Column(type=\"string\", length=255, nullable=true)\n     */\n    protected $companySiren;\n\n    /**\n     * @ORM\\Column(type=\"float\", nullable=true)\n     */\n    protected $latitude;\n\n    /**\n     * @ORM\\Column(type=\"float\", nullable=true)\n     */\n    protected $longitude;\n\n    /**\n     * @ORM\\OneToMany(targetEntity=\"Mac\\CoreBundle\\Entity\\Lead\\QuoteRequestLog\", mappedBy=\"assignable\", cascade={\"all\"})\n     * @ORM\\OrderBy({\"createdAt\" = \"DESC\", \"id\" = \"DESC\"})\n     */\n    protected $logs;\n\n    /**\n     * Enum fields values\n     */\n    public static $haveProjectValues = array(\n        'yes' => 'quote_request.have_project.yes',\n        'no'  => 'quote_request.have_project.no',\n    );\n\n    public static $workTypeValues = array(\n        'renovation' => 'quote_request.work_type.renovation',\n        'new'        => 'quote_request.work_type.new',\n    );\n\n    public static $housingTypeValues = array(\n        'house'         => 'quote_request.housing_type.house',\n        'apartment'     => 'quote_request.housing_type.apartment',\n        'building'      => 'quote_request.housing_type.building',\n        'office'        => 'quote_request.housing_type.office',\n        'commercial'    => 'quote_request.housing_type.commercial',\n        'tertiary'      => 'quote_request.housing_type.tertiary',\n        'residential'   => 'quote_request.housing_type.residential',\n        'other'         => 'quote_request.housing_type.other',\n    );\n\n    public static $completionDateValues = array(\n        'less_than_a_month'   => 'quote_request.completion_date.less_than_a_month',\n        'one_to_two_month'    => 'quote_request.completion_date.one_to_two_month',\n        'three_to_six_month'  => 'quote_request.completion_date.three_to_six_month',\n        'more_than_six_month' => 'quote_request.completion_date.more_than_six_month',\n        // Valeurs FF\n        'FF_three_months' => 'quote_request.completion_date.FF_three_months',\n        'FF_six_months' => 'quote_request.completion_date.FF_six_months',\n        'FF_more_than_a_year' => 'quote_request.completion_date.FF_more_than_a_year',\n        'FF_unknown' => 'quote_request.completion_date.FF_unknown',\n    );\n\n    public static $contactModeValues = array(\n        'email'    => 'quote_request.contact_mode.email',\n        'phone'    => 'quote_request.contact_mode.phone',\n        'whatever' => 'quote_request.contact_mode.whatever',\n    );\n\n    public static $givenOriginValues = array(\n        'national_radio' => 'quote_request.origin.national_radio',\n        'regional_radio' => 'quote_request.origin.regional_radio',\n        'tv'             => 'quote_request.origin.tv',\n        'national_press' => 'quote_request.origin.national_press',\n        'regional_press' => 'quote_request.origin.regional_press',\n        'flyers'         => 'quote_request.origin.flyers',\n        'emailing'       => 'quote_request.origin.emailing',\n        'annuary'        => 'quote_request.origin.annuary',\n        'search_engine'  => 'quote_request.origin.search_engine',\n        'friends'        => 'quote_request.origin.friends',\n        'other'          => 'quote_request.origin.other',\n    );\n\n    public static $statusValues = array(\n        'assigned'  => 'quote_request.status.assigned',\n        'accepted'  => 'quote_request.status.accepted',\n        'succeeded' => 'quote_request.status.succeeded',\n        'failed'    => 'quote_request.status.failed',\n        'refused'   => 'quote_request.status.refused',\n        'cancelled' => 'quote_request.status.cancelled',\n        'new'       => 'quote_request.status.new',\n        'processed' => 'quote_request.status.processed',\n        'forward'   => 'quote_request.status.forward',\n        'lost'      => 'quote_request.status.lost',\n\n        // Status France Fermetures\n        'FF_created'  => 'quote_request.status.FF_created',\n        'FF_pending_call_center'  => 'quote_request.status.FF_pending_call_center',\n        'FF_pending_non_wap'  => 'quote_request.status.FF_pending_non_wap',\n        'FF_accepted_wap'  => 'quote_request.status.FF_accepted_wap',\n        'FF_accepted_non_wap'  => 'quote_request.status.FF_accepted_non_wap',\n        'FF_succeeded' => 'quote_request.status.FF_succeeded',\n        'FF_lost' => 'quote_request.status.FF_lost',\n        'FF_cancelled' => 'quote_request.status.FF_cancelled'\n    );\n\n    const NOSALE_TOO_FAR = 1;\n    const NOSALE_PRODUCT_TYPE = 2;\n    const NOSALE_CUSTOMER_TYPE = 4;\n    const NOSALE_OTHER = 512;\n\n    public static $noSaleReasonsValues = array(\n        self::NOSALE_TOO_FAR       => 'quote_request.no_sale_reasons.too_far',\n        self::NOSALE_PRODUCT_TYPE  => 'quote_request.no_sale_reasons.product_type',\n        self::NOSALE_CUSTOMER_TYPE => 'quote_request.no_sale_reasons.customer_type',\n        self::NOSALE_OTHER         => 'quote_request.no_sale_reasons.other',\n    );\n\n    public static function getName()\n    {\n        return 'lead_activity.quote_request';\n    }\n\n    /**\n     * Constructor\n     */\n    public function __construct()\n    {\n        $this->assignments   = new \\Doctrine\\Common\\Collections\\ArrayCollection();\n        $this->productInterest   = new \\Doctrine\\Common\\Collections\\ArrayCollection();\n        $this->productCategoryInterest   = new \\Doctrine\\Common\\Collections\\ArrayCollection();\n        $this->products      = array();\n    }\n\n    /**\n     * Get id\n     *\n     * @return integer\n     */\n    public function getId()\n    {\n        return $this->id;\n    }\n\n    /**\n     * Set revenue\n     *\n     * @param  integer      $revenue\n     * @return QuoteRequest\n     */\n    public function setRevenue($revenue)\n    {\n        $this->revenue = $revenue;\n\n        return $this;\n    }\n\n    /**\n     * Get revenue\n     *\n     * @return float\n     */\n    public function getRevenue()\n    {\n        return $this->revenue;\n    }\n\n    public function setSalePrecision($salePrecision)\n    {\n        $this->salePrecision = $salePrecision;\n\n        return $this;\n    }\n\n    public function getSalePrecision()\n    {\n        return $this->salePrecision;\n    }\n\n    /**\n     * Set noSaleReason\n     *\n     * @param  string       $noSaleReason\n     * @return QuoteRequest\n     */\n    public function setNoSaleReasons($noSaleReasons)\n    {\n        $this->noSaleReasons = $noSaleReasons;\n\n        return $this;\n    }\n\n    /**\n     * Get noSaleReason\n     *\n     * @return string\n     */\n    public function getNoSaleReasons()\n    {\n        return $this->noSaleReasons;\n    }\n\n    public function setNoSaleReasonPrecision($noSaleReasonPrecision)\n    {\n        $this->noSaleReasonPrecision = $noSaleReasonPrecision;\n\n        return $this;\n    }\n\n    public function getNoSaleReasonPrecision()\n    {\n        return $this->noSaleReasonPrecision;\n    }\n\n    public function getNoSaleReasonsArray()\n    {\n        $reasons = array();\n\n        foreach (QuoteRequest::$noSaleReasonsValues as $reasonValue => $reasonLabel) {\n            if (($this->noSaleReasons & $reasonValue) === $reasonValue) {\n                $reasons[$reasonValue] = $reasonLabel;\n            }\n        }\n\n        return $reasons;\n    }\n\n    /**\n     * Add product\n     *\n     * @param  $product\n     * @return QuoteRequest\n     */\n    public function addProduct($product)\n    {\n        if (is_object($product) && get_class($product) == \"Mac\\CoreBundle\\Entity\\Catalog\\Product\") {\n            $this->products[] = $product->getId();\n        } elseif (is_array($product) && isset($product['id'])) {\n            $this->products[] = $product['id'];\n        } else {\n            $this->products[] = $product;\n        }\n\n        return $this;\n    }\n\n    /**\n     * Remove product\n     *\n     * @param $product\n     */\n    public function removeProduct($product)\n    {\n        if (is_object($product) && get_class($product) == \"Mac\\CoreBundle\\Entity\\Catalog\\Product\") {\n            $id = $product->getId();\n        } elseif (is_array($product) && isset($product['id'])) {\n            $id = $product['id'];\n        } else {\n            $id = $product;\n        }\n        $key = array_search($id, $this->products);\n\n        if ($key >= 0) {\n            unset($this->products[$key]);\n        }\n\n    }\n\n    /**\n     * Get products\n     *\n     * @return array\n     */\n    public function getProducts()\n    {\n        return $this->products;\n    }\n\n    /**\n     * Set productCategory\n     *\n     * @param  \\Mac\\CoreBundle\\Entity\\Catalog\\ProductCategory $productCategory\n     * @return QuoteRequest\n     */\n    public function setProductCategory(\\Mac\\CoreBundle\\Entity\\Catalog\\ProductCategory $productCategory = null)\n    {\n        $this->productCategory = $productCategory;\n\n        return $this;\n    }\n\n    /**\n     * Get productCategory\n     *\n     * @return \\Mac\\CoreBundle\\Entity\\Catalog\\ProductCategory\n     */\n    public function getProductCategory()\n    {\n        return $this->productCategory;\n    }\n\n    public function isAssignedTo(UserInterface $user)\n    {\n        foreach ($this->assignments as $assignment) {\n            if (null !== $user->getRetailerProfile()) {\n                if ($user->getRetailerProfile()->getPointOfSales()->contains($assignment->getPointOfSale())) {\n                    return true;\n                }\n            } else {\n                foreach ($user->getSellerCompanies() as $company) {\n                    if ($company->getPointOfSales()->contains($assignment->getPointOfSale())) {\n                        return true;\n                    }\n                }\n            }\n        }\n\n        return false;\n    }\n\n    public function getAssignments()\n    {\n        return $this->assignments;\n    }\n\n    public function getAssignedTo()\n    {\n        return $this->assignedTo;\n    }\n\n    public function getCurrentAssignment()\n    {\n        return $this->assignments->first();\n    }\n\n    /**\n     * @{inhreitdoc}\n     */\n    public function assignTo(AssigneeInterface $assignee = null)\n    {\n        if (isset($assignee) && !$assignee instanceof PointOfSale) {\n            throw new \\InvalidArgumentAxception('QuoteRequest::assignTo argument MUST BE a PointOfSale entity !');\n        }\n\n        $this->assignments[] = new QuoteRequestAssignment($this, $assignee);\n        $this->assignedTo = $assignee;\n\n        return $this;\n    }\n\n    public function getPosAssignment(PointOfSale $pointOfSale)\n    {\n        foreach ($this->assignments as $assignment) {\n            if ($assignment->getPointOfSale() === $pointOfSale) {\n                return $assignment;\n            }\n        }\n    }\n\n    /**\n     * Set status\n     *\n     * @param  string       $status\n     * @return QuoteRequest\n     */\n    public function setStatus($status)\n    {\n        if (null !== $status && !isset(self::$statusValues[$status])) {\n            throw new \\InvalidArgumentException(sprintf(\n                'The value \"%s\" is not allowed for the status property.',\n                $status\n            ));\n        }\n\n        $this->status = $status;\n\n        return $this;\n    }\n\n    /**\n     * Get status\n     *\n     * @return string\n     */\n    public function getStatus()\n    {\n        return $this->status;\n    }\n\n    public function getStatusLabel()\n    {\n        return self::$statusValues[$this->status];\n    }\n\n    public function getNoSaleReasonsValues()\n    {\n        return self::$noSaleReasonsValues;\n    }\n\n    /**\n     * Set housingType\n     *\n     * @param  string       $housingType\n     * @return QuoteRequest\n     */\n    public function setHousingType($housingType)\n    {\n        $this->housingType = $housingType;\n\n        return $this;\n    }\n\n    /**\n     * Get housingType\n     *\n     * @return string\n     */\n    public function getHousingType()\n    {\n        return $this->housingType;\n    }\n\n    /**\n     * Get housingType\n     *\n     * @return string\n     */\n    public function getHousingTypeLabel()\n    {\n        return isset(self::$housingTypeValues[$this->housingType])\n            ? self::$housingTypeValues[$this->housingType]\n            : $this->housingType\n        ;\n    }\n\n    /**\n     * Set workType\n     *\n     * @param  string       $workType\n     * @return QuoteRequest\n     */\n    public function setWorkType($workType)\n    {\n        $this->workType = $workType;\n\n        return $this;\n    }\n\n    /**\n     * Get workType\n     *\n     * @return string\n     */\n    public function getWorkType()\n    {\n        return $this->workType;\n    }\n\n    /**\n     * Get workType\n     *\n     * @return string\n     */\n    public function getWorkTypeLabel()\n    {\n        return isset(self::$workTypeValues[$this->workType])\n            ? self::$workTypeValues[$this->workType]\n            : $this->workType;\n    }\n\n    /**\n     * Set completionDate\n     *\n     * @param  string       $completionDate\n     * @return QuoteRequest\n     */\n    public function setCompletionDate($completionDate)\n    {\n        if (null !== $completionDate && !isset(self::$completionDateValues[$completionDate])) {\n            throw new \\InvalidArgumentException(sprintf(\n                'The value \"%s\" is not allowed for the completionDate property.',\n                $completionDate\n            ));\n        }\n\n        $this->completionDate = $completionDate;\n\n        return $this;\n    }\n\n    /**\n     * Get completionDate\n     *\n     * @return string\n     */\n    public function getCompletionDate()\n    {\n        return $this->completionDate;\n    }\n\n    public function getCompletionDateLabel()\n    {\n        return isset(self::$completionDateValues[$this->completionDate])\n            ? self::$completionDateValues[$this->completionDate]\n            : $this->completionDate;\n    }\n\n    /**\n     * Set haveProject\n     *\n     * @param  string       $haveProject\n     * @return QuoteRequest\n     */\n    public function setHaveProject($haveProject)\n    {\n        if (null !== $haveProject && !isset(self::$haveProjectValues[$haveProject])) {\n            throw new \\InvalidArgumentException(sprintf(\n                'The value \"%s\" is not allowed for the haveProject property.',\n                $haveProject\n            ));\n        }\n\n        $this->haveProject = $haveProject;\n\n        return $this;\n    }\n\n    /**\n     * Get haveProject\n     *\n     * @return string\n     */\n    public function getHaveProject()\n    {\n        return $this->haveProject;\n    }\n\n    public function getHaveProjectLabel()\n    {\n        return isset(self::$haveProjectValues[$this->haveProject])\n            ? self::$haveProjectValues[$this->haveProject]\n            : $this->haveProject;\n    }\n\n    /**\n     * Set message\n     *\n     * @param  string       $message\n     * @return QuoteRequest\n     */\n    public function setMessage($message)\n    {\n        $this->message = $message;\n\n        return $this;\n    }\n\n    /**\n     * Get message\n     *\n     * @return string\n     */\n    public function getMessage()\n    {\n        return $this->message;\n    }\n\n    /**\n     * Set attachment\n     *\n     * @param  string       $attachment\n     * @return QuoteRequest\n     */\n    public function setAttachment($attachment)\n    {\n        $this->attachment = $attachment;\n\n        return $this;\n    }\n\n    /**\n     * Get attachment\n     *\n     * @return string\n     */\n    public function getAttachment()\n    {\n        return $this->attachment;\n    }\n\n    /**\n     * Set contactMode\n     *\n     * @param  string       $contactMode\n     * @return QuoteRequest\n     */\n    public function setContactMode($contactMode)\n    {\n        if (null !== $contactMode && !isset(self::$contactModeValues[$contactMode])) {\n            throw new \\InvalidArgumentException(sprintf(\n                'The value \"%s\" is not allowed for the contactMode property.',\n                $contactMode\n            ));\n        }\n\n        $this->contactMode = $contactMode;\n\n        return $this;\n    }\n\n    /**\n     * Get contactMode\n     *\n     * @return string\n     */\n    public function getContactMode()\n    {\n        return $this->contactMode;\n    }\n\n    public function getContactModeLabel()\n    {\n        return isset(self::$contactModeValues[$this->contactMode])\n            ? self::$contactModeValues[$this->contactMode]\n            : $this->contactMode;\n    }\n\n    /**\n     * Set leadActivity\n     *\n     * @param  \\Mac\\CoreBundle\\Entity\\Lead\\LeadActivity $leadActivity\n     * @return QuoteRequest\n     */\n    public function setLeadActivity(\\Mac\\CoreBundle\\Entity\\Lead\\LeadActivity $leadActivity)\n    {\n        $this->leadActivity = $leadActivity;\n        $leadActivity->setClass(get_class($this));\n\n        return $this;\n    }\n\n    public function getGivenOriginLabelLabel()\n    {\n        if ($la = $this->getLeadActivity()) {\n            return isset(self::$givenOriginValues[$la->getGivenOrigin()])\n                ? self::$givenOriginValues[$la->getGivenOrigin()]\n                : $la->getGivenOrigin();\n        } else {\n            return null;\n        }\n    }\n\n    /**\n     * Get leadActivity\n     *\n     * @return \\Mac\\CoreBundle\\Entity\\Lead\\LeadActivity\n     */\n    public function getLeadActivity()\n    {\n        return $this->leadActivity;\n    }\n\n    public function getActivity()\n    {\n        return $this->getLeadActivity();\n    }\n\n    public function __toString()\n    {\n        return $this->getLeadActivity()->getName() . ' #'.$this->id;\n    }\n\n    /**\n     * Add feedbackSurvey\n     *\n     * @param  \\Mac\\CoreBundle\\Entity\\Lead\\FeedbackSurvey $feedbackSurvey\n     * @return User\n     */\n    public function addFeedbackSurvey(\\Mac\\CoreBundle\\Entity\\Lead\\FeedbackSurvey $feedbackSurvey)\n    {\n        $this->feedbackSurvey[] = $feedbackSurvey;\n\n        return $this;\n    }\n\n    /**\n     * Remove feedbackSurvey\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Lead\\FeedbackSurvey $feedbackSurvey\n     */\n    public function removeFeedbackSurvey(\\Mac\\CoreBundle\\Entity\\Lead\\FeedbackSurvey $feedbackSurvey)\n    {\n        $this->feedbackSurvey->removeElement($feedbackSurvey);\n    }\n\n    /**\n     * Get feedbackSurvey\n     *\n     * @return \\Doctrine\\Common\\Collections\\Collection\n     */\n    public function getFeedbackSurveys()\n    {\n        return $this->feedbackSurvey;\n    }\n\n    /**\n     * Add projectSurvey\n     *\n     * @param  \\Mac\\CoreBundle\\Entity\\Lead\\ProjectSurvey $projectSurvey\n     * @return User\n     */\n    public function addProjectSurvey(\\Mac\\CoreBundle\\Entity\\Lead\\ProjectSurvey $projectSurvey)\n    {\n        $this->projectSurvey[] = $projectSurvey;\n\n        return $this;\n    }\n\n    /**\n     * Remove projectSurvey\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Lead\\ProjectSurvey $projectSurvey\n     */\n    public function removeProjectSurvey(\\Mac\\CoreBundle\\Entity\\Lead\\ProjectSurvey $projectSurvey)\n    {\n        $this->projectSurvey->removeElement($projectSurvey);\n    }\n\n    /**\n     * Get projectSurvey\n     *\n     * @return \\Doctrine\\Common\\Collections\\Collection\n     */\n    public function getProjectSurveys()\n    {\n        return $this->projectSurvey;\n    }\n\n    public function addProductInterest(\\Mac\\CoreBundle\\Entity\\Catalog\\Product $product)\n    {\n        $this->productInterest[] = $product;\n\n        return $this;\n    }\n\n    public function removeProductInterest(\\Mac\\CoreBundle\\Entity\\Catalog\\Product $product)\n    {\n        $this->productInterest->removeElement($product);\n\n        return $this;\n    }\n\n    public function setProductInterest(array $products)\n    {\n        $this->productInterest = new ArrayCollection($products);\n\n        return $this;\n    }\n\n    public function getProductInterest()\n    {\n        return $this->productInterest;\n    }\n\n    public function addProductCategoryInterest(\\Mac\\CoreBundle\\Entity\\Catalog\\ProductCategory $productCategory)\n    {\n        $this->productCategoryInterest[] = $productCategory;\n\n        return $this;\n    }\n\n    public function removeProductCategoryInterest(\\Mac\\CoreBundle\\Entity\\Catalog\\ProductCategory $productCategory)\n    {\n        $this->productCategoryInterest->removeElement($productCategory);\n\n        return $this;\n    }\n\n    public function setProductCategoryInterest(array $productCategories)\n    {\n        $this->productCategoryInterest = new ArrayCollection($productCategories);\n\n        return $this;\n    }\n\n    public function getProductCategoryInterest()\n    {\n        return $this->productCategoryInterest;\n    }\n\n    public function setType($type)\n    {\n        $this->type = $type;\n\n        return $this;\n    }\n\n    public function getType()\n    {\n        return $this->type;\n    }\n\n    public function setCategoryMask($categoryMask)\n    {\n        $this->categoryMask = $categoryMask;\n\n        return $this;\n    }\n\n    public function getCategoryMask()\n    {\n        return $this->categoryMask;\n    }\n\n    /**\n     * Set products\n     *\n     * @param array $products\n     * @return QuoteRequest\n     */\n    public function setProducts($products)\n    {\n        $this->products = $products;\n\n        return $this;\n    }\n\n    /**\n     * Set productName\n     *\n     * @param string $productName\n     * @return QuoteRequest\n     */\n    public function setProductName($productName)\n    {\n        $this->productName = $productName;\n\n        return $this;\n    }\n\n    /**\n     * Get productName\n     *\n     * @return string\n     */\n    public function getProductName()\n    {\n        return $this->productName;\n    }\n\n    /**\n     * Set purchaseDate\n     *\n     * @param \\DateTime $purchaseDate\n     * @return QuoteRequest\n     */\n    public function setPurchaseDate($purchaseDate)\n    {\n        $this->purchaseDate = $purchaseDate;\n\n        return $this;\n    }\n\n    /**\n     * Get purchaseDate\n     *\n     * @return \\DateTime\n     */\n    public function getPurchaseDate()\n    {\n        return $this->purchaseDate;\n    }\n\n    /**\n     * Set companyName\n     *\n     * @param string $companyName\n     * @return QuoteRequest\n     */\n    public function setCompanyName($companyName)\n    {\n        $this->companyName = $companyName;\n\n        return $this;\n    }\n\n    /**\n     * Get companyName\n     *\n     * @return string\n     */\n    public function getCompanyName()\n    {\n        return $this->companyName;\n    }\n\n    /**\n     * Set companyZipcode\n     *\n     * @param string $companyZipcode\n     * @return QuoteRequest\n     */\n    public function setCompanyZipcode($companyZipcode)\n    {\n        $this->companyZipcode = $companyZipcode;\n\n        return $this;\n    }\n\n    /**\n     * Get companyZipcode\n     *\n     * @return string\n     */\n    public function getCompanyZipcode()\n    {\n        return $this->companyZipcode;\n    }\n\n    /**\n     * Set companyCity\n     *\n     * @param string $companyCity\n     * @return QuoteRequest\n     */\n    public function setCompanyCity($companyCity)\n    {\n        $this->companyCity = $companyCity;\n\n        return $this;\n    }\n\n    /**\n     * Get companyCity\n     *\n     * @return string\n     */\n    public function getCompanyCity()\n    {\n        return $this->companyCity;\n    }\n\n    /**\n     * Get company activity\n     *\n     * @return string\n     */\n    public function getCompanyActivity()\n    {\n        return $this->companyActivity;\n    }\n\n    /**\n     * Set company activity\n     *\n     * @param string $companyActivity\n     *\n     * @return QuoteRequest\n     */\n    public function setCompanyActivity($companyActivity)\n    {\n        $this->companyActivity = $companyActivity;\n        return $this;\n    }\n\n    /**\n     * Get company SIREN\n     *\n     * @return string\n     */\n    public function getCompanySiren()\n    {\n        return $this->companySiren;\n    }\n\n    /**\n     * Set company SIREN\n     *\n     * @param string $companySiren\n     *\n     * @return QuoteRequest\n     */\n    public function setCompanySiren($companySiren)\n    {\n        $this->companySiren = $companySiren;\n        return $this;\n    }\n\n    /**\n     * Add assignments\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Lead\\QuoteRequestAssignment $assignments\n     * @return QuoteRequest\n     */\n    public function addAssignment(\\Mac\\CoreBundle\\Entity\\Lead\\QuoteRequestAssignment $assignments)\n    {\n        $this->assignments[] = $assignments;\n\n        return $this;\n    }\n\n    /**\n     * Remove assignments\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Lead\\QuoteRequestAssignment $assignments\n     */\n    public function removeAssignment(\\Mac\\CoreBundle\\Entity\\Lead\\QuoteRequestAssignment $assignments)\n    {\n        $this->assignments->removeElement($assignments);\n    }\n\n    /**\n     * Set assignedTo\n     *\n     * @param \\Mac\\CoreBundle\\Entity\\Lead\\PointOfSale $assignedTo\n     * @return QuoteRequest\n     */\n    public function setAssignedTo(\\Mac\\CoreBundle\\Entity\\Lead\\PointOfSale $assignedTo = null)\n    {\n        $this->assignedTo = $assignedTo;\n\n        return $this;\n    }\n\n    /**\n     * Get feedbackSurvey\n     *\n     * @return \\Doctrine\\Common\\Collections\\Collection\n     */\n    public function getFeedbackSurvey()\n    {\n        return $this->feedbackSurvey;\n    }\n\n    /**\n     * Get projectSurvey\n     *\n     * @return \\Doctrine\\Common\\Collections\\Collection\n     */\n    public function getProjectSurvey()\n    {\n        return $this->projectSurvey;\n    }\n\n    /**\n     * {@inheritdoc}\n     */\n    public function addLog(AssignableLogInterface $log)\n    {\n        $this->logs[] = $log;\n\n        return $this;\n    }\n\n    /**\n     * {@inheritdoc}\n     */\n    public function removeLog(AssignableLogInterface $log)\n    {\n        $this->logs->removeElement($log);\n\n        return $this;\n    }\n\n    /**\n     * {@inheritdoc}\n     */\n    public function getLogs($action = null, AssigneeInterface $assignee = null)\n    {\n        $logs = $this->logs;\n\n        // Filtrage sur l'action\n        if (isset($action)) {\n            if (!in_array($action, array_keys(QuoteRequestLog::$actionValues))) {\n                throw new \\InvalidArgumentException('Unknown action for QuoteRequestLog : '.$action);\n            }\n\n            $logs = $logs->filter(function ($log) use ($action) {\n                return $action == $log->getAction();\n            });\n        }\n\n        // Filtrage sur le professionnel assigné\n        if (isset($assignee)) {\n            $logs = $logs->filter(function ($log) use ($assignee) {\n                return $assignee == $log->getAssignee();\n            });\n        }\n\n        return $logs;\n    }\n\n    /**\n     * @{inhheritdoc}\n     */\n    public function getAssignee()\n    {\n        $logs = $this->logs;\n\n        // Filtrage sur l'action\n        if (isset($action)) {\n            if (!in_array($action, array_keys(QuoteRequestLog::$actionValues))) {\n                throw new \\InvalidArgumentException('Unknown action for QuoteRequestLog : '.$action);\n            }\n\n            $logs = $logs->filter(function ($log) use ($action) {\n                return $action == $log->getAction();\n            });\n        }\n\n        // Filtrage sur le professionnel assigné\n        if (isset($assignee)) {\n            $logs = $logs->filter(function ($log) use ($assignee) {\n                return $assignee == $log->getAssignee();\n            });\n        }\n\n        return $logs;\n    }\n\n    /**\n     * Get latitude\n     *\n     * @return float\n     */\n    public function getLatitude()\n    {\n        return $this->latitude;\n    }\n\n    /**\n     * Set latitude\n     *\n     * @param float $latitude\n     */\n    public function setLatitude($latitude)\n    {\n        $this->latitude = $latitude;\n\n        return $this;\n    }\n\n    /**\n     * Get longitude\n     *\n     * @return float\n     */\n    public function getLongitude()\n    {\n        return $this->longitude;\n    }\n\n    /**\n     * Set longitude\n     *\n     * @param float $longitude\n     */\n    public function setLongitude($longitude)\n    {\n        $this->longitude = $longitude;\n\n        return $this;\n    }\n}\n",
+			"file": "/home/roussillep/sandbox/mac.franciaflex/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Lead/QuoteRequest.php",
+			"file_size": 32578,
+			"file_write_time": 131375190227098817,
+			"settings":
+			{
+				"buffer_size": 32576,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 357.0,
+		"last_filter": "move",
+		"selected_items":
+		[
+			[
+				"move",
+				"File: Move"
+			],
+			[
+				"blame",
+				"Git: Blame"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rena",
+				"File: Rename"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"lower",
+				"Convert Case: Lower Case"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"typetodo",
+				"TypeTodo: HTTP repository"
+			],
+			[
+				"todo",
+				"Set Syntax: typeTodo"
+			],
+			[
+				"blam",
+				"Git: Blame"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"thmee",
+				"Themr: List themes"
+			],
+			[
+				"theme",
+				"Themr: List themes"
+			],
+			[
+				"thme",
+				"Themr: List themes"
+			],
+			[
+				"json",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"scheme",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"sche",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"schele",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"reid",
+				"Indentation: Reindent Lines"
+			]
+		],
+		"width": 701.0
+	},
+	"console":
+	{
+		"height": 391.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/roussillep/sandbox/mac.franciaflex",
+		"/home/roussillep/sandbox/mac.franciaflex/app",
+		"/home/roussillep/sandbox/mac.franciaflex/app/config",
+		"/home/roussillep/sandbox/mac.franciaflex/src",
+		"/home/roussillep/sandbox/mac.franciaflex/src/LePhare",
+		"/home/roussillep/sandbox/mac.franciaflex/src/LePhare/Bundle",
+		"/home/roussillep/sandbox/mac.franciaflex/src/LePhare/Bundle/OAuthServerBundle",
+		"/home/roussillep/sandbox/mac.franciaflex/src/LePhare/Bundle/OAuthServerBundle/Resources",
+		"/home/roussillep/sandbox/mac.franciaflex/src/LePhare/Bundle/OAuthServerBundle/Resources/config",
+		"/home/roussillep/sandbox/mac.franciaflex/src/Mac",
+		"/home/roussillep/sandbox/mac.franciaflex/src/Mac/SupervisorBundle",
+		"/home/roussillep/sandbox/mac.franciaflex/src/Mac/SupervisorBundle/Controller",
+		"/home/roussillep/sandbox/mac.franciaflex/src/Mac/SupervisorBundle/Controller/Core",
+		"/home/roussillep/sandbox/mac.franciaflex/src/Mac/SupervisorBundle/Form",
+		"/home/roussillep/sandbox/mac.franciaflex/src/Mac/SupervisorBundle/Form/DocumentaryCatalog",
+		"/home/roussillep/sandbox/mac.franciaflex/src/Mac/SupervisorBundle/Form/Transformer",
+		"/home/roussillep/sandbox/mac.franciaflex/src/Mac/SupervisorBundle/Resources",
+		"/home/roussillep/sandbox/mac.franciaflex/src/Mac/SupervisorBundle/Resources/config",
+		"/home/roussillep/sandbox/mac.franciaflex/src/Mac/SupervisorBundle/Resources/views",
+		"/home/roussillep/sandbox/mac.franciaflex/src/Mac/SupervisorBundle/Resources/views/themes",
+		"/home/roussillep/sandbox/mac.franciaflex/src/Mac/SupervisorBundle/Resources/views/themes/avant",
+		"/home/roussillep/sandbox/mac.franciaflex/vendor",
+		"/home/roussillep/sandbox/mac.franciaflex/vendor/faros",
+		"/home/roussillep/sandbox/mac.franciaflex/vendor/faros/avant-theme-bundle",
+		"/home/roussillep/sandbox/mac.franciaflex/vendor/faros/qb-bundle",
+		"/home/roussillep/sandbox/mac.franciaflex/vendor/faros/qb-bundle/Faros",
+		"/home/roussillep/sandbox/mac.franciaflex/vendor/faros/qb-bundle/Faros/QBBundle",
+		"/home/roussillep/sandbox/mac.franciaflex/vendor/faros/qb-bundle/Faros/QBBundle/Form"
+	],
+	"file_history":
+	[
+		"/home/roussillep/sandbox/mac.franciaflex/app/DoctrineMigrations/Version20170330113516.php",
+		"/home/roussillep/sandbox/panaget/app/Resources/crontab.production",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Controller/PointOfSaleController.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Command/Cron/DailyEmailReminderCommand.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/views/Lead/QuoteRequestAdmin/list.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Pro/qr_remind_15J_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Form/Handler/QuoteRequestCommercialHandler.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Form/QuoteRequestCommercialType.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Command/Cron/HourlyEmailReminderCommand.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/translations/messages.fr.yml",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/en/Commercial/qr_all_refuse_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Commercial/qr_all_refuse_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Entity/Core/PointOfSale.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Entity/Lead/QuoteRequest.php",
+		"/home/roussillep/sandbox/panaget/app/DoctrineMigrations/Version20170323170902.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Mailer/Mailer.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/views/Lead/QuoteRequestAdmin/show.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Entity/Core/CommercialBinomial.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/QuoteRequest/Logger.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Entity/Lead/QuoteRequestLog.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/config/log_actions.yml",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/en/User/qr_remind_21J_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/User/qr_remind_21J_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/QuoteRequest/Manager.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Entity/Lead/Repository/QuoteRequestRepository.php",
+		"/home/roussillep/sandbox/panaget/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Compiler/CheckReferenceValidityPass.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/QuoteRequest/Manager.php.old",
+		"/home/roussillep/sandbox/panaget/vendor/gedmo/doctrine-extensions/lib/Gedmo/Exception.php",
+		"/home/roussillep/sandbox/panaget/vendor/faros/qb-bundle/Faros/QBBundle/Controller/QueryController.php",
+		"/home/roussillep/sandbox/panaget/web/bundles/lepharecomment/libs/jquery-comment/js/jquery.comment.js",
+		"/home/roussillep/sandbox/panaget/web/bundles/lepharecomment/js/comment.js",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/public/less/admin.less",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Entity/Core/RetailerProfile.php",
+		"/home/roussillep/sandbox/panaget/src/LePhare/CommentBundle/Controller/CommentController.php",
+		"/home/roussillep/sandbox/panaget/src/LePhare/CommentBundle/Resources/config/routing.yml",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Controller/CommercialProfileController.php",
+		"/home/roussillep/sandbox/panaget/node_modules/gulp-less/test/fixtures/buttons.less",
+		"/home/roussillep/sandbox/panaget/web/bundles/panagetadmin/libs/bootstrap-3.3.5/less/mixins.less",
+		"/home/roussillep/sandbox/panaget/web/bundles/panagetadmin/libs/bootstrap-3.3.5/less/labels.less",
+		"/home/roussillep/sandbox/panaget/web/bundles/panagetadmin/libs/bootstrap-3.3.5/less/mixins/labels.less",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Controller/Traits/ProfileController.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Entity/Core/Repository/PointOfSaleRepository.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Controller/DashboardController.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Admin/qr_creation_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Admin/qr_remind_48_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Commercial/qr_creation_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Commercial/qr_delegate_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Admin/inquiry_creation_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Admin/qr_comment_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Controller/DevController.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/translations/messages.en.yml",
+		"/home/roussillep/sandbox/panaget/app/DoctrineMigrations/Version20170223145327.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Commercial/qr_contact_15J_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/en/Commercial/qr_refuse_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Commercial/qr_refuse_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Commercial/qr_remind_24_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Commercial/qr_remind_48_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Commercial/qr_remind_lead_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Pro/qr_assignation_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Pro/qr_contact_8J_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Pro/qr_remind_36_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Retailer/qr_acceptation_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Form/QuoteRequestAdminType.php",
+		"/home/roussillep/sandbox/panaget/app/DoctrineMigrations/Version20170309163757.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Entity/Lead/QuoteRequestAssignment.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/translations/messages.en.yml",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/QuoteRequest/AssignationHelper.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Command/Cron/DailyLeadExportToCegidCommand.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Form/QuoteRequestWithoutProjectType.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Entity/Core/Region.php",
+		"/home/roussillep/sandbox/panaget/app/config/config.yml",
+		"/home/roussillep/sandbox/panaget/vendor/doctrine/orm/lib/Doctrine/ORM/Query/AST/Functions/SubstringFunction.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Entity/Core/Department.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Form/Handler/QuoteRequestAdminHandler.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/views/Dashboard/dashboard-commercial.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/views/Dashboard/dashboard-retailer.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/views/Dashboard/dashboard-section.html.twig",
+		"/home/roussillep/sandbox/panaget/app/DoctrineMigrations/Version20170302172401.php",
+		"/home/roussillep/sandbox/panaget/app/DoctrineMigrations/Version20170302151439.php",
+		"/home/roussillep/sandbox/panaget/app/config/capistrano/stages/preprod.rb",
+		"/home/roussillep/sandbox/panaget/app/config/capistrano/deploy.rb",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/views/Form/qr_actions.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/public/less/variables.less",
+		"/home/roussillep/sandbox/panaget/vendor/faros/admin-bundle/Faros/AdminBundle/Controller/CRUD/ORMController.php",
+		"/home/roussillep/sandbox/panaget/vendor/faros/avant-theme-bundle/Faros/AvantThemeBundle/Resources/views/themes/avant/CRUD/list.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Form/Handler/QuoteRequestWithoutProjectHandler.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Form/Handler/QuoteRequestRetailerHandler.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Form/QuoteRequestRetailerType.php",
+		"/home/roussillep/sandbox/panaget/app/config/parameters.yml",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/views/RetailerUser/edit.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/translations/messages.fr.yml",
+		"/home/roussillep/sandbox/panaget/app/DoctrineMigrations/Version20170228154621.php",
+		"/home/roussillep/sandbox/panaget/app/DoctrineMigrations/Version20170302103317.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/views/Dashboard/_statm2_attr_sale_admin.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/views/Dashboard/_statm2_attr_sale_section.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Import/AbstractImportProListener.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/views/CommercialProfile/show.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/views/PointOfSale/show.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/en/Pro/qr_unassign_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr/Pro/qr_unassign_notif.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Entity/Core/CommercialProfile.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/views/CommercialProfile/list.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/views/CommercialProfile/binomials.html.twig",
+		"/home/roussillep/sandbox/panaget/app/DoctrineMigrations/Version20170228154348.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/config/routing/commercial_profile.yml",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/config/roles.yml",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Form/CommercialBinomialsType.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Controller/ContactController.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Behavior/StatusableHelper.php",
+		"/home/roussillep/.config/sublime-text-3/Packages/User/TodoReview.sublime-settings",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/QuoteRequest/AssignationHelper.php.old",
+		"/home/roussillep/sandbox/panaget/panaget.do",
+		"/home/roussillep/sandbox/panaget/vendor/symfony/symfony/src/Symfony/Component/Validator/Constraints/Count.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Form/CoworkersType.php",
+		"/home/roussillep/sandbox/panaget/vendor/doctrine/dbal/lib/Doctrine/DBAL/Statement.php",
+		"/home/roussillep/sandbox/panaget/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php",
+		"/home/roussillep/sandbox/panaget/vendor/doctrine/dbal/lib/Doctrine/DBAL/Query/QueryBuilder.php",
+		"/home/roussillep/sandbox/panaget/vendor/faros/admin-bundle/Faros/AdminBundle/Controller/CRUD/AbstractController.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/views/CommercialProfile/coworkers.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Form/Catalog/AccessoryType.php",
+		"/home/roussillep/sandbox/panaget/vendor/faros/avant-theme-bundle/Faros/AvantThemeBundle/Resources/views/themes/avant/CRUD/edit.html.twig",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Geo/GeoHelper.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Resources/config/import_pro.yml",
+		"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Import/ImportProListener.php",
+		"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Geo/GeolocHelper.php",
+		"/home/roussillep/sandbox/panaget/app/config/config_prod.yml",
+		"/home/roussillep/Téléchargements/soap.txt"
+	],
+	"find":
+	{
+		"height": 48.0
+	},
+	"find_in_files":
+	{
+		"height": 130.0,
+		"where_history":
+		[
+			"/home/roussillep/sandbox/panaget/src/Panaget",
+			"/home/roussillep/sandbox/panaget/src",
+			"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email",
+			"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle",
+			"/home/roussillep/sandbox/panaget/web/bundles/panagetadmin/libs/bootstrap-3.3.5/less",
+			"/home/roussillep/sandbox/panaget/src/Panaget",
+			"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email/fr",
+			"/home/roussillep/sandbox/panaget/src/Panaget/SiteBundle/Resources/views/Email",
+			"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle",
+			"/home/roussillep/sandbox/panaget/src",
+			"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle",
+			"/home/roussillep/sandbox/panaget/src/Panaget",
+			"/home/roussillep/sandbox/panaget/src/Panaget,-*.js,-*.less,-*.py,-*.css.*",
+			"/home/roussillep/sandbox/panaget/src/Panaget,-*.js,-*.less,-*.py",
+			"/home/roussillep/sandbox/panaget/src/Panaget,-*.js,-*.less",
+			"/home/roussillep/sandbox/panaget/src",
+			"/home/roussillep/sandbox/panaget/src/Panaget",
+			"/home/roussillep/sandbox/panaget/src",
+			"/home/roussillep/sandbox/panaget/src/Panaget",
+			"/home/roussillep/sandbox/panaget/src",
+			"/home/roussillep/sandbox/panaget/app/config",
+			"/home/roussillep/sandbox/panaget/vendor/doctrine/dbal/lib/Doctrine",
+			"/home/roussillep/sandbox/panaget/src/Panaget/AdminBundle/Form",
+			"/home/roussillep/sandbox/panaget/src",
+			"/home/roussillep/sandbox/panaget/src/Panaget",
+			"/home/roussillep/sandbox/panaget/src",
+			"/home/roussillep/sandbox/panaget/app",
+			"/home/roussillep/sandbox/ponroy/src",
+			"/home/roussillep/sandbox/ponroy/src/Faros",
+			"/home/roussillep/sandbox/ponroy/src",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy",
+			"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/less"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"extranet_profile_bkp_20161020_1100",
+			"__FF_tmp_lead_ancien_site",
+			"extranet_profile_bkp_20161020_1100",
+			"__FF_tmp_lead_ancien_site",
+			"extranet_profile_bkp_20161020_1100",
+			"__FF_tmp_lead_ancien_site",
+			"extranet_profile_bkp_20161020_1100",
+			"__FF_tmp_lead_ancien_site",
+			"extranet_profile_bkp_20161020_1100",
+			"__FF_tmp_lead_ancien_site",
+			"qr_contact_15J_notif",
+			"qr_remind_15J_notif",
+			"action:",
+			"toString",
+			"switchToInquiry",
+			"Unknown QuoteRequest action",
+			"defaultCommercial",
+			"ContactMode",
+			"contactMode",
+			"ContactMode",
+			"->warn",
+			"Try to log an unknown action",
+			"no_sale",
+			"noSale",
+			"nosale",
+			"getDefaultCommercial",
+			"$e",
+			"Vous avez une demande de devis sur l'extranet Panaget en atten",
+			"awake",
+			"label-qr-",
+			".label-variant",
+			".label-qr",
+			"label-qr",
+			".label-qr",
+			"label-variant",
+			"label-",
+			"label-qr-",
+			"lead-qr-",
+			"url_input",
+			"delete_confirm",
+			"\n            <a href=\"#\"><i class=\"fa fa-cogs\"></i></a>",
+			"</h4>",
+			"<div class=\"count\"></div>",
+			"</h4>",
+			"trigger",
+			"total_comment",
+			".posted-comments-postbox",
+			"binomial",
+			"collapseThree",
+			"collapseTwo",
+			"|",
+			"id: \\d+",
+			"|",
+			"collapseOne",
+			"comment",
+			"assignment.pointOfSale.retailerUsers.first.user",
+			"allow_impersonate",
+			"entity.status == 'assigned' and",
+			"currentAssignment",
+			" and entity.status == 'assigned'",
+			"qra_sale",
+			"\nquote_request_assignment:",
+			"progress",
+			"new:",
+			"in_progress",
+			"status",
+			"action",
+			"awake",
+			", 'date' => $assignDate",
+			", 'qra' => $qras, 'date' => $assignDate",
+			",{% endfor %}",
+			"|count",
+			"|count()",
+			"Le(s) professionnel(s)",
+			"_3_",
+			"q3_",
+			"q2_",
+			"q1_",
+			"p0_",
+			"contactedAt",
+			"contacted_at",
+			", updated_by",
+			"setExpriredDate",
+			"expriredDate",
+			"exprireDate",
+			"expiredAt",
+			"expiredDate",
+			"Date",
+			"expired",
+			"label label-qr-",
+			"%s",
+			"()]);\n",
+			"$commercial",
+			"Commercial",
+			"commercial",
+			"Commercial",
+			"commercial",
+			"assign",
+			"nurturing",
+			"removeAssignmentsForQr",
+			"in_progress",
+			"qra_lost",
+			"Unsupported QuoteRequest actio",
+			"standBy",
+			"etn",
+			"ContactedAt",
+			"contactedAt",
+			"ContactedAt",
+			"standByDate",
+			"todo",
+			"todo-rml",
+			"quote",
+			"manag",
+			"qr_acceptation_notif",
+			"retailer",
+			"'retailer'",
+			"label-qr-sale",
+			"noSale",
+			"quote_request_retailer.no_sale_reason",
+			"too_expensive",
+			"abandonned_project",
+			"no_sale",
+			"qra_sale",
+			"fail",
+			"$qra->getPointOfSale()",
+			"getDecideFormType",
+			"->qr",
+			"getAssignmentByQr"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"|length",
+			"|count",
+			"label label-default label-qr-",
+			"getAssignmentsByQr",
+			"edentary",
+			"sedentary",
+			"inomial",
+			"binomal",
+			"get('ponroy_mailer')"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 8,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/roussillep/sandbox/mac.franciaflex/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/Realisation.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9974,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1879,
+								1879
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+									"1":
+									[
+										640,
+										641
+									]
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 30.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/roussillep/sandbox/mac.franciaflex/app/DoctrineMigrations/Version20170330174614.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5892,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2052,
+								2052
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										2292,
+										2293
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										2022,
+										2023
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 30.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/roussillep/sandbox/mac.franciaflex/app/DoctrineMigrations/Version20170403150334.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5925,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5086,
+								5086
+							],
+							[
+								5692,
+								5692
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"2":
+									[
+										5921,
+										5922
+									]
+								},
+								"icon":
+								{
+									"2":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"2":
+									[
+										5184,
+										5185
+									]
+								},
+								"unmatched":
+								{
+									"1":
+									[
+										5091,
+										5092
+									]
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/roussillep/sandbox/mac.franciaflex/app/DoctrineMigrations/Version20170403160436.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6732,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5298,
+								5298
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+									"1":
+									[
+										5641,
+										5642
+									]
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/roussillep/sandbox/mac.franciaflex/app/DoctrineMigrations/Version20170403175907.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1493,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1228,
+								1228
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1489,
+										1490
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										998,
+										999
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/roussillep/sandbox/mac.franciaflex/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/RealisationCategory.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6644,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								443,
+								443
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+									"1":
+									[
+										366,
+										367
+									]
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/roussillep/sandbox/mac.franciaflex/app/DoctrineMigrations/Version20170414161353.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1042,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1042,
+								1042
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/roussillep/sandbox/mac.franciaflex/app/DoctrineMigrations/Version20170424150851.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1044,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								872,
+								872
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										969,
+										970
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										851,
+										852
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/home/roussillep/sandbox/mac.franciaflex/app/config/parameters.yml",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1503,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								289,
+								289
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/home/roussillep/sandbox/mac.franciaflex/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Lead/QuoteRequest.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 32576,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"trim_trailing_white_space_on_save": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "mac.franciaflex.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"quoterequest",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Lead/QuoteRequest.php"
+			],
+			[
+				"realisacateg",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/RealisationCategory.php"
+			],
+			[
+				"realisation",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/Realisation.php"
+			],
+			[
+				"cront",
+				"app/Resources/crontab.production"
+			],
+			[
+				"quoterequesass",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequestAssignment.php"
+			],
+			[
+				"crontabprod",
+				"app/Resources/crontab.production"
+			],
+			[
+				"quotecontroler",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"manager.hp",
+				"src/Panaget/SiteBundle/QuoteRequest/Manager.php"
+			],
+			[
+				"quotemanager",
+				"src/Panaget/SiteBundle/QuoteRequest/Manager.php"
+			],
+			[
+				"mailer",
+				"src/Panaget/SiteBundle/Mailer/Mailer.php"
+			],
+			[
+				"quotemanage",
+				"src/Panaget/SiteBundle/QuoteRequest/Manager.php"
+			],
+			[
+				"qr_remind_15j_notif",
+				"src/Panaget/SiteBundle/Resources/views/Email/fr/Pro/qr_remind_15J_notif.html.twig"
+			],
+			[
+				"quoteadmicont",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"quoteadmincontr",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"logger",
+				"src/Panaget/SiteBundle/QuoteRequest/Logger.php"
+			],
+			[
+				"commercialbinomi",
+				"src/Panaget/SiteBundle/Entity/Core/CommercialBinomial.php"
+			],
+			[
+				"commercialbino",
+				"src/Panaget/SiteBundle/Entity/Core/CommercialBinomial.php"
+			],
+			[
+				"quotereqshow",
+				"src/Panaget/AdminBundle/Resources/views/Lead/QuoteRequestAdmin/show.html.twig"
+			],
+			[
+				"quotereq",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequest.php"
+			],
+			[
+				"manager",
+				"src/Panaget/SiteBundle/QuoteRequest/Manager.php"
+			],
+			[
+				"allrefuse",
+				"src/Panaget/SiteBundle/Resources/views/Email/en/Commercial/qr_all_refuse_notif.html.twig"
+			],
+			[
+				"checref",
+				"vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Compiler/CheckReferenceValidityPass.php"
+			],
+			[
+				"quoteconot",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"pointofsale",
+				"src/Panaget/SiteBundle/Entity/Core/PointOfSale.php"
+			],
+			[
+				"qr_remind_21j_notif",
+				"src/Panaget/SiteBundle/Resources/views/Email/fr/User/qr_remind_21J_notif.html.twig"
+			],
+			[
+				"quoteshow",
+				"src/Panaget/AdminBundle/Resources/views/Lead/QuoteRequestAdmin/show.html.twig"
+			],
+			[
+				"labels.less",
+				"web/bundles/panagetadmin/libs/bootstrap-3.3.5/less/labels.less"
+			],
+			[
+				"mixins.less",
+				"web/bundles/panagetadmin/libs/bootstrap-3.3.5/less/mixins.less"
+			],
+			[
+				"buttons.less",
+				"node_modules/gulp-less/test/fixtures/buttons.less"
+			],
+			[
+				"quotecontroller",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"querycontroller",
+				"vendor/faros/qb-bundle/Faros/QBBundle/Controller/QueryController.php"
+			],
+			[
+				"commentcontroller",
+				"src/LePhare/CommentBundle/Controller/CommentController.php"
+			],
+			[
+				"jquerycomment",
+				"web/bundles/lepharecomment/libs/jquery-comment/js/jquery.comment.js"
+			],
+			[
+				"comment.js",
+				"web/bundles/lepharecomment/js/comment.js"
+			],
+			[
+				"retailerpf",
+				"src/Panaget/SiteBundle/Entity/Core/RetailerProfile.php"
+			],
+			[
+				"quoterequ",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequest.php"
+			],
+			[
+				"commentrouting",
+				"src/LePhare/CommentBundle/Resources/config/routing.yml"
+			],
+			[
+				"commentcontroler",
+				"src/LePhare/CommentBundle/Controller/CommentController.php"
+			],
+			[
+				"poofsal",
+				"src/Panaget/SiteBundle/Entity/Core/PointOfSale.php"
+			],
+			[
+				"commerciaco",
+				"src/Panaget/AdminBundle/Controller/CommercialProfileController.php"
+			],
+			[
+				"devcontroller",
+				"src/Panaget/AdminBundle/Controller/DevController.php"
+			],
+			[
+				"dashbocontr",
+				"src/Panaget/AdminBundle/Controller/DashboardController.php"
+			],
+			[
+				"quotecontr",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"quoteadcont",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"quotere",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequest.php"
+			],
+			[
+				"combinphp",
+				"src/Panaget/SiteBundle/Entity/Core/CommercialBinomial.php"
+			],
+			[
+				"dashcontr",
+				"src/Panaget/AdminBundle/Controller/DashboardController.php"
+			],
+			[
+				"qutelog",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequestLog.php"
+			],
+			[
+				"crontab",
+				"app/Resources/crontab.production"
+			],
+			[
+				"quotelog",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequestLog.php"
+			],
+			[
+				"quotereadmicontr",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"quoteass",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequestAssignment.php"
+			],
+			[
+				"quotereas",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequestAssignment.php"
+			],
+			[
+				"quotereu",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequest.php"
+			],
+			[
+				"quoteassign",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequestAssignment.php"
+			],
+			[
+				"dashbcontr",
+				"src/Panaget/AdminBundle/Controller/DashboardController.php"
+			],
+			[
+				"region",
+				"src/Panaget/SiteBundle/Entity/Core/Region.php"
+			],
+			[
+				"substrphp",
+				"vendor/doctrine/orm/lib/Doctrine/ORM/Query/AST/Functions/SubstringFunction.php"
+			],
+			[
+				"departme",
+				"src/Panaget/SiteBundle/Entity/Core/Department.php"
+			],
+			[
+				"dashbo",
+				"src/Panaget/AdminBundle/Controller/DashboardController.php"
+			],
+			[
+				"quotereqacon",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"qr.php",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequest.php"
+			],
+			[
+				"quotereque",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequest.php"
+			],
+			[
+				"qrmanager",
+				"src/Panaget/SiteBundle/QuoteRequest/Manager.php"
+			],
+			[
+				"crudlisthtmltw",
+				"vendor/faros/avant-theme-bundle/Faros/AvantThemeBundle/Resources/views/themes/avant/CRUD/list.html.twig"
+			],
+			[
+				"ormcontr",
+				"vendor/faros/admin-bundle/Faros/AdminBundle/Controller/CRUD/ORMController.php"
+			],
+			[
+				"adbcontroller",
+				"src/Panaget/AdminBundle/Controller/DevController.php"
+			],
+			[
+				"quotereqass",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequestAssignment.php"
+			],
+			[
+				"quoterequestlog",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequestLog.php"
+			],
+			[
+				"quoteontroller",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"qucont",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"quoteadminontr",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"qurmanager",
+				"src/Panaget/SiteBundle/QuoteRequest/Manager.php"
+			],
+			[
+				"quoterecontr",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"quotereqadmi",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"quoterqass",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequestAssignment.php"
+			],
+			[
+				"quoreass",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequestAssignment.php"
+			],
+			[
+				"retaileruseredit",
+				"src/Panaget/AdminBundle/Resources/views/RetailerUser/edit.html.twig"
+			],
+			[
+				"quoterequestwithoutprojecttype",
+				"src/Panaget/AdminBundle/Form/QuoteRequestWithoutProjectType.php"
+			],
+			[
+				"admintype",
+				"src/Panaget/AdminBundle/Form/QuoteRequestAdminType.php"
+			],
+			[
+				"adminhandler",
+				"src/Panaget/AdminBundle/Form/Handler/QuoteRequestAdminHandler.php"
+			],
+			[
+				"quoterequestshow",
+				"src/Panaget/AdminBundle/Resources/views/Lead/QuoteRequestAdmin/show.html.twig"
+			],
+			[
+				"quoterequadmin",
+				"src/Panaget/AdminBundle/Form/QuoteRequestAdminType.php"
+			],
+			[
+				"quoterequestcontroller",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"commercialbin",
+				"src/Panaget/SiteBundle/Entity/Core/CommercialBinomial.php"
+			],
+			[
+				"",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"quotereqcontroller",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"dashbcontroller",
+				"src/Panaget/AdminBundle/Controller/DashboardController.php"
+			],
+			[
+				"commercialbinomia",
+				"src/Panaget/SiteBundle/Entity/Core/CommercialBinomial.php"
+			],
+			[
+				"quoterequlog",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequestLog.php"
+			],
+			[
+				"commercicontro",
+				"src/Panaget/AdminBundle/Controller/CommercialProfileController.php"
+			],
+			[
+				"binom",
+				"src/Panaget/SiteBundle/Entity/Core/CommercialBinomial.php"
+			],
+			[
+				"dashbocontroller",
+				"src/Panaget/AdminBundle/Controller/DashboardController.php"
+			],
+			[
+				"cowotype",
+				"src/Panaget/AdminBundle/Form/CoworkersType.php"
+			],
+			[
+				"commrcialprofi",
+				"src/Panaget/SiteBundle/Entity/Core/CommercialProfile.php"
+			],
+			[
+				"quotereqassi",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequestAssignment.php"
+			],
+			[
+				"quoteadm",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"quoteadmoc",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"quoteadmon",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"quoteadmin",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"poitnofsale",
+				"src/Panaget/SiteBundle/Entity/Core/PointOfSale.php"
+			],
+			[
+				"poiofsalerepo",
+				"src/Panaget/SiteBundle/Entity/Core/Repository/PointOfSaleRepository.php"
+			],
+			[
+				"quotereqrep",
+				"src/Panaget/SiteBundle/Entity/Lead/Repository/QuoteRequestRepository.php"
+			],
+			[
+				"statablehelp",
+				"src/Panaget/SiteBundle/Behavior/StatusableHelper.php"
+			],
+			[
+				"quoterequestadmincontroller",
+				"src/Panaget/AdminBundle/Controller/Lead/QuoteRequestAdminController.php"
+			],
+			[
+				"quoterequest.php",
+				"src/Panaget/SiteBundle/Entity/Lead/QuoteRequest.php"
+			],
+			[
+				"commerciprofile",
+				"src/Panaget/SiteBundle/Entity/Core/CommercialProfile.php"
+			],
+			[
+				"dbalquer",
+				"vendor/doctrine/dbal/lib/Doctrine/DBAL/Query/QueryBuilder.php"
+			],
+			[
+				"abscontroler",
+				"vendor/faros/admin-bundle/Faros/AdminBundle/Controller/CRUD/AbstractController.php"
+			],
+			[
+				"ormcontroller",
+				"vendor/faros/admin-bundle/Faros/AdminBundle/Controller/CRUD/ORMController.php"
+			],
+			[
+				"crudedit",
+				"vendor/faros/avant-theme-bundle/Faros/AvantThemeBundle/Resources/views/themes/avant/CRUD/edit.html.twig"
+			],
+			[
+				"commercialprofile",
+				"src/Panaget/SiteBundle/Entity/Core/CommercialProfile.php"
+			],
+			[
+				"dascontrol",
+				"src/Panaget/AdminBundle/Controller/DashboardController.php"
+			],
+			[
+				"dashboard",
+				"src/Panaget/AdminBundle/Controller/DashboardController.php"
+			],
+			[
+				"geo",
+				"src/Panaget/SiteBundle/Geo/GeolocHelper.php"
+			],
+			[
+				"importprolis",
+				"src/Panaget/AdminBundle/Import/AbstractImportProListener.php"
+			],
+			[
+				"cartshow",
+				"src/Ponroy/ShopBundle/Resources/views/Cart/show.html.twig"
+			],
+			[
+				"cartcontroller",
+				"src/Ponroy/ShopBundle/Controller/Cart/CartController.php"
+			],
+			[
+				"constrvalida",
+				"src/Faros/ShopBundle/Constraint/ConstraintValidator.php"
+			],
+			[
+				"giftproce",
+				"src/Ponroy/ShopBundle/Coupon/Processor/GiftProcessor.php"
+			],
+			[
+				"admincontroller",
+				"src/Ponroy/ShopAdminBundle/Controller/AdminController.php"
+			],
+			[
+				"dashbard",
+				"src/Ponroy/ShopAdminBundle/Resources/views/Admin/dashboard.html.twig"
+			],
+			[
+				"grouptype",
+				"src/Faros/AdminBundle/Form/GroupType.php"
+			],
+			[
+				"paymencontroller",
+				"src/Ponroy/ShopBundle/Controller/Cart/PaymentController.php"
+			],
+			[
+				"catalogcontroller",
+				"src/BernardSolfin/SiteBundle/Controller/CatalogController.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "ponroy",
+		"selected_items":
+		[
+			[
+				"ponroy",
+				"~/sandbox/ponroy.sublime-workspace"
+			],
+			[
+				"",
+				"~/sandbox/dotfiles.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 341.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

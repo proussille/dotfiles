@@ -30,6 +30,10 @@ root: ~/
 windows:
   #- 'docker-hub': 'cd ~/sandbox/docker-hub && dc u p -d && clear'
   - '~':
+  - 'MAU/TDF':
+      root: ~/sandbox/maugin-tdf
+      panes:
+          - clear
   - 'BRIT':
       root: ~/sandbox/brithotel
       panes:
@@ -65,3 +69,7 @@ windows:
       root: ~/.dotfiles
       panes:
           - clear
+  - 'git-dude':
+      root: ~/.git-dude
+      panes:
+          - git dude &

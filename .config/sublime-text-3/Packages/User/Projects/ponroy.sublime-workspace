@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"car",
+				"cartItem"
+			],
+			[
 				"for",
 				"for\tfor"
 			],
@@ -44,149 +48,91 @@
 	"buffers":
 	[
 		{
-			"file": "/home/roussillep/sandbox/ponroy/src/Faros/QBBundle/Resources/views/Query/macro.html.twig",
+			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/Services/Lead/CollectorController.php",
 			"settings":
 			{
-				"buffer_size": 2008,
+				"buffer_size": 14295,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Order/list.html.twig",
+			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Game/thanks.html.twig",
 			"settings":
 			{
-				"buffer_size": 726,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/roussillep/sandbox/ponroy/src/Faros/QBBundle/Controller/QueryController.php",
-			"settings":
-			{
-				"buffer_size": 11097,
+				"buffer_size": 5031,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "INSERT INTO `_query` (`id`, `name`, `identifier`, `description`, `sqlrequest`, `fields`, `export_format`, `delimiter`, `role`, `tags`, `hidden`) VALUES\n(NULL, 'Export commandes', 'export_commandes', '<p>\\r\\n     </p>\\r\\n<div id=\\\"magicdomid6\\\" style=\\\"padding-right: 1px; -webkit-font-smoothing: antialiased; font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;lucida grande&quot;, arial, verdana, &quot;lucida sans unicode&quot;, tahoma, sans-serif; color: rgb(35, 37, 40); font-size: 14px;\\\">\\r\\n <span class=\\\"author-Mf3nJf40FB7v\\\" style=\\\"cursor: auto; padding-top: 0px; padding-bottom: 0px; -webkit-font-smoothing: antialiased;\\\">Filtre par date (ou alors on reprend les filtres dans la liste des commandes)</span></div>\\r\\n<div id=\\\"magicdomid7\\\" style=\\\"padding-right: 1px; -webkit-font-smoothing: antialiased; font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;lucida grande&quot;, arial, verdana, &quot;lucida sans unicode&quot;, tahoma, sans-serif; color: rgb(35, 37, 40); font-size: 14px;\\\">\\r\\n    <span class=\\\"author-Mf3nJf40FB7v\\\" style=\\\"cursor: auto; padding-top: 0px; padding-bottom: 0px; -webkit-font-smoothing: antialiased;\\\">Dans le fichier:</span></div>\\r\\n<div id=\\\"magicdomid8\\\" style=\\\"padding-right: 1px; -webkit-font-smoothing: antialiased; font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;lucida grande&quot;, arial, verdana, &quot;lucida sans unicode&quot;, tahoma, sans-serif; color: rgb(35, 37, 40); font-size: 14px;\\\">\\r\\n <ul class=\\\"list-bullet1\\\" style=\\\"padding: 2px 0px; margin: 0px 0px 0px 1.5em; -webkit-font-smoothing: antialiased;\\\">\\r\\n     <li style=\\\"padding: 0px; margin: 0px; -webkit-font-smoothing: antialiased;\\\">\\r\\n          <span class=\\\"author-Mf3nJf40FB7v\\\" style=\\\"cursor: auto; padding-top: 0px; padding-bottom: 0px; -webkit-font-smoothing: antialiased;\\\">Id commande</span></li>\\r\\n </ul>\\r\\n</div>\\r\\n<div id=\\\"magicdomid9\\\" style=\\\"padding-right: 1px; -webkit-font-smoothing: antialiased; font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;lucida grande&quot;, arial, verdana, &quot;lucida sans unicode&quot;, tahoma, sans-serif; color: rgb(35, 37, 40); font-size: 14px;\\\">\\r\\n   <ul class=\\\"list-bullet1\\\" style=\\\"padding: 2px 0px; margin: 0px 0px 0px 1.5em; -webkit-font-smoothing: antialiased;\\\">\\r\\n     <li style=\\\"padding: 0px; margin: 0px; -webkit-font-smoothing: antialiased;\\\">\\r\\n          <span class=\\\"author-Mf3nJf40FB7v\\\" style=\\\"cursor: auto; padding-top: 0px; padding-bottom: 0px; -webkit-font-smoothing: antialiased;\\\">Id client web</span></li>\\r\\n   </ul>\\r\\n</div>\\r\\n<div id=\\\"magicdomid10\\\" style=\\\"padding-right: 1px; -webkit-font-smoothing: antialiased; font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;lucida grande&quot;, arial, verdana, &quot;lucida sans unicode&quot;, tahoma, sans-serif; color: rgb(35, 37, 40); font-size: 14px;\\\">\\r\\n  <ul class=\\\"list-bullet1\\\" style=\\\"padding: 2px 0px; margin: 0px 0px 0px 1.5em; -webkit-font-smoothing: antialiased;\\\">\\r\\n     <li style=\\\"padding: 0px; margin: 0px; -webkit-font-smoothing: antialiased;\\\">\\r\\n          <span class=\\\"author-Mf3nJf40FB7v\\\" style=\\\"cursor: auto; padding-top: 0px; padding-bottom: 0px; -webkit-font-smoothing: antialiased;\\\">code client Generix</span></li>\\r\\n </ul>\\r\\n</div>\\r\\n<div id=\\\"magicdomid11\\\" style=\\\"padding-right: 1px; -webkit-font-smoothing: antialiased; font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;lucida grande&quot;, arial, verdana, &quot;lucida sans unicode&quot;, tahoma, sans-serif; color: rgb(35, 37, 40); font-size: 14px;\\\">\\r\\n  <ul class=\\\"list-bullet1\\\" style=\\\"padding: 2px 0px; margin: 0px 0px 0px 1.5em; -webkit-font-smoothing: antialiased;\\\">\\r\\n     <li style=\\\"padding: 0px; margin: 0px; -webkit-font-smoothing: antialiased;\\\">\\r\\n          <span class=\\\"author-Mf3nJf40FB7v\\\" style=\\\"cursor: auto; padding-top: 0px; padding-bottom: 0px; -webkit-font-smoothing: antialiased;\\\">Email</span></li>\\r\\n   </ul>\\r\\n</div>\\r\\n<div id=\\\"magicdomid12\\\" style=\\\"padding-right: 1px; -webkit-font-smoothing: antialiased; font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;lucida grande&quot;, arial, verdana, &quot;lucida sans unicode&quot;, tahoma, sans-serif; color: rgb(35, 37, 40); font-size: 14px;\\\">\\r\\n  <ul class=\\\"list-bullet1\\\" style=\\\"padding: 2px 0px; margin: 0px 0px 0px 1.5em; -webkit-font-smoothing: antialiased;\\\">\\r\\n     <li style=\\\"padding: 0px; margin: 0px; -webkit-font-smoothing: antialiased;\\\">\\r\\n          <span class=\\\"author-Mf3nJf40FB7v\\\" style=\\\"cursor: auto; padding-top: 0px; padding-bottom: 0px; -webkit-font-smoothing: antialiased;\\\">Montant ht</span></li>\\r\\n  </ul>\\r\\n</div>\\r\\n<div id=\\\"magicdomid13\\\" style=\\\"padding-right: 1px; -webkit-font-smoothing: antialiased; font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;lucida grande&quot;, arial, verdana, &quot;lucida sans unicode&quot;, tahoma, sans-serif; color: rgb(35, 37, 40); font-size: 14px;\\\">\\r\\n  <ul class=\\\"list-bullet1\\\" style=\\\"padding: 2px 0px; margin: 0px 0px 0px 1.5em; -webkit-font-smoothing: antialiased;\\\">\\r\\n     <li style=\\\"padding: 0px; margin: 0px; -webkit-font-smoothing: antialiased;\\\">\\r\\n          <span class=\\\"author-Mf3nJf40FB7v\\\" style=\\\"cursor: auto; padding-top: 0px; padding-bottom: 0px; -webkit-font-smoothing: antialiased;\\\">Mode de r&egrave;glement</span></li>\\r\\n    </ul>\\r\\n</div>\\r\\n<div id=\\\"magicdomid14\\\" style=\\\"padding-right: 1px; -webkit-font-smoothing: antialiased; font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;lucida grande&quot;, arial, verdana, &quot;lucida sans unicode&quot;, tahoma, sans-serif; color: rgb(35, 37, 40); font-size: 14px;\\\">\\r\\n  <ul class=\\\"list-bullet1\\\" style=\\\"padding: 2px 0px; margin: 0px 0px 0px 1.5em; -webkit-font-smoothing: antialiased;\\\">\\r\\n     <li style=\\\"padding: 0px; margin: 0px; -webkit-font-smoothing: antialiased;\\\">\\r\\n          <span class=\\\"author-Mf3nJf40FB7v\\\" style=\\\"cursor: auto; padding-top: 0px; padding-bottom: 0px; -webkit-font-smoothing: antialiased;\\\">Statut r&egrave;glement</span></li>\\r\\n </ul>\\r\\n</div>\\r\\n<div id=\\\"magicdomid15\\\" style=\\\"padding-right: 1px; -webkit-font-smoothing: antialiased; font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;lucida grande&quot;, arial, verdana, &quot;lucida sans unicode&quot;, tahoma, sans-serif; color: rgb(35, 37, 40); font-size: 14px;\\\">\\r\\n  <ul class=\\\"list-bullet1\\\" style=\\\"padding: 2px 0px; margin: 0px 0px 0px 1.5em; -webkit-font-smoothing: antialiased;\\\">\\r\\n     <li style=\\\"padding: 0px; margin: 0px; -webkit-font-smoothing: antialiased;\\\">\\r\\n          <span class=\\\"author-Mf3nJf40FB7v\\\" style=\\\"cursor: auto; padding-top: 0px; padding-bottom: 0px; -webkit-font-smoothing: antialiased;\\\">Date de commande</span></li>\\r\\n    </ul>\\r\\n</div>\\r\\n<div id=\\\"magicdomid16\\\" style=\\\"padding-right: 1px; -webkit-font-smoothing: antialiased; font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;lucida grande&quot;, arial, verdana, &quot;lucida sans unicode&quot;, tahoma, sans-serif; color: rgb(35, 37, 40); font-size: 14px;\\\">\\r\\n  <ul class=\\\"list-bullet1\\\" style=\\\"padding: 2px 0px; margin: 0px 0px 0px 1.5em; -webkit-font-smoothing: antialiased;\\\">\\r\\n     <li style=\\\"padding: 0px; margin: 0px; -webkit-font-smoothing: antialiased;\\\">\\r\\n          <span class=\\\"author-Mf3nJf40FB7v\\\" style=\\\"cursor: auto; padding-top: 0px; padding-bottom: 0px; -webkit-font-smoothing: antialiased;\\\">Pays de livraison</span></li>\\r\\n   </ul>\\r\\n</div>\\r\\n<p>\\r\\n   </p>', 'SELECT O.id AS \\'Id commande\\'\\r\\n , O.user_id AS \\'Id client web\\'\\r\\n    , CP.num_client AS \\'code client GNX\\'\\r\\n    , U.email\\r\\n    , O.price_order_ttc AS \\'montant TTC\\'\\r\\n    , O.price_order_payed_ttc AS \\'montant payé TTC\\'\\r\\n    , O.payment_mode AS \\'Mode de règlement\\'\\r\\n    , O.order_status_id AS \\'Statut règlement\\'\\r\\n    , O.order_date AS \\'Date de commande\\'\\r\\n    , O.shipping_address_country AS \\'Pays de livraison\\'\\r\\n\\r\\nFROM shop_order O\\r\\nINNER JOIN user U ON U.id=O.user_id\\r\\nINNER JOIN user_customer_profile CP ON CP.user_id=U.id\\r\\n\\r\\nWHERE \\r\\n   O.order_date BETWEEN :date_start AND :date_end \\r\\n    AND O.payment_mode IN (:payment_modes)\\r\\n    AND O.order_status_id NOT IN (\\'unanswered\\', \\'unpaid\\')',    '{\\\"date_start\\\":{\\\"type\\\":\\\"date\\\",\\\"params\\\":\\\"\\'widget\\': \\'choice\\'\\\\r\\\\n\\'input\\': \\'string\\'\\\\r\\\\n\\'format\\': \\'dd\\\\/MM\\\\/yyyy\\'\\\\r\\\\nrequired: true\\\"},\\\"date_end\\\":{\\\"type\\\":\\\"date\\\",\\\"params\\\":\\\"\\'widget\\': \\'choice\\'\\\\r\\\\n\\'input\\': \\'string\\'\\\\r\\\\n\\'format\\': \\'dd\\\\/MM\\\\/yyyy\\'\\\\r\\\\nrequired: true\\\"},\\\"payment_modes\\\":{\\\"type\\\":\\\"choice\\\",\\\"params\\\":\\\"choices: \\\\r\\\\n  \\'cic_bridge\\': \\'cic_bridge\\'\\\\r\\\\n  \\'check\\': \\'check\\'\\\\r\\\\n  \\'paypal_express_checkout\\': \\'paypal_express_checkout\\'\\\\r\\\\n  \\'no_payment\\': \\'no_payment\\'\\\\r\\\\n  \\'paiement_confiance\\': \\'paiement_confiance\\'\\\\r\\\\n\\\\r\\\\nmultiple: true\\\\r\\\\nrequired: true\\\"}}', 'csv',  ';',    'ROLE_ADMIN_SHOP_ORDER_LIST',   NULL,   0);\n0Recherche\n",
+			"file": "/home/roussillep/sandbox/ponroy/app/config/config.yml",
 			"settings":
 			{
-				"buffer_size": 9002,
-				"line_ending": "Unix",
-				"name": "INSERT INTO `_query` (`id`, `name`, `identifier`,"
-			}
-		},
-		{
-			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/AdminController.php",
-			"settings":
-			{
-				"buffer_size": 27520,
-				"encoding": "UTF-8",
+				"buffer_size": 9257,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/roussillep/sandbox/ponroy/src/Faros/QBBundle/Export/CsvGenerator.php",
+			"contents": "Searching 19 files for \"_tmp\" (case sensitive)\n\n/home/roussillep/sandbox/ponroy/app/config/capistrano/deploy.rb:\n   34  set :maintenance_page_source, \"app/Resources/views/503.html\"\n   35  \n   36: set :dump_ignored_table_patterns, %w{__bkp_% __tmp_% shop_paper_order_item%}\n   37  \n\n1 match in 1 file\n",
 			"settings":
 			{
-				"buffer_size": 2751,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Statement.php",
-			"settings":
-			{
-				"buffer_size": 8889,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/Type.php",
-			"settings":
-			{
-				"buffer_size": 10313,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/ArrayType.php",
-			"settings":
-			{
-				"buffer_size": 2348,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/SQLParserUtils.php",
-			"settings":
-			{
-				"buffer_size": 8598,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Searching 11047 files for \"bindValue\"\n\n/home/roussillep/sandbox/ponroy/vendor/doctrine/cache/lib/Doctrine/Common/Cache/SQLite3Cache.php:\n  113          ));\n  114  \n  115:         $statement->bindValue(':id', $id);\n  116:         $statement->bindValue(':data', serialize($data), SQLITE3_BLOB);\n  117:         $statement->bindValue(':expire', $lifeTime > 0 ? time() + $lifeTime : null);\n  118  \n  119          return $statement->execute() instanceof SQLite3Result;\n  ...\n  133          ));\n  134  \n  135:         $statement->bindValue(':id', $id);\n  136  \n  137          return $statement->execute() instanceof SQLite3Result;\n  ...\n  178          ));\n  179  \n  180:         $statement->bindValue(':id', $id, SQLITE3_TEXT);\n  181  \n  182          $item = $statement->execute()->fetchArray(SQLITE3_ASSOC);\n\n/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php:\n 1310                      $type = $types[$typeIndex];\n 1311                      list($value, $bindingType) = $this->getBindingInfo($value, $type);\n 1312:                     $stmt->bindValue($bindIndex, $value, $bindingType);\n 1313                  } else {\n 1314:                     $stmt->bindValue($bindIndex, $value);\n 1315                  }\n 1316                  ++$bindIndex;\n ....\n 1322                      $type = $types[$name];\n 1323                      list($value, $bindingType) = $this->getBindingInfo($value, $type);\n 1324:                     $stmt->bindValue($name, $value, $bindingType);\n 1325                  } else {\n 1326:                     $stmt->bindValue($name, $value);\n 1327                  }\n 1328              }\n\n/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/IBMDB2/DB2Statement.php:\n   60       * {@inheritdoc}\n   61       */\n   62:     public function bindValue($param, $value, $type = null)\n   63      {\n   64          return $this->bindParam($param, $value, $type);\n\n/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Mysqli/MysqliStatement.php:\n   65  \n   66      /**\n   67:      * Contains ref values for bindValue().\n   68       *\n   69       * @var array\n   ..\n  127       * {@inheritdoc}\n  128       */\n  129:     public function bindValue($param, $value, $type = null)\n  130      {\n  131          if (null === $type) {\n  ...\n  153          if (null !== $this->_bindedValues) {\n  154              if (null !== $params) {\n  155:                 if ( ! $this->_bindValues($params)) {\n  156                      throw new MysqliException($this->_stmt->error, $this->_stmt->errno);\n  157                  }\n  ...\n  205       * @return boolean\n  206       */\n  207:     private function _bindValues($values)\n  208      {\n  209          $params = array();\n\n/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/OCI8/OCI8Statement.php:\n  133       * {@inheritdoc}\n  134       */\n  135:     public function bindValue($param, $value, $type = null)\n  136      {\n  137          return $this->bindParam($param, $value, $type, null);\n  ...\n  203              foreach ($params as $key => $val) {\n  204                  if ($hasZeroIndex && is_numeric($key)) {\n  205:                     $this->bindValue($key + 1, $val);\n  206                  } else {\n  207:                     $this->bindValue($key, $val);\n  208                  }\n  209              }\n\n/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/SQLSrv/SQLSrvStatement.php:\n  111       * {@inheritdoc}\n  112       */\n  113:     public function bindValue($param, $value, $type = null)\n  114      {\n  115          return $this->bindParam($param, $value, $type,null);\n  ...\n  180              foreach ($params as $key => $val) {\n  181                  $key = ($hasZeroIndex && is_numeric($key)) ? $key + 1 : $key;\n  182:                 $this->bindValue($key, $val);\n  183              }\n  184          }\n\n/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/Statement.php:\n   45       * @return boolean TRUE on success or FALSE on failure.\n   46       */\n   47:     function bindValue($param, $value, $type = null);\n   48  \n   49      /**\n   50       * Binds a PHP variable to a corresponding named or question mark placeholder in the\n   51:      * SQL statement that was use to prepare the statement. Unlike PDOStatement->bindValue(),\n   52       * the variable is bound as a reference and will only be evaluated at the time\n   53       * that PDOStatement->execute() is called.\n\n/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Portability/Statement.php:\n   75       */\n   76  \n   77:     public function bindValue($param, $value, $type = null)\n   78      {\n   79:         return $this->stmt->bindValue($param, $value, $type);\n   80      }\n   81  \n\n/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Query/QueryBuilder.php:\n  124  \n  125      /**\n  126:      * The counter of bound parameters used with {@see bindValue).\n  127       *\n  128       * @var integer\n  ...\n 1072       * Creates a new named parameter and bind the value $value to it.\n 1073       *\n 1074:      * This method provides a shortcut for PDOStatement::bindValue\n 1075       * when using prepared statements.\n 1076       *\n 1077       * The parameter $value specifies the value that you want to bind. If\n 1078:      * $placeholder is not provided bindValue() will automatically create a\n 1079       * placeholder for you. An automatic placeholder will be of the name\n 1080       * ':dcValue1', ':dcValue2' etc.\n ....\n 1085       * <code>\n 1086       * $value = 2;\n 1087:      * $q->eq( 'id', $q->bindValue( $value ) );\n 1088       * $stmt = $q->executeQuery(); // executed with 'id = 2'\n 1089       * </code>\n\n/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Statement.php:\n  103       * @return boolean TRUE on success, FALSE on failure.\n  104       */\n  105:     public function bindValue($name, $value, $type = null)\n  106      {\n  107          $this->params[$name] = $value;\n  ...\n  118              }\n  119  \n  120:             return $this->stmt->bindValue($name, $value, $bindingType);\n  121          } else {\n  122:             return $this->stmt->bindValue($name, $value);\n  123          }\n  124      }\n\n/home/roussillep/sandbox/ponroy/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/BasicEntityPersister.php:\n  273  \n  274                  foreach ($insertData[$tableName] as $column => $value) {\n  275:                     $stmt->bindValue($paramIndex++, $value, $this->columnTypes[$column]);\n  276                  }\n  277              }\n\n/home/roussillep/sandbox/ponroy/vendor/doctrine/orm/lib/Doctrine/ORM/Persisters/JoinedSubclassPersister.php:\n  170  \n  171              foreach ($insertData[$rootTableName] as $columnName => $value) {\n  172:                 $rootTableStmt->bindValue($paramIndex++, $value, $this->columnTypes[$columnName]);\n  173              }\n  174  \n  ...\n  194                      $type = isset($this->columnTypes[$idName]) ? $this->columnTypes[$idName] : Type::STRING;\n  195  \n  196:                     $stmt->bindValue($paramIndex++, $idVal, $type);\n  197                  }\n  198  \n  199                  foreach ($data as $columnName => $value) {\n  200                      if (!is_array($id) || !isset($id[$columnName])) {\n  201:                         $stmt->bindValue($paramIndex++, $value, $this->columnTypes[$columnName]);\n  202                      }\n  203                  }\n\n/home/roussillep/sandbox/ponroy/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Session/Storage/Handler/PdoSessionHandler.php:\n  111          try {\n  112              $stmt = $this->pdo->prepare($sql);\n  113:             $stmt->bindValue(':time', time() - $lifetime, \\PDO::PARAM_INT);\n  114              $stmt->execute();\n  115          } catch (\\PDOException $e) {\n  ...\n  181                  $stmt->bindParam(':id', $id, \\PDO::PARAM_STR);\n  182                  $stmt->bindParam(':data', $encoded, \\PDO::PARAM_STR);\n  183:                 $stmt->bindValue(':time', time(), \\PDO::PARAM_INT);\n  184                  $stmt->execute();\n  185              } elseif ('oci' === $driver) {\n  ...\n  195                  $stmt->bindParam(':id', $id, \\PDO::PARAM_STR);\n  196                  $stmt->bindParam(':data', $encoded, \\PDO::PARAM_STR);\n  197:                 $stmt->bindValue(':time', time(), \\PDO::PARAM_INT);\n  198                  $stmt->execute();\n  199  \n  ...\n  234          $stmt->bindParam(':id', $id, \\PDO::PARAM_STR);\n  235          $stmt->bindParam(':data', $encoded, \\PDO::PARAM_STR);\n  236:         $stmt->bindValue(':time', time(), \\PDO::PARAM_INT);\n  237          $stmt->execute();\n  238  \n\n/home/roussillep/sandbox/ponroy/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Profiler/PdoProfilerStorage.php:\n  149  \n  150          foreach ($args as $arg => $val) {\n  151:             $stmt->bindValue($arg, $val, is_int($val) ? \\PDO::PARAM_INT : \\PDO::PARAM_STR);\n  152          }\n  153          $success = $stmt->execute();\n  ...\n  177  \n  178          foreach ($args as $arg => $val) {\n  179:             $stmt->bindValue($arg, $val, is_int($val) ? \\PDO::PARAM_INT : \\PDO::PARAM_STR);\n  180          }\n  181          $stmt->execute();\n\n/home/roussillep/sandbox/ponroy/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Profiler/SqliteProfilerStorage.php:\n   60              $stmt = $this->prepareStatement($db, $query);\n   61              foreach ($args as $arg => $val) {\n   62:                 $stmt->bindValue($arg, $val, is_int($val) ? \\SQLITE3_INTEGER : \\SQLITE3_TEXT);\n   63              }\n   64  \n   ..\n   80              $stmt = $this->prepareStatement($db, $query, true);\n   81              foreach ($args as $arg => $val) {\n   82:                 $stmt->bindValue($arg, $val, is_int($val) ? \\SQLITE3_INTEGER : \\SQLITE3_TEXT);\n   83              }\n   84              $res = $stmt->execute();\n\n42 matches across 15 files\n",
-			"settings":
-			{
-				"buffer_size": 9950,
+				"buffer_size": 300,
 				"line_ending": "Unix",
 				"name": "Find Results",
 				"scratch": true
 			}
 		},
 		{
-			"file": "/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php",
+			"file": "/home/roussillep/sandbox/ponroy/app/config/capistrano/deploy.rb",
 			"settings":
 			{
-				"buffer_size": 1944,
+				"buffer_size": 1069,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php",
+			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/SampleController.php",
 			"settings":
 			{
-				"buffer_size": 42372,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "",
-			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Form/date",
-			"file_size": 0,
-			"file_write_time": 131344900862735910,
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Form/ConstraintDateType.php",
-			"settings":
-			{
-				"buffer_size": 899,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Controller/CRUDController.php",
-			"settings":
-			{
-				"buffer_size": 32439,
+				"buffer_size": 11650,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Resources/views/CRUD/list.html.twig",
+			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/AdminController.php",
 			"settings":
 			{
-				"buffer_size": 3178,
+				"buffer_size": 28409,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Admin/dashboard-customer.html.twig",
+			"settings":
+			{
+				"buffer_size": 12064,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/public/css/admin.css",
+			"settings":
+			{
+				"buffer_size": 7512,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/sandbox/ponroy/app/config/parameters.yml",
+			"settings":
+			{
+				"buffer_size": 4189,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -198,17 +144,57 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 357.0,
-		"last_filter": "blame",
+		"height": 314.0,
+		"last_filter": "markdown",
 		"selected_items":
 		[
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"reinde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
 			[
 				"blame",
 				"Git: Blame"
 			],
 			[
+				"slug",
+				"Slugify"
+			],
+			[
+				"dpli",
+				"File: Duplicate"
+			],
+			[
+				"re",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"delete",
+				"File: Delete"
+			],
+			[
 				"move",
 				"File: Move"
+			],
+			[
+				"mobe",
+				"BracketHighlighter: Find Matching Offscreen Bracket"
+			],
+			[
+				"bla",
+				"Git: Blame"
+			],
+			[
+				"html twig",
+				"Set Syntax: HTML (Twig)"
 			],
 			[
 				"upper",
@@ -224,14 +210,6 @@
 			],
 			[
 				"rein",
-				"Indentation: Reindent Lines"
-			],
-			[
-				"re",
-				"Indentation: Reindent Lines"
-			],
-			[
-				"rei",
 				"Indentation: Reindent Lines"
 			],
 			[
@@ -275,7 +253,7 @@
 				"Indentation: Reindent Lines"
 			]
 		],
-		"width": 701.0
+		"width": 575.0
 	},
 	"console":
 	{
@@ -297,148 +275,170 @@
 	"expanded_folders":
 	[
 		"/home/roussillep/sandbox/ponroy",
+		"/home/roussillep/sandbox/ponroy/app",
+		"/home/roussillep/sandbox/ponroy/app/Resources",
+		"/home/roussillep/sandbox/ponroy/app/config",
+		"/home/roussillep/sandbox/ponroy/app/logs",
+		"/home/roussillep/sandbox/ponroy/app/logs/apache",
+		"/home/roussillep/sandbox/ponroy/app/logs/symfony",
 		"/home/roussillep/sandbox/ponroy/src",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/config",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/public",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Admin",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Services",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Services/Lead",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Services/Lead/Collector",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/EmailVision",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/Selligent",
-		"/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal",
-		"/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib",
-		"/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine",
-		"/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL",
-		"/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types"
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/OneShot",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/config",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Cart",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/CatalogCategory",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Commons",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/DirectOrder",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Game",
+		"/home/roussillep/sandbox/ponroy/web"
 	],
 	"file_history":
 	[
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/EmailVision/ExportCommand.php",
-		"/home/roussillep/sandbox/ponroy/vendor/symfony/symfony/src/Symfony/Bridge/Doctrine/Form/ChoiceList/ORMQueryBuilderLoader.php",
-		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Entity/Repository/CouponRepository.php",
-		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Shop/ShopManager.php",
-		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Entity/AbstractCoupon.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/AdminController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity/User.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity/Shop/CustomerProfile.php",
-		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Listener/CouponResolverListener.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Form/ConstraintUserType.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Admin/dashboard-coupon.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Admin/dashboard-customer.html.twig",
-		"/home/roussillep/sandbox/ponroy/app/config/capistrano/stages/preprod.rb",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Listener/ConfigureAdminMenuListener.php",
-		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Entity/Coupon.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Listener/OrderUpdateListener.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity/Shop/Order.php",
-		"/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php",
-		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Entity/CouponCode.php",
-		"/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Menu/Builder.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/Selligent/ProductExportCommand.php",
-		"/home/roussillep/sandbox/ponroy/app/Resources/crontab.production",
-		"/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Resources/views/Menu/sub_nav.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/config/routing.yml",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/Selligent/UnsubscribeCommand.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Listener/OrderChangeListener.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Form/CouponType.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Mailer/EmailVision.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/Generix/ImportCustomerCommand.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/EmailEndOfTreatmentCommand.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/Notification/FidelityReminderCommand.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/Notification/GiftVoucherLimitCommand.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/Account/UserController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/FormDocController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/Games/Special35thAnniversaryController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/SecurityController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/SponsorshipController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/config/services.yml",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Listener/OrderValidateListener.php",
-		"/home/roussillep/sandbox/ponroy/app/config/parameters.yml",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Mailer/Selligent.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/EmailController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/Services/ComparatorController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity/Product.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/ProductShowcaseController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity/Repository/ProductRepository.php",
-		"/home/roussillep/sandbox/ponroy/app/Resources/data/in/selligent/AVA_DESABOS_20170216.csv",
-		"/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Entity/UserSubscription.php",
-		"/home/roussillep/sandbox/ponroy/app/config/parameters.yml.dist",
-		"/home/roussillep/sandbox/ponroy/app/config/config.yml",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/EmailVision/EmailVision.php",
-		"/home/roussillep/sandbox/ponroy/DELETE-user-subscription-en-double.sql",
-		"/home/roussillep/sandbox/ponroy/app/config/capistrano/stages/production.rb",
-		"/home/roussillep/sandbox/ponroy/src/Faros/CmsBundle/Entity/Behavior/Timestampable.php",
-		"/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Listener/AdminMappingSubscriber.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity/UserRepository.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Email/stock-alert-available.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/Notification/StockAlertCheckerCommand.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/ProductShowcase/show.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/ProductShowcase/showCosmetic.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/OneShot/ImportCustomerCommand.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/Services/Lead/CollectorController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/base.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Entity/AbstractUser.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/ProductController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/SmartFocus/BuildXmlCommand.php",
-		"/home/roussillep/sandbox/ponroy/src/Faros/CmsBundle/Entity/Repository/PublicationAware.php",
-		"/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Entity/AbstractCivility.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity/ProductShowcase.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Email/order-confirm.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/layout_email.html.twig",
-		"/home/roussillep/Downloads/rupture (1).html",
-		"/home/roussillep/sandbox/ponroy/app/Resources/crontab.preprod",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/Beware/FarosAwareCommand.php",
-		"/home/roussillep/sandbox/ponroy/src/Faros/CmsBundle/Cms/PublicationManager.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/ProductShowcase/_layerStockAlert.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/GameController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/FormContactController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/FormDemandeEchantillonController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity/StockAlert.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Form/ProductType.php",
-		"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20170112183011.php",
-		"/home/roussillep/sandbox/bernard-solfin/app/Resources/exchange/input/import_2017_01_06_08_05_19/stk_2017_01_06_08_00_00.txt",
-		"/home/roussillep/sandbox/bernard-solfin/app/Resources/exchange/input/tar_2015_08_28_13_00_00.txt",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Product/edit.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Form/StockAlertType.php",
-		"/home/roussillep/sandbox/bernard-solfin/app/Resources/exchange/input/import_2017_01_06_08_05_19/tar_2017_01_06_08_00_00.txt",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/ProductShowcaseController.php",
-		"/home/roussillep/sandbox/ponroy/app/Resources/data/in/clients_gnx.csv",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/ProfessionalAccountController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/Account/ProfessionalUserController.php",
-		"/home/roussillep/sandbox/ponroy/app/Resources/data/in/clients_gnx-2017-01-02-14-22-15.csv",
-		"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20161215163116.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Form/GameType.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Form/EventListener/FillFormWithUserDataSubscriber.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Form/SendToAFriendType.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/KtaExportCommand.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/_user_form_fields.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/EmailVision/UnsubscribeCommand.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/Generix/GenerixAwareCommand.php",
-		"/home/roussillep/sandbox/ponroy/import-opt-in-5",
-		"/home/roussillep/Téléchargements/custom data.webarchive",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Commons/socialNetworks.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Resources/views/layout.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/Account/UserController.php",
+		"/home/roussillep/sandbox/ponroy/web/.htaccess",
+		"/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Entity/FormRequestSubjectRepository.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Form/FormRequestCustomerType.php",
+		"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20170613114330.php",
+		"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20131025120321.php",
+		"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20170622111830.php",
+		"/home/roussillep/sandbox/ponroy/app/Resources/data/in/opt-in.csv",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Services/Lead/UnpurchasedCart/form.html.twig",
+		"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20170622160355.php",
+		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Entity/Repository/CartRepository.php",
+		"/home/roussillep/sandbox/ponroy/vendor/symfony/symfony/src/Symfony/Component/Form/Extension/Core/Type/DateTimeType.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/WidgetController.php",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/Cart/CartController.php",
+		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Shop/Factory.php",
+		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Shop/ShopManager.php",
+		"/home/roussillep/sandbox/ponroy/app/config/security.yml",
+		"/home/roussillep/sandbox/ponroy/docker-compose.yml",
+		"/home/roussillep/sandbox/ponroy/app/config/parameters.yml",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/base.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Cart/show.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Constraint/ConstraintValidator.php",
-		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Constraint/Validator/UserValidator.php",
-		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Resources/translations/validators.fr.yml",
-		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/DependencyInjection/Compiler/RegisterAdvantageProcessorPass.php",
-		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Resources/config/services.yml",
-		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Coupon/AdvantageProcessor.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Gift/edit.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity/Gift.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Home/home.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Order/confirm.html.twig",
+		"/home/roussillep/sandbox/ponroy/README.md",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/Services/Lead/CollectorController.php",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity/Lead/CollectorLog.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Coupon/Processor/GiftProcessor.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Admin/dashboard.html.twig",
-		"/home/roussillep/sandbox/ponroy/app/config/capistrano/deploy.rb",
-		"/home/roussillep/sandbox/ponroy/app/Resources/statistics/export-re-abonnes-nl.sql",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Form/GiftType.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/Account/OrderController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Listener/FidelityResolverListener.php",
-		"/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Form/GroupType.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/Cart/PaymentController.php",
-		"/home/roussillep/sandbox/bernard-solfin/docker-compose.override.yml",
-		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Controller/Catalog/CatalogController.php",
-		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/catalog-bundle/Faros/CatalogBundle/Controller/CatalogController.php",
-		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/CatalogController.php"
+		"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20170703180259.php",
+		"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20170703180200.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/AdminController.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Game/thanks.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/Services/Lead/UnpurchasedCartController.php",
+		"/home/roussillep/.tmuxinator/sandbox.yml",
+		"/home/roussillep/sandbox/ponroy/package.json",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/config/routing_services.yml",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity/Shop/PersistantCart.php",
+		"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20160315154252.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/config/routing.yml",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Cart/summary.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/config/esi.yml",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Address/index.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Home/idzJavascript.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Payment/index.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/css/styles.css",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Cart/_cart_modal.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/js/cart.js",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/HomeController.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Search/results.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/ProductShowcase/show.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Newsletter/share-newsletter.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/HealthAdviceCategory/listCategory.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/HealthAdviceCategory/list.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/HealthAdviceCategory/index.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/HealthAdvice/show.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/HealthAdvice/search.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/FormRequestDoc/request.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/FormRequestDoc/confirm.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/FormRequestContact/request.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/FormRequestContact/confirm.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Delivery/select.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Commons/navContact.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/CatalogCategory/listCosmetic.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/CatalogCategory/list.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/CatalogCategory/indexCosmetic.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/CatalogCategory/index.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/update.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/update-password.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/request_confirm.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/request.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/register.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/order.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/newsletter.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/newsletter-offline.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/newsletter-offline-confirm.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/index.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/gift-vouchers.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/fidelity-history.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/register.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/register-confirm.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/recommend-pro-offer-confirm.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/products.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/products-search.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/print-book-confirm.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/print-book-address.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/preferential-price-confirm.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/preferential-price-address.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/our-prescribers-confirm.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/our-prescribers-address.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/index.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/contact-form.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/contact-confirm.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/FavoriteProducts/index.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/libs/jquery-ui/css/blitzer/jquery-ui-1.10.3.custom.css",
+		"/home/roussillep/sandbox/ponroy/gulpfile.js",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/CatalogCategoryController.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/DirectOrder/show.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/DirectOrder/_cart.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/css/refonte.less",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/Cart/DirectOrderController.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/CatalogCategory/menu.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/Cart/CommonsController.php",
+		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Cart/Cart.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/js/shop.js",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/DirectOrder/_line_div.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/ProductSelection/show.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/ProductSelection/_list.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/ProductSelection/showCosmetic.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Home/user.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Entity/AbstractFormRequest.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Shop/list.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Form/GameType.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/CatalogCategoryController.php",
+		"/home/roussillep/sandbox/ponroy/app/config/config.yml",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/layout_prod.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/css/smartFocus.css",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/css/raty.css",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/EmailVision/ExportCommand.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/css/stylesDev.css",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/css/undoBootstrap.css",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/css/widgets.css",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/html/header-pdf.html",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/libs/bootstrap/css/bootstrap.css",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/libs/bootstrap/css/bootstrap.min.css",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/libs/owl-carousel/assets/css/bootstrapTheme.css",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/libs/owl-carousel/assets/css/custom.css",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/libs/royal-slider-9.5.1/templates/animated-blocks/index.html",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/libs/royal-slider-9.5.1/templates/assets/preview-assets/css/reset.css"
 	],
 	"find":
 	{
@@ -449,6 +449,71 @@
 		"height": 130.0,
 		"where_history":
 		[
+			"/home/roussillep/sandbox/ponroy/app/config",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/config",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy",
+			"/home/roussillep/sandbox/ponroy/src",
+			"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle",
+			"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations",
+			"/home/roussillep/sandbox/ponroy/app/config",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle",
+			"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/libs",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/css",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/css",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/js",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/js",
+			"/home/roussillep/sandbox/ponroy/src",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/css",
+			"/home/roussillep/sandbox/ponroy/src/Faros/QBBundle",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views",
+			"/home/roussillep/sandbox/ponroy/src/Faros",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle",
+			"/home/roussillep/sandbox/ponroy/src/Faros",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources",
+			"/home/roussillep/sandbox/ponroy/src/Faros",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/Services",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/**/*.yml",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/**.yml",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views**.yml",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources",
+			"/home/roussillep/sandbox/ponroy/src/Faros",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy",
 			"/home/roussillep/sandbox/ponroy/vendor",
 			"/home/roussillep/sandbox/ponroy/vendor/friendsofsymfony",
 			"/home/roussillep/sandbox/ponroy/vendor/doctrine",
@@ -493,137 +558,137 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
-			"bindValue",
-			"PARAM_STR_ARRAY",
-			"$this->stmt",
-			"',",
-			"PARAM_STR_ARRAY",
-			"date",
-			"pinterest_macros",
-			"macro",
-			"default",
-			"getCurrentCoupon",
-			"ROLE_PRIVILEGE",
-			"ok",
-			"addOOrderBy",
-			"$(this).data('series')",
-			"indexIf",
-			" catég code promo",
-			"alternative_name",
-			"alternative",
-			"[] = ",
-			" '--'",
-			"IFNULL",
-			"var_dump",
-			"buildStatByDate",
-			"origins",
-			"tags",
-			"origins",
-			"col-3",
-			"CouponInterface",
-			"setCoupon",
-			"coupon",
-			"availableTags",
-			"availableOrigin",
-			"couponNames",
-			"tags",
-			"origins",
-			"tags",
-			"WITH', ",
-			"Tags",
-			"tags",
-			"origins",
-			"ponroy:selligent:import",
-			":import",
-			"\n                'displayChildren' => false,",
-			"$dashboardMenu",
-			"$sponsorship",
-			"sendGiftConfirmationEmail",
-			"gift",
-			"admin-order-confirm",
-			"commande.validation",
-			".confirmation",
-			"confirmation",
-			"sendReminderProposedEmail",
-			"@emailvision",
-			"emailVisionParams",
-			"emailvis",
-			"EmailVision\\EmailVision",
-			"get('emailvision')",
-			"EmailVision",
-			"emailvision_url_api_rest",
-			"emailVisionParams",
-			"guzzle",
-			"Event_First_Web_Order_Date",
-			"EventFirstWebOrderDate",
-			"\\Gedmo\\Mapping\\Annotation\\",
-			"@\\Gedmo",
-			"@\\",
-			"userSubscriptions",
-			"g-recaptcha",
-			"stock",
-			"path",
-			"OrderChangeListener",
-			"eventLastOtherOrderDate",
-			"setLastOrder",
-			"updateStmt",
-			"PublicationManager",
-			"Publication",
-			"EmailController",
-			"avai",
-			"AvailabitlityDate",
-			"availabitlityDate",
-			"AvailabitlityDate",
-			"new User()",
-			"Swift_Message",
-			"sendDocRequestEmail",
-			"Swift_Message",
-			"public function",
-			"fid16",
-			"CollectorLog",
-			"logCollector",
-			"newsletter",
-			"emailForm",
-			"$this->getRequest()",
-			"newsletter",
-			"recaptcha",
-			"captcha",
-			"layerEnvoiAmi",
-			"layerEnvoiAmi\nlayerEnvoiAmi",
-			"layerEnvoiAmi",
-			"send_to_a_friend",
-			"emailForm",
-			"Newsletter",
-			"newsletter",
-			"send_to_a_friend",
-			"layerEnvoiAmi",
-			"sen",
-			"etu",
-			"Product",
-			"product",
-			"Product",
-			"product",
-			"Product",
-			"product",
-			"Indisponible jusqu'au",
-			"indisp",
-			"trans",
-			"CollectorLog",
-			"isFidelity",
-			"unprocessCart",
-			"isNonGiftApplication",
-			"additionnalsGifts",
-			"ConstraintValidator",
-			"processCart",
-			"faros.shop.advantage_processor",
-			"AdvantageProcessor",
-			"max_coupon_use_reached",
-			"Vous avez déjà utilisé ce code promo.",
-			"unprocessCart",
-			"@"
+			"_tmp",
+			"table",
+			"getOptinStats",
+			"$userSubscription->getStatus() &&",
+			"sample",
+			"[",
+			"collectornewOptin",
+			"'new'",
+			"setResponseLeadType",
+			"docker",
+			"shop_cart_retrievePreviousCart",
+			"php app/console",
+			"esponseLeadType",
+			"$return",
+			"persistCart",
+			"persist",
+			"resolve",
+			"NotFoundHttpExceptionBlank",
+			"$$",
+			"(([1-2]\\d|0[1-9]|[3][0-1])\\/([0][1-9]|[1][0-2])\\/[1-2][0-9]\\d{2})",
+			"/^(([1-2]\\d|0[1-9]|[3][0-1])\\/([0][1-9]|[1][0-2])\\/[1-2][0-9]\\d{2})$$/",
+			"\n                'input' => 'string',",
+			"input",
+			"start",
+			"\n                    new Callback([\n                        'methods' => [function ($data, ExecutionContext $context) {\n                            if (!preg_match(\"/^(([1-2]\\d|0[1-9]|[3][0-1])\\/([0][1-9]|[1][0-2])\\/[1-2][0-9]\\d{2})$$/\", $data)) {\n                                $context->addViolation('Invalid date format');\n                            }\n                        }]\n                    ]),",
+			"api.collector.keys",
+			"api.unpurchased-cart.keys",
+			"api",
+			"collector",
+			"Services\\Lead\\Collector",
+			"form",
+			"publicidee",
+			"true or ",
+			"app.environment == 'prod'",
+			"\"//webchat.",
+			"getSubjectsChoices",
+			"\".$taxonomyId.\"",
+			"_form_request_subject_taxonomy",
+			"idz",
+			"iAdv",
+			"idz",
+			"shop_cart_show_summary",
+			"summary",
+			"modalePanier",
+			"user_summary",
+			"summary",
+			".cart",
+			"modalePanier",
+			".cart",
+			"modalePanier",
+			"update",
+			"item",
+			"quantity",
+			"hard_100_f6f6f6_1x100",
+			"pageGabSelection",
+			"selection",
+			"directOrder",
+			"addRef",
+			".modal-backdrop",
+			"modal",
+			"layerConnexion",
+			"layerConn",
+			"layerCompte",
+			"layerconne",
+			"userName",
+			"modaleConnexion",
+			"change",
+			"soustotal",
+			"FormRequestSubject",
+			"Taxonomy",
+			"subject",
+			"1000merci",
+			"millemerci",
+			"https://tracking.publicidees.com",
+			"publicidee",
+			"publicibee",
+			"')\n",
+			"{% stylesheets",
+			"{% javascripts",
+			"{% stylesheets",
+			"jqueryAndModernizr",
+			"jquery-and-modernizr",
+			"../img/",
+			"img/",
+			"bundles/ponroyshop",
+			"brithotelextranet",
+			"@",
+			"CsvGenerator",
+			"http://nxtck.com/act.php",
+			"https://nxtck.com/act.php",
+			"https://nxtck.com/act.php?tag=38274;cid=7",
+			"https://nxtck.com/act.php?tag=38274;cid=7 ",
+			"http:",
+			"? 'error' :",
+			"? 'error':",
+			"? \"error\":",
+			"render",
+			"setrend",
+			"block _",
+			"orig",
+			"resultDate",
+			"sendFidelityReminderEmail",
+			"&",
+			"tracking",
+			"&",
+			"100",
+			"RFC_URL_PRODUIT",
+			"&",
+			"sendGiftVoucherLimitEmail",
+			"export",
+			"\n            ->add('newsletter', 'checkbox', array(\n                'mapped' => false,\n                'label' => false,\n                'required' => false,\n                'help_inline' => 'J’accepte de recevoir la newsletter des LABORATOIRES YVES PONROY'\n            ))",
+			"tg",
+			"Country",
+			"country",
+			"Country",
+			"country",
+			"ponroy:products:exportFile",
+			"ETIQUETTE",
+			"isNewFormula",
+			"isNewNormula",
+			"is_new_formula",
+			"newForm",
+			"new",
+			"new Process",
+			"CURL",
+			"stock-alert-available",
+			"sendFidelityReminderEmail",
+			"sendGiftVoucherLimitEmail"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -631,6 +696,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"/bundles/ponroyshop/img/",
 			"get('ponroy_mailer')"
 		],
 		"reverse": false,
@@ -647,19 +713,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/home/roussillep/sandbox/ponroy/src/Faros/QBBundle/Resources/views/Query/macro.html.twig",
+					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/Services/Lead/CollectorController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2008,
+						"buffer_size": 14295,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1026,
-								1026
+								6324,
+								6324
 							]
 						],
 						"settings":
@@ -671,8 +737,8 @@
 								{
 									"1":
 									[
-										1026,
-										1027
+										6324,
+										6325
 									]
 								},
 								"icon":
@@ -687,8 +753,8 @@
 								{
 									"1":
 									[
-										1021,
-										1022
+										6314,
+										6315
 									]
 								},
 								"unmatched":
@@ -697,16 +763,31 @@
 							},
 							"bracket_highlighter.regions":
 							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -717,444 +798,6 @@
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Order/list.html.twig",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 726,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								345,
-								345
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										345,
-										346
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/single_quote.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										328,
-										329
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/roussillep/sandbox/ponroy/src/Faros/QBBundle/Controller/QueryController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11097,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5885,
-								5885
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										5962,
-										5963
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										4973,
-										4974
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2139.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9002,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2650,
-								2650
-							]
-						],
-						"settings":
-						{
-							"auto_name": "INSERT INTO `_query` (`id`, `name`, `identifier`,",
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"default_dir": "/home/roussillep/sandbox/ponroy",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/AdminController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 27520,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2642,
-								2642
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-									"1":
-									[
-										230,
-										231
-									]
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1165,306 +808,78 @@
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content"
-							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 405.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/home/roussillep/sandbox/ponroy/src/Faros/QBBundle/Export/CsvGenerator.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2751,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								107,
-								107
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										119,
-										120
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/round_bracket.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										92,
-										93
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
+								"bh_c_define_content"
 							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Statement.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8889,
-						"regions":
-						{
-						},
-						"selection":
-						[
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
 							[
-								5239,
-								5239
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
+							],
+							"color_helper.scan":
 							{
-								"close":
-								{
-									"1":
-									[
-										5268,
-										5269
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/round_bracket.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										5228,
-										5229
-									]
-								},
-								"unmatched":
-								{
-								}
+								"allowed_colors":
+								[
+									"hsl",
+									"rgb",
+									"rgba",
+									"hex",
+									"hsla",
+									"hex_compressed",
+									"webcolors"
+								],
+								"compress_hex_output": true,
+								"current_ext": ".php",
+								"current_syntax": "PHP/PHP",
+								"enabled": true,
+								"last_updated": 1499692077.38,
+								"scan_completion_scopes":
+								[
+								],
+								"scan_scopes":
+								[
+									"meta.declaration-list.css -support.type.property-name.css -comment -string",
+									"meta.property-value.css -comment -string",
+									"meta.value.css -comment -string",
+									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
+									"meta.tag.any.html meta.attribute-with-value.style.html"
+								],
+								"use_hex_argb": false
 							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1914.0,
+						"translation.y": 3645.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/Type.php",
+					"buffer": 1,
+					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Game/thanks.html.twig",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10313,
+						"buffer_size": 5031,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2284,
-								2284
+								4896,
+								4896
 							]
 						],
 						"settings":
@@ -1476,231 +891,8 @@
 								{
 									"1":
 									[
-										2284,
-										2285
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/single_quote.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										2254,
-										2255
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 720.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Types/ArrayType.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2348,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/SQLParserUtils.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8598,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3558,
-								3558
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										3833,
-										3834
+										4902,
+										4903
 									]
 								},
 								"icon":
@@ -1715,8 +907,8 @@
 								{
 									"1":
 									[
-										3529,
-										3530
+										4810,
+										4811
 									]
 								},
 								"unmatched":
@@ -1725,16 +917,31 @@
 							},
 							"bracket_highlighter.regions":
 							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -1745,237 +952,104 @@
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
-								"bh_single_quote_content"
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
 							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+								"#0161a9ff"
+							],
+							"color_helper.preview_meta":
+							{
+								"3209":
+								[
+									8844408069822184710,
+									7,
+									"hex",
+									8138177108606589441,
+									1,
+									"1499948561.3227818"
+								],
+								"3548":
+								[
+									8844408069822184710,
+									7,
+									"hex",
+									8138177108606589441,
+									2,
+									"1499948561.332844"
+								]
+							},
+							"color_helper.scan":
+							{
+								"allowed_colors":
+								[
+									"hsl",
+									"hex_compressed",
+									"hsla",
+									"webcolors",
+									"hex",
+									"rgba",
+									"rgb"
+								],
+								"compress_hex_output": true,
+								"current_ext": ".twig",
+								"current_syntax": "PHP-Twig/Syntaxes/HTML (Twig)",
+								"enabled": true,
+								"last_updated": 1499935152.31,
+								"scan_completion_scopes":
+								[
+								],
+								"scan_scopes":
+								[
+									"meta.declaration-list.css -support.type.property-name.css -comment -string",
+									"meta.property-value.css -comment -string",
+									"meta.value.css -comment -string",
+									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
+									"meta.tag.any.html meta.attribute-with-value.style.html"
+								],
+								"use_hex_argb": false
+							},
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1554.0,
+						"translation.y": 900.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"semi_transient": false,
+					"buffer": 2,
+					"file": "/home/roussillep/sandbox/ponroy/app/config/config.yml",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 9950,
+						"buffer_size": 9257,
 						"regions":
 						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										191,
-										200
-									],
-									[
-										241,
-										250
-									],
-									[
-										320,
-										329
-									],
-									[
-										523,
-										532
-									],
-									[
-										684,
-										693
-									],
-									[
-										1073,
-										1082
-									],
-									[
-										1184,
-										1193
-									],
-									[
-										1461,
-										1470
-									],
-									[
-										1567,
-										1576
-									],
-									[
-										1813,
-										1822
-									],
-									[
-										2097,
-										2106
-									],
-									[
-										2225,
-										2234
-									],
-									[
-										2454,
-										2463
-									],
-									[
-										2678,
-										2687
-									],
-									[
-										2918,
-										2927
-									],
-									[
-										3199,
-										3208
-									],
-									[
-										3292,
-										3301
-									],
-									[
-										3538,
-										3547
-									],
-									[
-										3835,
-										3844
-									],
-									[
-										4092,
-										4101
-									],
-									[
-										4340,
-										4349
-									],
-									[
-										4646,
-										4655
-									],
-									[
-										4734,
-										4743
-									],
-									[
-										4970,
-										4979
-									],
-									[
-										5184,
-										5193
-									],
-									[
-										5378,
-										5387
-									],
-									[
-										5627,
-										5636
-									],
-									[
-										5934,
-										5943
-									],
-									[
-										6106,
-										6115
-									],
-									[
-										6209,
-										6218
-									],
-									[
-										6494,
-										6503
-									],
-									[
-										6844,
-										6853
-									],
-									[
-										7104,
-										7113
-									],
-									[
-										7359,
-										7368
-									],
-									[
-										7721,
-										7730
-									],
-									[
-										8042,
-										8051
-									],
-									[
-										8361,
-										8370
-									],
-									[
-										8614,
-										8623
-									],
-									[
-										8905,
-										8914
-									],
-									[
-										9128,
-										9137
-									],
-									[
-										9524,
-										9533
-									],
-									[
-										9785,
-										9794
-									]
-								],
-								"scope": ""
-							}
 						},
 						"selection":
 						[
@@ -2000,25 +1074,35 @@
 								},
 								"unmatched":
 								{
-									"1":
-									[
-										152,
-										153
-									]
 								}
 							},
 							"bracket_highlighter.regions":
 							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -2029,42 +1113,187 @@
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": ".yml",
+								"current_syntax": "YAML/YAML",
+								"enabled": false,
+								"last_updated": 1499935152.31
+							},
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1080.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 300,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										242,
+										246
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								242,
+								242
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										271,
+										272
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										232,
+										233
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
-								"bh_single_quote_content"
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
 							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": null,
+								"current_syntax": "Default/Find Results",
+								"enabled": false,
+								"last_updated": 1499935152.31
+							},
 							"default_dir": "/home/roussillep/sandbox/ponroy",
 							"detect_indentation": false,
 							"line_numbers": false,
@@ -2077,131 +1306,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2340.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOStatement.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1944,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1175,
-								1175
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
-					"file": "/home/roussillep/sandbox/ponroy/vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php",
+					"buffer": 4,
+					"file": "/home/roussillep/sandbox/ponroy/app/config/capistrano/deploy.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 42372,
+						"buffer_size": 1069,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1952,
-								1952
+								1068,
+								1068
 							]
 						],
 						"settings":
@@ -2224,16 +1349,31 @@
 							},
 							"bracket_highlighter.regions":
 							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -2244,6 +1384,118 @@
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": ".rb",
+								"current_syntax": "Ruby/Ruby",
+								"enabled": false,
+								"last_updated": 1499935152.31
+							},
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 39.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/SampleController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11650,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5902,
+								5902
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										5901,
+										5902
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										5308,
+										5309
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
@@ -2254,161 +1506,410 @@
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
+								"bh_round_content"
 							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.scan":
+							{
+								"allowed_colors":
+								[
+									"hsl",
+									"rgb",
+									"rgba",
+									"hex",
+									"hsla",
+									"hex_compressed",
+									"webcolors"
+								],
+								"compress_hex_output": true,
+								"current_ext": ".php",
+								"current_syntax": "PHP/PHP",
+								"enabled": true,
+								"last_updated": 1499692077.38,
+								"scan_completion_scopes":
+								[
+								],
+								"scan_scopes":
+								[
+									"meta.declaration-list.css -support.type.property-name.css -comment -string",
+									"meta.property-value.css -comment -string",
+									"meta.value.css -comment -string",
+									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
+									"meta.tag.any.html meta.attribute-with-value.style.html"
+								],
+								"use_hex_argb": false
+							},
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 444.0,
+						"translation.y": 1419.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/AdminController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 28409,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								24445,
+								24445
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										24537,
+										24538
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/square_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										24328,
+										24329
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.scan":
+							{
+								"allowed_colors":
+								[
+									"hsl",
+									"rgb",
+									"rgba",
+									"hex",
+									"hsla",
+									"hex_compressed",
+									"webcolors"
+								],
+								"compress_hex_output": true,
+								"current_ext": ".php",
+								"current_syntax": "PHP/PHP",
+								"enabled": true,
+								"last_updated": 1499692077.38,
+								"scan_completion_scopes":
+								[
+								],
+								"scan_scopes":
+								[
+									"meta.declaration-list.css -support.type.property-name.css -comment -string",
+									"meta.property-value.css -comment -string",
+									"meta.value.css -comment -string",
+									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
+									"meta.tag.any.html meta.attribute-with-value.style.html"
+								],
+								"use_hex_argb": false
+							},
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 9564.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Admin/dashboard-customer.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12064,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3129,
+								3129
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3136,
+										3137
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/double_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										3111,
+										3112
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+								"#f8f7ccff"
+							],
+							"color_helper.no_auto": false,
+							"color_helper.popup_active": false,
+							"color_helper.popup_auto": true,
+							"color_helper.scan":
+							{
+								"allowed_colors":
+								[
+									"hsl",
+									"rgb",
+									"rgba",
+									"hex",
+									"hsla",
+									"hex_compressed",
+									"webcolors"
+								],
+								"compress_hex_output": true,
+								"current_ext": ".twig",
+								"current_syntax": "PHP-Twig/Syntaxes/HTML (Twig)",
+								"enabled": true,
+								"last_updated": 1499692077.38,
+								"scan_completion_scopes":
+								[
+								],
+								"scan_scopes":
+								[
+									"meta.declaration-list.css -support.type.property-name.css -comment -string",
+									"meta.property-value.css -comment -string",
+									"meta.value.css -comment -string",
+									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
+									"meta.tag.any.html meta.attribute-with-value.style.html"
+								],
+								"use_hex_argb": false
+							},
+							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1023.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
-					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Form/date",
+					"buffer": 8,
+					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/public/css/admin.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 7512,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"open_with_edit": true,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Form/ConstraintDateType.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 899,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								455,
-								455
+								7512,
+								7512
 							]
 						],
 						"settings":
@@ -2420,15 +1921,15 @@
 								{
 									"1":
 									[
-										602,
-										603
+										7511,
+										7512
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
 										"brackethighlighter.default"
 									]
 								},
@@ -2436,8 +1937,8 @@
 								{
 									"1":
 									[
-										454,
-										455
+										7487,
+										7488
 									]
 								},
 								"unmatched":
@@ -2446,26 +1947,21 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
@@ -2476,58 +1972,108 @@
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
+								"bh_round_content"
 							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+								"#0071d1ff",
+								"#0088ccff",
+								"#112233ff",
+								"#333333ff",
+								"#6aafeaff",
+								"#828282ff",
+								"#bdbdbdff",
+								"#ccccccff",
+								"#eeeeeeff",
+								"#f7f7f7ff",
+								"#fafafaff",
+								"#ffffffff"
+							],
+							"color_helper.scan":
+							{
+								"allowed_colors":
+								[
+									"hsl",
+									"rgb",
+									"rgba",
+									"hex",
+									"hsla",
+									"hex_compressed",
+									"webcolors"
+								],
+								"compress_hex_output": true,
+								"current_ext": ".css",
+								"current_syntax": "LESS/LESS",
+								"enabled": true,
+								"last_updated": 1499692077.38,
+								"scan_completion_scopes":
+								[
+								],
+								"scan_scopes":
+								[
+									"constant.other.color.rgb-value.css",
+									"constant.color.w3c-standard-color-name.css",
+									"meta.property-value.css"
+								],
+								"use_hex_argb": false
+							},
+							"syntax": "Packages/LESS/LESS.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2722.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
-					"file": "/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Controller/CRUDController.php",
+					"buffer": 9,
+					"file": "/home/roussillep/sandbox/ponroy/app/config/parameters.yml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 32439,
+						"buffer_size": 4189,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								21417,
-								21417
+								3549,
+								3549
 							]
 						],
 						"settings":
@@ -2550,16 +2096,31 @@
 							},
 							"bracket_highlighter.regions":
 							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
@@ -2570,170 +2131,51 @@
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
-								"bh_single_quote_content"
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
 							],
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 8844.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Resources/views/CRUD/list.html.twig",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3178,
-						"regions":
-						{
-						},
-						"selection":
-						[
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
 							[
-								656,
-								656
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
+							],
+							"color_helper.preview_meta":
 							{
-								"close":
-								{
-									"1":
-									[
-										658,
-										659
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/round_bracket.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										647,
-										648
-									]
-								},
-								"unmatched":
-								{
-								}
 							},
-							"bracket_highlighter.regions":
-							[
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
-							"tab_size": 2,
+							"color_helper.scan":
+							{
+								"current_ext": ".yml",
+								"current_syntax": "YAML/YAML",
+								"enabled": false,
+								"last_updated": 1499935152.31
+							},
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -2788,8 +2230,204 @@
 		"selected_items":
 		[
 			[
+				"gamethan",
+				"src/Ponroy/ShopBundle/Resources/views/Game/thanks.html.twig"
+			],
+			[
+				"collectorlog",
+				"src/Ponroy/ShopBundle/Entity/Lead/CollectorLog.php"
+			],
+			[
+				"collectorcontroller",
+				"src/Ponroy/ShopAdminBundle/Controller/Services/Lead/CollectorController.php"
+			],
+			[
+				"collecorlog",
+				"src/Ponroy/ShopBundle/Entity/Lead/CollectorLog.php"
+			],
+			[
+				"leadcollector",
+				"src/Ponroy/ShopAdminBundle/Controller/Services/Lead/CollectorController.php"
+			],
+			[
+				"cartcontroller",
+				"src/Ponroy/ShopBundle/Controller/Cart/CartController.php"
+			],
+			[
+				"shopmanager",
+				"src/Faros/ShopBundle/Shop/ShopManager.php"
+			],
+			[
+				"catcontroller",
+				"src/Ponroy/ShopBundle/Controller/Cart/CartController.php"
+			],
+			[
+				"cart.php",
+				"src/Ponroy/ShopBundle/Entity/Shop/PersistantCart.php"
+			],
+			[
+				"datetimetype",
+				"vendor/symfony/symfony/src/Symfony/Component/Form/Extension/Core/Type/DateTimeType.php"
+			],
+			[
+				"cartrepos",
+				"src/Faros/ShopBundle/Entity/Repository/CartRepository.php"
+			],
+			[
 				"admincontroller",
 				"src/Ponroy/ShopAdminBundle/Controller/AdminController.php"
+			],
+			[
+				"thanks",
+				"src/Ponroy/ShopBundle/Resources/views/Game/thanks.html.twig"
+			],
+			[
+				"admincon",
+				"src/Ponroy/ShopAdminBundle/Controller/AdminController.php"
+			],
+			[
+				"homecontroller",
+				"src/Ponroy/ShopBundle/Controller/HomeController.php"
+			],
+			[
+				"shopfactory",
+				"src/Faros/ShopBundle/Shop/Factory.php"
+			],
+			[
+				"catalogategmenu",
+				"src/Ponroy/ShopBundle/Resources/views/CatalogCategory/menu.html.twig"
+			],
+			[
+				"cartshow",
+				"src/Ponroy/ShopBundle/Resources/views/Cart/show.html.twig"
+			],
+			[
+				"directordrcont",
+				"src/Ponroy/ShopBundle/Controller/Cart/DirectOrderController.php"
+			],
+			[
+				"user.html.tw",
+				"src/Ponroy/ShopBundle/Resources/views/Home/user.html.twig"
+			],
+			[
+				"directorder",
+				"src/Ponroy/ShopBundle/Resources/views/DirectOrder/show.html.twig"
+			],
+			[
+				"catalogcategorycontroller",
+				"src/Ponroy/ShopBundle/Controller/CatalogCategoryController.php"
+			],
+			[
+				"gamecontroler",
+				"src/Ponroy/ShopBundle/Controller/GameController.php"
+			],
+			[
+				"gametype",
+				"src/Ponroy/ShopBundle/Form/GameType.php"
+			],
+			[
+				"gamecontroller",
+				"src/Ponroy/ShopBundle/Controller/GameController.php"
+			],
+			[
+				"user.php",
+				"src/Ponroy/ShopBundle/Entity/User.php"
+			],
+			[
+				"reference.php",
+				"src/Ponroy/ShopBundle/Entity/Reference.php"
+			],
+			[
+				"referencecontroller",
+				"src/Ponroy/ShopAdminBundle/Controller/ReferenceController.php"
+			],
+			[
+				"endoftre",
+				"src/Ponroy/ShopBundle/Command/EmailEndOfTreatmentCommand.php"
+			],
+			[
+				"game-confirm",
+				"src/Ponroy/ShopBundle/Resources/views/Email/game-confirm.html.twig"
+			],
+			[
+				"crontab",
+				"app/Resources/crontab.production"
+			],
+			[
+				"endoftr",
+				"src/Ponroy/ShopBundle/Command/EmailEndOfTreatmentCommand.php"
+			],
+			[
+				"stock-alert-available",
+				"src/Ponroy/ShopBundle/Resources/views/Email/stock-alert-available.html.twig"
+			],
+			[
+				"guzzlerequest",
+				"vendor/guzzle/guzzle/src/Guzzle/Http/Message/Request.php"
+			],
+			[
+				"product",
+				"src/Ponroy/ShopBundle/Entity/Product.php"
+			],
+			[
+				"partici",
+				"src/Ponroy/ShopBundle/Entity/Game/Participation.php"
+			],
+			[
+				"productshowcaserepository",
+				"src/Ponroy/ShopBundle/Entity/Repository/ProductShowcaseRepository.php"
+			],
+			[
+				"widgetcontroller",
+				"src/Ponroy/ShopAdminBundle/Controller/WidgetController.php"
+			],
+			[
+				"catalogcategorymenu",
+				"src/Ponroy/ShopBundle/Resources/views/CatalogCategory/menu.html.twig"
+			],
+			[
+				"email",
+				"src/Ponroy/ShopBundle/Mailer/EmailVision.php"
+			],
+			[
+				"realisationlist",
+				"vendor/symfony/symfony/src/Symfony/Component/Form/Extension/Validator/EventListener/ValidationListener.php"
+			],
+			[
+				"emailstock",
+				"src/Ponroy/ShopBundle/Resources/views/Email/stock-alert-available.html.twig"
+			],
+			[
+				"endof",
+				"src/Ponroy/ShopBundle/Command/EmailEndOfTreatmentCommand.php"
+			],
+			[
+				"producttype",
+				"src/Ponroy/ShopAdminBundle/Form/ProductType.php"
+			],
+			[
+				"productedit",
+				"src/Ponroy/ShopAdminBundle/Resources/views/Product/edit.html.twig"
+			],
+			[
+				"product.php",
+				"src/Ponroy/ShopBundle/Entity/Product.php"
+			],
+			[
+				"querycontroller",
+				"src/Faros/QBBundle/Controller/QueryController.php"
+			],
+			[
+				"logaction",
+				"src/Faros/AdminBundle/Entity/LogAction.php"
+			],
+			[
+				"admicontr",
+				"src/Ponroy/ShopAdminBundle/Controller/AdminController.php"
+			],
+			[
+				"statcontroller",
+				"src/Ponroy/ShopAdminBundle/Controller/StatisticController.php"
 			],
 			[
 				"arraytype",
@@ -2808,20 +2446,12 @@
 				"vendor/doctrine/dbal/lib/Doctrine/DBAL/Connection.php"
 			],
 			[
-				"querycontroller",
-				"src/Faros/QBBundle/Controller/QueryController.php"
-			],
-			[
 				"crudlist",
 				"src/Faros/AdminBundle/Resources/views/CRUD/list.html.twig"
 			],
 			[
 				"abscoupon",
 				"src/Faros/ShopBundle/Entity/AbstractCoupon.php"
-			],
-			[
-				"user.php",
-				"src/Ponroy/ShopBundle/Entity/User.php"
 			],
 			[
 				"coupon.php",
@@ -2880,10 +2510,6 @@
 				"src/Ponroy/ShopBundle/Controller/ProductShowcaseController.php"
 			],
 			[
-				"product",
-				"src/Ponroy/ShopBundle/Entity/Product.php"
-			],
-			[
 				"usersubr",
 				"src/Faros/AdminBundle/Entity/UserSubscription.php"
 			],
@@ -2896,20 +2522,12 @@
 				"src/Ponroy/ShopBundle/Entity/UserRepository.php"
 			],
 			[
-				"leadcollector",
-				"src/Ponroy/ShopAdminBundle/Controller/Services/Lead/CollectorController.php"
-			],
-			[
 				"producshowcontr",
 				"src/Ponroy/ShopBundle/Controller/ProductShowcaseController.php"
 			],
 			[
 				"base.html",
 				"src/Ponroy/ShopBundle/Resources/views/base.html.twig"
-			],
-			[
-				"crontab",
-				"app/Resources/crontab.production"
 			],
 			[
 				"produshcontr",
@@ -2936,10 +2554,6 @@
 				"src/Ponroy/ShopBundle/Entity/ProductShowcase.php"
 			],
 			[
-				"product.php",
-				"src/Ponroy/ShopBundle/Entity/Product.php"
-			],
-			[
 				"emailconroller",
 				"src/Ponroy/ShopBundle/Controller/EmailController.php"
 			],
@@ -2950,10 +2564,6 @@
 			[
 				"showcaseshow",
 				"src/Ponroy/ShopBundle/Resources/views/ProductShowcase/show.html.twig"
-			],
-			[
-				"producttype",
-				"src/Ponroy/ShopAdminBundle/Form/ProductType.php"
 			],
 			[
 				"produedit",
@@ -2978,14 +2588,6 @@
 			[
 				"leacolle",
 				"src/Ponroy/ShopBundle/Entity/Lead/CollectorLog.php"
-			],
-			[
-				"cartshow",
-				"src/Ponroy/ShopBundle/Resources/views/Cart/show.html.twig"
-			],
-			[
-				"cartcontroller",
-				"src/Ponroy/ShopBundle/Controller/Cart/CartController.php"
 			],
 			[
 				"constrvalida",
@@ -3033,12 +2635,12 @@
 	},
 	"select_symbol":
 	{
-		"height": 0.0,
+		"height": 357.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 935.0
 	},
 	"selected_group": 0,
 	"settings":
@@ -3048,7 +2650,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 251.0,
+	"side_bar_width": 309.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

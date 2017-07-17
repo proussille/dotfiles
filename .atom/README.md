@@ -1,6 +1,6 @@
 Packages backup :
 
-    apm list --installed --bare > ~/.atom/packages.list
+    apm list --installed --bare | awk -F@ '{print $1}' > ~/.atom/packages.list
 
 Packages install :
 

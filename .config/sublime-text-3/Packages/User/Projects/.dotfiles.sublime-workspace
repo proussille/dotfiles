@@ -1,0 +1,1492 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"testi",
+				"testimonialBody"
+			],
+			[
+				"constat",
+				"constant_score"
+			],
+			[
+				"publi",
+				"publishEnd"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"inli",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/roussillep/.dotfiles/.dfminstall",
+			"settings":
+			{
+				"buffer_size": 155,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/.dotfiles/.powerline-shell/powerline-shell.py",
+			"settings":
+			{
+				"buffer_size": 16686,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 55 files for \"fasd\"\n\n0 matches",
+			"settings":
+			{
+				"buffer_size": 40,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "/home/roussillep/.dotfiles/.bash.d/functions",
+			"settings":
+			{
+				"buffer_size": 93,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/.bash_profile",
+			"settings":
+			{
+				"buffer_size": 48,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/roussillep/.dotfiles/.bash_profile",
+			"settings":
+			{
+				"buffer_size": 48,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 212.0,
+		"last_filter": "dupl",
+		"selected_items":
+		[
+			[
+				"dupl",
+				"File: Duplicate"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"upper",
+				"Convert Case: Upper Case"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"jso",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"json",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"blame",
+				"Git: Blame"
+			],
+			[
+				"bl\tme",
+				"Git: Blame"
+			],
+			[
+				"move",
+				"File: Move"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"thmee",
+				"Themr: List themes"
+			],
+			[
+				"theme",
+				"Themr: List themes"
+			],
+			[
+				"thme",
+				"Themr: List themes"
+			],
+			[
+				"scheme",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"sche",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"schele",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"reid",
+				"Indentation: Reindent Lines"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 391.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/roussillep/.dotfiles",
+		"/home/roussillep/.dotfiles/.bash.d"
+	],
+	"file_history":
+	[
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Commons/nav.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Form/RealisationCategoryType.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Form/RealisationType.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Controller/PageController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Home/index.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Home/_pros.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Cms/RealisationCategoryController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Cms/RealisationCategory/list.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/public/less/Pros/couleursPros.less",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/config/routing.yml",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Realisation/index.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/Realisation.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/RealisationCategory.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Cms/Realisation/edit.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Cms/RealisationCategory/edit.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/layout.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/Commons/footer.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/faros/cms-bundle/Faros/CmsBundle/Cms/PublicationManager.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Menu/Builder.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Lead/NetworkApplianceController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Lead/JobOfferController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Lead/JobApplicationController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Lead/InquiryController.php",
+		"/home/roussillep/sandbox/storistes-de-france/app/config/routing.yml",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/faros/core-bundle/Faros/CoreBundle/Routing/DynamicRouter.php",
+		"/home/roussillep/sandbox/storistes-de-france/composer.json",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/faros/lead-bundle/Faros/LeadBundle/Controller/InquiryController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/ExtranetBundle/Controller/Lead/QuoteRequestController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Lead/WarrantyController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Form/AdviceType.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Form/ColorChart/ColorChartType.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Lead/LeadEvent.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/AdminController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Lead/QuoteRequestController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Lead/ProjectSurveyController.php",
+		"/home/roussillep/sandbox/storistes-de-france/app/config/security_roles.yml",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/translations/messages.fr.yml",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Form/PressType.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/config/routing/catalog.yml",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/config/routing/cms.yml",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Cms/PropageController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Cms/RealisationController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Cms/Realisation/list.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Cms/Realisation/new.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Cms/Realisation/order.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Cms/RealisationCategory/new.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views/Cms/RealisationCategory/order.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Controller/Cms/PropageCategoryController.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/SlideshowItem.php",
+		"/home/roussillep/.config/sublime-text-3/Packages/User/Projects/storistes-de-france.sublime-project",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Lead/RetailerProvider.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views/PointOfSale/search.html.twig",
+		"/home/roussillep/sandbox/storistes-de-france/app/Resources/crontab.production",
+		"/home/roussillep/sandbox/storistes-de-france/app/config/parameters.yml",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Core/User.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Core/RetailerProfile.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Controller/SearchController.php",
+		"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Command/AbstractImportCommand.php",
+		"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/NewsPro.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/Cart/CartController.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Cart/show.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Constraint/ConstraintValidator.php",
+		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Constraint/Validator/UserValidator.php",
+		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Resources/translations/validators.fr.yml",
+		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/DependencyInjection/Compiler/RegisterAdvantageProcessorPass.php",
+		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Resources/config/services.yml",
+		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Listener/CouponResolverListener.php",
+		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Coupon/AdvantageProcessor.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Gift/edit.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity/Gift.php",
+		"/home/roussillep/sandbox/ponroy/app/Resources/crontab.production",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Coupon/Processor/GiftProcessor.php",
+		"/home/roussillep/sandbox/ponroy/app/config/capistrano/stages/production.rb",
+		"/home/roussillep/sandbox/ponroy/app/config/capistrano/deploy.rb",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Admin/dashboard.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/AdminController.php",
+		"/home/roussillep/sandbox/ponroy/app/Resources/statistics/export-re-abonnes-nl.sql",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Form/GiftType.php",
+		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Shop/ShopManager.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/Account/OrderController.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/EmailVision/UnsubscribeCommand.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity/Shop/CustomerProfile.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Listener/FidelityResolverListener.php",
+		"/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Form/GroupType.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/config/services.yml",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/Cart/PaymentController.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/OneShot/ImportCustomerCommand.php",
+		"/home/roussillep/sandbox/bernard-solfin/docker-compose.override.yml",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/AdminBundle/Controller/Catalog/CatalogController.php",
+		"/home/roussillep/sandbox/bernard-solfin/vendor/faros/catalog-bundle/Faros/CatalogBundle/Controller/CatalogController.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/CatalogController.php",
+		"/home/roussillep/sandbox/bernard-solfin/src/BernardSolfin/SiteBundle/Controller/CommonsController.php",
+		"/home/roussillep/sandbox/bernard-solfin/app/config/parameters.yml",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Ads/show.html.twig",
+		"/home/roussillep/sandbox/todaycar/app/config/parameters.yml",
+		"/home/roussillep/sandbox/todaycar/var/logs/dev-2016-06-14.log",
+		"/home/roussillep/sandbox/todaycar/Gemfile",
+		"/home/roussillep/sandbox/todaycar/Capfile",
+		"/home/roussillep/sandbox/todaycar/app/config/capistrano/deploy.rb",
+		"/home/roussillep/sandbox/todaycar/app/config/capistrano/tasks/secure.rake",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/js/theia-sticky-sidebar.js",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/layout.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Booking/recapitulatif.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Booking/livraison.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Ads/index.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/views/Booking/_recap_final.html.twig",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/less/responsive.less",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/less/styleDev.less",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/js/script.js",
+		"/home/roussillep/sandbox/todaycar/gulpfile.js",
+		"/home/roussillep/gnome-terminal-colors-solarized/set_dark.sh",
+		"/home/roussillep/.config/dconf/user",
+		"/home/roussillep/sandbox/todaycar/src/SiteBundle/Controller/ContactInspectorController.php",
+		"/home/roussillep/sandbox/todaycar/vendor/bower_components/theia-sticky-sidebar/js/theia-sticky-sidebar.js",
+		"/home/roussillep/sandbox/todaycar/package.json",
+		"/home/roussillep/sandbox/todaycar/docker-compose.override.yml.dist",
+		"/home/roussillep/sandbox/todaycar/docker-compose.yml",
+		"/home/roussillep/sandbox/todaycar/docker-compose.override.yml",
+		"/home/roussillep/sandbox/todaycar/app/config/parameters.yml.dist",
+		"/home/roussillep/sandbox/todaycar/app/Resources/crontab.production",
+		"/home/roussillep/.dotfiles/.tmux.conf"
+	],
+	"find":
+	{
+		"height": 48.0
+	},
+	"find_in_files":
+	{
+		"height": 130.0,
+		"where_history":
+		[
+			"/home/roussillep/.dotfiles/.config",
+			"/home/roussillep/.dotfiles/.bash.d",
+			"/home/roussillep/.dotfiles",
+			"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/public/less",
+			"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/views",
+			"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Resources/public/less",
+			"/home/roussillep/sandbox/storistes-de-france/src/Sdf/AdminBundle/Resources/views",
+			"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle/Form",
+			"/home/roussillep/sandbox/storistes-de-france/src/Sdf/SiteBundle/Controller",
+			"/home/roussillep/sandbox/storistes-de-france/vendor/mac/core-bundle/Mac/CoreBundle",
+			"/home/roussillep/sandbox/ponroy/src",
+			"/home/roussillep/sandbox/ponroy/src/Faros",
+			"/home/roussillep/sandbox/ponroy/src",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy",
+			"/home/roussillep/sandbox/todaycar/src/SiteBundle/Resources/public/less"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"fasd",
+			"fastd",
+			"padding-top",
+			"logo",
+			"max-hei",
+			"logo",
+			"\n                //'required' => true,\n            ",
+			"image2",
+			"image1",
+			"testimonialImage",
+			"testimonial",
+			"rci",
+			"carousel-product-category",
+			"Commerce",
+			".carousel-inner",
+			"#pros .carousel-inner",
+			"#pros .carousel-inner > .item",
+			"#pro",
+			"theme_cafe",
+			"scb_corporate_youArePro",
+			"/realisations",
+			" /realisations",
+			"/realisations",
+			"{{ path('scb_corporate_youArePro') }}",
+			"borderCafe",
+			"border",
+			"bestOf",
+			"mac_corebundle_realisationcategorytype_images_control_group",
+			"required",
+			"testimonialImage",
+			"tli",
+			"tlistImage(\\Mac\\CoreBundle\\Entity\\Core\\File $listImage = null)\n    {",
+			"TestimonialImage",
+			"testimonialImage",
+			"TestimonialImage",
+			"testimonialImage",
+			"tlis",
+			"Body",
+			"body",
+			"Body",
+			"body",
+			"job",
+			"fields.html.twig",
+			"collection",
+			"press",
+			"Press",
+			"press",
+			"realisationes",
+			"press",
+			"realisationes",
+			"press",
+			"PRESS",
+			"_Realisation",
+			"_Realisation_",
+			"Press",
+			"press",
+			"Press",
+			"PRESS",
+			"Press",
+			"press",
+			"RealisationPRESSCATEGORY",
+			"PressCategory",
+			"PRESSCATEGORY",
+			"PressCategory",
+			"Cms/realisation",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Propage",
+			"propage",
+			"Press",
+			"press",
+			"Press",
+			"PRESS",
+			"Press",
+			"Cms/propage",
+			"faq",
+			"Faq",
+			"faq",
+			"Faq",
+			"faq",
+			"Faq",
+			"faq",
+			"Faq",
+			"faq",
+			"Faq",
+			"faq",
+			"Faq",
+			"faq",
+			"Faq",
+			"faq",
+			"Faq",
+			"faq",
+			"Faq",
+			"faq",
+			"Faq",
+			"faq",
+			"Faq",
+			"faq",
+			"color_chart",
+			"(name=\"",
+			"name=\"",
+			"name=",
+			"picto",
+			"Translatable",
+			"image",
+			"&quot;",
+			"&gt",
+			"&quot;",
+			"debug",
+			"Find",
+			"findAPro",
+			"$leadActivity;"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"sdf_site_realisation_index",
+			"|length"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/roussillep/.dotfiles/.dfminstall",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 155,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								141,
+								141
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": "",
+								"current_syntax": "Text/Plain text",
+								"enabled": false,
+								"last_updated": 1499152845.3
+							},
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/roussillep/.dotfiles/.powerline-shell/powerline-shell.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16686,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								134,
+								134
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": ".py",
+								"current_syntax": "Python/Python",
+								"enabled": false,
+								"last_updated": 1499152845.3
+							},
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 40,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": null,
+								"current_syntax": "Default/Find Results",
+								"enabled": false,
+								"last_updated": 1499152845.3
+							},
+							"default_dir": "/home/roussillep/.dotfiles",
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/roussillep/.dotfiles/.bash.d/functions",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 93,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								55,
+								55
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										54,
+										55
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										31,
+										32
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": "",
+								"current_syntax": "ShellScript/Shell-Unix-Generic",
+								"enabled": false,
+								"last_updated": 1499152845.3
+							},
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/roussillep/.bash_profile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 48,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								48,
+								48
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": "",
+								"current_syntax": "ShellScript/Shell-Unix-Generic",
+								"enabled": false,
+								"last_updated": 1499152845.3
+							},
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/roussillep/.dotfiles/.bash_profile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 48,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								48,
+								48
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"color_helper.box_height": 15,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": "",
+								"current_syntax": "ShellScript/Shell-Unix-Generic",
+								"enabled": false,
+								"last_updated": 1499152845.3
+							},
+							"open_with_edit": true,
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": ".dotfiles.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"realisacateg",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/RealisationCategory.php"
+			],
+			[
+				"realisation.php",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/Realisation.php"
+			],
+			[
+				"realisationtype",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Form/RealisationType.php"
+			],
+			[
+				"realisationlist",
+				"src/Sdf/AdminBundle/Resources/views/Cms/Realisation/list.html.twig"
+			],
+			[
+				"relisation",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/Realisation.php"
+			],
+			[
+				"realisation",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/Realisation.php"
+			],
+			[
+				"realisationtyp",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Form/RealisationType.php"
+			],
+			[
+				"slideshowhtml",
+				"src/Sdf/SiteBundle/Resources/views/Home/_slideshow.html.twig"
+			],
+			[
+				"reacatedit",
+				"src/Sdf/AdminBundle/Resources/views/Cms/RealisationCategory/edit.html.twig"
+			],
+			[
+				"reacattype",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Form/RealisationCategoryType.php"
+			],
+			[
+				"realisacategory",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/RealisationCategory.php"
+			],
+			[
+				"reacatlisthtml",
+				"src/Sdf/AdminBundle/Resources/views/Cms/RealisationCategory/list.html.twig"
+			],
+			[
+				"realicatcontr",
+				"src/Sdf/AdminBundle/Controller/Cms/RealisationCategoryController.php"
+			],
+			[
+				"homeindex",
+				"src/Sdf/SiteBundle/Resources/views/Home/index.html.twig"
+			],
+			[
+				"publicationmanager",
+				"vendor/faros/cms-bundle/Faros/CmsBundle/Cms/PublicationManager.php"
+			],
+			[
+				"layout.html",
+				"src/Sdf/AdminBundle/Resources/views/layout.html.twig"
+			],
+			[
+				"realisationcateg",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/RealisationCategory.php"
+			],
+			[
+				"realisatiocateg",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/RealisationCategory.php"
+			],
+			[
+				"menubuilder",
+				"src/Sdf/AdminBundle/Menu/Builder.php"
+			],
+			[
+				"dynamicro",
+				"vendor/faros/core-bundle/Faros/CoreBundle/Routing/DynamicRouter.php"
+			],
+			[
+				"inquirycontroler",
+				"vendor/faros/lead-bundle/Faros/LeadBundle/Controller/InquiryController.php"
+			],
+			[
+				"quotereqcont",
+				"src/Sdf/ExtranetBundle/Controller/Lead/QuoteRequestController.php"
+			],
+			[
+				"quotcontroller",
+				"src/Sdf/AdminBundle/Controller/Lead/QuoteRequestController.php"
+			],
+			[
+				"admincontrolelr",
+				"src/Sdf/AdminBundle/Controller/AdminController.php"
+			],
+			[
+				"leadevent",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Lead/LeadEvent.php"
+			],
+			[
+				"advicetype",
+				"src/Sdf/AdminBundle/Form/AdviceType.php"
+			],
+			[
+				"realisatiocategor",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/RealisationCategory.php"
+			],
+			[
+				"realisacategtpye",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Form/RealisationCategoryType.php"
+			],
+			[
+				"presstype",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Form/PressType.php"
+			],
+			[
+				"pointofsalesearch",
+				"src/Sdf/SiteBundle/Resources/views/PointOfSale/search.html.twig"
+			],
+			[
+				"searcontr",
+				"src/Sdf/SiteBundle/Controller/SearchController.php"
+			],
+			[
+				"retailerpro",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Core/RetailerProfile.php"
+			],
+			[
+				"newspro.php",
+				"vendor/mac/core-bundle/Mac/CoreBundle/Entity/Cms/NewsPro.php"
+			],
+			[
+				"crontab",
+				"app/Resources/crontab.production"
+			],
+			[
+				"cartshow",
+				"src/Ponroy/ShopBundle/Resources/views/Cart/show.html.twig"
+			],
+			[
+				"cartcontroller",
+				"src/Ponroy/ShopBundle/Controller/Cart/CartController.php"
+			],
+			[
+				"constrvalida",
+				"src/Faros/ShopBundle/Constraint/ConstraintValidator.php"
+			],
+			[
+				"giftproce",
+				"src/Ponroy/ShopBundle/Coupon/Processor/GiftProcessor.php"
+			],
+			[
+				"admincontroller",
+				"src/Ponroy/ShopAdminBundle/Controller/AdminController.php"
+			],
+			[
+				"dashbard",
+				"src/Ponroy/ShopAdminBundle/Resources/views/Admin/dashboard.html.twig"
+			],
+			[
+				"grouptype",
+				"src/Faros/AdminBundle/Form/GroupType.php"
+			],
+			[
+				"paymencontroller",
+				"src/Ponroy/ShopBundle/Controller/Cart/PaymentController.php"
+			],
+			[
+				"catalogcontroller",
+				"src/BernardSolfin/SiteBundle/Controller/CatalogController.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "ponroy",
+		"selected_items":
+		[
+			[
+				"ponroy",
+				"~/sandbox/ponroy.sublime-workspace"
+			],
+			[
+				"",
+				"~/sandbox/dotfiles.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 341.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

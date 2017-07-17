@@ -1,6 +1,9 @@
 "*":
+  "atom-autocomplete-php":
+    binComposer: "/home/roussillep/bin/composer"
   "atom-material-ui":
-    colors: {}
+    colors:
+      abaseColor: "#72a882"
     fonts:
       fontSize: 14
     tabs:
@@ -11,9 +14,33 @@
     ui:
       panelContrast: true
       panelShadows: true
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
   core:
     disabledPackages: [
       "language-gfm"
+    ]
+    excludeVcsIgnoredPaths: false
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "web/compiled"
+      "web/medias"
+      "app/cache"
+      "app/var"
+      "app/logs"
+      "var/cache"
+      "var/logs"
+      "web/bundles"
+      "web/image"
+    ]
+    packagesWithKeymapsDisabled: [
+      "fuzzy-finder"
     ]
     projectHome: "/home/roussillep/sandbox"
     telemetryConsent: "no"
@@ -26,6 +53,9 @@
     showInvisibles: true
   "exception-reporting":
     userId: "87320729-c39a-481f-a5aa-43274d3a63ab"
+  "fuzzy-finder": {}
+  "php-integrator-base":
+    phpCommand: "php7.0"
   "project-manager":
     alwaysOpenInSameWindow: true
     includeGitRepositories: true
