@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"pla",
+				"plants"
+			],
+			[
 				"car",
 				"cartItem"
 			],
@@ -48,90 +52,40 @@
 	"buffers":
 	[
 		{
-			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/Services/Lead/CollectorController.php",
+			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/Services/ComparatorController.php",
 			"settings":
 			{
-				"buffer_size": 14295,
+				"buffer_size": 27028,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Game/thanks.html.twig",
+			"contents": "\n\n#Exports vers Generix\npsb_generix:\n    pattern: /ml/extranet/s15_admin_commandes/s15p98_get_cmd.php\n    defaults: { _controller: PonroyShopAdminBundle:Services\\GenerixExport:export }\n\npsb_generix_origines:\n    pattern: /ml/extranet/s15_admin_commandes/s15p98_get_cmd.php\n    defaults: { _controller: PonroyShopAdminBundle:Services\\GenerixExport:exportOrigines }\n\npsb_generix_cheque_cadeau_export:\n    pattern: /export/cheques_cadeaux\n    defaults: { _controller: PonroyShopAdminBundle:Services\\Generix\\GiftVoucher:exportGiftVouchers }\n\npsb_generix_cheque_cadeau_import:\n    pattern: /import/cheques_cadeaux\n    defaults: { _controller: PonroyShopAdminBundle:Services\\Generix\\GiftVoucher:importGiftVouchers }\n\npsb_comparator_export:\n    pattern: /export/{comparatorName}.{format}/{charset}\n    defaults: { _controller: PonroyShopAdminBundle:Services\\Comparator:export, charset: ISO-8859-1 }\n    requirements:\n        charset: ISO-8859-1|UTF8\n\n\npsb_collector_collect_form:\n    pattern: /admin/services/collector/form\n    defaults: { _controller: PonroyShopAdminBundle:Services\\Lead\\Collector:form }\n    requirements:\n        method: GET\n\npsb_collector_collect:\n    pattern: /admin/services/collector/collect\n    defaults: { _controller: PonroyShopAdminBundle:Services\\Lead\\Collector:collect }\n    requirements:\n        method: POST|GET\n\npsb_lead_unpurchased_cart_form:\n    pattern: /admin/services/lead/unpurchased-cart/form\n    defaults: { _controller: PonroyShopAdminBundle:Services\\Lead\\UnpurchasedCart:form }\n    requirements:\n        method: GET\n\npsb_lead_unpurchased_cart_list:\n    pattern: /admin/services/lead/unpurchased-cart/list\n    defaults: { _controller: PonroyShopAdminBundle:Services\\Lead\\UnpurchasedCart:list }\n    requirements:\n        method: POST|GET\n",
+			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/config/routing_services.yml",
+			"file_size": 1772,
+			"file_write_time": 131442485182150665,
 			"settings":
 			{
-				"buffer_size": 5031,
-				"encoding": "UTF-8",
+				"buffer_size": 1771,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/roussillep/sandbox/ponroy/app/config/config.yml",
+			"contents": "Searching 207 files for \"orig.bing\" (case sensitive)\n\n/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20160907102513.php:\n   17      {\n   18          $this->addSql(\"\n   19:             INSERT INTO _parameter (`id`, `path`, `name`, `value`, `needed_role`) VALUES (NULL, 'orig.bing', 'Origine utilisée pour le flux bing', 'WLS1601013CA', 'ROLE_ADMIN');\"\n   20          );\n   21      }\n   ..\n   26      public function down(Schema $schema)\n   27      {\n   28:         $this->addSql('DELETE FROM _parameter WHERE path = \"orig.bing\"');\n   29      }\n   30  }\n\n2 matches in 1 file\n",
 			"settings":
 			{
-				"buffer_size": 9257,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Searching 19 files for \"_tmp\" (case sensitive)\n\n/home/roussillep/sandbox/ponroy/app/config/capistrano/deploy.rb:\n   34  set :maintenance_page_source, \"app/Resources/views/503.html\"\n   35  \n   36: set :dump_ignored_table_patterns, %w{__bkp_% __tmp_% shop_paper_order_item%}\n   37  \n\n1 match in 1 file\n",
-			"settings":
-			{
-				"buffer_size": 300,
+				"buffer_size": 588,
 				"line_ending": "Unix",
 				"name": "Find Results",
 				"scratch": true
 			}
 		},
 		{
-			"file": "/home/roussillep/sandbox/ponroy/app/config/capistrano/deploy.rb",
+			"file": "/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20170728105041.php",
 			"settings":
 			{
-				"buffer_size": 1069,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/SampleController.php",
-			"settings":
-			{
-				"buffer_size": 11650,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/AdminController.php",
-			"settings":
-			{
-				"buffer_size": 28409,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Admin/dashboard-customer.html.twig",
-			"settings":
-			{
-				"buffer_size": 12064,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/public/css/admin.css",
-			"settings":
-			{
-				"buffer_size": 7512,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/roussillep/sandbox/ponroy/app/config/parameters.yml",
-			"settings":
-			{
-				"buffer_size": 4189,
+				"buffer_size": 743,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -144,20 +98,24 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 314.0,
-		"last_filter": "markdown",
+		"height": 357.0,
+		"last_filter": "rei",
 		"selected_items":
 		[
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"javascript",
+				"Set Syntax: JavaScript"
+			],
 			[
 				"markdown",
 				"Markdown Preview: Preview in Browser"
 			],
 			[
 				"reinde",
-				"Indentation: Reindent Lines"
-			],
-			[
-				"rei",
 				"Indentation: Reindent Lines"
 			],
 			[
@@ -276,15 +234,21 @@
 	[
 		"/home/roussillep/sandbox/ponroy",
 		"/home/roussillep/sandbox/ponroy/app",
+		"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations",
 		"/home/roussillep/sandbox/ponroy/app/Resources",
 		"/home/roussillep/sandbox/ponroy/app/config",
+		"/home/roussillep/sandbox/ponroy/app/config/capistrano",
+		"/home/roussillep/sandbox/ponroy/app/config/capistrano/tasks",
 		"/home/roussillep/sandbox/ponroy/app/logs",
 		"/home/roussillep/sandbox/ponroy/app/logs/apache",
 		"/home/roussillep/sandbox/ponroy/app/logs/symfony",
 		"/home/roussillep/sandbox/ponroy/src",
+		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle",
+		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Controller",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/Services",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/config",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/public",
@@ -294,27 +258,78 @@
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Services/Lead",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Services/Lead/Collector",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/OneShot",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Listener",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/config",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Cart",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/CatalogCategory",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Commons",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/DirectOrder",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Game",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/FaqCategory",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Home",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Order",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Page",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Page/psb_page_show",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Payment",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/ProductShowcase",
 		"/home/roussillep/sandbox/ponroy/web"
 	],
 	"file_history":
 	[
+		"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20160907102513.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/config/routing.yml",
+		"/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Entity/UserSubscription.php",
+		"/home/roussillep/sandbox/ponroy/web/.htaccess",
+		"/home/roussillep/sandbox/ponroy/app/config/capistrano/tasks/secure.rake",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/Services/Lead/UnpurchasedCartController.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/Account/OrderController.php",
+		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Shop/Factory.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/PlantController.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/HealthAdviceCategoryController.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/HealthAdviceController.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/config/cms.yml",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Form/CatalogCategoryType.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/PageController.php",
+		"/home/roussillep/sandbox/ponroy/src/Faros/CmsBundle/Form/CmsAwareForm.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity/User.php",
+		"/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Entity/AbstractUser.php",
+		"/home/roussillep/Téléchargements/tag-squadata.js",
+		"/home/roussillep/sandbox/ponroy/app/config/security.yml",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/base.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/update.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Delivery/select.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Payment/index.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Order/confirm.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Order/summary.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/update-password.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/request_confirm.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/request.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/order.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/newsletter_unsubscription.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/newsletter.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/index.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/gift-vouchers.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/fidelity-history.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/FavoriteProducts/index.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Address/index.html.twig",
+		"/home/roussillep/sandbox/ponroy/vendor/symfony/symfony/src/Symfony/Component/Security/Http/Firewall.php",
+		"/home/roussillep/sandbox/ponroy/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Security/FirewallMap.php",
+		"/home/roussillep/sandbox/ponroy/app/config/config.yml",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Home/home.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/ProductShowcase/show.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Cart/show.html.twig",
+		"/home/roussillep/sandbox/ponroy/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Templating/GlobalVariables.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/Services/Lead/CollectorController.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Game/thanks.html.twig",
+		"/home/roussillep/sandbox/ponroy/app/config/capistrano/deploy.rb",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/SampleController.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/AdminController.php",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Admin/dashboard-customer.html.twig",
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/public/css/admin.css",
+		"/home/roussillep/sandbox/ponroy/app/config/parameters.yml",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/OneShot/ImportCustomerCommand.php",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/GameController.php",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/Account/UserController.php",
-		"/home/roussillep/sandbox/ponroy/web/.htaccess",
 		"/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Entity/FormRequestSubjectRepository.php",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Form/FormRequestCustomerType.php",
 		"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20170613114330.php",
@@ -327,40 +342,25 @@
 		"/home/roussillep/sandbox/ponroy/vendor/symfony/symfony/src/Symfony/Component/Form/Extension/Core/Type/DateTimeType.php",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/WidgetController.php",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/Cart/CartController.php",
-		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Shop/Factory.php",
 		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Shop/ShopManager.php",
-		"/home/roussillep/sandbox/ponroy/app/config/security.yml",
 		"/home/roussillep/sandbox/ponroy/docker-compose.yml",
-		"/home/roussillep/sandbox/ponroy/app/config/parameters.yml",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/base.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Cart/show.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Home/home.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Order/confirm.html.twig",
 		"/home/roussillep/sandbox/ponroy/README.md",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/Services/Lead/CollectorController.php",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity/Lead/CollectorLog.php",
 		"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20170703180259.php",
 		"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20170703180200.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/AdminController.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Game/thanks.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/Services/Lead/UnpurchasedCartController.php",
 		"/home/roussillep/.tmuxinator/sandbox.yml",
 		"/home/roussillep/sandbox/ponroy/package.json",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/config/routing_services.yml",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Entity/Shop/PersistantCart.php",
 		"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20160315154252.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/config/routing.yml",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Cart/summary.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/config/esi.yml",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Address/index.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Home/idzJavascript.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Payment/index.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/css/styles.css",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Cart/_cart_modal.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/js/cart.js",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/HomeController.php",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Search/results.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/ProductShowcase/show.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Newsletter/share-newsletter.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/HealthAdviceCategory/listCategory.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/HealthAdviceCategory/list.html.twig",
@@ -371,24 +371,14 @@
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/FormRequestDoc/confirm.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/FormRequestContact/request.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/FormRequestContact/confirm.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Delivery/select.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Commons/navContact.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/CatalogCategory/listCosmetic.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/CatalogCategory/list.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/CatalogCategory/indexCosmetic.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/CatalogCategory/index.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/update.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/update-password.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/request_confirm.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/request.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/register.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/order.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/newsletter.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/newsletter-offline.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/newsletter-offline-confirm.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/index.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/gift-vouchers.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/fidelity-history.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/register.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/register-confirm.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/recommend-pro-offer-confirm.html.twig",
@@ -403,7 +393,6 @@
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/index.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/contact-form.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/Professional/contact-confirm.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account/FavoriteProducts/index.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/libs/jquery-ui/css/blitzer/jquery-ui-1.10.3.custom.css",
 		"/home/roussillep/sandbox/ponroy/gulpfile.js",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/CatalogCategoryController.php",
@@ -414,31 +403,7 @@
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/CatalogCategory/menu.html.twig",
 		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/Cart/CommonsController.php",
 		"/home/roussillep/sandbox/ponroy/src/Faros/ShopBundle/Cart/Cart.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/js/shop.js",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/DirectOrder/_line_div.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/ProductSelection/show.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/ProductSelection/_list.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/ProductSelection/showCosmetic.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Home/user.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Faros/AdminBundle/Entity/AbstractFormRequest.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Shop/list.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Form/GameType.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/CatalogCategoryController.php",
-		"/home/roussillep/sandbox/ponroy/app/config/config.yml",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/layout_prod.html.twig",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/css/smartFocus.css",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/css/raty.css",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Command/EmailVision/ExportCommand.php",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/css/stylesDev.css",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/css/undoBootstrap.css",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/css/widgets.css",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/html/header-pdf.html",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/libs/bootstrap/css/bootstrap.css",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/libs/bootstrap/css/bootstrap.min.css",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/libs/owl-carousel/assets/css/bootstrapTheme.css",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/libs/owl-carousel/assets/css/custom.css",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/libs/royal-slider-9.5.1/templates/animated-blocks/index.html",
-		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/libs/royal-slider-9.5.1/templates/assets/preview-assets/css/reset.css"
+		"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/public/js/shop.js"
 	],
 	"find":
 	{
@@ -449,6 +414,8 @@
 		"height": 130.0,
 		"where_history":
 		[
+			"/home/roussillep/sandbox/ponroy/app/DoctrineMigrations",
+			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Account",
 			"/home/roussillep/sandbox/ponroy/app/config",
 			"/home/roussillep/sandbox/ponroy/src/Ponroy",
 			"/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/config",
@@ -561,6 +528,11 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"bing",
+			"orig.bing",
+			"author",
+			"|md5 }}",
+			"router",
 			"_tmp",
 			"table",
 			"getOptinStats",
@@ -683,12 +655,7 @@
 			"isNewNormula",
 			"is_new_formula",
 			"newForm",
-			"new",
-			"new Process",
-			"CURL",
-			"stock-alert-available",
-			"sendFidelityReminderEmail",
-			"sendGiftVoucherLimitEmail"
+			"new"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -696,6 +663,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"|md5encrypt }}",
 			"/bundles/ponroyshop/img/",
 			"get('ponroy_mailer')"
 		],
@@ -708,24 +676,24 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/Services/Lead/CollectorController.php",
+					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/Services/ComparatorController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14295,
+						"buffer_size": 27028,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6324,
-								6324
+								1532,
+								1532
 							]
 						],
 						"settings":
@@ -737,15 +705,15 @@
 								{
 									"1":
 									[
-										6324,
-										6325
+										1536,
+										1537
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/single_quote.png",
+										"Packages/BracketHighlighter/icons/round_bracket.png",
 										"brackethighlighter.default"
 									]
 								},
@@ -753,8 +721,8 @@
 								{
 									"1":
 									[
-										6314,
-										6315
+										1486,
+										1487
 									]
 								},
 								"unmatched":
@@ -763,84 +731,87 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
 							],
 							"color_helper.box_height": 15,
 							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
 							"color_helper.file_palette":
 							[
 							],
+							"color_helper.preview_meta":
+							{
+							},
 							"color_helper.scan":
 							{
 								"allowed_colors":
 								[
 									"hsl",
+									"hsla",
 									"rgb",
+									"hex_compressed",
 									"rgba",
 									"hex",
-									"hsla",
-									"hex_compressed",
 									"webcolors"
 								],
 								"compress_hex_output": true,
 								"current_ext": ".php",
 								"current_syntax": "PHP/PHP",
 								"enabled": true,
-								"last_updated": 1499692077.38,
+								"last_updated": 1501226907.63,
 								"scan_completion_scopes":
 								[
 								],
@@ -855,207 +826,31 @@
 								"use_hex_argb": false
 							},
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3645.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Resources/views/Game/thanks.html.twig",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5031,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4896,
-								4896
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										4902,
-										4903
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										4810,
-										4811
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
-							],
-							"color_helper.box_height": 15,
-							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
-							"color_helper.file_palette":
-							[
-								"#0161a9ff"
-							],
-							"color_helper.preview_meta":
-							{
-								"3209":
-								[
-									8844408069822184710,
-									7,
-									"hex",
-									8138177108606589441,
-									1,
-									"1499948561.3227818"
-								],
-								"3548":
-								[
-									8844408069822184710,
-									7,
-									"hex",
-									8138177108606589441,
-									2,
-									"1499948561.332844"
-								]
-							},
-							"color_helper.scan":
-							{
-								"allowed_colors":
-								[
-									"hsl",
-									"hex_compressed",
-									"hsla",
-									"webcolors",
-									"hex",
-									"rgba",
-									"rgb"
-								],
-								"compress_hex_output": true,
-								"current_ext": ".twig",
-								"current_syntax": "PHP-Twig/Syntaxes/HTML (Twig)",
-								"enabled": true,
-								"last_updated": 1499935152.31,
-								"scan_completion_scopes":
-								[
-								],
-								"scan_scopes":
-								[
-									"meta.declaration-list.css -support.type.property-name.css -comment -string",
-									"meta.property-value.css -comment -string",
-									"meta.value.css -comment -string",
-									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
-									"meta.tag.any.html meta.attribute-with-value.style.html"
-								],
-								"use_hex_argb": false
-							},
-							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 900.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/home/roussillep/sandbox/ponroy/app/config/config.yml",
-					"semi_transient": true,
+					"buffer": 1,
+					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/config/routing_services.yml",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9257,
+						"buffer_size": 1771,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								790,
+								790
 							]
 						],
 						"settings":
@@ -1078,61 +873,61 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
 							],
 							"color_helper.box_height": 15,
 							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
@@ -1147,25 +942,25 @@
 								"current_ext": ".yml",
 								"current_syntax": "YAML/YAML",
 								"enabled": false,
-								"last_updated": 1499935152.31
+								"last_updated": 1501226907.63
 							},
 							"syntax": "Packages/YAML/YAML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1080.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 300,
+						"buffer_size": 588,
 						"regions":
 						{
 							"match":
@@ -1174,8 +969,12 @@
 								"regions":
 								[
 									[
-										242,
-										246
+										284,
+										293
+									],
+									[
+										531,
+										540
 									]
 								],
 								"scope": ""
@@ -1184,8 +983,8 @@
 						"selection":
 						[
 							[
-								242,
-								242
+								512,
+								512
 							]
 						],
 						"settings":
@@ -1197,15 +996,15 @@
 								{
 									"1":
 									[
-										271,
-										272
+										542,
+										543
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"Packages/BracketHighlighter/icons/round_bracket.png",
 										"brackethighlighter.default"
 									]
 								},
@@ -1213,8 +1012,8 @@
 								{
 									"1":
 									[
-										232,
-										233
+										492,
+										493
 									]
 								},
 								"unmatched":
@@ -1223,61 +1022,61 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
 							],
 							"color_helper.box_height": 15,
 							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
@@ -1292,7 +1091,7 @@
 								"current_ext": null,
 								"current_syntax": "Default/Find Results",
 								"enabled": false,
-								"last_updated": 1499935152.31
+								"last_updated": 1501226907.63
 							},
 							"default_dir": "/home/roussillep/sandbox/ponroy",
 							"detect_indentation": false,
@@ -1309,24 +1108,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/home/roussillep/sandbox/ponroy/app/config/capistrano/deploy.rb",
+					"buffer": 3,
+					"file": "/home/roussillep/sandbox/ponroy/app/DoctrineMigrations/Version20170728105041.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1069,
+						"buffer_size": 743,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1068,
-								1068
+								730,
+								730
 							]
 						],
 						"settings":
@@ -1336,12 +1135,27 @@
 							{
 								"close":
 								{
+									"1":
+									[
+										731,
+										732
+									]
 								},
 								"icon":
 								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"brackethighlighter.default"
+									]
 								},
 								"open":
 								{
+									"1":
+									[
+										679,
+										680
+									]
 								},
 								"unmatched":
 								{
@@ -1349,61 +1163,61 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
 								"bh_single_quote_close",
 								"bh_single_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
 							],
 							"color_helper.box_height": 15,
 							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
@@ -1415,150 +1229,21 @@
 							},
 							"color_helper.scan":
 							{
-								"current_ext": ".rb",
-								"current_syntax": "Ruby/Ruby",
-								"enabled": false,
-								"last_updated": 1499935152.31
-							},
-							"syntax": "Packages/Ruby/Ruby.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 39.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopBundle/Controller/SampleController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11650,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5902,
-								5902
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										5901,
-										5902
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										5308,
-										5309
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"color_helper.box_height": 15,
-							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
-							"color_helper.file_palette":
-							[
-							],
-							"color_helper.scan":
-							{
 								"allowed_colors":
 								[
 									"hsl",
+									"hsla",
 									"rgb",
+									"hex_compressed",
 									"rgba",
 									"hex",
-									"hsla",
-									"hex_compressed",
 									"webcolors"
 								],
 								"compress_hex_output": true,
 								"current_ext": ".php",
 								"current_syntax": "PHP/PHP",
 								"enabled": true,
-								"last_updated": 1499692077.38,
+								"last_updated": 1501226907.63,
 								"scan_completion_scopes":
 								[
 								],
@@ -1573,601 +1258,6 @@
 								"use_hex_argb": false
 							},
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1419.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Controller/AdminController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 28409,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								24445,
-								24445
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										24537,
-										24538
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/square_bracket.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										24328,
-										24329
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
-							],
-							"color_helper.box_height": 15,
-							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
-							"color_helper.file_palette":
-							[
-							],
-							"color_helper.scan":
-							{
-								"allowed_colors":
-								[
-									"hsl",
-									"rgb",
-									"rgba",
-									"hex",
-									"hsla",
-									"hex_compressed",
-									"webcolors"
-								],
-								"compress_hex_output": true,
-								"current_ext": ".php",
-								"current_syntax": "PHP/PHP",
-								"enabled": true,
-								"last_updated": 1499692077.38,
-								"scan_completion_scopes":
-								[
-								],
-								"scan_scopes":
-								[
-									"meta.declaration-list.css -support.type.property-name.css -comment -string",
-									"meta.property-value.css -comment -string",
-									"meta.value.css -comment -string",
-									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
-									"meta.tag.any.html meta.attribute-with-value.style.html"
-								],
-								"use_hex_argb": false
-							},
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 9564.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/views/Admin/dashboard-customer.html.twig",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12064,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3129,
-								3129
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										3136,
-										3137
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										3111,
-										3112
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"color_helper.box_height": 15,
-							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
-							"color_helper.file_palette":
-							[
-								"#f8f7ccff"
-							],
-							"color_helper.no_auto": false,
-							"color_helper.popup_active": false,
-							"color_helper.popup_auto": true,
-							"color_helper.scan":
-							{
-								"allowed_colors":
-								[
-									"hsl",
-									"rgb",
-									"rgba",
-									"hex",
-									"hsla",
-									"hex_compressed",
-									"webcolors"
-								],
-								"compress_hex_output": true,
-								"current_ext": ".twig",
-								"current_syntax": "PHP-Twig/Syntaxes/HTML (Twig)",
-								"enabled": true,
-								"last_updated": 1499692077.38,
-								"scan_completion_scopes":
-								[
-								],
-								"scan_scopes":
-								[
-									"meta.declaration-list.css -support.type.property-name.css -comment -string",
-									"meta.property-value.css -comment -string",
-									"meta.value.css -comment -string",
-									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
-									"meta.tag.any.html meta.attribute-with-value.style.html"
-								],
-								"use_hex_argb": false
-							},
-							"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1023.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/home/roussillep/sandbox/ponroy/src/Ponroy/ShopAdminBundle/Resources/public/css/admin.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7512,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7512,
-								7512
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										7511,
-										7512
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/curly_bracket.png",
-										"brackethighlighter.default"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										7487,
-										7488
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"color_helper.box_height": 15,
-							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
-							"color_helper.file_palette":
-							[
-								"#0071d1ff",
-								"#0088ccff",
-								"#112233ff",
-								"#333333ff",
-								"#6aafeaff",
-								"#828282ff",
-								"#bdbdbdff",
-								"#ccccccff",
-								"#eeeeeeff",
-								"#f7f7f7ff",
-								"#fafafaff",
-								"#ffffffff"
-							],
-							"color_helper.scan":
-							{
-								"allowed_colors":
-								[
-									"hsl",
-									"rgb",
-									"rgba",
-									"hex",
-									"hsla",
-									"hex_compressed",
-									"webcolors"
-								],
-								"compress_hex_output": true,
-								"current_ext": ".css",
-								"current_syntax": "LESS/LESS",
-								"enabled": true,
-								"last_updated": 1499692077.38,
-								"scan_completion_scopes":
-								[
-								],
-								"scan_scopes":
-								[
-									"constant.other.color.rgb-value.css",
-									"constant.color.w3c-standard-color-name.css",
-									"meta.property-value.css"
-								],
-								"use_hex_argb": false
-							},
-							"syntax": "Packages/LESS/LESS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2722.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "/home/roussillep/sandbox/ponroy/app/config/parameters.yml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4189,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3549,
-								3549
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
-							],
-							"color_helper.box_height": 15,
-							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Solarized Light.tmTheme",
-							"color_helper.file_palette":
-							[
-							],
-							"color_helper.preview_meta":
-							{
-							},
-							"color_helper.scan":
-							{
-								"current_ext": ".yml",
-								"current_syntax": "YAML/YAML",
-								"enabled": false,
-								"last_updated": 1499935152.31
-							},
-							"syntax": "Packages/YAML/YAML.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -2175,7 +1265,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -2229,6 +1319,34 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"ordercontroller",
+				"src/Ponroy/ShopBundle/Controller/Account/OrderController.php"
+			],
+			[
+				"catalogcategtype",
+				"src/Ponroy/ShopAdminBundle/Form/CatalogCategoryType.php"
+			],
+			[
+				"cms.yml",
+				"src/Ponroy/ShopBundle/Resources/config/cms.yml"
+			],
+			[
+				"usersub",
+				"src/Faros/AdminBundle/Entity/UserSubscription.php"
+			],
+			[
+				"user",
+				"src/Ponroy/ShopBundle/Entity/User.php"
+			],
+			[
+				"firewall",
+				"vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Security/FirewallMap.php"
+			],
+			[
+				"globalvariables",
+				"vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Templating/GlobalVariables.php"
+			],
 			[
 				"gamethan",
 				"src/Ponroy/ShopBundle/Resources/views/Game/thanks.html.twig"

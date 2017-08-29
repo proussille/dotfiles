@@ -4,4 +4,8 @@ function reload {
     source ~/.bashrc
 }
 
+function curlheader {
+    curl -s -D - "$@" -o /dev/null
+}
+
 # vim:foldmethod=marker:foldlevel=0
