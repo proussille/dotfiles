@@ -8,13 +8,17 @@ import sys
 def warn(msg):
     print '[powerline-bash] ', msg
 
+# Separators 
+#     > : u\u003E
+#     pixel : u\u259A
+
 class Powerline:
     symbols = {
         'compatible': {
             'lock': 'RO',
             'network': 'SSH',
             'separator': u'\u25B6',
-            'separator_thin': u'\u276F'
+            'separator_thin': u'\u266F'
         },
         'patched': {
             'lock': u'\uE0A2',
@@ -31,8 +35,8 @@ class Powerline:
         'block': {
             'lock': 'RO',
             'network': 'SSH',
-            'separator': u'\u259E',
-            'separator_thin': u'\u259A'
+            'separator': u'\u003E',
+            'separator_thin': u'\u003A'
         },
     }
 
@@ -226,8 +230,8 @@ class LightColor:
     VIRTUAL_ENV_BG = 35  # a mid-tone green
     VIRTUAL_ENV_FG = 00
 
-# class Color(DefaultColor):
-class Color(LightColor):
+class Color(DefaultColor):
+# class Color(LightColor):
     """
     This subclass is required when the user chooses to use 'default' theme.
     Because the segments require a 'Color' class for every theme.
