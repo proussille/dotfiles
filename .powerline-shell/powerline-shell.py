@@ -386,9 +386,9 @@ def get_git_status():
         if origin_status:
             origin_position = " %d" % int(origin_status[0][1])
             if origin_status[0][0] == 'behind':
-                origin_position += u'\u21E3'
+                origin_position += u'\u0076'   # fleche bas : \u21E3
             if origin_status[0][0] == 'ahead':
-                origin_position += u'\u21E1'
+                origin_position += u'\u005E'   # fleche haut : \u21E1
 
         if line.find('nothing to commit') >= 0:
             has_pending_commits = False
