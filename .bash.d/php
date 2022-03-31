@@ -14,15 +14,16 @@ function sf() {
     return 1;
   fi
 
-  docker_compose_wrapper php -d memory_limit=-1 ${CONSOLE} ${ARGS}
+  #docker_compose_wrapper php -d memory_limit=-1 ${CONSOLE} ${ARGS}
 }
 
-function phpunit() {
-  docker_compose_wrapper php -d memory_limit=-1 bin/phpunit $@
-}
+#function phpunit() {
+#  docker_compose_wrapper php -d memory_limit=-1 bin/phpunit $@
+#}
 
-function composer() {
-  COMPOSER_HOME=${COMPOSER_HOME:-$HOME/.composer} \
-  DOCKERFILES_RUN_FLAGS="--memory=2g --tty" \
-  docker_compose_wrapper php -d memory_limit=-1 /usr/local/bin/composer $@
-}
+#function composer() {
+#  COMPOSER_HOME=${COMPOSER_HOME:-$HOME/.composer} \
+#  DOCKERFILES_RUN_FLAGS="--memory=2g --tty" \
+#  docker_compose_wrapper php -d memory_limit=-1 /usr/local/bin/composer $@
+#}
+#
