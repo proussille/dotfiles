@@ -8,7 +8,7 @@ import sys
 def warn(msg):
     print '[powerline-bash] ', msg
 
-# Separators 
+# Separators
 #     > : u\u003E
 #     pixel : u\u259A
 
@@ -403,6 +403,8 @@ def add_git_segment():
     out, err = p.communicate()
 
     if 'Not a git repo' in err:
+        return
+    if 'fatal: not a git repository (or any of the parent directories): .git' in err:
         return
 
     if out:
