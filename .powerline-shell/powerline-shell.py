@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import argparse
@@ -6,7 +6,7 @@ import os
 import sys
 
 def warn(msg):
-    print '[powerline-bash] ', msg
+    print('[powerline-bash] ', msg)
 
 # Separators
 #     > : u\u003E
@@ -73,7 +73,7 @@ class Powerline:
 
     def draw(self):
         return (''.join(self.draw_segment(i) for i in range(len(self.segments)))
-                + self.reset).encode('utf-8')
+                + self.reset)
 
     def draw_segment(self, idx):
         segment = self.segments[idx]
@@ -338,7 +338,7 @@ def get_short_path(cwd):
 
 def add_cwd_segment():
     cwd = powerline.cwd or os.getenv('PWD')
-    names = get_short_path(cwd.decode('utf-8'))
+    names = get_short_path(cwd)
 
     max_depth = powerline.args.cwd_max_depth
     if len(names) > max_depth:
@@ -380,7 +380,7 @@ def get_git_status():
     origin_position = ""
     output = subprocess.Popen(['git', 'status', '--ignore-submodules'],
             env={"LANG": "C", "HOME": os.getenv("HOME")}, stdout=subprocess.PIPE).communicate()[0]
-    for line in output.split('\n'):
+    for line in output.decode('utf-8').split('\n'):
         origin_status = re.findall(
             r"Your branch is (ahead|behind).*?(\d+) comm", line)
         if origin_status:
@@ -401,6 +401,8 @@ def add_git_segment():
     # See http://git-blame.blogspot.com/2013/06/checking-current-branch-programatically.html
     p = subprocess.Popen(['git', 'symbolic-ref', '-q', 'HEAD'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     out, err = p.communicate()
+    out = out.decode('utf-8')
+    err = err.decode('utf-8')
 
     if 'Not a git repo' in err:
         return
@@ -450,7 +452,7 @@ def get_hg_status():
     has_missing_files = False
     output = subprocess.Popen(['hg', 'status'],
             stdout=subprocess.PIPE).communicate()[0]
-    for line in output.split('\n'):
+    for line in output.decode('utf-8').split('\n'):
         if line == '':
             continue
         elif line[0] == '?':
@@ -556,7 +558,7 @@ import subprocess
 def add_jobs_segment():
     pppid = subprocess.Popen(['ps', '-p', str(os.getppid()), '-oppid='], stdout=subprocess.PIPE).communicate()[0].strip()
     output = subprocess.Popen(['ps', '-a', '-o', 'ppid'], stdout=subprocess.PIPE).communicate()[0]
-    num_jobs = len(re.findall(str(pppid), output)) - 1
+    num_jobs = len(re.findall(str(pppid), output.decode('utf-8'))) - 1
 
     if num_jobs > 0:
         powerline.append(' %d ' % num_jobs, Color.JOBS_FG, Color.JOBS_BG)
