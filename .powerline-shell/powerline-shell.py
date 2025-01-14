@@ -404,7 +404,9 @@ def add_git_segment():
     out = out.decode('utf-8')
     err = err.decode('utf-8')
 
-    if 'Not a git repo' in err:
+    if 'fatal' in err:
+        return
+    if 'not a git repo' in err:
         return
     if 'fatal: not a git repository (or any of the parent directories): .git' in err:
         return
@@ -431,6 +433,8 @@ def add_git_segment():
         # Inversion des couleurs
         bg = Color.REPO_CLEAN_FG
         fg = Color.REPO_CLEAN_BG
+
+
 
 
     powerline.append(' %s ' % branch, fg, bg)
